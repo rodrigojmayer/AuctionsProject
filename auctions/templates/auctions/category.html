@@ -1,10 +1,12 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-<div class="main" id="category">       
+<div id="sub">
     <h2>Category: {{ category.category_name }}</h2>
+</div>
+<div class="main" id="category">       
     
-    </br>
+    <!-- </br> -->
     {% if auction_listing_category %}    
         {% for auction_category in auction_listing_category %}
             <div id="listing_auction" >
@@ -20,8 +22,8 @@
                     Description: <div id="auction_description">{{ auction_category.description }}</div>        
                 </div>
                 <div id="auction_image"><a href="../listing_page/{{ auction_category.id }}" ><img src="/media/{{ auction_category.image }}"  height="200px"></a></div>
-                </br>
-                </br>
+                <!-- </br> -->
+                <!-- </br> -->
             </div>
         {% endfor %}
     {%else %}

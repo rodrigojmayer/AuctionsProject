@@ -45,10 +45,19 @@ html {
 }
 
 body {
+  background-color: var(--gray-color-2);
   margin: 0;
+  margin-top: var(--header-height);
   overflow-x: hidden;
   overflow-y: overlay;
   color: var(--text-color);
+}
+body #sub {
+  height: 4rem;
+  padding-left: 10%;
+}
+body #sub h2 {
+  padding-top: 0.75rem;
 }
 
 a {
@@ -65,11 +74,12 @@ h1 {
   font-size: 2.9rem;
 }
 
-/* *************** Components *************** */
-body {
-  background-color: var(--gray-color-2);
+h2 {
+  margin: 0;
+  font-size: 2rem;
 }
 
+/* *************** Components *************** */
 .nav {
   /*background-color: #333;    */
   background-color: var(--first-color);
@@ -122,12 +132,12 @@ body {
 /*margin-bottom: -20px;*/
 /*height: 76px;*/
 .main {
-  margin-top: calc(var(--header-height) + 1.5rem);
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 1.5rem;
+  padding: 1.5rem;
   background-color: white;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 3rem);
+  min-height: calc(100vh - var(--header-height) - 5.5rem - var(--footer-height));
   /*height: 1500px;*/ /* Used in this example to enable scrolling */
 }
 
@@ -249,16 +259,13 @@ body {
 
 footer {
   background-color: var(--gray-dark-color);
-  color: white;
+  color: var(--second-color);
   font-family: var(--font);
   width: 100%;
   height: var(--footer-height);
+  text-align: center;
 }
 footer div {
-  color: white;
-  font-family: initial;
-  width: 100%;
-  position: absolute;
+  padding-top: 5px;
   text-align: center;
-  font-size: 18px;
 }/*# sourceMappingURL=styles.css.map */

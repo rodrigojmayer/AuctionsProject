@@ -2,10 +2,11 @@
 
 {% block body %}
 <div class="main" id="create_bid">
+    
     {% if err %}
         <h2>Error </h2>
         {{ err }}
-        </br>
+        <!-- </br> -->
         <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
             <div class="form-group">
                 <input class="btn btn-primary" type="submit"  value="Back" >
@@ -14,7 +15,7 @@
     {% else %}
         <h2>Your bid has been added to {{ auction_data.name }} </h2>
         New price: ${{ bid_added }}
-        </br>
+        <!-- </br> -->
         <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
             <div class="form-group">
                 <input class="btn btn-primary" type="submit"  value="Back" >

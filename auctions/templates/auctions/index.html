@@ -1,8 +1,10 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
+<div id="sub">
+    <h2>Active Listings</h2>
+</div>
     <div class="main">
-        <h2>Active Listings</h2>
 
         <!-- </br> -->
 
@@ -34,12 +36,12 @@
                     -->                
                 </div>
                 <div id="auction_image"><a href="listing_page/{{ auction.id }}" ><img src="/media/{{ auction.image }}"  height="200px"></a></div>
-                </br>
-                </br>
+                <!-- </br> -->
+                <!-- </br> -->
                 {% if last_auction_id != auction.id %}
                     <div class="borders">    </div>
-                    </br>
-                    </br>
+                    <!-- </br> -->
+                    <!-- </br> -->
                 {% endif %}
             </div>
         {% endfor %}

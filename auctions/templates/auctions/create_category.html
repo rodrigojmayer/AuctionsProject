@@ -2,8 +2,10 @@
 
 {% block body %}
 
-<div class="main">
+<div id="sub">
     <h2>New Category</h2>
+</div>
+<div class="main">
 
     <form action="{% url 'auctions_app:create_category' %}" method="post">
         {% csrf_token %}

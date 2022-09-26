@@ -47,10 +47,20 @@ html {
   }
   
   body {
+    background-color:  var(--gray-color-2);
     margin: 0;
+    margin-top: var(--header-height);
     overflow-x: hidden;
     overflow-y:overlay;
     color: var(--text-color);
+    #sub{
+        height: 4rem;
+        padding-left: 10%;
+        // margin-bottom: 0.5rem;
+        h2{
+            padding-top:0.75rem;
+        }
+    }
   }
   
   a {
@@ -66,10 +76,10 @@ html {
     font-size: 2.9rem;
   }
   
-//   h2 {
-//     margin: 0;
-//     font-size: 2rem;
-//   }
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+  }
   
 //   h3 {
 //     margin: 0;
@@ -108,13 +118,6 @@ html {
 
 
 
-body {
-    // padding: 10px 10px 0 10px;
-    // background-color:  rgb(158, 158, 158);
-    background-color:  var(--gray-color-2);
-    // min-height: 100vh;
-    // min-height: calc(100vh - var(--header-height) - var(--footer-height) - 3.5rem);
-}
 .nav {
     /*background-color: #333;    */
     background-color: var(--first-color);
@@ -187,12 +190,13 @@ body {
 .main {
     // padding: 16px 16px 11% 16px;
     // padding: 16px 0 11% 0;
-    margin-top: calc(var(--header-height) + 1.5rem);
+    // margin-top: calc(var(--header-height) + 1.5rem);
     margin-left:10%;
     margin-right:10%;
     margin-bottom: 1.5rem;
+    padding: 1.5rem;
     background-color:  white;
-    min-height: calc(100vh - var(--header-height) - var(--footer-height) - 3rem);
+    min-height: calc(100vh - var(--header-height) - 5.5rem - var(--footer-height));
     /*height: 1500px;*//* Used in this example to enable scrolling */
 }
 // #create_bid, #create_comment, #category{
@@ -316,7 +320,8 @@ body {
 footer {
     // background-color: rgb(11, 33, 61);
     background-color: var(--gray-dark-color);
-    color: white;
+    // color: white;
+    color: var(--second-color);
     // font-family: initial;
     font-family: var(--font);
     // width: 101.5%;
@@ -328,16 +333,19 @@ footer {
     // position: relative;
     // position: absolute;
     // bottom:0;
+    text-align: center;
+    // margin:  auto;
     div{
         // background-color: rgb(11, 33, 61);
-        color: white;
-        font-family: initial;
-        width: 100%;
+        // color: white;
+        // font-family: initial;
+        padding-top:  5px;
+        // height: 100%;
         // height: var(--footer-height);
         // height: 40px;
-        position: absolute;
+        // position: absolute;
         // top: 50%;
         text-align: center;
-        font-size: 18px;
+        // font-size: 18px;
     }
 }
