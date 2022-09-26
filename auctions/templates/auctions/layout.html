@@ -56,14 +56,14 @@
                 
             </div>
         </div>
-        </br>
+        <!-- </br> -->
         {% block body %}
         {% endblock %}
+        <footer > 
+            <div>
+              © 2021 Copyright:
+              <a  href="{% url 'auctions_app:index' %}">commerceauctions.com</a>
+            </div>
+        </footer>
     </body>
-    <footer > 
-        <div>
-          © 2021 Copyright:
-          <a  href="{% url 'auctions_app:index' %}">commerceauctions.com</a>
-        </div>
-    </footer>
 </html>
