@@ -1,0 +1,35 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="main" id="category">       
+    <h2>Category: {{ category.category_name }}</h2>
+    
+    </br>
+    {% if auction_listing_category %}    
+        {% for auction_category in auction_listing_category %}
+            <div id="listing_auction" >
+                
+                <div id="auction_name">
+                    <a href="../listing_page/{{ auction_category.id }}" >
+                        {{ auction_category.name }}
+                    </a>  
+                </div> 
+                <div id="auction_data">
+                    <div id="auction_price">Actual price: ${{ auction_category.initial_price }}</div>
+        
+                    Description: <div id="auction_description">{{ auction_category.description }}</div>        
+                </div>
+                <div id="auction_image"><a href="../listing_page/{{ auction_category.id }}" ><img src="/media/{{ auction_category.image }}"  height="200px"></a></div>
+                </br>
+                </br>
+            </div>
+        {% endfor %}
+    {%else %}
+    <div id="listing_auction" >
+        <div id="auction_name">
+            There is no auction in this category.
+        </div> 
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

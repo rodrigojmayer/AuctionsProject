@@ -1,0 +1,223 @@
+body {
+    padding: 10px;
+    background-color:  rgb(71, 78, 87);
+}
+
+.nav {
+    /*background-color: #333;    */
+    
+    background-color: rgb(11, 33, 61);
+    color: rgb(255, 255, 255);
+    margin: 0 0 -20px -10px ;
+    padding-left: 3%;
+    font-family: initial;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    /*margin-bottom: 200px;*/
+    /*text-align: left;*/
+}
+
+.navbar {
+    /*background-color: #333;    */
+    
+    color: rgb(255, 255, 255);
+    margin: 0 0 -20px -10px ;
+    padding-left: 3%;
+    font-family: initial;
+    position:relative;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    /*margin-bottom: 200px;*/
+    /*text-align: left;*/
+}
+.navbar h1 {
+    float: left;
+}
+
+
+.nav-item{
+    height: 65px;
+    position: relative;
+    bottom: 8px;
+}
+
+.nav-item a{
+    display: inline-block;
+}
+
+#nav1{
+    position: relative;
+    right: 1%;
+}
+
+#nav2{
+    position: relative;
+    right: 1%;
+}
+
+#nav3{
+    position: relative;
+    right: 1%;
+}
+
+#nav4{
+    position: relative;
+    right: 1%;
+}
+
+#nav5{
+    position: relative;
+    right: 1%;
+}
+
+#nav6{
+    position: relative;
+    right: 1%;
+}
+
+.nav-item a{
+
+    position: relative;
+    top: 13px;
+}
+.nav h1{
+
+    position: relative;
+    bottom:  5px;
+}
+
+.nav .nav-item:hover {
+    background-color:  rgb(25, 52, 87);
+    /*margin-bottom: -20px;*/
+    /*height: 76px;*/
+}
+
+.main {
+    padding: 16px;
+    margin-top: 30px;
+    margin-left:10%;
+    margin-right:10%;
+    background-color:  rgb(201, 204, 207);
+    /*height: 1500px;*//* Used in this example to enable scrolling */
+}
+
+/*
+.navbar h1{
+    margin-right:-100px;
+}
+
+.navbar .nav{
+    margin-left: -100px;
+}*/
+#listing_auction{
+    font-family: 'Courier New', Courier, monospace;
+    /*background-color: aqua;*/
+    color: rgb(51, 51, 136); 
+    /*text-align: center;*/
+    width:100%;
+}
+
+.form-group {
+    width: 30%;
+}
+
+#auction_name{ 
+    font-size: 200%;
+    font-weight: bold;
+    margin-left: -30%;
+    text-align: center;
+}
+#auction_data{
+    float:left;
+    /*margin-right: -250%;*/
+    margin-top: 5%;
+    width:40%;
+}
+#auction_description{
+    margin: 0;
+}
+#auction_image{
+    margin-left: 44%;
+}
+#auction_price{
+    font-weight: bold;
+}
+#bid_price{
+    font-weight: bold;
+    color: red;
+}
+#in_watchlist{
+    /*color: blue;*/
+    background-color: blue;
+}
+#out_watchlist{
+    background-color: white;
+    color: blue;
+    
+}
+
+/*#not_logged:hover{
+    width:70px;
+    height:74px;
+    color: green;
+    content: "hola";
+    
+}*/
+
+.hide {
+    display: none;
+  }
+  
+#myDIV:hover + .hide {
+    display: block;
+    color: red;
+  }
+
+.window-notice {
+    background: rgba(33, 41, 52, .85);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+}
+.window-notice .content {
+    background: rgb(255, 255, 255);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 400px;
+    min-width: 220px !important;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+.window-notice .content-text {
+    color: rgb(105, 105, 105);
+    
+}
+.window-notice .content-buttons {
+    margin-left: 90%;
+    margin-top: 3%;
+    
+}
+
+#comment{
+    font-size: 110%;
+    font-weight: bold;
+    border-style: solid;
+}
+#comment a{
+    font-size: 90%;
+    font-weight: normal;
+}

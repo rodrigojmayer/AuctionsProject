@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="main" id="create_comment">
+    {% if err %}
+        <h2>Error </h2>
+        {{ err }}
+        </br>
+        <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit"  value="Back" >
+            </div>
+        </form>
+    {% else %}
+        <h2>Your comment has been added to {{ auction_data.name }} </h2>
+        New comment: {{ comment_added }}
+        </br>
+        <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit"  value="Back" >
+            </div>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

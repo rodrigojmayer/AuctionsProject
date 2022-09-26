@@ -1,0 +1,64 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<script>
+    function abrir(id) {
+    var file = document.getElementById(id);
+    file.dispatchEvent(new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+    }));
+    }
+    function contar(elem, idGlosa) {
+        var glosa = document.getElementById(idGlosa);
+        if(elem.files.length == 0) {
+            glosa.innerText = "Ningun archivo seleccionado";
+        } else {
+            glosa.innerText = elem.files.length + "  image selected";
+        }
+    }
+</script>
+<div class="main">
+    <h2>New Auction Listing</h2>
+    <!-- Agregado para las imagenes: enctype="multipart/form-data" -->
+    <form action="{% url 'auctions_app:create_listing' %}"  method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <input autofocus class="form-control" type="text" name="auction_name" placeholder="Listing title"> 
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="description" placeholder="Description" maxlength="150"></textarea>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="number" name="initial_price" placeholder="Starting bid">
+        </div>
+        <!--div class="form-group">
+            <input class="form-control" type="text" name="auction_category" placeholder="Category">
+        </div-->
+        <div class="form-group">
+            <select name="auction_category" id="auction_category" multiple>
+                {% for all_categorie in all_categories %}
+                    <option value="{{ all_categorie.id }}">{{ all_categorie.category_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <!--input  type="file" name="image" placeholder="Image"-->
+
+            <button type="button"
+                    onclick="abrir('image')">Choose an image</button>
+            <input type="file" multiple
+                   id="image" name="image"
+                   onchange="contar(this, 'glosaArchivos')" style="display: none">
+            <span id="glosaArchivos">None image selected</span>
+
+
+        </div>
+        <input class="btn btn-primary" type="submit" value="Save and add another" name="_save">
+        <input class="btn btn-primary" type="submit" value="Save" name="_save">
+    </form>
+
+</div>
+{% endblock %}
