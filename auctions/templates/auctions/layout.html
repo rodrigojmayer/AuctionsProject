@@ -10,12 +10,17 @@
     <body>
         <div class="nav">
             <div class="navbar">
-                <h1>AUCTIONS</h1>
-
-            
-                <div class="nav-item" id="nav1">
-                    <a class="nav-link" href="{% url 'auctions_app:index' %}">Active Listings</a>
-                </div>
+                <!-- <h1>AUCTIONS</h1> -->
+                <!-- <img src="/media/Logo (1).png" alt="Logo"> -->
+                <!-- <img src="/media/Group 2.png" alt="Logo"> -->
+                <div class="nav-item" >
+                    <!-- <a href="{% url 'auctions_app:index' %}" id="nav1"> -->
+                        <img src="/media/Group 3.png" alt="Logo">
+                    <!-- </a> -->
+                </div>            
+                <!-- <div class="nav-item" id="nav1"> -->
+                    <!-- <a class="nav-link" href="{% url 'auctions_app:index' %}">Active Listings</a> -->
+                <!-- </div> -->
                 {% if user.is_authenticated %}
                     <div class="nav-item" id="nav2">                
                         <a class="nav-link" href="{% url 'auctions_app:watch_list' %}">My Watch List</a>
