@@ -49,10 +49,13 @@ html {
   body {
     background-color:  var(--gray-color-2);
     margin: 0;
-    margin-top: var(--header-height);
+    // margin-top: var(--header-height);
     overflow-x: hidden;
     overflow-y:overlay;
     color: var(--text-color);
+    position: relative;
+    // min-height: calc(100vh - var(--header-height));
+    min-height: 100vh;
     #sub{
         height: 4rem;
         padding-left: 10%;
@@ -198,6 +201,11 @@ html {
     /*margin-bottom: -20px;*/
     /*height: 76px;*/
 // }
+#content-wrap{
+    padding-top: var(--header-height);
+    padding-bottom: 1rem;
+
+}
 .main {
     // padding: 16px 16px 11% 16px;
     // padding: 16px 0 11% 0;
@@ -205,13 +213,19 @@ html {
     // margin-left:10%;
     // margin-right:10%;
     margin:auto;
-    margin-bottom: 1.5rem;
+    margin-bottom:3vw;
+    // margin-bottom: calc(100vh - var(--header-height) - 50.5rem - var(--footer-height));
     padding: 1.5rem;
+    // padding-bottom: var(--footer-height);
+    // margin-bottom: 6rem;
+    // margin-bottom: var(--footer-height);
     background-color:  var(--white-color);
     border-radius: 10px;
-    min-height: calc(100vh - var(--header-height) - 5.5rem - var(--footer-height));
-    max-width: 80%;
-    min-width: 10%;
+    // min-height: calc(100vh - var(--header-height) - 5.5rem - var(--footer-height));
+
+    max-width: 80vw;
+    // min-width: 10%;
+    min-width: 10vw;
     /*height: 1500px;*//* Used in this example to enable scrolling */
     .form-group{
 
@@ -361,6 +375,8 @@ html {
 
 footer {
     // background-color: rgb(11, 33, 61);
+    position: absolute;
+    bottom: 0;
     background-color: var(--gray-dark-color);
     // color: white;
     color: var(--second-color);
