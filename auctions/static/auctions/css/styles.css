@@ -188,7 +188,6 @@ h2 {
 .main {
   margin: auto;
   margin-bottom: 3vw;
-  padding: 1.5rem;
   background-color: var(--white-color);
   border-radius: 10px;
   max-width: 80vw;
@@ -205,14 +204,17 @@ h2 {
 .main .form-group label {
   margin: 4px 5px;
 }
+.main form:first-child {
+  padding-top: 0.5rem;
+}
 .main .btn {
   margin: 1rem 10%;
   width: 80%;
   height: 3.5rem;
 }
-.main a {
+.main form a {
   display: block;
-  margin: 1rem;
+  padding-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -231,6 +233,9 @@ h2 {
   color: var(--text-color);
   /*text-align: center;*/
   width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .form-group {
@@ -245,7 +250,6 @@ h2 {
 }
 
 #auction_data {
-  float: left;
   /*margin-right: -250%;*/
   margin-top: 5%;
   width: 40%;
@@ -253,10 +257,6 @@ h2 {
 
 #auction_description {
   margin: 0;
-}
-
-#auction_image {
-  margin-left: 44%;
 }
 
 #auction_price {

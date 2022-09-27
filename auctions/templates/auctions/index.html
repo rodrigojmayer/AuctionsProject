@@ -13,37 +13,43 @@
             
             <div id="listing_auction" >
                 
-                <div id="auction_name">
-                    <a href="../listing_page/{{ auction.id }}" >
-                        {{ auction.name }}
-                    </a>   
+                <div id="auction_image">
+                    <a href="listing_page/{{ auction.id }}" >
+                        <img src="/media/{{ auction.image }}"  height="200px">
+                    </a>
                 </div>
-                <div id="auction_data">                
-                    <div id="auction_price">Actual price: ${{ auction.initial_price }}</div>
-        
-                    <!--div id="auction_price">Price: ${{ auction.initial_price }}</div-->
-                    Description: <div id="auction_description">{{ auction.description }}</div>
-                    <div id="auction_category">Category:     
-                        {% for category in auction.auction_category.all %}   
-                            {{ category.category_name }}
-                            {{ category.index }}
-                        {% endfor %}
+
+                <div id="order-column">
+                    <div id="auction_name">
+                        <a href="../listing_page/{{ auction.id }}" >
+                            {{ auction.name }}
+                        </a>   
                     </div>
-                    <!--{{ auction.auction_category.count }}
-                    {% with color_category=1 %}     
-                        {{ color_category }}
-                    {% endwith %}
-                    -->                
+                    <div id="auction_data">                
+                        <div id="auction_price">Actual price: ${{ auction.initial_price }}</div>
+            
+                        <!--div id="auction_price">Price: ${{ auction.initial_price }}</div-->
+                        Description: <div id="auction_description">{{ auction.description }}</div>
+                        <div id="auction_category">Category:     
+                            {% for category in auction.auction_category.all %}   
+                                {{ category.category_name }}
+                                {{ category.index }}
+                            {% endfor %}
+                        </div>
+                        <!--{{ auction.auction_category.count }}
+                        {% with color_category=1 %}     
+                            {{ color_category }}
+                        {% endwith %}
+                        -->                
+                    </div>
                 </div>
-                <div id="auction_image"><a href="listing_page/{{ auction.id }}" ><img src="/media/{{ auction.image }}"  height="200px"></a></div>
-                <!-- </br> -->
-                <!-- </br> -->
-                {% if last_auction_id != auction.id %}
-                    <div class="borders">    </div>
-                    <!-- </br> -->
-                    <!-- </br> -->
-                {% endif %}
+                    
             </div>
+            {% if last_auction_id != auction.id %}
+                <div class="borders">    </div>
+                <!-- </br> -->
+                <!-- </br> -->
+            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}
