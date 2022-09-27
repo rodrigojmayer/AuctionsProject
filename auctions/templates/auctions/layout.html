@@ -6,6 +6,7 @@
         <title>{% block title %}Auctions{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'auctions/css/styles.css' %}" rel="stylesheet">
+        <script src="{% static 'auctions/inbox.js' %}"></script>
     </head>
     <body>
         <div class="nav">
@@ -34,9 +35,9 @@
                     <!--div class="nav-item" id="nav6">                
                         <a class="nav-link" href="{% url 'auctions_app:create_category' %}">Create Category</a>
                     </div-->
-                    <div class="nav-item" id="nav5">
-                        <a class="nav-link" href="{% url 'auctions_app:logout' %}">Log Out</a>
-                    </div>
+                    <!-- <div class="nav-item" id="nav5"> -->
+                        <!-- <a class="nav-link" href="{% url 'auctions_app:logout' %}">Log Out</a> -->
+                    <!-- </div> -->
                 {% else %}
                     <!-- <div class="nav-item" id="nav5"> -->
                         <!-- <a class="nav-link" href="{% url 'auctions_app:login' %}">Log In</a> -->
@@ -46,19 +47,21 @@
                     <!-- </div> -->
                 {% endif %}
                 
-                <div class="authentication">
+                <div class="nav-item authentication" >
                     {% if user.is_authenticated %}
 
 
                         
-                        <div id="user-logged" >
+                        <div id="user-logged">
                             <strong>{{ user.username }}</strong>
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 2.66666C8.77202 2.66666 2.66669 8.772 2.66669 16C2.66669 23.228 8.77202 29.3333 16 29.3333C23.228 29.3333 29.3334 23.228 29.3334 16C29.3334 8.772 23.228 2.66666 16 2.66666ZM16 9.33333C18.3027 9.33333 20 11.0293 20 13.3333C20 15.6373 18.3027 17.3333 16 17.3333C13.6987 17.3333 12 15.6373 12 13.3333C12 11.0293 13.6987 9.33333 16 9.33333ZM9.19202 22.3627C10.388 20.6027 12.3827 19.4293 14.6667 19.4293H17.3334C19.6187 19.4293 21.612 20.6027 22.808 22.3627C21.104 24.1867 18.6867 25.3333 16 25.3333C13.3134 25.3333 10.896 24.1867 9.19202 22.3627Z" fill="black"/>
                             </svg>
-                        </div>
-                        <div id="myDropdown" class="dropdown-content hide">
-                            <a id="log_out" href="{% url 'auctions_app:login' %}">Log out</a>
+                            <!-- <div id="transparent-selection"> -->
+                                <div id="myDropdownUser" >
+                                    <a id="log_out" href="{% url 'auctions_app:login' %}">Log out</a>
+                                </div>
+                            <!-- </div> -->
                         </div>
 
                     {% else %}
