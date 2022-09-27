@@ -169,7 +169,7 @@ html {
     font-family: var(--font);
     position:relative;
     top: 0;
-    width: 100%;
+    width: 95%;
     // height: 65px;
     height: var(--header-height);
     /*margin-bottom: 200px;*/
@@ -189,14 +189,6 @@ html {
         padding-top: 20px;
     }
     
-    // #transparent-selection{
-    //     position:absolute;
-    //     // padding-top:2rem;
-    //     top:0;
-    //     height: 2.5rem;
-    //     width: 6rem;
-
-    // }
     #myDropdownUser {
         position:absolute;
         margin-top: .5rem;
@@ -204,12 +196,10 @@ html {
         height: 2.5rem;
         width: 6rem;
         background-color: var(--white-color);
-
         a{
             display: block;
             text-align: center;
             margin-top: -5px;
-            // align-self: center;
         }
     }
     #myDropdownUser:before {
@@ -226,16 +216,16 @@ html {
     }
 }
 
-  #user-logged > #myDropdownUser {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.2s linear;
-  }
-  #user-logged:hover > #myDropdownUser{
-    visibility: visible;
-    opacity: 1;
-  }
+#user-logged > #myDropdownUser {
+visibility: hidden;
+opacity: 0;
+transition: visibility 0s, opacity 0.2s linear;
+}
 
+#user-logged:hover > #myDropdownUser{
+visibility: visible;
+opacity: 1;
+}
 
 .nav-item{
     height: 65px;
@@ -248,12 +238,16 @@ html {
         top: 13px;
         // color: $gray_color;
         color:  var(--title-color)
-
     }
 }
 #nav1, #nav2, #nav3, #nav4, #nav5, #nav6{
     position: relative;
     right: 1%;
+}
+#nav5, #nav6{
+    // position: absolute;
+    // position:fixed;
+    // right:0;
 }
 // .nav-item:hover {
     // background-color:  $blue_color;
@@ -264,7 +258,6 @@ html {
 #content-wrap{
     padding-top: var(--header-height);
     padding-bottom: 1rem;
-
 }
 .main {
     // padding: 16px 16px 11% 16px;
@@ -316,10 +309,8 @@ html {
     // padding-bottom: 28%;
 // }
 #login, #register{
-//    padding-bottom: 21%;
     width: 50%;
     max-width: 26.5rem;
-
 }
  #register{
 //    padding-bottom: 13%;
@@ -374,13 +365,12 @@ html {
     background-color: white;
     color: blue;
 }
-.hide {
-    display: none;
-  }
-.show {
-    display: block;
-    transition: visibility 5s ease-out;
-}
+// .hide {
+//     display: none;
+//   }
+// .show {
+//     display: block;
+// }
 #myDIV{
     background-color: white;
     color: blue;

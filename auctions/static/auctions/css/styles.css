@@ -114,7 +114,7 @@ h2 {
   font-family: var(--font);
   position: relative;
   top: 0;
-  width: 100%;
+  width: 95%;
   height: var(--header-height);
   /*margin-bottom: 200px;*/
   /*text-align: left;*/
@@ -276,15 +276,6 @@ h2 {
 #out_watchlist {
   background-color: white;
   color: blue;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
-  transition: visibility 5s ease-out;
 }
 
 #myDIV {
