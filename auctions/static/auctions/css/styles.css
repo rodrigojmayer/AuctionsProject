@@ -53,12 +53,16 @@ body {
   position: relative;
   min-height: 100vh;
 }
-body #sub {
+body .sub {
   height: 4rem;
   padding-left: 10%;
 }
-body #sub h2 {
+body .sub h2 {
   padding-top: 0.75rem;
+}
+body #sub-not-logged {
+  padding: 0;
+  text-align: center;
 }
 
 a {
@@ -178,8 +182,9 @@ h2 {
   text-align: center;
 }
 
-#login {
-  max-width: 50%;
+#login, #register {
+  width: 50%;
+  max-width: 26.5rem;
 }
 
 .borders {

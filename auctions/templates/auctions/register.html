@@ -1,8 +1,13 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-<div class="main" id="register">
+
+<div class="sub" id="sub-not-logged">
     <h2>Register</h2>
+</div>
+
+<div class="main" id="register">
+    
 
     {% if message %}
         <div>{{ message }}</div>

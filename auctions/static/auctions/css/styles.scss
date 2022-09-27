@@ -56,7 +56,7 @@ html {
     position: relative;
     // min-height: calc(100vh - var(--header-height));
     min-height: 100vh;
-    #sub{
+    .sub{
         height: 4rem;
         padding-left: 10%;
         // margin-bottom: 0.5rem;
@@ -64,6 +64,11 @@ html {
             padding-top:0.75rem;
         }
     }
+    #sub-not-logged{
+        padding: 0;
+        text-align: center;
+    }
+
   }
   
   a {
@@ -255,10 +260,10 @@ html {
 // #create_bid, #create_comment, #category{
     // padding-bottom: 28%;
 // }
-#login{
+#login, #register{
 //    padding-bottom: 21%;
-    max-width: 50%;
-
+    width: 50%;
+    max-width: 26.5rem;
 
 }
  #register{
