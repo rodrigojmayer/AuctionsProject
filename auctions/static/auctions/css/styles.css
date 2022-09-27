@@ -250,6 +250,13 @@ h2 {
 
 #auction_data {
   /*margin-right: -250%;*/
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+#auction_data #order-column {
+  width: 100%;
 }
 
 #auction_description {
@@ -259,6 +266,13 @@ h2 {
 #auction_image img {
   height: 10rem;
   width: 10rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#article_image img {
+  height: 35vw;
+  width: 35vw;
   -o-object-fit: contain;
      object-fit: contain;
 }
