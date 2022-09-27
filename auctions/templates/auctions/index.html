@@ -25,15 +25,18 @@
                             <h2>{{ auction.name }}</h2>    
                         </a>   
                     </div>
-                    <div id="auction_data">                
+                    <div id="auction_listing_data">                
                         <div id="auction_price"> <h3>${{ auction.initial_price }}</h3></div>
             
                         <!--div id="auction_price">Price: ${{ auction.initial_price }}</div-->
                         <!-- Description: -->
                             {{ auction.description }}
-                        <div id="auction_category">Category:     
+                        <div id="auction_category">
+                            Category:     
                             {% for category in auction.auction_category.all %}   
-                                {{ category.category_name }}
+                                <a href="../category/{{ category.id }}">
+                                    {{ category.category_name }}
+                                </a>
                                 <!-- {{ category.index }} -->
                             {% endfor %}
                         </div>
