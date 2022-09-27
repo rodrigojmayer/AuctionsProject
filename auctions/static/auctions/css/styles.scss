@@ -64,12 +64,18 @@ html {
   }
   
   a {
-    color: var(--link-color);
+    // font-weight: bold;
+    color: var(--link);
     transition: all 0.5s ease-out;
   }
   
   a:hover {
-    opacity: 0.75;
+    text-decoration: none;
+    // opacity: 0.75;
+    color: var(--link-hover);
+  }
+  a:active{
+    color: var(--link-light-pressing);
   }
   h1 {
     margin: 0;
@@ -110,6 +116,11 @@ html {
 //     line-height: 1.6;
 //     font-size: 1.3rem;
 //   }
+
+.btn{
+    font-weight: bold;
+    font-size: larger;
+}
   
   /* *************** Components *************** */
 
@@ -191,19 +202,50 @@ html {
     // padding: 16px 16px 11% 16px;
     // padding: 16px 0 11% 0;
     // margin-top: calc(var(--header-height) + 1.5rem);
-    margin-left:10%;
-    margin-right:10%;
+    // margin-left:10%;
+    // margin-right:10%;
+    margin:auto;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
-    background-color:  white;
+    background-color:  var(--white-color);
+    border-radius: 10px;
     min-height: calc(100vh - var(--header-height) - 5.5rem - var(--footer-height));
+    max-width: 80%;
+    min-width: 10%;
     /*height: 1500px;*//* Used in this example to enable scrolling */
+    .form-group{
+
+        width: 80%;
+        margin: 1rem auto ;
+        input{
+            height: 3.5rem;
+        }
+        label{
+            margin: 4px 5px;
+            // margin-left: 5px;
+        }
+    }
+    .btn{
+        margin: 1rem 10%;
+        width: 80%;
+        height: 3.5rem;
+        // align-content: center;
+    }
+    a{
+        display:block ;
+        // or display:inline-block.
+        margin: 1rem;
+        text-align: center;
+    }
 }
 // #create_bid, #create_comment, #category{
     // padding-bottom: 28%;
 // }
 #login{
 //    padding-bottom: 21%;
+    max-width: 50%;
+
+
 }
  #register{
 //    padding-bottom: 13%;
