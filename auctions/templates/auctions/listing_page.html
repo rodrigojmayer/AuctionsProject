@@ -41,72 +41,77 @@
                             <div class="hide">You must be logged to add this auction.</div>
                         {% endif %}
                     </label>
-                    <div id="auction_price">Initial Price: ${{ auction_data.initial_price }}</div>
-                    <div id="auction_price">Listed by: {{auction_data.id_user}}</div>
+                    <div id="auction_price"><h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})</div>
                     {% if actual_bid %}
-                        <div id="bid_price">Best Bid: ${{ actual_bid.price }}</div>
-                        <div id="bid_price">Bid by: {{ actual_bid.id_user }}</div>
+                        <div id="bid_price"><h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})</div>
                     {% endif %}
-                </div>             
-            </div>
-            Description: <div id="auction_description">{{ auction_data.description }}</div>
-            <div id="auction_category">Category:     
-                {% for category in auction_data.auction_category.all %}   
+
+                    {% if auction_data.auction_active == 1 %}
+                        <!--form action="{% url 'auctions_app:listing_page' auction=auction_data.id %}"  method="GET" enctype="multipart/form-data"-->
+                        {% if user_logged.id == auction_data.id_user.id %}
+                            <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input class="btn btn-primary" type="submit" name="close_auction" value="Close auction" >
+                                </div>
+                            </form>
+                        {% else %}
+                            <form action="{% url 'auctions_app:create_bid'  %}"  method="GET" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" name="new_bid" placeholder="New bid">
+                                    <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
+                                    {% if user_logged.id %} 
+                                        <input class="btn btn-primary" type="submit" value="Place bid" >
+                                    {% else %}
+                                        <input class="btn btn-primary"  id="myDIV" disabled value="Place bid" >
+                                        <div class="hide">You must be logged to place a bid.</div>
+                                    {% endif %}
+                                </div>
+                            </form>
+                            <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="new_comment" placeholder="New comment">
+                                    <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
+                                    <!--input class="hide" value="{{ auction_data.id}}" -->
+                                    {% if user_logged.id %}
+                                        <input class="btn btn-primary" type="submit" value="Add comment" >
+                                    {% else %}
+                                        <input class="btn btn-primary"  id="myDIV" disabled value="Add comment" >
+                                        <div class="hide">You must be logged to add a comment.</div>
+                                    {% endif %}
+                                </div>
+                            </form>
+                        {% endif %}
+                    {% else %}
+                        <div class="form-group" id="auction_price"> </br> <a> Auction list closed.</a></div>
+                        {% if user_logged.id == actual_bid.id_user.id %}
+                            <div class="form-group" id="bid_price"> </br> <a> You have won this auction ! ! !</a></div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div> 
+        </form>
+            <div id="auction_description">
+                <h5>Description: </h5>
+                {{ auction_data.description }}</div>
+            <div id="auction_category">
+                Category:
+                {% for category in auction_data.auction_category.all %}
                     {{ category.category_name }}
                     {{ category.index }}
                 {% endfor %}
-            </div>  
-        </form>
+            </div> 
         
-        {% if auction_data.auction_active == 1 %}
-            <!--form action="{% url 'auctions_app:listing_page' auction=auction_data.id %}"  method="GET" enctype="multipart/form-data"-->
-                {% if user_logged.id == auction_data.id_user.id %}
-                        <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <input class="btn btn-primary" type="submit" name="close_auction" value="Close auction" >
-                            </div>
-                        </form>
-                {% else %}
-                        <form action="{% url 'auctions_app:create_bid'  %}"  method="GET" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <input class="form-control" type="number" name="new_bid" placeholder="New bid">
-                                <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
-                                {% if user_logged.id %} 
-                                    <input class="btn btn-primary" type="submit" value="Place bid" >
-                                {% else %}
-                                    <input class="btn btn-primary"  id="myDIV" disabled value="Place bid" >
-                                    <div class="hide">You must be logged to place a bid.</div>
-                                {% endif %}
-                            </div>
-                        </form>
-                        <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <input class="form-control" type="text" name="new_comment" placeholder="New comment">
-                                <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
-                                <!--input class="hide" value="{{ auction_data.id}}" -->
-                                {% if user_logged.id %}
-                                    <input class="btn btn-primary" type="submit" value="Add comment" >
-                                {% else %}
-                                    <input class="btn btn-primary"  id="myDIV" disabled value="Add comment" >
-                                    <div class="hide">You must be logged to add a comment.</div>
-                                {% endif %}
-                            </div>
-                        </form>
-                    {% endif %}
-        {% else %}
-            <div class="form-group" id="auction_price"> </br> <a> Auction list closed.</a></div>
-            {% if user_logged.id == actual_bid.id_user.id %}
-                <div class="form-group" id="bid_price"> </br> <a> You have won this auction ! ! !</a></div>
+        <div id="auction_coments">
+            <h3>Comments</h3>
+            {% if comments %}
+                {% for comment in comments %}
+                    <div class="form-group" id="comment">  {{ comment.id_user.username }}:
+                        <p> {{ comment.description }}.</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="form-group" >  <a> No comments</a></div>
             {% endif %}
-        {% endif %}
-
-        <h3>Comments</h3>
-        {% if comments %}
-            {% for comment in comments %}
-                <div class="form-group" id="comment">  {{ comment.id_user.username }}: </br><a> {{ comment.description }}.</a></div>
-            {% endfor %}
-        {% else %}
-            <div class="form-group" >  <a> No comments</a></div>
-        {% endif %}
+        </div>
     </div>
 {% endblock %}

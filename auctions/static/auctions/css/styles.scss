@@ -240,7 +240,7 @@ opacity: 1;
         color:  var(--title-color)
     }
 }
-#nav1, #nav2, #nav3, #nav4, #nav5, #nav6{
+#nav1,#nav2, #nav3, #nav4, #nav5, #nav6{
     position: relative;
     right: 1%;
 }
@@ -365,7 +365,10 @@ opacity: 1;
     }
 }
 #auction_description{
-    margin: 0;
+    padding: 0.5rem;
+}
+#auction_comments{
+    padding: 0.5rem;
 }
 #auction_image{
     // margin-left: 44%;
@@ -453,12 +456,12 @@ opacity: 1;
 }
 
 #comment{
-    font-size: 110%;
-    font-weight: bold;
-    border-style:groove;
+    // font-size: 110%;
+    // font-weight: bold;
+    // border-style:groove;
     a{
-        font-size: 90%;
-        font-weight: normal;
+        // font-size: 90%;
+        // font-weight: normal;
     }
 }
 

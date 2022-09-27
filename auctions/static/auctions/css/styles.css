@@ -260,7 +260,11 @@ h2 {
 }
 
 #auction_description {
-  margin: 0;
+  padding: 0.5rem;
+}
+
+#auction_comments {
+  padding: 0.5rem;
 }
 
 #auction_image img {
@@ -339,16 +343,6 @@ h2 {
 .window-notice .content-buttons {
   margin-left: 90%;
   margin-top: 3%;
-}
-
-#comment {
-  font-size: 110%;
-  font-weight: bold;
-  border-style: groove;
-}
-#comment a {
-  font-size: 90%;
-  font-weight: normal;
 }
 
 footer {
