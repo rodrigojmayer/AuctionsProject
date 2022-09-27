@@ -67,19 +67,6 @@
                                     {% endif %}
                                 </div>
                             </form>
-                            <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <input class="form-control" type="text" name="new_comment" placeholder="New comment">
-                                    <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
-                                    <!--input class="hide" value="{{ auction_data.id}}" -->
-                                    {% if user_logged.id %}
-                                        <input class="btn btn-primary" type="submit" value="Add comment" >
-                                    {% else %}
-                                        <input class="btn btn-primary"  id="myDIV" disabled value="Add comment" >
-                                        <div class="hide">You must be logged to add a comment.</div>
-                                    {% endif %}
-                                </div>
-                            </form>
                         {% endif %}
                     {% else %}
                         <div class="form-group" id="auction_price"> </br> <a> Auction list closed.</a></div>
@@ -116,6 +103,20 @@
             {% else %}
                 <div class="form-group" >  <a> No comments</a></div>
             {% endif %}
+            
+            <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="new_comment" placeholder="New comment">
+                    <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
+                    <!--input class="hide" value="{{ auction_data.id}}" -->
+                    {% if user_logged.id %}
+                        <input class="btn btn-primary" type="submit" value="Add comment" >
+                    {% else %}
+                        <input class="btn btn-primary"  id="myDIV" disabled value="Add comment" >
+                        <div class="hide">You must be logged to add a comment.</div>
+                    {% endif %}
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}

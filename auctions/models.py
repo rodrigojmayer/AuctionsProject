@@ -43,6 +43,7 @@ class Comments(models.Model):
     id_auction = models.ForeignKey(AuctionListings, on_delete = models.CASCADE, related_name = "auction_comments")
     description = models.CharField(max_length = 150)
     id_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "user_comments")
+    answer = models.CharField(null=True, max_length = 150)
 
     def __str__(self):
         return f"{self.id}: The comment of {self.id_auction} is {self.description}"

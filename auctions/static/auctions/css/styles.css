@@ -308,6 +308,14 @@ h2 {
   color: blue;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 #myDIV {
   background-color: white;
   color: blue;
