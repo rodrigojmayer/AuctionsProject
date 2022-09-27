@@ -199,10 +199,10 @@ h2 {
   margin: 1rem auto;
 }
 .main .form-group input {
-  height: 3.5rem;
+  height: 3rem;
 }
 .main .form-group label {
-  margin: 4px 5px;
+  margin: 3.5px 5px;
 }
 .main form:first-child {
   padding-top: 0.5rem;
@@ -210,7 +210,7 @@ h2 {
 .main .btn {
   margin: 1rem 10%;
   width: 80%;
-  height: 3.5rem;
+  height: 3rem;
 }
 .main form a {
   display: block;
