@@ -26,14 +26,15 @@
                         </a>   
                     </div>
                     <div id="auction_data">                
-                        <div id="auction_price">Actual price: ${{ auction.initial_price }}</div>
+                        <div id="auction_price"> <h3>${{ auction.initial_price }}</h3></div>
             
                         <!--div id="auction_price">Price: ${{ auction.initial_price }}</div-->
-                        Description: <div id="auction_description">{{ auction.description }}</div>
+                        <!-- Description: -->
+                            {{ auction.description }}
                         <div id="auction_category">Category:     
                             {% for category in auction.auction_category.all %}   
                                 {{ category.category_name }}
-                                {{ category.index }}
+                                <!-- {{ category.index }} -->
                             {% endfor %}
                         </div>
                         <!--{{ auction.auction_category.count }}
