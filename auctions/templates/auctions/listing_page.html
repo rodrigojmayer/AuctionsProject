@@ -110,7 +110,7 @@
                             {% if user_logged.id == auction_data.id_user.id %}
                                 {% if comment.answer %}<!-- You can't answer the question because there is already an answer.   -->
                                 {% else %}<!-- You can answer the question because you are the owner of the bid and there is no answer for this question yet.. -->
-                                    <a href="#answer-form-{{comment.id}}" onclick="enable_answer(`{{comment.id}}`)" >Answer this question</a>
+                                    <a href="#answer-input-{{comment.id}}" onclick="enable_answer(`{{comment.id}}`)" >Answer this question</a>
                                     <form action="{% url 'auctions_app:create_answer' id_comment=comment.id %}"  method="GET" enctype="multipart/form-data">
                                         <div class="form-group hide answer-forms" id="answer-form-{{comment.id}}">
                                             <textarea class="form-control "  id="answer-input-{{comment.id}}" name="new_answer" placeholder="New answer"></textarea>
