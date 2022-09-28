@@ -93,30 +93,69 @@
             </div> 
         
         <div id="auction_comments">
-            <h5>Comments</h5>
+            <h5>Questions</h5>
             {% if comments %}
                 {% for comment in comments %}
-                    <div class="form-group" id="comment">  {{ comment.id_user.username }}:
+                    <div class="form-group" id="comment">  
+                        {{ comment.id_user.username }}:
                         <p> {{ comment.description }}.</p>
+                        <!-- <p> {{ comment.id }}.</p> -->
+                        <!-- <p> user logued {{ user_logged.id }}.</p> -->
+                        <!-- <p> user bid {{ auction_data.id_user.id }}.</p> -->
                     </div>
+                    <div class="form-group" id="comment">  
+                        <p> {{ comment.answer }}.</p>
+                    </div>
+
+                    {% if user_logged.id == auction_data.id_user.id %}
+                        {% if comment.answer %}
+                            You can't answer the question because there is already an answer.  
+                        {% else %} 
+                            You can answer the question because you are the owner of the bid and there is no answer for this question yet..
+                            <form action="{% url 'auctions_app:create_answer' id_comment=comment.id %}"  method="GET" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="new_answer" placeholder="New answer">
+                                    <input class="hilde" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
+                                    <!--input class="hide" value="{{ auction_data.id}}" -->
+                                    {% if user_logged.id %}
+                                        <input class="btn btn-primary" type="submit" value="Add answer">
+                                    {% else %}
+                                        <!-- <input class="btn btn-primary"  id="myDIV" disabled value="Add comment"> -->
+                                        <!-- <div class="hide">You must be logged to add a comment.</div> -->
+                                    {% endif %}
+                                </div>
+                            </form>
+                        {% endif %}
+                    {% else %}
+                        You can't answer questions because you are not the owner of the bid.
+                    {% endif %}
+                    
+
                 {% endfor %}
             {% else %}
-                <div class="form-group" >  <a> No comments</a></div>
+                <div class="form-group" >  <a> No questions</a></div>
             {% endif %}
-            
-            <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
-                <div class="form-group">
-                    <input class="form-control" type="text" name="new_comment" placeholder="New comment">
-                    <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
-                    <!--input class="hide" value="{{ auction_data.id}}" -->
-                    {% if user_logged.id %}
-                        <input class="btn btn-primary" type="submit" value="Add comment" >
-                    {% else %}
-                        <input class="btn btn-primary"  id="myDIV" disabled value="Add comment" >
-                        <div class="hide">You must be logged to add a comment.</div>
-                    {% endif %}
-                </div>
-            </form>
+            </br>
+            {% if user_logged.id != auction_data.id_user.id %}
+                You can create questions.
+                <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="new_comment" placeholder="New question">
+                        <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
+                        <!--input class="hide" value="{{ auction_data.id}}" -->
+                        {% if user_logged.id %}
+                            <input class="btn btn-primary" type="submit" value="Add question">
+                        {% else %}
+                            <input class="btn btn-primary"  id="myDIV" disabled value="Add comment">
+                            <div class="hide">You must be logged to add a comment.</div>
+                        {% endif %}
+                    </div>
+                </form>
+            {% else %}
+                You can't create questions because you are the owner of the auction.
+
+            {% endif %}
+                
         </div>
     </div>
 {% endblock %}

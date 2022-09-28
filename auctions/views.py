@@ -315,6 +315,38 @@ def create_comment(request):
 
     })
 
+def create_answer(request, id_comment):
+    auction_data = AuctionListings.objects.get(id=request.GET['auction_data'])
+    print("this is the comment to add an answer:")
+    print(id_comment)
+
+    answer_added = request.GET['new_answer']
+    
+    
+    err_mess = ""
+
+    # print("create anser print:")
+    # print(answer_added)
+    if(answer_added == ""):
+        print("no ha ingresado ninguna respuesta")
+        err_mess = "You have not entered any answer."
+    else:
+        print(" ha ingresado comentario")
+        # add_answer = Comments(id_auction=auction_data, answer=answer_added, id_user=user_logged)
+        # add_answer.save()
+        add_answer = Comments.objects.get(id=id_comment)
+        add_answer.answer = answer_added
+        add_answer.save()
+   
+    
+    
+    return render(request, "auctions/create_answer.html", {
+        "auction_data": auction_data,
+        "answer_added": answer_added,
+        "err" : err_mess
+
+    })
+
 def watch_list(request):
     all_auctions = AuctionListings.objects.all()
     all_bids = Bids.objects.all()
