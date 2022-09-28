@@ -151,6 +151,7 @@ def create_category(request):
 
 def listing_page(request, auction):
     user_logged = request.user
+    print("auction")
     print(auction)
     auction_data = AuctionListings.objects.get(id=auction)
     actual_bid = Bids.objects.filter(id_auction=auction_data.id)
@@ -159,22 +160,42 @@ def listing_page(request, auction):
     err_mess = ""
     if(actual_bid):
         actual_bid = Bids.objects.get(id_auction=auction_data.id)
-    print(user_logged.id)
+    # print("user_logged.id")
+    # print(user_logged.id)
+    # print("request.POST")
+    # print(request.POST)
+    # if(request.POST):
+    #     print("true")
+    # else:
+    #     print("false")
+    # print("request.method")
+    # print(request.method)
+    # print('request.POST["_place_bid"]')
+    # if("_place_bid" in request.POST):
+    #     print("asdf")
+    # if("new_bid" in request.POST):
+    #     print("new_bidnew_bid")
+
+        
+        # print(request.POST["_place_bid"])
+    
     '''print(auction_data.id)'''
     if(request.method == "POST"):
-            if(request.POST["_place_bid"] == "Add to Watchlist"):
-                add_watchlist = WatchLists(id_auction=auction_data , id_user=user_logged)
-                add_watchlist.save()
-                '''print(add_watchlist)'''
-                in_watchlist=add_watchlist
-            else:
-                '''print(user_logged)
-                print(auction_data.id)'''
-                del_watchlist = WatchLists.objects.get(id_auction=auction_data.id,id_user=user_logged.id)
-                del_watchlist.delete()
-                in_watchlist=False
-                #pass
-            #elif((request.POST["_place_bid"]))
+            
+        # if("_place_bid" in request.POST):
+        if(request.POST["_place_bid"] == "Add to Watchlist"):
+            add_watchlist = WatchLists(id_auction=auction_data , id_user=user_logged)
+            add_watchlist.save()
+            '''print(add_watchlist)'''
+            in_watchlist=add_watchlist
+        else:
+            '''print(user_logged)
+            print(auction_data.id)'''
+            del_watchlist = WatchLists.objects.get(id_auction=auction_data.id,id_user=user_logged.id)
+            del_watchlist.delete()
+            in_watchlist=False
+            #pass
+        #elif((request.POST["_place_bid"]))
             
     else:
         in_watchlist = WatchLists.objects.filter(id_auction=auction_data.id,id_user=user_logged.id)
@@ -238,6 +259,8 @@ def listing_page(request, auction):
     })
 
 def create_bid(request):
+    print("---entra al create_bid---")
+
     auction_data = AuctionListings.objects.get(id=request.GET['auction_data'])
     actual_bid = Bids.objects.filter(id_auction=auction_data.id)
     if(actual_bid):
