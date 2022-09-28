@@ -113,7 +113,7 @@
                                     <a href="#answer-form-{{comment.id}}" onclick="enable_answer(`{{comment.id}}`)" >Answer this question</a>
                                     <form action="{% url 'auctions_app:create_answer' id_comment=comment.id %}"  method="GET" enctype="multipart/form-data">
                                         <div class="form-group hide answer-forms" id="answer-form-{{comment.id}}">
-                                            <input class="form-control "  id="answer-input-{{comment.id}}" type="text" name="new_answer" placeholder="New answer">
+                                            <textarea class="form-control "  id="answer-input-{{comment.id}}" name="new_answer" placeholder="New answer"></textarea>
                                             <input class="hide" value="{{auction_data.id}}" name="auction_data" placeholder="Auction Data">
                                             <!--input class="hide" value="{{ auction_data.id}}" -->
                                             {% if user_logged.id %}
@@ -143,7 +143,8 @@
                 <a href="#question-input" onclick="enable_question()" >Make a question</a>
                 <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
                     <div class="form-group hide" id="question-form" >
-                        <input class="form-control" id="question-input" type="text" name="new_comment" placeholder="New question">
+                        <textarea class="form-control" id="question-input" type="text" name="new_comment" placeholder="New question"></textarea>
+
                         <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
                         <!--input class="hide" value="{{ auction_data.id}}" -->
                         {% if user_logged.id %}

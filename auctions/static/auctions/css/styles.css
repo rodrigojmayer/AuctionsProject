@@ -88,6 +88,11 @@ h2 {
   font-size: 2rem;
 }
 
+div {
+  height: auto;
+  word-wrap: break-word;
+}
+
 .btn {
   font-weight: bold;
   font-size: larger;
@@ -235,6 +240,14 @@ input[type=number] {
 }
 .main #answer {
   margin: 0 0.72rem;
+}
+.main #auction_comments .btn {
+  display: block;
+  font-size: smaller;
+  max-width: 7rem;
+  max-height: 4rem;
+  margin-left: auto;
+  margin-right: 3%;
 }
 
 #login, #register {

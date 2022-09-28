@@ -124,7 +124,10 @@ html {
 //     line-height: 1.6;
 //     font-size: 1.3rem;
 //   }
-
+div{
+    height: auto;
+    word-wrap: break-word;
+}
 .btn{
     font-weight: bold;
     font-size: larger;
@@ -329,6 +332,14 @@ opacity: 1;
     #answer{
         // color: red;
         margin: 0 0.72rem;
+    }
+    #auction_comments .btn{
+        display: block;
+        font-size: smaller;
+        max-width: 7rem;
+        max-height: 4rem;
+        margin-left:auto;
+        margin-right:3%;
     }
 }
 // #create_bid, #create_comment, #category{
