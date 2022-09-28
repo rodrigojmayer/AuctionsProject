@@ -137,11 +137,11 @@
                     <b> No questions</b>
                 </div>
             {% endif %}
-            </br>
+            <!-- </br> -->
             {% if user_logged.id != auction_data.id_user.id %}<!-- You can create questions. -->
                 <!-- <a href="javascript:void(0);" onclick="enable_question()" >Make a question</a> -->
-                <a href="#question-input" onclick="enable_question()" >Make a question</a>
                 <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
+                    <a href="#question-input" onclick="enable_question()" >Make a question</a>
                     <div class="form-group hide" id="question-form" >
                         <textarea class="form-control" id="question-input" type="text" name="new_comment" placeholder="New question"></textarea>
 

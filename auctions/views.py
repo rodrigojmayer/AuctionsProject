@@ -371,14 +371,21 @@ def create_answer(request, id_comment):
     })
 
 def watch_list(request):
+    print("--- Entering to the watch_list view ---")
     all_auctions = AuctionListings.objects.all()
     all_bids = Bids.objects.all()
     user_logged = request.user
     my_watch_list = WatchLists.objects.filter(id_user=user_logged)
     len_auctions = len(my_watch_list)
-    last_auction = my_watch_list[len_auctions-1]
-    print("the lasat auction is: ")
-    print( last_auction.id_auction.id)
+    print("--- len_auctions ---")
+    print(len_auctions)
+    if(len_auctions != 0):
+        last_auction = my_watch_list[len_auctions-1]
+        last_auction_id = last_auction.id_auction.id
+    else:
+        last_auction_id = 0
+    # print("the last auction is: ")
+    # print( last_auction.id_auction.id)
     for auction in all_auctions:
         try:
             all_bids = Bids.objects.get(id_auction=auction.id) 
@@ -401,7 +408,7 @@ def watch_list(request):
         "all_auctions" : all_auctions,
         "my_watch_list" : my_watch_list,
         "my_dict" : my_dict,
-        "last_auction_id" : last_auction.id_auction.id,
+        "last_auction_id" : last_auction_id,
     })
 
 def categories(request):

@@ -231,7 +231,7 @@ input[type=number] {
 }
 .main form a {
   display: block;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
   text-align: center;
 }
 .main .form-group {
