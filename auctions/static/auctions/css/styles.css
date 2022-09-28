@@ -218,7 +218,7 @@ h2 {
   text-align: center;
 }
 .main .form-group {
-  margin: 0 0.5rem;
+  margin: 0.75rem;
 }
 #login, #register {
   width: 50%;

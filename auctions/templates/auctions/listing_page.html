@@ -96,20 +96,16 @@
             <h5>Questions and answers</h5>
             {% if comments %}
                 {% for comment in comments %}
-                    <div class="form-group" id="comment">  
-                        <!-- User {{ comment.id_user.username }} asked: -->
-                        <b>Question:</b>
-                        {{ comment.description }}.
-                        <!-- <p> {{ comment.id }}.</p> -->
-                        <!-- <p> user logued {{ user_logged.id }}.</p> -->
-                        <!-- <p> user bid {{ auction_data.id_user.id }}.</p> -->
-                    </div>
-                    {% if comment.answer %}
-                        <div class="form-group" id="answer">  
-                            <b>Answer</b> 
-                            {{ comment.answer }}.
+                    <div class="form-group" id="question-answer">  
+                        <div id="question">
+                            <b>Question: </b>    {{ comment.description }}
                         </div>
-                    {% endif %}
+                        {% if comment.answer %}
+                            <div id="answer">
+                                <b>Answer: </b>   {{ comment.answer }}
+                            </div>
+                        {% endif %}
+                    </div>
 
                     {% if user_logged.id == auction_data.id_user.id %}
                         {% if comment.answer %}
