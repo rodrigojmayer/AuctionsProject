@@ -93,29 +93,33 @@
             </div> 
         
         <div id="auction_comments">
-            <h5>Questions</h5>
+            <h5>Questions and answers</h5>
             {% if comments %}
                 {% for comment in comments %}
                     <div class="form-group" id="comment">  
-                        {{ comment.id_user.username }}:
-                        <p> {{ comment.description }}.</p>
+                        <!-- User {{ comment.id_user.username }} asked: -->
+                        <b>Question:</b>
+                        {{ comment.description }}.
                         <!-- <p> {{ comment.id }}.</p> -->
                         <!-- <p> user logued {{ user_logged.id }}.</p> -->
                         <!-- <p> user bid {{ auction_data.id_user.id }}.</p> -->
                     </div>
-                    <div class="form-group" id="comment">  
-                        <p> {{ comment.answer }}.</p>
-                    </div>
+                    {% if comment.answer %}
+                        <div class="form-group" id="answer">  
+                            <b>Answer</b> 
+                            {{ comment.answer }}.
+                        </div>
+                    {% endif %}
 
                     {% if user_logged.id == auction_data.id_user.id %}
                         {% if comment.answer %}
-                            You can't answer the question because there is already an answer.  
+                            <!-- You can't answer the question because there is already an answer.   -->
                         {% else %} 
-                            You can answer the question because you are the owner of the bid and there is no answer for this question yet..
+                            <!-- You can answer the question because you are the owner of the bid and there is no answer for this question yet.. -->
                             <form action="{% url 'auctions_app:create_answer' id_comment=comment.id %}"  method="GET" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="new_answer" placeholder="New answer">
-                                    <input class="hilde" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
+                                    <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
                                     <!--input class="hide" value="{{ auction_data.id}}" -->
                                     {% if user_logged.id %}
                                         <input class="btn btn-primary" type="submit" value="Add answer">
@@ -127,17 +131,19 @@
                             </form>
                         {% endif %}
                     {% else %}
-                        You can't answer questions because you are not the owner of the bid.
+                        <!-- You can't answer questions because you are not the owner of the bid. -->
                     {% endif %}
                     
 
                 {% endfor %}
             {% else %}
-                <div class="form-group" >  <a> No questions</a></div>
+                <div class="form-group" >  
+                    <b> No questions</b>
+                </div>
             {% endif %}
             </br>
             {% if user_logged.id != auction_data.id_user.id %}
-                You can create questions.
+                <!-- You can create questions. -->
                 <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
                     <div class="form-group">
                         <input class="form-control" type="text" name="new_comment" placeholder="New question">
@@ -152,7 +158,7 @@
                     </div>
                 </form>
             {% else %}
-                You can't create questions because you are the owner of the auction.
+                <!-- You can't create questions because you are the owner of the auction. -->
 
             {% endif %}
                 

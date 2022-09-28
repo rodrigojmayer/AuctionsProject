@@ -280,7 +280,7 @@ opacity: 1;
     // min-width: 10%;
     min-width: 10vw;
     /*height: 1500px;*//* Used in this example to enable scrolling */
-    .form-group{
+    .to-log-form-group{
 
         width: 80%;
         margin: 1rem auto ;
@@ -308,6 +308,15 @@ opacity: 1;
         padding-bottom: 1.5rem;
         
         text-align: center;
+    }
+    
+    .form-group {
+        // width: 90%;
+        margin: 0 .5rem;
+    }
+    #answer{
+        // color: red;
+        // margin-left: 2rem;
     }
 }
 // #create_bid, #create_comment, #category{
@@ -339,9 +348,6 @@ opacity: 1;
     display: flex;
     flex-direction: row;
     gap: 3rem;
-}
-.form-group {
-    width: 30%;
 }
 #auction_name{ 
     // font-size: 35px;
@@ -462,6 +468,7 @@ opacity: 1;
 }
 
 #comment{
+
     // font-size: 110%;
     // font-weight: bold;
     // border-style:groove;
