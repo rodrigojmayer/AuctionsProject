@@ -129,7 +129,18 @@ html {
     font-weight: bold;
     font-size: larger;
 }
-  
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
   /* *************** Components *************** */
 
 // $blue_color:  rgb(25, 52, 87);
@@ -369,6 +380,12 @@ opacity: 1;
 
     #order-column{
         width:100%;
+    }
+    .btn, .form-control{
+        max-width: 15rem;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        // display: block;
     }
 }
 #auction_description{

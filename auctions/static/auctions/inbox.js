@@ -35,7 +35,7 @@ function enable_answer(varr){
         add = 'hide'
         remove = 'show'
     }
-    if(answer_form.classList.contains("hide")){
+    else{
         add = 'show'
         remove = 'hide'
     }
@@ -47,4 +47,23 @@ function enable_answer(varr){
 
     answer_form.classList.add(add);
     answer_form.classList.remove(remove);
+    // document.getElementById("answer-input-"+varr).style.backgroundColor="red";
+    console.log(varr)
+    
+    setTimeout(function(){ document.querySelector("#answer-input-"+varr).focus(); }, 50);
+}
+function enable_question(){
+    let question_form = document.getElementById("question-form"); 
+    if(question_form.classList.contains("show")){
+        add = 'hide';
+        remove = 'show';
+    }
+    else{
+        add = 'show';
+        remove = 'hide';
+    }
+    question_form.classList.add(add);
+    question_form.classList.remove(remove);
+    
+    setTimeout(function(){ document.getElementById("question-input").focus(); }, 50);
 }

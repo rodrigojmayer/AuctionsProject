@@ -92,7 +92,7 @@
             </h5>
         </div> 
 
-        <div class="borders">    </div>
+        <div class="borders"></div>
         
         <div id="auction_comments">
             <h5>Questions and answers</h5>
@@ -108,16 +108,13 @@
                             {% endif %}
 
                             {% if user_logged.id == auction_data.id_user.id %}
-                                {% if comment.answer %}
-                                    <!-- You can't answer the question because there is already an answer.   -->
-                                {% else %} 
-                                    <!-- You can answer the question because you are the owner of the bid and there is no answer for this question yet.. -->
-                                    
-                                    <a href="javascript:void(0);" onclick="enable_answer(`{{comment.id}}`)" >Answer this question</a>
+                                {% if comment.answer %}<!-- You can't answer the question because there is already an answer.   -->
+                                {% else %}<!-- You can answer the question because you are the owner of the bid and there is no answer for this question yet.. -->
+                                    <a href="#answer-form-{{comment.id}}" onclick="enable_answer(`{{comment.id}}`)" >Answer this question</a>
                                     <form action="{% url 'auctions_app:create_answer' id_comment=comment.id %}"  method="GET" enctype="multipart/form-data">
                                         <div class="form-group hide answer-forms" id="answer-form-{{comment.id}}">
-                                            <input class="form-control " type="text" name="new_answer" placeholder="New answer">
-                                            <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
+                                            <input class="form-control "  id="answer-input-{{comment.id}}" type="text" name="new_answer" placeholder="New answer">
+                                            <input class="hide" value="{{auction_data.id}}" name="auction_data" placeholder="Auction Data">
                                             <!--input class="hide" value="{{ auction_data.id}}" -->
                                             {% if user_logged.id %}
                                                 <input class="btn btn-primary" type="submit" value="Add answer">
@@ -128,8 +125,7 @@
                                         </div>
                                     </form>
                                 {% endif %}
-                            {% else %}
-                                <!-- You can't answer questions because you are not the owner of the bid. -->
+                            {% else %}<!-- You can't answer questions because you are not the owner of the bid. -->
                             {% endif %}
                         </div>
                     </div>
@@ -142,11 +138,12 @@
                 </div>
             {% endif %}
             </br>
-            {% if user_logged.id != auction_data.id_user.id %}
-                <!-- You can create questions. -->
+            {% if user_logged.id != auction_data.id_user.id %}<!-- You can create questions. -->
+                <!-- <a href="javascript:void(0);" onclick="enable_question()" >Make a question</a> -->
+                <a href="#question-input" onclick="enable_question()" >Make a question</a>
                 <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="new_comment" placeholder="New question">
+                    <div class="form-group hide" id="question-form" >
+                        <input class="form-control" id="question-input" type="text" name="new_comment" placeholder="New question">
                         <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
                         <!--input class="hide" value="{{ auction_data.id}}" -->
                         {% if user_logged.id %}

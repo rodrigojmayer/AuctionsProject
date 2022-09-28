@@ -93,6 +93,18 @@ h2 {
   font-size: larger;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* *************** Components *************** */
 .nav {
   /*background-color: #333;    */
@@ -260,6 +272,11 @@ h2 {
 }
 #auction_data #order-column {
   width: 100%;
+}
+#auction_data .btn, #auction_data .form-control {
+  max-width: 15rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 #auction_description {
