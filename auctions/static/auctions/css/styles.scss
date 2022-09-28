@@ -71,7 +71,7 @@ html {
 
   }
   
-  a {
+  a{
     // font-weight: bold;
     color: var(--link);
     transition: all 0.5s ease-out;
@@ -313,10 +313,11 @@ opacity: 1;
     .form-group {
         // width: 90%;
         margin: .75rem;
+        margin-bottom: 1rem;
     }
     #answer{
         // color: red;
-        // margin-left: 2rem;
+        margin: 0 0.72rem;
     }
 }
 // #create_bid, #create_comment, #category{

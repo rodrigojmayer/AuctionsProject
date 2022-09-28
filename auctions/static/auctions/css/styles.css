@@ -219,7 +219,12 @@ h2 {
 }
 .main .form-group {
   margin: 0.75rem;
+  margin-bottom: 1rem;
 }
+.main #answer {
+  margin: 0 0.72rem;
+}
+
 #login, #register {
   width: 50%;
   max-width: 26.5rem;
