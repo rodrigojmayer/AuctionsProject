@@ -203,6 +203,9 @@ input[type=number] {
         padding-top: 20px;
     }
     
+
+
+    
     #myDropdownUser {
         position:absolute;
         margin-top: .5rem;
@@ -228,6 +231,33 @@ input[type=number] {
         // border-color: rgba(0,0,0,1) transparent; 
         border-color: var(--white-color) transparent;   
     }
+
+    
+    #myDropdownCategories {
+        position:absolute;
+        margin-top: .5rem;
+        left: -.6rem;
+        height: 2.5rem;
+        width: 6rem;
+        background-color: var(--white-color);
+        a{
+            display: block;
+            text-align: center;
+            margin-top: -5px;
+        }
+    }
+    #myDropdownCategories:before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 100%;
+        right: 13px;
+        border-width: 0 8px 8px 8px;
+        border-style: solid;
+        // border-color: rgba(0,0,0,1) transparent; 
+        border-color: var(--white-color) transparent;   
+    }
 }
 
 #user-logged > #myDropdownUser {
@@ -240,6 +270,21 @@ transition: visibility 0s, opacity 0.2s linear;
 visibility: visible;
 opacity: 1;
 }
+
+
+#user-logged > #myDropdownCategories {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+}
+
+#user-logged:hover > #myDropdownCategories{
+visibility: visible;
+opacity: 1;
+}
+
+
+
 
 .nav-item{
     height: 65px;

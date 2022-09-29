@@ -3,10 +3,18 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+# from django.views.decorators.csrf import csrf_protect
+from django.http import JsonResponse
+import json, math
 
 from django.templatetags.static import static
 from jinja2 import Environment
+
+# @csrf_protect
+# @csrf_exempt
+# @login_required
 
 
 def environment(**options):
@@ -22,6 +30,7 @@ from .models import User, AuctionListings, Bids, Comments, Category, WatchLists
 
 def index(request):
 
+    print("Siempre entra aca o solo con el indice???????????????????????????")
     all_auctions = AuctionListings.objects.all()
     #all_bids = Bids.objects.all()
     len_auctions = len(all_auctions)
@@ -38,6 +47,7 @@ def index(request):
         "message": "Aca van los datos de cada auction",
         "all_auctions" : all_auctions,
         "last_auction_id" : last_auction.id,
+        "pepetest": "test de pepito",
     })
 
 
@@ -411,14 +421,32 @@ def watch_list(request):
         # "last_auction_id" : last_auction_id,
     })
 
+# @csrf_protect
+@csrf_exempt
+@login_required
 def categories(request):
+    print("Entrando al categoriesssssssDDDDDDDDDDDDDDDDDDDDDDDD")
     all_categories = Category.objects.all()
 
-    return render(request, "auctions/categories.html", {
-        "all_categories" : all_categories,
-    })    
+    # print(all_categories[0])
+    categories_array = []   
+    for each_category in all_categories:
+        print(each_category)
+        each_category=str(each_category)
+        categories_array.append(each_category)
+    # # data = json.loads(all_categories)
+    # # return render(request, "auctions/categories.html", {
+    # #     "all_categories" : all_categories,
+    # # })    
+    
+    return JsonResponse({
+        "categories_array":categories_array,
+        "message": "Profile followed successfully."
+    }
+    , status=201)
 
 def category(request, id_category):
+
     category = Category.objects.get(id=id_category)
     auction_listing_category = AuctionListings.objects.filter(auction_category__id=id_category)
     for auction in auction_listing_category:

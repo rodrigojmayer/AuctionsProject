@@ -15,6 +15,9 @@
                 <!-- <img src="/media/Logo (1).png" alt="Logo"> -->
                 <!-- <img src="/media/Group 2.png" alt="Logo"> -->
                 
+                {% for result in item.results %}
+                        {{result}}
+                {% endfor %}
                 <a href="{% url 'auctions_app:index' %}" >
                     <div class="nav-item" >
                         <img src="/media/Group 3.png" alt="Logo">
@@ -30,9 +33,18 @@
                     <div class="nav-item" id="nav3">                
                         <a class="nav-link" href="{% url 'auctions_app:create_listing' %}">Create Auction Listing</a>
                     </div>
+                    <form action="">
+                        {% csrf_token %}
+                        <button onclick="charge_categories()"></button>
+                    </form>
                     <div class="nav-item" id="nav4">                
                         <a class="nav-link" href="{% url 'auctions_app:categories' %}">Categories</a>
+                        <div id="myDropdownCategories" >
+                            <!-- <a id="log_out" href="{% url 'auctions_app:login' %}">Log out</a> -->
+                            <a id="log_out" href="{% url 'auctions_app:logout' %}">{{pepetest}}</a>
+                        </div>
                     </div>
+
                     <!--div class="nav-item" id="nav6">                
                         <a class="nav-link" href="{% url 'auctions_app:create_category' %}">Create Category</a>
                     </div-->
