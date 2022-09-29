@@ -391,6 +391,10 @@ opacity: 1;
 #auction_name{ 
     // font-size: 35px;
     font-weight: bold;
+    // overflow: hidden;
+    // white-space: nowrap;
+    // text-overflow: ellipsis;
+    // max-width: 100%;
     /*margin-left: -30%;*/
     // text-align: center;
 }

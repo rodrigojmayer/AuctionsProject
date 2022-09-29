@@ -39,9 +39,10 @@
                             </div>
                             <div id="auction_category">
                                 Category:     
-                                {% for category in auction.auction_category.all %}   
+                                {% for category in auction.auction_category.all %} 
+                                <a href="../category/{{ category.id }}" >  
                                     {{ category.category_name }}
-                                    {{ category.index }}
+                                </a>
                                 {% endfor %}
                             </div>              
                         <!-- </div> -->
