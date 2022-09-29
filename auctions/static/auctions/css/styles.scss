@@ -235,19 +235,30 @@ input[type=number] {
     
     #myDropdownCategories {
         position:absolute;
-        margin-top: .5rem;
+        margin-top: 1.2rem;
         left: -.6rem;
         // height: 2.5rem;
         height: 100%;
         width: 9rem;
-        background-color: var(--white-color);
+        // background-color: var(--white-color);
+            background-color: var(--black-color);
         a{
             display: block;
             text-align: center;
             margin-top: -5px;
         }
+        ul {
+            list-style-type: none;
+            padding:0;
+        }
         li{
-            background-color: red;
+            height: 1.5rem;
+            color: var(--white-color);
+            font-weight: bold;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+            text-align: center;
+            // background-color: var(--black-color);
         }
     }
     #myDropdownCategories:before {
@@ -260,7 +271,8 @@ input[type=number] {
         border-width: 0 8px 8px 8px;
         border-style: solid;
         // border-color: rgba(0,0,0,1) transparent; 
-        border-color: var(--white-color) transparent;   
+        border-color: var(--black-color) transparent;
+        // background-color: var(--black-color);   
     }
 }
 

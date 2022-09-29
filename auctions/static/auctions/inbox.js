@@ -84,13 +84,17 @@ function charge_categories(){
     .then(result => {
         console.log(result)
         let categories_list = "";
+        let cont_cat = 0
         result.categories_array.forEach(element => {
             console.log(element);
             categories_list += `<li> ${element} </li>`;
+            cont_cat++;
         });
-        
-        document.querySelector("#myDropdownCategories > ul").innerHTML = categories_list
-        // document.querySelector("#myDropdownCategories").myDropdownCategories
+        cont_cat = cont_cat * 2;
+        cont_cat = cont_cat +.5;
+        cont_cat = cont_cat + "rem"
+        document.querySelector("#myDropdownCategories > ul").innerHTML = categories_list;
+        document.getElementById("myDropdownCategories").style.height = cont_cat;
         // document.querySelector(`#heart-img-${id_post}`).innerHTML
         // setTimeout(function(){ 
         //     document.querySelector(`#heart-img-${id_post}`).innerHTML = '';
