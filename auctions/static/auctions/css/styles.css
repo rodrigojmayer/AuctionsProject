@@ -170,14 +170,17 @@ input[type=number] {
   position: absolute;
   margin-top: 0.5rem;
   left: -0.6rem;
-  height: 2.5rem;
-  width: 6rem;
+  height: 100%;
+  width: 9rem;
   background-color: var(--white-color);
 }
 .navbar #myDropdownCategories a {
   display: block;
   text-align: center;
   margin-top: -5px;
+}
+.navbar #myDropdownCategories li {
+  background-color: red;
 }
 .navbar #myDropdownCategories:before {
   content: "";
@@ -202,13 +205,13 @@ input[type=number] {
   opacity: 1;
 }
 
-#user-logged > #myDropdownCategories {
+#id_categories > #myDropdownCategories {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.2s linear;
 }
 
-#user-logged:hover > #myDropdownCategories {
+#id_categories:hover > #myDropdownCategories {
   visibility: visible;
   opacity: 1;
 }

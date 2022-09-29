@@ -90,6 +90,7 @@ function charge_categories(){
         });
         
         document.querySelector("#myDropdownCategories > ul").innerHTML = categories_list
+        // document.querySelector("#myDropdownCategories").myDropdownCategories
         // document.querySelector(`#heart-img-${id_post}`).innerHTML
         // setTimeout(function(){ 
         //     document.querySelector(`#heart-img-${id_post}`).innerHTML = '';

@@ -237,13 +237,17 @@ input[type=number] {
         position:absolute;
         margin-top: .5rem;
         left: -.6rem;
-        height: 2.5rem;
-        width: 6rem;
+        // height: 2.5rem;
+        height: 100%;
+        width: 9rem;
         background-color: var(--white-color);
         a{
             display: block;
             text-align: center;
             margin-top: -5px;
+        }
+        li{
+            background-color: red;
         }
     }
     #myDropdownCategories:before {
@@ -272,15 +276,15 @@ opacity: 1;
 }
 
 
-#user-logged > #myDropdownCategories {
+#id_categories > #myDropdownCategories {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.2s linear;
 }
 
-#user-logged:hover > #myDropdownCategories{
-visibility: visible;
-opacity: 1;
+#id_categories:hover > #myDropdownCategories{
+    visibility: visible;
+    opacity: 1;
 }
 
 
