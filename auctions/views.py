@@ -427,23 +427,24 @@ def watch_list(request):
 def categories(request):
     print("Entrando al categoriesssssssDDDDDDDDDDDDDDDDDDDDDDDD")
     all_categories = Category.objects.all()
-
-    # print(all_categories[0])
-    categories_array = []   
-    for each_category in all_categories:
-        print(each_category)
-        each_category=str(each_category)
-        categories_array.append(each_category)
-    # # data = json.loads(all_categories)
-    # # return render(request, "auctions/categories.html", {
-    # #     "all_categories" : all_categories,
-    # # })    
-    
-    return JsonResponse({
-        "categories_array":categories_array,
-        "message": "Profile followed successfully."
-    }
-    , status=201)
+    if request.method == "POST":
+        # print(all_categories[0])
+        categories_array = []   
+        for each_category in all_categories:
+            print(each_category)
+            each_category=str(each_category)
+            categories_array.append(each_category)   
+        
+        return JsonResponse({
+            "categories_array":categories_array,
+            "message": "Profile followed successfully."
+        }
+        , status=201)
+    if request.method == "GET":
+        # # data = json.loads(all_categories)
+        return render(request, "auctions/categories.html", {
+            "all_categories" : all_categories,
+        }) 
 
 def category(request, id_category):
 

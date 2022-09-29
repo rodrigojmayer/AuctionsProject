@@ -74,7 +74,7 @@ function charge_categories(){
     // user_like=document.querySelector(`#like-btn-${id_post}`);
     console.log("esta entrando al charge_categories js")
     fetch(`/categories/`, {
-        method: 'GET',
+        method: 'POST',
         // data: "stringi",
         // body: JSON.stringify({
             // like_action:"user_like.value"
