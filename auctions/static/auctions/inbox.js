@@ -83,6 +83,14 @@ function charge_categories(){
     .then(response => response.json())
     .then(result => {
         console.log(result)
+        let categories_list = "";
+        result.categories_array.forEach(element => {
+            console.log(element);
+            categories_list += `<li> ${element} </li>`;
+        });
+        
+        document.querySelector("#myDropdownCategories > ul").innerHTML = categories_list
+        // document.querySelector(`#heart-img-${id_post}`).innerHTML
         // setTimeout(function(){ 
         //     document.querySelector(`#heart-img-${id_post}`).innerHTML = '';
         //     if(result.prev_status=="heart_empty"){

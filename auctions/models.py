@@ -11,7 +11,7 @@ class Category(models.Model):
 
 
     def __str__(self):
-        return f"{self.id}: {self.category_name}"
+        return f"{self.category_name}"
 
 class AuctionListings(models.Model):
     name = models.CharField(max_length=64)
