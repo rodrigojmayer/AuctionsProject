@@ -275,6 +275,16 @@ input[type=number] {
   margin: auto;
 }
 
+#listing_watchlist {
+  font-size: 140%;
+  padding: 0.5rem;
+}
+#listing_watchlist #auction_category {
+  font-size: 60%;
+  margin: auto;
+  padding: 0;
+}
+
 #auction_name {
   font-weight: bold;
   /*margin-left: -30%;*/
@@ -417,11 +427,20 @@ footer div {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  background-color: var(--gray-color2);
+  grid-gap: 10px;
+  outline: 10px solid var(--gray-color-2);
+  border-radius: 10px;
 }
 
 .grid-item {
-  outline: 3px solid var(--gray-color-2);
+  background-color: var(--white-color);
+  outline: 10px solid var(--gray-color-2);
   padding: 20px;
   font-size: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  justify-content: space-evenly;
 }/*# sourceMappingURL=styles.css.map */

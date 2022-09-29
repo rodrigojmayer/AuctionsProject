@@ -28,16 +28,17 @@
                         </div>
                         <!-- <div id="auction_data"> -->
                             <div id="auction_price">
-                                <b>
+                                <!-- <b> -->
                                     {% if auction.auction_active %}
                                         ${{ auction.initial_price }}
                                     {% else %}
                                         Sold
                                     {% endif %}
 
-                                </b>
+                                <!-- </b> -->
                             </div>
-                            <div id="auction_category">Category:     
+                            <div id="auction_category">
+                                Category:     
                                 {% for category in auction.auction_category.all %}   
                                     {{ category.category_name }}
                                     {{ category.index }}
