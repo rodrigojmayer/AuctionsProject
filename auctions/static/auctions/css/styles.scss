@@ -236,29 +236,43 @@ input[type=number] {
     #myDropdownCategories {
         position:absolute;
         margin-top: 1.2rem;
-        left: -1rem;
+        left: -1.7rem;
         // height: 2.5rem;
-        height: 100%;
-        width: 9rem;
+        // height: 100%;
+        width: 10rem;
         // background-color: var(--white-color);
-            background-color: var(--black-color);
-        a{
-            display: block;
-            text-align: center;
-            margin-top: -5px;
-        }
+        background-color: var(--black-color);
+        // a{
+        //     display: block;
+        //     text-align: center;
+        //     margin-top: -5px;
+        // }
         ul {
+            position:static;
             list-style-type: none;
             padding:0;
+            margin:0;
         }
         li{
+            position:static;
             height: 1.5rem;
             color: var(--white-color);
             font-weight: bold;
-            margin-top: .5rem;
-            margin-bottom: .5rem;
             text-align: center;
+            // margin-bottom: 1rem;
             // background-color: var(--black-color);
+            a{
+                position:static;
+                // margin-top: .5rem;
+                height: 1.5rem;
+                color: var(--white-color);
+            }
+        }
+        li:hover a{
+        //   text-decoration: none;
+        //   opacity: 0.75;
+          color: var(--link);
+          background-color: var(--link-pressing);
         }
     }
     #myDropdownCategories:before {
