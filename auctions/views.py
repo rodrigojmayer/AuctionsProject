@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 # from django.views.decorators.csrf import csrf_protect
 from django.http import JsonResponse
 import json, math
+from django.core import serializers
 
 from django.templatetags.static import static
 from jinja2 import Environment
@@ -429,14 +430,21 @@ def categories(request):
     all_categories = Category.objects.all()
     if request.method == "POST":
         # print(all_categories[0])
-        categories_array = []   
-        for each_category in all_categories:
-            print(each_category)
-            each_category=str(each_category)
-            categories_array.append(each_category)   
+
+        response = {}
+        response = serializers.serialize("json", Category.objects.all())
+
+        print("this is the json")
+        print(response)
+        # categories_array = []   
+        # for each_category in all_categories:
+        #     # print(each_category)
+        #     each_category=str(each_category)
+        #     categories_array.append(each_category) 
         
         return JsonResponse({
-            "categories_array":categories_array,
+            # "categories_array":categories_array,
+            "categories_array":response,
             "message": "Profile followed successfully."
         }
         , status=201)

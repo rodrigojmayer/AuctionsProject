@@ -85,9 +85,23 @@ function charge_categories(){
         console.log(result)
         let categories_list = "";
         let cont_cat = 0
-        result.categories_array.forEach(element => {
-            console.log(element);
-            categories_list += `<li> ${element} </li>`;
+        // console.log(result.categories_array.fields)
+        var array = JSON.parse(result.categories_array);
+        // var array =Object.values(result.categories_array)
+        console.log("primero");
+        console.log(result.categories_array);
+        console.log("Segundo");
+        console.log(array);
+
+        array.forEach(element => {
+            // categories_list += `<li><a href="../category/{{ categories.id }}"> ${element} </a></li>`;
+            // console.log("fields field");
+            // console.log(element.fields);
+            // console.log("fields category name");
+            console.log(element.fields.category_name);
+            // console.log("PKk");
+            console.log(element.pk);
+            categories_list += `<li><a href="../category/1"> ${element} </a></li>`;
             cont_cat++;
         });
         cont_cat = cont_cat * 2;
