@@ -76,6 +76,10 @@ html {
     color: var(--link);
     transition: all 0.5s ease-out;
   }
+  li{
+    // font-weight: bold;
+    // color: var(--link);
+  }
   
   a:hover {
     text-decoration: none;
@@ -253,25 +257,28 @@ input[type=number] {
             padding:0;
             margin:0;
         }
-        li{
+        a{
             position:static;
-            height: 1.5rem;
+            display: block;
+            li{
+            position:static;
+            height: 2.5rem;
             color: var(--white-color);
             font-weight: bold;
             text-align: center;
-            // margin-bottom: 1rem;
+            transition: all 0.3s ease-out;
+            padding: .5rem;
+            // height: 1.5rem;
+            // padding: 1rem;
             // background-color: var(--black-color);
-            a{
-                position:static;
-                // margin-top: .5rem;
-                height: 1.5rem;
-                color: var(--white-color);
             }
         }
-        li:hover a{
+        li:hover{
         //   text-decoration: none;
         //   opacity: 0.75;
-          color: var(--link);
+            cursor: pointer;
+        //   color: var(--link);
+        //   background-color: var(--link-pressing);
           background-color: var(--link-pressing);
         }
     }

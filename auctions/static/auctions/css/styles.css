@@ -179,20 +179,21 @@ input[type=number] {
   padding: 0;
   margin: 0;
 }
-.navbar #myDropdownCategories li {
+.navbar #myDropdownCategories a {
   position: static;
-  height: 1.5rem;
+  display: block;
+}
+.navbar #myDropdownCategories a li {
+  position: static;
+  height: 2.5rem;
   color: var(--white-color);
   font-weight: bold;
   text-align: center;
+  transition: all 0.3s ease-out;
+  padding: 0.5rem;
 }
-.navbar #myDropdownCategories li a {
-  position: static;
-  height: 1.5rem;
-  color: var(--white-color);
-}
-.navbar #myDropdownCategories li:hover a {
-  color: var(--link);
+.navbar #myDropdownCategories li:hover {
+  cursor: pointer;
   background-color: var(--link-pressing);
 }
 .navbar #myDropdownCategories:before {

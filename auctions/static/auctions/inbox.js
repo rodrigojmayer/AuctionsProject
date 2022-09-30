@@ -101,11 +101,11 @@ function charge_categories(){
             console.log(element.fields.category_name);
             // console.log("PKk");
             console.log(element.pk);
-            categories_list += `<li><a href="../category/${element.pk}"> ${element.fields.category_name} </a></li>`;
+            categories_list += `<a href="../category/${element.pk}"><li> ${element.fields.category_name} </li></a>`;
             cont_cat++;
         });
-        cont_cat = cont_cat * 2;
-        cont_cat = cont_cat + 2.5;
+        cont_cat = cont_cat * 2.5;
+        // cont_cat = cont_cat + 2.5;
         cont_cat = cont_cat + "rem"
         document.querySelector("#myDropdownCategories > ul").innerHTML = categories_list;
         document.getElementById("myDropdownCategories").style.height = cont_cat;
