@@ -535,12 +535,16 @@ opacity: 1;
         // display: block;
     }
 }
+textarea{
+    min-height: 4rem;
+}
 #auction_description{
     padding: 0.5rem;
     line-height: 70%;
 }
 #auction_category{
     padding: 0.5rem;
+    width: 12rem;
     h5{display: inline;
     }
 }

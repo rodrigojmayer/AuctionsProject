@@ -394,6 +394,10 @@ input[type=number] {
   margin-left: 1rem;
 }
 
+textarea {
+  min-height: 4rem;
+}
+
 #auction_description {
   padding: 0.5rem;
   line-height: 70%;
@@ -401,6 +405,7 @@ input[type=number] {
 
 #auction_category {
   padding: 0.5rem;
+  width: 12rem;
 }
 #auction_category h5 {
   display: inline;

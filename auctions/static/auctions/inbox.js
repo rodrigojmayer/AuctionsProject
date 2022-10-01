@@ -131,3 +131,21 @@ function charge_categories(){
         // modal_error();
     });
 }
+
+
+function abrir(id) {
+    var file = document.getElementById(id);
+    file.dispatchEvent(new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+    }));
+}
+function contar(elem, idGlosa) {
+    var glosa = document.getElementById(idGlosa);
+    if(elem.files.length == 0) {
+        glosa.innerText = "Ningun archivo seleccionado";
+    } else {
+        glosa.innerText = elem.files.length + "  image selected";
+    }
+}
