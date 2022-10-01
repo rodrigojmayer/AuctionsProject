@@ -1,24 +1,17 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-<div class="sub">
-    <h2>Active Listings</h2>
-</div>
+    <div class="sub">
+        <h2>Active Listings</h2>
+    </div>
     <div class="main">
-
-        <!-- </br> -->
-
-
         {% for auction in all_auctions %}
-            
             <div id="listing_auction" >
-                
                 <div id="auction_image">
                     <a href="listing_page/{{ auction.id }}" >
                         <img src="/media/{{ auction.image }}"  height="200px">
                     </a>
                 </div>
-
                 <div id="order-column">
                     <div id="auction_name">
                         <a href="../listing_page/{{ auction.id }}" >
@@ -26,33 +19,23 @@
                         </a>   
                     </div>
                     <div id="auction_listing_data">                
-                        <div id="auction_price"> <h3>${{ auction.initial_price }}</h3></div>
-            
-                        <!--div id="auction_price">Price: ${{ auction.initial_price }}</div-->
-                        <!-- Description: -->
-                            {{ auction.description }}
+                        <div id="auction_price"> 
+                            <h3>${{ auction.initial_price }}</h3>
+                        </div>
+                        {{ auction.description }}
                         <div id="auction_category">
                             Category:     
                             {% for category in auction.auction_category.all %}   
                                 <a href="../category/{{ category.id }}">
                                     {{ category.category_name }}
                                 </a>
-                                <!-- {{ category.index }} -->
                             {% endfor %}
-                        </div>
-                        <!--{{ auction.auction_category.count }}
-                        {% with color_category=1 %}     
-                            {{ color_category }}
-                        {% endwith %}
-                        -->                
+                        </div>             
                     </div>
                 </div>
-                    
             </div>
             {% if last_auction_id != auction.id %}
-                <div class="borders">    </div>
-                <!-- </br> -->
-                <!-- </br> -->
+                <div class="borders"></div>
             {% endif %}
         {% endfor %}
     </div>

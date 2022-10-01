@@ -1,37 +1,46 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-<div class="sub">
-    <h2>Category: {{ category.category_name }}</h2>
-</div>
-<div class="main" id="category">       
-    
-    <!-- </br> -->
-    {% if auction_listing_category %}    
-        {% for auction_category in auction_listing_category %}
-            <div id="listing_auction" >
-                
-                <div id="auction_name">
-                    <a href="../listing_page/{{ auction_category.id }}" >
-                        {{ auction_category.name }}
-                    </a>  
-                </div> 
-                <div id="auction_data">
-                    <div id="auction_price">Actual price: ${{ auction_category.initial_price }}</div>
-        
-                    Description: <div id="auction_description">{{ auction_category.description }}</div>        
-                </div>
-                <div id="auction_image"><a href="../listing_page/{{ auction_category.id }}" ><img src="/media/{{ auction_category.image }}"  height="200px"></a></div>
-                <!-- </br> -->
-                <!-- </br> -->
-            </div>
-        {% endfor %}
-    {%else %}
-    <div id="listing_auction" >
-        <div id="auction_name">
-            There is no auction in this category.
-        </div> 
+    <div class="sub">
+        <h2>Category: {{ category.category_name }}</h2>
     </div>
-    {% endif %}
-</div>
+    <div class="main" id="category">
+        {% if auction_listing_category %}    
+            {% for auction_category in auction_listing_category %}
+                <div id="listing_auction" >
+                    <div id="auction_image">
+                        <a href="../listing_page/{{ auction_category.id }}" >
+                            <img src="/media/{{ auction_category.image }}"  height="200px">
+                        </a>
+                    </div>
+                    <div id="order-column">
+                        <div id="auction_name">
+                            <a href="../listing_page/{{ auction_category.id }}" >
+                                <h2>{{ auction_category.name }}</h2>
+                            </a>  
+                        </div> 
+                        <!-- <div id="auction_data"> -->
+                        <div id="auction_listing_data">
+                            <div id="auction_price">
+                                <h3>${{ auction_category.initial_price }}</h3>
+                            </div>
+                            <!-- <div id="auction_description"> -->
+                                {{ auction_category.description }}
+                            <!-- </div>         -->
+                        </div>           
+                    </div>
+                </div>
+                {% if last_auction_id != auction_category.id %}
+                    <div class="borders"></div>
+                {% endif %}
+            {% endfor %}
+            
+        {%else %}
+        <div id="listing_auction" >
+            <div id="auction_name">
+                There is no auction in this category.
+            </div> 
+        </div>
+        {% endif %}
+    </div>
 {% endblock %}

@@ -35,8 +35,11 @@ def index(request):
     all_auctions = AuctionListings.objects.all()
     #all_bids = Bids.objects.all()
     len_auctions = len(all_auctions)
-    last_auction = all_auctions[len_auctions-1]
-    print(last_auction.id)
+    if len_auctions > 0:
+        last_auction = all_auctions[len_auctions-1].id
+    else:
+        last_auction = 0
+    # print(last_auction)
     for auction in all_auctions:
         try:
             all_bids = Bids.objects.get(id_auction=auction.id) 
@@ -47,7 +50,7 @@ def index(request):
     return render(request, "auctions/index.html", {
         "message": "Aca van los datos de cada auction",
         "all_auctions" : all_auctions,
-        "last_auction_id" : last_auction.id,
+        "last_auction_id" : last_auction,
         "pepetest": "test de pepito",
     })
 
@@ -458,6 +461,11 @@ def category(request, id_category):
 
     category = Category.objects.get(id=id_category)
     auction_listing_category = AuctionListings.objects.filter(auction_category__id=id_category)
+    len_auctions = len(auction_listing_category)
+    if len_auctions > 0:
+        last_auction = auction_listing_category[len_auctions-1].id
+    else:
+        last_auction = 0
     for auction in auction_listing_category:
         try:
             all_bids = Bids.objects.get(id_auction=auction.id) 
@@ -467,5 +475,6 @@ def category(request, id_category):
     return render(request, "auctions/category.html", {
         "category" : category,
         "auction_listing_category" : auction_listing_category,
+        "last_auction_id" : last_auction,
     })
 
