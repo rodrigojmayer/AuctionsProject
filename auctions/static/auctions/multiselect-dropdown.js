@@ -19,6 +19,7 @@ style.innerHTML = `
   padding:1px 0; 
   border-radius: 4px; 
   display:inline-block;
+  margin-top: 100px;
 }
 .multiselect-dropdown span.optext{
   background-color:lightgray;
@@ -35,6 +36,9 @@ style.innerHTML = `
 .multiselect-dropdown span.optext .optdel:hover { color: #c66;}
 .multiselect-dropdown span.placeholder{
   color:#ced4da;
+  // color: pink;
+  margin: .5rem !important;
+  // vertical-align:middle !important;
 }
 .multiselect-dropdown-list-wrapper{
   box-shadow: gray 0 3px 8px;

@@ -414,12 +414,19 @@ opacity: 1;
 
         width: 80%;
         margin: 1rem auto ;
-        input{
+        input, .multiselect-dropdown{
             height: 3rem;
+            margin:0;
+            // }
         }
         label{
             margin: 3.5px 5px;
             // margin-left: 5px;
+        }
+        #glosaArchivos{
+            display: block;
+            margin: auto;
+            text-align: center;
         }
     }
     form:first-child{
@@ -462,12 +469,9 @@ opacity: 1;
 // #create_bid, #create_comment, #category{
     // padding-bottom: 28%;
 // }
-#login, #register{
+#login, #register, #id_create_listing{
     width: 50%;
     max-width: 26.5rem;
-}
- #register{
-//    padding-bottom: 13%;
 }
 .borders{
     // border-bottom: thick dotted $gray_color;
@@ -544,9 +548,16 @@ textarea{
 }
 #auction_category{
     padding: 0.5rem;
-    width: 12rem;
+    // width: 106%;
+    margin:100px;
     h5{display: inline;
     }
+}
+
+.multiselect-dropdown{
+    display: block !important;
+    margin:auto !important;
+    width: 100% !important;
 }
 #auction_comments{
     padding: 0.5rem;

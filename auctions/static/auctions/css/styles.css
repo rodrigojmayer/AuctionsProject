@@ -303,11 +303,17 @@ input[type=number] {
   width: 80%;
   margin: 1rem auto;
 }
-.main .to-log-form-group input {
+.main .to-log-form-group input, .main .to-log-form-group .multiselect-dropdown {
   height: 3rem;
+  margin: 0;
 }
 .main .to-log-form-group label {
   margin: 3.5px 5px;
+}
+.main .to-log-form-group #glosaArchivos {
+  display: block;
+  margin: auto;
+  text-align: center;
 }
 .main form:first-child {
   padding-top: 0.5rem;
@@ -338,7 +344,7 @@ input[type=number] {
   margin-right: 3%;
 }
 
-#login, #register {
+#login, #register, #id_create_listing {
   width: 50%;
   max-width: 26.5rem;
 }
@@ -405,10 +411,16 @@ textarea {
 
 #auction_category {
   padding: 0.5rem;
-  width: 12rem;
+  margin: 100px;
 }
 #auction_category h5 {
   display: inline;
+}
+
+.multiselect-dropdown {
+  display: block !important;
+  margin: auto !important;
+  width: 100% !important;
 }
 
 #auction_comments {
