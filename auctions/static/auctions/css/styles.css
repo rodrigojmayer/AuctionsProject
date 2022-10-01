@@ -136,6 +136,10 @@ input[type=number] {
   /*margin-bottom: 200px;*/
   /*text-align: left;*/
 }
+.navbar .nav-link {
+  font-size: larger;
+  padding-top: 0.3rem;
+}
 .navbar #user-logged {
   position: relative;
   cursor: pointer;

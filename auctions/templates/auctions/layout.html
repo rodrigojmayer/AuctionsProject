@@ -28,11 +28,8 @@
                     <!-- <a class="nav-link" href="{% url 'auctions_app:index' %}">Active Listings</a> -->
                 <!-- </div> -->
                 {% if user.is_authenticated %}
-                    <div class="nav-item" id="nav2">                
-                        <a class="nav-link" href="{% url 'auctions_app:watch_list' %}">My Watch List</a>
-                    </div>
                     <div class="nav-item" id="nav3">                
-                        <a class="nav-link" href="{% url 'auctions_app:create_listing' %}">Create Auction Listing</a>
+                        <a class="nav-link" href="{% url 'auctions_app:create_listing' %}">Post Item</a>
                     </div>
                     <!-- <form action="">
                         {% csrf_token %}
@@ -47,6 +44,9 @@
 
                             </ul>
                         </div>
+                    </div>
+                    <div class="nav-item" id="nav2">                
+                        <a class="nav-link" href="{% url 'auctions_app:watch_list' %}">My Watch List</a>
                     </div>
 
                     <!--div class="nav-item" id="nav6">                
