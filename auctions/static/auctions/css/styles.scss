@@ -213,14 +213,46 @@ input[type=number] {
     #myDropdownUser {
         position:absolute;
         margin-top: .5rem;
-        left: -.6rem;
+        // left: -.6rem;
         height: 2.5rem;
         width: 6rem;
-        background-color: var(--white-color);
+        // margin-top: 1.2rem;
+        left: -1.7rem;
+        // background-color: var(--white-color);
+        background-color: var(--black-color);
+        border-radius: 4px;
+        ul {
+            position:static;
+            list-style-type: none;
+            padding:0;
+            margin:0;
+        }
         a{
+            position:static;
             display: block;
+            // text-align: center;
+            // margin-top: -5px;
+            li{
+            position:static;
+            height: 2.5rem;
+            color: var(--white-color);
+            font-weight: bold;
             text-align: center;
-            margin-top: -5px;
+            transition: all 0.3s ease-out;
+            padding: .5rem;
+            }
+        }
+        a:hover{
+            cursor: pointer;
+            background-color: var(--link-pressing);
+        }
+        a:first-child:hover{
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+        a:last-child:hover{
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
         }
     }
     #myDropdownUser:before {
@@ -233,7 +265,7 @@ input[type=number] {
         border-width: 0 8px 8px 8px;
         border-style: solid;
         // border-color: rgba(0,0,0,1) transparent; 
-        border-color: var(--white-color) transparent;   
+        border-color: var(--black-color) transparent;   
     }
 
     
@@ -269,18 +301,19 @@ input[type=number] {
             text-align: center;
             transition: all 0.3s ease-out;
             padding: .5rem;
-            // height: 1.5rem;
-            // padding: 1rem;
-            // background-color: var(--black-color);
             }
         }
-        li:hover{
-        //   text-decoration: none;
-        //   opacity: 0.75;
+        a:hover{
             cursor: pointer;
-        //   color: var(--link);
-        //   background-color: var(--link-pressing);
-          background-color: var(--link-pressing);
+            background-color: var(--link-pressing);
+        }
+        a:first-child:hover{
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+        a:last-child:hover{
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
         }
     }
     #myDropdownCategories:before {
