@@ -332,6 +332,10 @@ input[type=number] {
   margin: 0.75rem;
   margin-bottom: 1rem;
 }
+.main .form {
+  padding-top: 0.1rem !important;
+  padding-bottom: 1rem !important;
+}
 .main #answer {
   margin: 0 0.72rem;
 }
@@ -411,7 +415,6 @@ textarea {
 
 #auction_category {
   padding: 0.5rem;
-  margin: 100px;
 }
 #auction_category h5 {
   display: inline;

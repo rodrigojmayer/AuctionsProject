@@ -13,7 +13,7 @@
         <div>{{ message }}</div>
     {% endif %}
 
-    <form action="{% url 'auctions_app:register' %}" method="post">
+    <form class="form" action="{% url 'auctions_app:register' %}" method="post">
         {% csrf_token %}
         <div class="to-log-form-group">
             <label for="username">Username</label>

@@ -9,7 +9,7 @@
 </div>
 <div class="main" id="id_create_listing">
     <!-- Agregado para las imagenes: enctype="multipart/form-data" -->
-    <form action="{% url 'auctions_app:create_listing' %}"  method="post" enctype="multipart/form-data">
+    <form class="form" action="{% url 'auctions_app:create_listing' %}"  method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="to-log-form-group">
             <label for="auction_name">Article</label>

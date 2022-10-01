@@ -453,6 +453,11 @@ opacity: 1;
         margin: .75rem;
         margin-bottom: 1rem;
     }
+    .form{
+        
+        padding-top: 0.1rem !important;
+        padding-bottom: 1rem !important;
+    }
     #answer{
         // color: red;
         margin: 0 0.72rem;
@@ -549,7 +554,7 @@ textarea{
 #auction_category{
     padding: 0.5rem;
     // width: 106%;
-    margin:100px;
+    // margin:100px;
     h5{display: inline;
     }
 }
