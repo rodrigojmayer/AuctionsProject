@@ -172,6 +172,7 @@ input[type=number] {
   left: -1.7rem;
   width: 10rem;
   background-color: var(--black-color);
+  border-radius: 4px;
 }
 .navbar #myDropdownCategories ul {
   position: static;
