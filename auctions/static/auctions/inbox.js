@@ -17,8 +17,43 @@ document.addEventListener('DOMContentLoaded', function(){
         const fileList = this.files; /* now you can work with the file list */
         console.log(fileList)
         document.getElementById("image").files = fileList
+        console.log(fileList[0].name)
 
+        // console.log(fileList[0].name)
+        document.getElementById("glosaArchivos").innerText = fileList[0].name;
+        img = document.getElementById("display-image");
+        img.src = URL.createObjectURL(fileList[0]);
+        
     }
+
+    // const image_input = document.querySelector("#change_profile_picture");
+    // image_input.addEventListener("change", function(e) {
+
+    //     alert("holis")
+    //     if (e.target.files) {
+    //         let imageFile = e.target.files[0];
+    //         var reader = new FileReader();
+    //         reader.onload = function (e) {
+    //             var img = document.createElement("img");
+    //             img.onload = function (event) {
+    //                 // Dynamically create a canvas element
+    //                 var canvas = document.createElement("canvas");
+    //                 // var canvas = document.getElementById("canvas");
+    //                 var ctx = canvas.getContext("2d");
+    //                 // Actual resizing
+    //                 ctx.drawImage(img, 0, 0, 300, 160);
+    //                 var dataurl = canvas.toDataURL(imageFile.type);
+    //                 document.getElementById("display-image").src = dataurl;
+    //             }
+    //             img.src = e.target.result;
+    //         }
+    //         reader.readAsDataURL(imageFile);
+    //         if(document.getElementById("no_profile_picture_background")){
+    //             document.getElementById("no_profile_picture_background").style.display="none";
+    //             document.getElementById("display-image").style.opacity=1;
+    //         }
+    //     }
+    // });
 
     // alert("Its working!")
     // document.getElementById("user-logged").onmouseover=function(){
