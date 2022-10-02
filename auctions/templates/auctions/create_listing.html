@@ -13,13 +13,13 @@
         {% csrf_token %}
         <div class="to-log-form-group">
             <label for="auction_name">Article</label>
-            <input autofocus class="form-control" type="text" name="auction_name" placeholder=""> 
+            <input autofocus class="form-control" id="data_article" type="text" name="auction_name" placeholder=""> 
             <label for="description">Description</label>
-            <textarea class="form-control" name="description" placeholder="" maxlength="150"></textarea>
+            <textarea class="form-control" id="data_description" name="description" placeholder="" maxlength="150"></textarea>
             <label for="initial_price">Starting price</label>
-            <input class="form-control" type="number" name="initial_price" placeholder="">
+            <input class="form-control" id="data_initial_price" type="number" name="initial_price" placeholder="">
             <label for="auction_category">Category</label></br>
-            <select name="auction_category" id="auction_category" multiple 
+            <select name="auction_category" id="data_auction_category" multiple 
                     multiselect-search="true" 
                     multiselect-max-items="1"
                     multiselect-hide-x = "false"
@@ -56,7 +56,12 @@
         <!-- <input class="btn btn-primary" type="submit" value="Save and add another" name="_save"> -->
         
         <div class="modal-alert hide" >
-            <input class="btn btn-primary" type="submit" value="Save" name="_save" >
+            <div class="modal-body ">
+                <h5>Rrror</h5>
+                <p>Pretender</p>
+                <button id="back"  class="btn btn-primary" type="button" value="Back" >Back</button>
+                <input class="btn btn-primary" type="submit" value="Save" name="_save" >
+            </div>
         </div>
         
     </form>

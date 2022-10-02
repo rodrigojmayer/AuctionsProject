@@ -377,6 +377,25 @@ input[type=number] {
   background-color: var(--black-alpha-color);
   z-index: 900;
 }
+.modal-alert .modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--white-color);
+  width: 25vw;
+  max-width: 20rem;
+  margin: 25vh auto;
+}
+.modal-alert .modal-body h5, .modal-alert .modal-body p {
+  text-align: center;
+  margin: 0;
+}
+.modal-alert .modal-body .btn {
+  display: block;
+  margin: 0.5rem auto;
+}
 
 #login, #register, #id_create_listing, #create_comment {
   width: 50%;

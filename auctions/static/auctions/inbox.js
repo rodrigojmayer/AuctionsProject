@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', function(){
     //     alert("RED")
     // });
 
-    const inputElement = document.getElementById("input");
+    let inputElement = document.getElementById("input");
     inputElement.addEventListener("change", handleFiles, false);
     function handleFiles() {
-        const fileList = this.files; /* now you can work with the file list */
-        console.log(fileList)
+        let fileList = this.files; /* now you can work with the file list */
+        // console.log(fileList)
         document.getElementById("image").files = fileList
-        console.log(fileList[0].name)
+        // console.log(fileList[0].name)
 
         // console.log(fileList[0].name)
         document.getElementById("glosaArchivos").innerText = fileList[0].name;
@@ -27,12 +27,26 @@ document.addEventListener('DOMContentLoaded', function(){
         
     }
     
-    const modal_alert = document.querySelector(".modal-alert");
-    const accept = document.getElementById("accept");
+    let modal_alert = document.querySelector(".modal-alert");
+    let accept = document.getElementById("accept");
     accept.addEventListener("click", function() {
         // alert("entrando al submit")
         modal_alert.classList.add('show');
         modal_alert.classList.remove('hide');
+        let data_article = document.getElementById("data_article");
+        let data_description = document.getElementById("data_description");
+        let data_initial_price = document.getElementById("data_initial_price");
+        let data_auction_category = document.getElementById("data_auction_category");
+        let data_image = document.getElementById("image");
+        if(data_article.value){
+            console.log("habemus articulus")
+        }
+        console.log(data_article.value);
+        console.log(data_description.value);
+        console.log(data_initial_price.value);
+        console.log(data_auction_category.value);
+        console.log(data_image.value);
+
     });
     
 
@@ -110,7 +124,7 @@ function enable_answer(varr){
     answer_form.classList.add(add);
     answer_form.classList.remove(remove);
     // document.getElementById("answer-input-"+varr).style.backgroundColor="red";
-    console.log(varr)
+    // console.log(varr)
     
     setTimeout(function(){ document.querySelector("#answer-input-"+varr).focus(); }, 50);
 }
@@ -132,7 +146,7 @@ function enable_question(){
 
 function charge_categories(){
     // user_like=document.querySelector(`#like-btn-${id_post}`);
-    console.log("esta entrando al charge_categories js")
+    // console.log("esta entrando al charge_categories js")
     fetch(`/categories/`, {
         method: 'POST',
         // data: "stringi",
@@ -142,25 +156,25 @@ function charge_categories(){
     })
     .then(response => response.json())
     .then(result => {
-        console.log(result)
+        // console.log(result)
         let categories_list = "";
         let cont_cat = 0
         // console.log(result.categories_array.fields)
         var array = JSON.parse(result.categories_array);
         // var array =Object.values(result.categories_array)
-        console.log("primero");
-        console.log(result.categories_array);
-        console.log("Segundo");
-        console.log(array);
+        // console.log("primero");
+        // console.log(result.categories_array);
+        // console.log("Segundo");
+        // console.log(array);
 
         array.forEach(element => {
             // categories_list += `<li><a href="../category/{{ categories.id }}"> ${element} </a></li>`;
             // console.log("fields field");
             // console.log(element.fields);
             // console.log("fields category name");
-            console.log(element.fields.category_name);
+            // console.log(element.fields.category_name);
             // console.log("PKk");
-            console.log(element.pk);
+            // console.log(element.pk);
             categories_list += `<a href="../category/${element.pk}"><li> ${element.fields.category_name} </li></a>`;
             cont_cat++;
         });
