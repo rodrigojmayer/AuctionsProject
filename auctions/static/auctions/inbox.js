@@ -26,10 +26,13 @@ document.addEventListener('DOMContentLoaded', function(){
         img.src = URL.createObjectURL(fileList[0]);
         
     }
-
+    
+    const modal_alert = document.querySelector(".modal-alert");
     const accept = document.getElementById("accept");
     accept.addEventListener("click", function() {
-        alert("entrando al submit")
+        // alert("entrando al submit")
+        modal_alert.classList.add('show');
+        modal_alert.classList.remove('hide');
     });
     
 

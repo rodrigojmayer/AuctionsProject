@@ -489,6 +489,17 @@ opacity: 1;
         margin-right:3%;
     }
 }
+.modal-alert{
+    // display: none;
+    position:absolute;
+    top:0;
+    right:0;
+    width:100vw;
+    height: 100vh;
+    background-color: var(--black-alpha-color);
+    z-index: 900;
+
+}
 // #create_bid, #create_comment, #category{
     // padding-bottom: 28%;
 // }

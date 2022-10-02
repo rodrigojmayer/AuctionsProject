@@ -368,6 +368,16 @@ input[type=number] {
   margin-right: 3%;
 }
 
+.modal-alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black-alpha-color);
+  z-index: 900;
+}
+
 #login, #register, #id_create_listing, #create_comment {
   width: 50%;
   max-width: 26.5rem;
