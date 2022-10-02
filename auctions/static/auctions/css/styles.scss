@@ -448,7 +448,6 @@ opacity: 1;
         // padding-top: 1rem;
         // padding-bottom: 1.5rem;
         padding-bottom: .5rem;
-        
         text-align: center;
     }
     
@@ -458,9 +457,24 @@ opacity: 1;
         margin-bottom: 1rem;
     }
     .form{
-        
         padding-top: 0.1rem !important;
         padding-bottom: 1rem !important;
+        #input{
+            display: none;
+            margin: 0 auto;
+        }
+        label.btn{
+            // background-color: red;
+            width: 100%;
+            margin: 1.7rem 0;
+        }
+        #display-image{
+            display: none;
+            margin: 0 auto;
+            height: 17vw;
+            width: 17vw;
+            object-fit: contain;
+        }
     }
     #answer{
         // color: red;

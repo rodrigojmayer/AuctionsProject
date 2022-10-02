@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
     //     alert("RED")
     // });
 
-    const inputElement = document.getElementById("innput");
+    const inputElement = document.getElementById("input");
     inputElement.addEventListener("change", handleFiles, false);
     function handleFiles() {
         const fileList = this.files; /* now you can work with the file list */
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
         // console.log(fileList[0].name)
         document.getElementById("glosaArchivos").innerText = fileList[0].name;
         img = document.getElementById("display-image");
+        img.style.display = "block";
         img.src = URL.createObjectURL(fileList[0]);
         
     }

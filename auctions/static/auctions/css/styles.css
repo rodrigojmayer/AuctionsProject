@@ -340,6 +340,22 @@ input[type=number] {
   padding-top: 0.1rem !important;
   padding-bottom: 1rem !important;
 }
+.main .form #input {
+  display: none;
+  margin: 0 auto;
+}
+.main .form label.btn {
+  width: 100%;
+  margin: 1.7rem 0;
+}
+.main .form #display-image {
+  display: none;
+  margin: 0 auto;
+  height: 17vw;
+  width: 17vw;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .main #answer {
   margin: 0 0.72rem;
 }
