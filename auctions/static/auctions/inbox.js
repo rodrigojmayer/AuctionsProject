@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function(){
         
     }
 
+    const accept = document.getElementById("accept");
+    accept.addEventListener("click", function() {
+        alert("entrando al submit")
+    });
+    
+
     // const image_input = document.querySelector("#change_profile_picture");
     // image_input.addEventListener("change", function(e) {
 
