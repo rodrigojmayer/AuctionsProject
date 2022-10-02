@@ -4,6 +4,21 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     charge_categories();
+    
+    
+    // document.querySelector("#id_create_listing > form > div > input.btn.btn-primary").addEventListener("click", function() {
+    //     this.style.backgroundColor = "red";
+    //     alert("RED")
+    // });
+
+    const inputElement = document.getElementById("innput");
+    inputElement.addEventListener("change", handleFiles, false);
+    function handleFiles() {
+        const fileList = this.files; /* now you can work with the file list */
+        console.log(fileList)
+        document.getElementById("image").files = fileList
+
+    }
 
     // alert("Its working!")
     // document.getElementById("user-logged").onmouseover=function(){
@@ -134,12 +149,14 @@ function charge_categories(){
 
 
 function abrir(id) {
-    var file = document.getElementById(id);
-    file.dispatchEvent(new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-    }));
+    // var file = document.getElementById(id);
+    // file.dispatchEvent(new MouseEvent('click', {
+    //     view: window,
+    //     bubbles: true,
+    //     cancelable: true,accept:"image/*"
+    // }));
+
+    alert(document.querySelector("#id_create_listing > form > div > input.btn.btn-primary").value)
 }
 function contar(elem, idGlosa) {
     var glosa = document.getElementById(idGlosa);

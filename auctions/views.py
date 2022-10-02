@@ -111,7 +111,11 @@ def create_listing(request):
     if request.method == "POST":
             
         print(" ")
-        print("The request is: ")
+        print("The request POST is: ---")
+        print(request.POST)
+        print("The request FILES is: ---")
+        print(request.FILES)
+        print("request POST save")
         print(request.POST["_save"])
         print(" ")
         auction_name = request.POST["auction_name"]
@@ -325,6 +329,8 @@ def create_bid(request):
     })
 
 def create_comment(request):
+    print("el request method es este----->")
+    print(request.method)
     #auction_data_bid = AuctionListings.objects.get(id=request.GET['auction_get'])
     auction_data = AuctionListings.objects.get(id=request.GET['auction_data'])
     user_logged = request.user
@@ -340,8 +346,15 @@ def create_comment(request):
         err_mess = "You have not entered any comment."
     else:
         print(" ha ingresado comentario")
-        add_comment = Comments(id_auction=auction_data, description=comment_added, id_user=user_logged)
-        add_comment.save()
+        comment_duplicated = Comments.objects.filter(id_auction=auction_data, description=comment_added, id_user=user_logged.id)
+        if comment_duplicated:
+            print("comment duplicated --- ")
+            print(comment_duplicated)
+            err_mess = "Duplicate question."
+        else:
+            print("comment not duplicated----")
+            add_comment = Comments(id_auction=auction_data, description=comment_added, id_user=user_logged)
+            add_comment.save()
    
     
     

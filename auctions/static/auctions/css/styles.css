@@ -352,7 +352,7 @@ input[type=number] {
   margin-right: 3%;
 }
 
-#login, #register, #id_create_listing {
+#login, #register, #id_create_listing, #create_comment {
   width: 50%;
   max-width: 26.5rem;
 }
