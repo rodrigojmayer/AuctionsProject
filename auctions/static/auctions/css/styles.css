@@ -474,6 +474,9 @@ textarea {
   margin: auto !important;
   width: 100% !important;
 }
+.multiselect-dropdown .optext {
+  margin: 0.5rem 0 !important;
+}
 
 #auction_comments {
   padding: 0.5rem;

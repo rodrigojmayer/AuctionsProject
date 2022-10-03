@@ -12,8 +12,8 @@
     <form class="form" action="{% url 'auctions_app:create_listing' %}"  method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="to-log-form-group">
-            <label for="auction_name">Article</label>
-            <input autofocus class="form-control" id="data_article" type="text" name="auction_name" placeholder=""> 
+            <label for="auction_name" >Article</label>
+            <input autofocus class="form-control" id="data_article" type="text" name="auction_name" placeholder="" autocomplete="off"> 
             <label for="description">Description</label>
             <textarea class="form-control" id="data_description" name="description" placeholder="" maxlength="150"></textarea>
             <label for="initial_price">Starting price</label>
@@ -21,7 +21,7 @@
             <label for="auction_category">Category</label></br>
             <select name="auction_category" id="data_auction_category" multiple 
                     multiselect-search="true" 
-                    multiselect-max-items="1"
+                    multiselect-max-items="2"
                     multiselect-hide-x = "false"
                     placeholder="Select Category">
                 {% for all_categorie in all_categories %}
