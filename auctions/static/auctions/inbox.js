@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function(){
         else{
             modal_subtitle.innerHTML = "Post item"
 
-            modal_text.innerHTML = `Name: ${data_description.value}</br>
+            modal_text.innerHTML = `Name: ${data_article.value}</br>
                                     Description: ${data_description.value}</br>
                                     Price: ${data_initial_price.value}</br>
                                     Category: ${data_auction_category.value}</br>
@@ -84,6 +84,10 @@ document.addEventListener('DOMContentLoaded', function(){
             
 
         }
+        modal_back.addEventListener("click", function() {
+            modal_alert.classList.add('hide');
+            modal_alert.classList.remove('show');
+        })
         
         // modal_text
 
