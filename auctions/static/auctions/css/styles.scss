@@ -655,10 +655,10 @@ textarea{
     color: blue;
 }
 .hide {
-    display: none;
+    display: none !important;
 }
 .show {
-    display: block;
+    display: block !important;
 }
 #myDIV{
     background-color: white;

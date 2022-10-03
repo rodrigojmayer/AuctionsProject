@@ -33,19 +33,66 @@ document.addEventListener('DOMContentLoaded', function(){
         // alert("entrando al submit")
         modal_alert.classList.add('show');
         modal_alert.classList.remove('hide');
+
+        let modal_subtitle = document.getElementById("modal_subtitle");
+        let modal_text = document.getElementById("modal_text");
+        let modal_back = document.getElementById("modal_back");
+        let modal_save = document.getElementById("modal_save");
+        
         let data_article = document.getElementById("data_article");
         let data_description = document.getElementById("data_description");
         let data_initial_price = document.getElementById("data_initial_price");
         let data_auction_category = document.getElementById("data_auction_category");
         let data_image = document.getElementById("image");
-        if(data_article.value){
-            console.log("habemus articulus")
+        let modal_answer_text = "", modal_answer_subtitle
+        if(!data_article.value){
+            console.log("Article name missing")
+            modal_answer_text += "- Name</br>"
         }
-        console.log(data_article.value);
-        console.log(data_description.value);
-        console.log(data_initial_price.value);
-        console.log(data_auction_category.value);
-        console.log(data_image.value);
+        if(!data_description.value){
+            console.log("Description missing")
+            modal_answer_text += " - Description</br>"
+        }
+        if(!data_initial_price.value){
+            console.log("Price missing")
+            modal_answer_text += " - Price</br>"
+        }
+        if(!data_auction_category.value){
+            console.log("Category missing")
+            modal_answer_text += " - Category</br>"
+        }
+        if(!data_image.value){
+            console.log("Image missing")
+            modal_answer_text += " - Image</br>"
+        }
+
+        if(modal_answer_text){
+            modal_subtitle.innerHTML = "Missing data"
+            modal_text.innerHTML = `You need to enter: </br> ${modal_answer_text}`
+            modal_save.classList.remove('show');
+            modal_save.classList.add('hide');
+        }
+        else{
+            modal_subtitle.innerHTML = "Post item"
+
+            modal_text.innerHTML = `Name: ${data_description.value}</br>
+                                    Description: ${data_description.value}</br>
+                                    Price: ${data_initial_price.value}</br>
+                                    Category: ${data_auction_category.value}</br>
+                                    Image: ${document.getElementById("glosaArchivos").textContent}</br>`
+ 
+            
+
+        }
+        
+        // modal_text
+
+        // console.log(data_article.value);
+        // console.log(data_description.value);
+        // console.log(data_initial_price.value);
+        // console.log(data_auction_category.value);
+        // console.log(data_image.value);
+
 
     });
     
