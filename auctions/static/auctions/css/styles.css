@@ -307,7 +307,7 @@ input[type=number] {
   width: 80%;
   margin: 1rem auto;
 }
-.main .to-log-form-group input, .main .to-log-form-group .multiselect-dropdown {
+.main .to-log-form-group > input, .main .to-log-form-group .multiselect-dropdown {
   height: 3rem;
   margin: 0;
 }
@@ -318,6 +318,9 @@ input[type=number] {
   display: block;
   margin: auto;
   text-align: center;
+}
+.main .to-log-form-group .multiselect-dropdown-list {
+  height: 7rem !important;
 }
 .main form:first-child {
   padding-top: 0.5rem;

@@ -418,7 +418,7 @@ opacity: 1;
 
         width: 80%;
         margin: 1rem auto ;
-        input, .multiselect-dropdown{
+        >input, .multiselect-dropdown{
             height: 3rem;
             margin:0;
             // }
@@ -431,6 +431,9 @@ opacity: 1;
             display: block;
             margin: auto;
             text-align: center;
+        }
+        .multiselect-dropdown-list{
+            height: 7rem !important;
         }
     }
     form:first-child{

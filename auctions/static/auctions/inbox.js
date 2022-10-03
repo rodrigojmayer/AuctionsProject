@@ -276,3 +276,10 @@ function contar(elem, idGlosa) {
         glosa.innerText = elem.files.length + "  image selected";
     }
 }
+
+function submitButtonClick(event) {
+    event.preventDefault();
+    //other stuff you want to do instead...
+
+    
+} 
