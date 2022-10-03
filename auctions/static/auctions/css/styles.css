@@ -24,7 +24,9 @@
   --black-alpha-color: rgba(0, 0, 0, 0.3);
   --black-alpha-color2: rgba(0, 0, 0, 0.5);
   --green-color: rgba(54, 255, 74, 1);
-  --red-color: rgba(255, 72, 72, 1);
+  --red-color-pressing: rgba(255, 77, 77, 1);
+  --red-color-hover: rgb(255, 47, 47, 1);
+  --red-color: rgb(255, 17, 17, 1);
   --font: "Roboto", sans-serif;
   --max-width: 1200px;
   --header-height: 4rem;
@@ -358,7 +360,8 @@ input[type=number] {
   height: 10vw;
   width: 10vw;
   outline: dotted 1px var(--link);
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 1rem;
 }
 .main .form #display-image-environment #display-image {
   display: none;
@@ -366,6 +369,30 @@ input[type=number] {
   width: 10vw;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.main .form #display-image-environment #button_image {
+  display: block;
+  height: 10vw;
+  width: 10vw;
+  margin: 0;
+  padding: 0;
+  color: var(--black-color);
+  background-color: transparent;
+  border: none;
+}
+.main .form #display-image-environment #button_image p {
+  font-size: 1.5vw;
+  display: block;
+  padding-top: 10%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.main .form #display-image-environment #button_image p svg {
+  width: 2vw;
+  height: 2vw;
+}
+.main #accept {
+  margin-top: 0;
 }
 .main #answer {
   margin: 0 0.72rem;
@@ -411,6 +438,12 @@ input[type=number] {
 .modal-alert .modal-body #modal_back {
   background-color: var(--red-color);
   border: none;
+}
+.modal-alert .modal-body #modal_back:hover {
+  background-color: var(--red-color-hover);
+}
+.modal-alert .modal-body #modal_back:active {
+  background-color: var(--red-color-pressing);
 }
 
 .flex-horizontal {
@@ -496,7 +529,7 @@ textarea {
   width: 100% !important;
 }
 .multiselect-dropdown .optext {
-  margin: 0.5rem 0 !important;
+  margin: 0.5rem 0.1rem !important;
 }
 
 #auction_comments {

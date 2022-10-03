@@ -24,7 +24,9 @@
     --black-alpha-color: rgba(0, 0, 0, 0.3);
     --black-alpha-color2: rgba(0, 0, 0, 0.5);
     --green-color: rgba(54, 255, 74, 1);
-    --red-color: rgba(255, 72, 72, 1);
+    --red-color-pressing: rgba(255, 77, 77, 1);
+    --red-color-hover: rgb(255, 47, 47, 1);
+    --red-color: rgb(255, 17, 17, 1);
     --font: "Roboto", sans-serif;
     --max-width: 1200px;
     --header-height: 4rem;
@@ -483,7 +485,9 @@ opacity: 1;
             outline: dotted 1px var(--link);
             // border-inline: ;
             // padding:10px;
-            margin: 0 auto;
+            margin:  auto;
+            margin-top: 1rem;
+            // background-color: none !important;
             #display-image{
                 display: none;
                 // margin: 0.1px;
@@ -491,9 +495,44 @@ opacity: 1;
                 width: 10vw;
                 object-fit: contain;
                 // margin:auto;
+                // background-color: none !important;
+                
     
             }
+            
+            #button_image{
+                display:block;
+                height: 10vw ;
+                width: 10vw ;
+                margin:0 ;
+                padding:0;
+                color: var(--black-color);
+                background-color: transparent;
+                // outline: none;
+                border: none;
+                // z-index: 999;
+                p{
+                    font-size: 1.5vw;
+                    display: block;
+                    // margin: 10%;
+                    // height: 70% ;
+                    // width: 70% ;
+                    padding-top: 10%;
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    // text-align: center;
+                    // outline:none;
+                    svg{
+                        width:2vw;
+                        height: 2vw;
+                    }
+                }
+            }
         }
+    }
+    #accept{
+        margin-top:0;
     }
     #answer{
         // color: red;
@@ -545,6 +584,12 @@ opacity: 1;
         #modal_back{
             background-color: var(--red-color);
             border:none;
+        }
+        #modal_back:hover{
+            background-color: var(--red-color-hover);
+        }
+        #modal_back:active{
+            background-color: var(--red-color-pressing);
         }
         // #modal_save{
             // background-color: var(--green-color);
@@ -651,7 +696,7 @@ textarea{
     margin:auto !important;
     width: 100% !important;
     .optext{
-        margin: .5rem 0 !important;
+        margin: .5rem 0.1rem !important;
     }
 }
 #auction_comments{

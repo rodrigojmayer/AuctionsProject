@@ -12,8 +12,14 @@ document.addEventListener('DOMContentLoaded', function(){
     // });
 
     let inputElement = document.getElementById("input");
-    inputElement.addEventListener("change", handleFiles, false);
+    if(inputElement)
+        inputElement.addEventListener("change", handleFiles, false);
+
     function handleFiles() {
+        label_button = document.querySelector("#button_image p")
+        
+        label_button.classList.add('hide');
+        label_button.classList.remove('show');
         let fileList = this.files; /* now you can work with the file list */
         // console.log(fileList)
         document.getElementById("image").files = fileList
@@ -24,12 +30,16 @@ document.addEventListener('DOMContentLoaded', function(){
         img = document.getElementById("display-image");
         img.style.display = "block";
         img.src = URL.createObjectURL(fileList[0]);
+
         
     }
     
     let modal_alert = document.querySelector(".modal-alert");
     let accept = document.getElementById("accept");
-    accept.addEventListener("click", function() {
+    if(accept)
+        accept.addEventListener("click", handleModal, false)
+
+    function handleModal() {
         // alert("entrando al submit")
         modal_alert.classList.add('show');
         modal_alert.classList.remove('hide');
@@ -129,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
         // console.log(data_auction_category.value);
         // console.log(data_image.value);
 
-    });
+    };
     
 
     // const image_input = document.querySelector("#change_profile_picture");
