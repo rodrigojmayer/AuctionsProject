@@ -129,7 +129,7 @@ def create_listing(request):
         user_logged = request.user
         new_listing = AuctionListings(name=auction_name, initial_price=initial_price, description=description, image=image, id_user=user_logged)
         new_listing.save()
-        nl = AuctionListings.objects.get(name=auction_name)
+        nl = AuctionListings.objects.get(id=new_listing.id)
         for auction_categ in auction_category:
             nl.auction_category.add(auction_categ)
         nl.save()
@@ -448,7 +448,7 @@ def categories(request):
         # print(all_categories[0])
 
         response = {}
-        response = serializers.serialize("json", Category.objects.all())
+        response = serializers.serialize("json",all_categories)
 
         print("this is the json")
         print(response)
@@ -491,3 +491,21 @@ def category(request, id_category):
         "last_auction_id" : last_auction,
     })
 
+
+@csrf_exempt
+def check_auction(request):
+        # response = {}
+        # response = serializers.serialize("json", "holis")
+        # var = {request.}
+        # data = json.loads(request)
+        name=request.POST.get('name')
+        print(" el nname esssssssssssssssssss")
+        print(name)
+        # print (request.body['Content-Type'])
+        response = serializers.serialize("json", Category.objects.all())
+        # response={request.description}
+
+        return JsonResponse({
+            "checked_auction":response,
+        }
+        , status=201)

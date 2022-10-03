@@ -24,7 +24,9 @@ urlpatterns = [
     path("create_answer/<str:id_comment>", views.create_answer, name="create_answer"),
     path("watch_list/", views.watch_list, name="watch_list"),
     path("categories/", views.categories, name="categories"),
-    path("category/<str:id_category>", views.category, name="category")
+    path("category/<str:id_category>", views.category, name="category"),
+    path("check_auction/", views.check_auction, name="check_auction"),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #agregado para las imagenes: + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

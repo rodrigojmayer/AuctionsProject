@@ -45,6 +45,12 @@ document.addEventListener('DOMContentLoaded', function(){
         let data_auction_category = document.getElementById("data_auction_category");
         let data_image = document.getElementById("image");
         let modal_answer_text = "", modal_answer_subtitle
+        // data_article.value=1
+        // data_description.value=1
+        // data_initial_price.value=1
+        // data_image.value=1
+
+        
         if(!data_article.value){
             console.log("Article name missing")
             modal_answer_text += "- Name</br>"
@@ -73,6 +79,71 @@ document.addEventListener('DOMContentLoaded', function(){
             modal_save.classList.add('hide');
         }
         else{
+
+            const formData = new FormData();
+            //console.log(name);
+            formData.append('name', data_article.value);
+            // formData.append('email', email);
+            // formData.append('subject', subject);
+            formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+            console.log(formData);
+            
+            // let response =  fetch(`/check_auction/`, {
+            fetch(`/check_auction/`, {
+                method: 'POST',
+                
+                
+                body:formData,
+            })
+
+            // let data =  response.json()
+            // console.log( data)
+
+            .then(response => response.json())
+            .then(result => {
+                // console.log(result)
+
+
+                // console.log(result.checked_auction)
+                var array = JSON.parse(result.checked_auction);
+
+
+
+                // var array =Object.values(result.categories_array)
+                // console.log("primero");
+                // console.log(result.categories_array);
+                // console.log("Segundo");
+                console.log(array);
+        
+                // array.forEach(element => {
+                //     // categories_list += `<li><a href="../category/{{ categories.id }}"> ${element} </a></li>`;
+                //     // console.log("fields field");
+                //     // console.log(element.fields);
+                //     // console.log("fields category name");
+                //     // console.log(element.fields.category_name);
+                //     // console.log("PKk");
+                //     // console.log(element.pk);
+                //     categories_list += `<a href="../category/${element.pk}"><li> ${element.fields.category_name} </li></a>`;
+                //     cont_cat++;
+                // });
+                // cont_cat = cont_cat * 2.5;
+                // // cont_cat = cont_cat + 2.5;
+                // cont_cat = cont_cat + "rem"
+                // document.querySelector("#myDropdownCategories > ul").innerHTML = categories_list;
+                // document.getElementById("myDropdownCategories").style.height = cont_cat;
+            })
+            .catch((error) => {
+                console.log(error)
+            });
+
+
+
+
+
+
+
+
+
             modal_subtitle.innerHTML = "Post item"
 
             modal_text.innerHTML = `Name: ${data_article.value}</br>
@@ -81,10 +152,9 @@ document.addEventListener('DOMContentLoaded', function(){
                                     Category: ${data_auction_category.value}</br>
                                     Image: ${document.getElementById("glosaArchivos").textContent}</br>`
  
-                                    modal_save.classList.remove('hide');
-                                    modal_save.classList.add('show');
-                                    modal_save.onclick="";
-            
+            modal_save.classList.remove('hide');
+            modal_save.classList.add('show');
+            modal_save.onclick="";
 
         }
         modal_back.addEventListener("click", function() {
@@ -99,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function(){
         // console.log(data_initial_price.value);
         // console.log(data_auction_category.value);
         // console.log(data_image.value);
-
 
     });
     
