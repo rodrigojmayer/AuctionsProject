@@ -81,6 +81,9 @@ document.addEventListener('DOMContentLoaded', function(){
                                     Category: ${data_auction_category.value}</br>
                                     Image: ${document.getElementById("glosaArchivos").textContent}</br>`
  
+                                    modal_save.classList.remove('hide');
+                                    modal_save.classList.add('show');
+                                    modal_save.onclick="";
             
 
         }
@@ -281,5 +284,4 @@ function submitButtonClick(event) {
     event.preventDefault();
     //other stuff you want to do instead...
 
-    
 } 
