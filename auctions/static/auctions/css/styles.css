@@ -21,7 +21,10 @@
   --title-color: #333;
   --text-color: #222;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
-  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.3);
+  --black-alpha-color2: rgba(0, 0, 0, 0.5);
+  --green-color: rgba(54, 255, 74, 1);
+  --red-color: rgba(255, 72, 72, 1);
   --font: "Roboto", sans-serif;
   --max-width: 1200px;
   --header-height: 4rem;
@@ -395,6 +398,7 @@ input[type=number] {
   width: 25vw;
   max-width: 20rem;
   margin: 25vh auto;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
 }
 .modal-alert .modal-body h5, .modal-alert .modal-body p {
   text-align: center;
@@ -403,6 +407,15 @@ input[type=number] {
 .modal-alert .modal-body .btn {
   display: block;
   margin: 0.5rem auto;
+}
+.modal-alert .modal-body #modal_back {
+  background-color: var(--red-color);
+  border: none;
+}
+
+.flex-horizontal {
+  display: flex;
+  gap: 0.5rem;
 }
 
 #login, #register, #id_create_listing, #create_comment {

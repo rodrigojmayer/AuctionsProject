@@ -21,7 +21,10 @@
     --title-color: #333;
     --text-color: #222;
     --white-alpha-color: rgba(255, 255, 255, 0.5);
-    --black-alpha-color: rgba(0, 0, 0, 0.5);
+    --black-alpha-color: rgba(0, 0, 0, 0.3);
+    --black-alpha-color2: rgba(0, 0, 0, 0.5);
+    --green-color: rgba(54, 255, 74, 1);
+    --red-color: rgba(255, 72, 72, 1);
     --font: "Roboto", sans-serif;
     --max-width: 1200px;
     --header-height: 4rem;
@@ -529,6 +532,7 @@ opacity: 1;
         max-width: 20rem;
         // height: 20vh;
         margin: 25vh auto;
+        box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
         // align-items: center;
         h5, p{
             text-align: center;
@@ -538,7 +542,20 @@ opacity: 1;
             display: block;
             margin: .5rem auto;
         }
+        #modal_back{
+            background-color: var(--red-color);
+            border:none;
+        }
+        // #modal_save{
+            // background-color: var(--green-color);
+            // border:none;
+        // }
     }
+
+}
+.flex-horizontal{
+    display: flex;
+    gap: .5rem;
 
 }
 // #create_bid, #create_comment, #category{

@@ -498,14 +498,21 @@ def check_auction(request):
         # response = serializers.serialize("json", "holis")
         # var = {request.}
         # data = json.loads(request)
-        name=request.POST.get('name')
-        print(" el nname esssssssssssssssssss")
-        print(name)
+        new_auction_name=request.POST.get('name')
+        auction_data = AuctionListings.objects.filter(name=new_auction_name, auction_active=1)
+        if(auction_data):
+            print("There is already an active auction with that name")
+            auction_repeated = True
+        else:
+            print("There is no active auction with that name")
+            auction_repeated = False
+        # print(" el nname esssssssssssssssssss")
+        # print(name)
         # print (request.body['Content-Type'])
-        response = serializers.serialize("json", Category.objects.all())
+        # response = serializers.serialize("json", Category.objects.all())
         # response={request.description}
 
         return JsonResponse({
-            "checked_auction":response,
+            "auction_repeated":auction_repeated,
         }
         , status=201)
