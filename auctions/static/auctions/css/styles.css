@@ -351,11 +351,16 @@ input[type=number] {
   width: 100%;
   margin: 1.7rem 0;
 }
-.main .form #display-image {
-  display: none;
+.main .form #display-image-environment {
+  height: 10vw;
+  width: 10vw;
+  outline: dotted 1px var(--link);
   margin: 0 auto;
-  height: 17vw;
-  width: 17vw;
+}
+.main .form #display-image-environment #display-image {
+  display: none;
+  height: 10vw;
+  width: 10vw;
   -o-object-fit: contain;
      object-fit: contain;
 }

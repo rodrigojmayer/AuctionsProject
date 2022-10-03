@@ -49,9 +49,11 @@
             <!-- <img id="display-image" src="/media/{{ user.header_image }}"></img> -->
 
             <input type="file" multiple id="image" name="image" onchange="contar(this, 'glosaArchivos')" style="display: none">
+            <div id="display-image-environment">
+                <img id="display-image" src="default.jpg" >
+            </div>
             <span id="glosaArchivos">None image selected</span>
-            <img id="display-image" src="">
-
+            
         </div>
         <!-- <input class="btn btn-primary" type="submit" value="Save and add another" name="_save"> -->
         

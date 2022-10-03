@@ -471,12 +471,25 @@ opacity: 1;
             width: 100%;
             margin: 1.7rem 0;
         }
-        #display-image{
-            display: none;
+        #display-image-environment{
+            
+            // height: calc(10vw + 2px);
+            // width: calc(10vw + 2px);
+            height: 10vw;
+            width: 10vw;
+            outline: dotted 1px var(--link);
+            // border-inline: ;
+            // padding:10px;
             margin: 0 auto;
-            height: 17vw;
-            width: 17vw;
-            object-fit: contain;
+            #display-image{
+                display: none;
+                // margin: 0.1px;
+                height: 10vw;
+                width: 10vw;
+                object-fit: contain;
+                // margin:auto;
+    
+            }
         }
     }
     #answer{
