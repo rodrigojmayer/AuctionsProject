@@ -194,6 +194,25 @@ function handleModal() {
             });
         }
     }
+
+    else if( modal.getAttribute('value') == "listing_page"){
+
+        // new_bid
+        const bid_price = document.getElementById("bid_price")
+        // console.log("inicial price: " + bid_price.getAttribute('value'))
+        const new_bid = document.getElementById("new_bid")
+        // console.log("new bid: " + new_bid.value)
+        if(bid_price.getAttribute('value') < new_bid.value){
+            modal_subtitle.innerHTML = "Duplicate data"
+            modal_text.innerHTML = "There is already an active article with that name."
+            rejected_modal()
+
+        }
+            
+    }
+
+
+
     modal_back.addEventListener("click", function() {
         modal_alert.classList.add('hide');
         modal_alert.classList.remove('show');
