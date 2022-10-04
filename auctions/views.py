@@ -445,7 +445,7 @@ def watch_list(request):
 @login_required
 def categories(request):
     print("Entrando al categoriesssssssDDDDDDDDDDDDDDDDDDDDDDDD")
-    all_categories = Category.objects.all()
+    all_categories = Category.objects.all().order_by('category_name')
     if request.method == "POST":
         # print(all_categories[0])
 

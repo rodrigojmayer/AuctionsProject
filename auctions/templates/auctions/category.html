@@ -9,13 +9,17 @@
             {% for auction_category in auction_listing_category %}
                 <div id="listing_auction" >
                     <div id="auction_image">
-                        <a href="../listing_page/{{ auction_category.id }}" >
+
+                        <a href="{% url 'auctions_app:listing_page' auction_category.id %}">
+                        <!-- <a href="../listing_page/{{ auction_category.id }}" > -->
                             <img src="/media/{{ auction_category.image }}"  height="200px">
                         </a>
                     </div>
                     <div id="order-column">
                         <div id="auction_name">
-                            <a href="../listing_page/{{ auction_category.id }}" >
+                        <a href="{% url 'auctions_app:listing_page' auction_category.id %}">
+                            <!-- <a href="../listing_page/{{ auction_category.id }}" > -->
+
                                 <h2>{{ auction_category.name }}</h2>
                             </a>  
                         </div> 

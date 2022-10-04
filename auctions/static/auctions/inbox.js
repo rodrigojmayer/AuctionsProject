@@ -270,7 +270,8 @@ function charge_categories(){
             // console.log(element.fields.category_name);
             // console.log("PKk");
             // console.log(element.pk);
-            categories_list += `<a href="../category/${element.pk}"><li> ${element.fields.category_name} </li></a>`;
+            categories_list += `<a href="/category/${element.pk}"><li> ${element.fields.category_name} </li></a>`;
+            // categories_list += `<a href="{% url 'auctions_app:categories' %}"><li> ${element.fields.category_name} </li></a>`;
             cont_cat++;
         });
         cont_cat = cont_cat * 2.5;
