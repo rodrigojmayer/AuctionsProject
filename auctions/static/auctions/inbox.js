@@ -37,112 +37,113 @@ document.addEventListener('DOMContentLoaded', function(){
         
     }
     
-    let modal_alert = document.querySelector(".modal-alert");
-    let accept = document.getElementById("accept");
-    if(accept)
-        accept.addEventListener("click", handleModal, false)
+    // let modal_alert = document.querySelector(".modal-alert");
+    // console.log(modal_alert)
+    // let accept = document.getElementById("accept");
+    // if(accept)
+    //     accept.addEventListener("click", handleModal, false)
 
-    function handleModal() {
-        // alert("entrando al submit")
-        modal_alert.classList.add('show');
-        modal_alert.classList.remove('hide');
+    // function handleModal() {
+    //     // alert("entrando al submit")
+    //     modal_alert.classList.add('show');
+    //     modal_alert.classList.remove('hide');
 
-        let modal_subtitle = document.getElementById("modal_subtitle");
-        let modal_text = document.getElementById("modal_text");
-        let modal_back = document.getElementById("modal_back");
-        let modal_save = document.getElementById("modal_save");
+    //     let modal_subtitle = document.getElementById("modal_subtitle");
+    //     let modal_text = document.getElementById("modal_text");
+    //     let modal_back = document.getElementById("modal_back");
+    //     let modal_save = document.getElementById("modal_save");
         
-        let data_article = document.getElementById("data_article");
-        let data_description = document.getElementById("data_description");
-        let data_initial_price = document.getElementById("data_initial_price");
-        let data_auction_category = document.getElementById("data_auction_category");
-        let data_image = document.getElementById("image");
-        let modal_answer_text = "", modal_answer_subtitle
-        // data_article.value=1
-        // data_description.value=1
-        // data_initial_price.value=1
-        // data_image.value=1
+    //     let data_article = document.getElementById("data_article");
+    //     let data_description = document.getElementById("data_description");
+    //     let data_initial_price = document.getElementById("data_initial_price");
+    //     let data_auction_category = document.getElementById("data_auction_category");
+    //     let data_image = document.getElementById("image");
+    //     let modal_answer_text = "", modal_answer_subtitle
+    //     // data_article.value=1
+    //     // data_description.value=1
+    //     // data_initial_price.value=1
+    //     // data_image.value=1
 
         
-        if(!data_article.value){
-            console.log("Article name missing")
-            modal_answer_text += "- Name</br>"
-        }
-        if(!data_description.value){
-            console.log("Description missing")
-            modal_answer_text += " - Description</br>"
-        }
-        if(!data_initial_price.value){
-            console.log("Price missing")
-            modal_answer_text += " - Price</br>"
-        }
-        if(!data_auction_category.value){
-            console.log("Category missing")
-            modal_answer_text += " - Category</br>"
-        }
-        if(!data_image.value){
-            console.log("Image missing")
-            modal_answer_text += " - Image</br>"
-        }
+    //     if(!data_article.value){
+    //         console.log("Article name missing")
+    //         modal_answer_text += "- Name</br>"
+    //     }
+    //     if(!data_description.value){
+    //         console.log("Description missing")
+    //         modal_answer_text += " - Description</br>"
+    //     }
+    //     if(!data_initial_price.value){
+    //         console.log("Price missing")
+    //         modal_answer_text += " - Price</br>"
+    //     }
+    //     if(!data_auction_category.value){
+    //         console.log("Category missing")
+    //         modal_answer_text += " - Category</br>"
+    //     }
+    //     if(!data_image.value){
+    //         console.log("Image missing")
+    //         modal_answer_text += " - Image</br>"
+    //     }
 
-        if(modal_answer_text){
-            modal_subtitle.innerHTML = "Missing data"
-            modal_text.innerHTML = `You need to enter: </br> ${modal_answer_text}`
-            rejected_modal()
-        }
-        else{
+    //     if(modal_answer_text){
+    //         modal_subtitle.innerHTML = "Missing data"
+    //         modal_text.innerHTML = `You need to enter: </br> ${modal_answer_text}`
+    //         rejected_modal()
+    //     }
+    //     else{
 
-            const formData = new FormData();
-            formData.append('name', data_article.value);
-            formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
-            // console.log(formData);
-            fetch(`/check_auction/`, {
-                method: 'POST',
-                body:formData,
-            })
-            .then(response => response.json())
-            .then(result => {
-                console.log(result.auction_repeated)
-                if(result.auction_repeated){
-                    modal_subtitle.innerHTML = "Duplicate data"
-                    modal_text.innerHTML = "There is already an active article with that name."
-                    rejected_modal()
-                }
-                else{
-                    modal_subtitle.innerHTML = "Post item"
-                    modal_text.innerHTML = `Name: ${data_article.value}</br>
-                                            Description: ${data_description.value}</br>
-                                            Price: ${data_initial_price.value}</br>
-                                            Category: ${data_auction_category.value}</br>
-                                            Image: ${document.getElementById("glosaArchivos").textContent}</br>`
-                    modal_save.classList.remove('hide');
-                    modal_save.classList.add('show');
-                    modal_save.onclick="";
-                }
+    //         const formData = new FormData();
+    //         formData.append('name', data_article.value);
+    //         formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+    //         // console.log(formData);
+    //         fetch(`/check_auction/`, {
+    //             method: 'POST',
+    //             body:formData,
+    //         })
+    //         .then(response => response.json())
+    //         .then(result => {
+    //             console.log(result.auction_repeated)
+    //             if(result.auction_repeated){
+    //                 modal_subtitle.innerHTML = "Duplicate data"
+    //                 modal_text.innerHTML = "There is already an active article with that name."
+    //                 rejected_modal()
+    //             }
+    //             else{
+    //                 modal_subtitle.innerHTML = "Post item"
+    //                 modal_text.innerHTML = `Name: ${data_article.value}</br>
+    //                                         Description: ${data_description.value}</br>
+    //                                         Price: ${data_initial_price.value}</br>
+    //                                         Category: ${data_auction_category.value}</br>
+    //                                         Image: ${document.getElementById("glosaArchivos").textContent}</br>`
+    //                 modal_save.classList.remove('hide');
+    //                 modal_save.classList.add('show');
+    //                 modal_save.onclick="";
+    //             }
 
-            })
-            .catch((error) => {
-                console.log(error)
-            });
-        }
-        modal_back.addEventListener("click", function() {
-            modal_alert.classList.add('hide');
-            modal_alert.classList.remove('show');
-        })
+    //         })
+    //         .catch((error) => {
+    //             console.log(error)
+    //         });
+    //     }
+    //     modal_back.addEventListener("click", function() {
+    //         modal_alert.classList.add('hide');
+    //         modal_alert.classList.remove('show');
+    //     })
     
-        function rejected_modal(){
-            modal_save.classList.remove('show');
-            modal_save.classList.add('hide');
-        }
-        // modal_text
+    //     function rejected_modal(){
+    //         modal_save.classList.remove('show');
+    //         modal_save.classList.add('hide');
+    //     }
+    //     // modal_text
 
-        // console.log(data_article.value);
-        // console.log(data_description.value);
-        // console.log(data_initial_price.value);
-        // console.log(data_auction_category.value);
-        // console.log(data_image.value);
+    //     // console.log(data_article.value);
+    //     // console.log(data_description.value);
+    //     // console.log(data_initial_price.value);
+    //     // console.log(data_auction_category.value);
+    //     // console.log(data_image.value);
 
-    };
+    // };
     
 
     // const image_input = document.querySelector("#change_profile_picture");

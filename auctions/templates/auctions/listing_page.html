@@ -61,12 +61,16 @@
                                     <input class="form-control" type="number" name="new_bid" placeholder="New bid">
                                     <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
                                     {% if user_logged.id %} 
-                                        <input class="btn btn-primary" type="submit" value="Place bid" >
+                                        <input  id="accept" class="btn btn-primary"  value="Place bid" >
                                     {% else %}
                                         <input class="btn btn-primary"  id="myDIV" disabled value="Place bid" >
                                         <div class="hide">You must be logged to place a bid.</div>
                                     {% endif %}
                                 </div>
+
+                                
+                                <div id="modal" value="listing_page"> </div>
+
                             </form>
                         {% endif %}
                     {% else %}
@@ -154,6 +158,9 @@
                             <div class="hide">You must be logged to add a comment.</div>
                         {% endif %}
                     </div>
+
+
+
                 </form>
             {% else %}
                 <!-- You can't create questions because you are the owner of the auction. -->
