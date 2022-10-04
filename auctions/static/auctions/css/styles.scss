@@ -867,3 +867,21 @@ footer {
     justify-content: space-evenly;
 
 }
+
+
+
+#app{
+    width: 100%;
+    text-align: center;
+    #problem{
+        font-size: 57px;
+    }
+    input{
+        display: block;
+        margin: auto;
+    }
+    .incorrect{
+        color:red;
+    }
+    
+}

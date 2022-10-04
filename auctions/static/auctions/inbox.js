@@ -3,7 +3,10 @@
 document.addEventListener('DOMContentLoaded', function(){
 
 
-    charge_categories();
+
+    let id_categories = document.getElementById("id_categories");
+    if(id_categories)
+        charge_categories();
     
     
     // document.querySelector("#id_create_listing > form > div > input.btn.btn-primary").addEventListener("click", function() {

@@ -657,4 +657,19 @@ footer div {
   flex-direction: column;
   gap: 0.7rem;
   justify-content: space-evenly;
+}
+
+#app {
+  width: 100%;
+  text-align: center;
+}
+#app #problem {
+  font-size: 57px;
+}
+#app input {
+  display: block;
+  margin: auto;
+}
+#app .incorrect {
+  color: red;
 }/*# sourceMappingURL=styles.css.map */
