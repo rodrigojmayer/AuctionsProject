@@ -659,6 +659,10 @@ footer div {
   justify-content: space-evenly;
 }
 
+#watch_list_main {
+  background-color: transparent;
+}
+
 #app {
   width: 100%;
   text-align: center;
