@@ -198,13 +198,21 @@ function handleModal() {
     else if( modal.getAttribute('value') == "listing_page"){
 
         // new_bid
-        const bid_price = document.getElementById("bid_price")
-        // console.log("inicial price: " + bid_price.getAttribute('value'))
-        const new_bid = document.getElementById("new_bid")
-        // console.log("new bid: " + new_bid.value)
-        if(bid_price.getAttribute('value') < new_bid.value){
-            modal_subtitle.innerHTML = "Duplicate data"
-            modal_text.innerHTML = "There is already an active article with that name."
+        const bid_price = parseInt(document.getElementById("bid_price").getAttribute('value'))
+        console.log("inicial price: " + bid_price)
+        const new_bid = parseInt(document.getElementById("new_bid").value)
+        console.log("new bid: " + new_bid)
+        if(bid_price < new_bid){
+            modal_subtitle.innerHTML = "New bid"
+            modal_text.innerHTML = "You are offering $" + new_bid
+            modal_save.classList.remove('hide');
+            modal_save.classList.add('show');
+            modal_save.onclick="";
+        }
+        else{
+
+            modal_subtitle.innerHTML = "Not enough"
+            modal_text.innerHTML = "Your offer must be higher than $" + bid_price
             rejected_modal()
 
         }

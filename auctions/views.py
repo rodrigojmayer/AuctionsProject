@@ -171,8 +171,8 @@ def create_category(request):
 
 def listing_page(request, auction):
     user_logged = request.user
-    print("auction")
-    print(auction)
+    # print("auction")
+    # print(auction)
     auction_data = AuctionListings.objects.get(id=auction)
     actual_bid = Bids.objects.filter(id_auction=auction_data.id)
     actual_comment = Comments.objects.filter(id_auction=auction_data.id)
@@ -182,90 +182,104 @@ def listing_page(request, auction):
         actual_bid = Bids.objects.get(id_auction=auction_data.id)
     # print("user_logged.id")
     # print(user_logged.id)
-    # print("request.POST")
-    # print(request.POST)
+    print("request POST:")
+    print(request.POST)
     # if(request.POST):
     #     print("true")
     # else:
     #     print("false")
     # print("request.method")
     # print(request.method)
-    # print('request.POST["_place_bid"]')
-    # if("_place_bid" in request.POST):
-    #     print("asdf")
+    print('request POST ["_place bid"]:')
+    if("_place_bid" in request.POST):
+        print(request.POST["_place_bid"])
     # if("new_bid" in request.POST):
     #     print("new_bidnew_bid")
 
         
-        # print(request.POST["_place_bid"])
     
     '''print(auction_data.id)'''
-    if(request.method == "POST"):
+    # if(request.method == "POST"):
             
-        # if("_place_bid" in request.POST):
-        if(request.POST["_place_bid"] == "Add to Watchlist"):
-            add_watchlist = WatchLists(id_auction=auction_data , id_user=user_logged)
-            add_watchlist.save()
-            '''print(add_watchlist)'''
-            in_watchlist=add_watchlist
-        else:
-            '''print(user_logged)
-            print(auction_data.id)'''
-            del_watchlist = WatchLists.objects.get(id_auction=auction_data.id,id_user=user_logged.id)
-            del_watchlist.delete()
-            in_watchlist=False
-            #pass
-        #elif((request.POST["_place_bid"]))
+    #     # if("_place_bid" in request.POST):
+    #     if(request.POST["_place_bid"] == "Add to Watchlist"):
+    #         already_in_watchlist = WatchLists.objects.filter(id_auction=auction_data,id_user=user_logged)
+    #         if(already_in_watchlist):
+    #             print("This item is already charged in the watchlist--->")
+    #             in_watchlist=already_in_watchlist
+    #         else:
+    #             print("This item is not already charged in the watchlist--->")
+    #             add_watchlist = WatchLists(id_auction=auction_data , id_user=user_logged)
+    #             add_watchlist.save()
+    #             '''print(add_watchlist)'''
+    #             in_watchlist=add_watchlist
+    #     else:
+    #         '''print(user_logged)
+    #         print(auction_data.id)'''
+    #         del_watchlist = WatchLists.objects.get(id_auction=auction_data.id,id_user=user_logged.id)
+    #         if(del_watchlist):
+    #             del_watchlist.delete()
+    #         in_watchlist=False
+    #         #pass
+    #     #elif((request.POST["_place_bid"]))
             
+    # else:
+    in_watchlist = WatchLists.objects.filter(id_auction=auction_data.id,id_user=user_logged.id)
+    if(in_watchlist):
+        in_watchlist = "in_watchlist"
     else:
-        in_watchlist = WatchLists.objects.filter(id_auction=auction_data.id,id_user=user_logged.id)
-        new_bid = request.GET.get('new_bid')
-        close_auction = request.GET.get('close_auction')
-        new_comment = request.GET.get('new_comment')
-        print(new_bid)
-        print(close_auction)
-        print(new_comment)
-        if(new_bid):
-            #actual_bid = Bids.objects.filter(id_auction=auction_data.id)
-            print("hay una nueva oferta")
-            print(actual_bid)
-            if(actual_bid):
-                print("si ya tenia una oferta anterior")
-                #actual_bid = Bids.objects.get(id_auction=auction_data.id)
-                if(int(new_bid) > actual_bid.price):
-                    print("nueva oferta mayor que la anterior")
-                    actual_bid.delete()
-                    add_bid = Bids(id_auction=auction_data, price=int(new_bid), id_user=user_logged)
-                    add_bid.save()
-                    actual_bid = add_bid
-                else:
-                    print("nueva oferta no es mayor que la anterior")
-                    err_mess = "Your bid is lower than the previous"
+        in_watchlist = "out_watchlist"
+
+    new_bid = request.GET.get('new_bid')
+    close_auction = request.GET.get('close_auction')
+    new_comment = request.GET.get('new_comment')
+    print("new bid:")
+    print(new_bid)
+    print("close auction:")
+    print(close_auction)
+    print("new comment:")
+    print(new_comment)
+    if(new_bid):
+        #actual_bid = Bids.objects.filter(id_auction=auction_data.id)
+        print("hay una nueva oferta")
+        print(actual_bid)
+        if(actual_bid):
+            print("si ya tenia una oferta anterior")
+            #actual_bid = Bids.objects.get(id_auction=auction_data.id)
+            if(int(new_bid) > actual_bid.price):
+                print("nueva oferta mayor que la anterior")
+                actual_bid.delete()
+                add_bid = Bids(id_auction=auction_data, price=int(new_bid), id_user=user_logged)
+                add_bid.save()
+                actual_bid = add_bid
             else:
-                print("no tenia una oferta anterior")
-                if(int(new_bid)>=auction_data.initial_price):
-                    print("nueva oferta mayor o igual que la inicial")
-                    add_bid = Bids(id_auction=auction_data, price=int(new_bid), id_user=user_logged)
-                    add_bid.save()
-                    actual_bid = add_bid
-                else:
-                    print("nueva oferta es menor que la inicial")
-                    err_mess = "Your bid is lower than the starting price."
-
-        elif(new_bid == "" and new_comment == ""):
-            print("no ha ingresado ninguna oferta o comentario")
-            err_mess = "You have not entered any bid or comment."
-        elif(new_comment):
-            add_comment = Comments(id_auction=auction_data, description=new_comment, id_user=user_logged)
-            add_comment.save()
-        elif(close_auction):
-            print("se pidió el cierre de la auction list")
-            auction_data.auction_active = 0
-            auction_data.save()
-
+                print("nueva oferta no es mayor que la anterior")
+                err_mess = "Your bid is lower than the previous"
         else:
-            print("carga inicial de la pagina")
-            
+            print("no tenia una oferta anterior")
+            if(int(new_bid)>=auction_data.initial_price):
+                print("nueva oferta mayor o igual que la inicial")
+                add_bid = Bids(id_auction=auction_data, price=int(new_bid), id_user=user_logged)
+                add_bid.save()
+                actual_bid = add_bid
+            else:
+                print("nueva oferta es menor que la inicial")
+                err_mess = "Your bid is lower than the starting price."
+
+    elif(new_bid == "" and new_comment == ""):
+        print("no ha ingresado ninguna oferta o comentario")
+        err_mess = "You have not entered any bid or comment."
+    elif(new_comment):
+        add_comment = Comments(id_auction=auction_data, description=new_comment, id_user=user_logged)
+        add_comment.save()
+    elif(close_auction):
+        print("se pidió el cierre de la auction list")
+        auction_data.auction_active = 0
+        auction_data.save()
+
+    else:
+        print("carga inicial de la pagina")
+        
             
             
             
@@ -444,7 +458,7 @@ def watch_list(request):
 @csrf_exempt
 @login_required
 def categories(request):
-    print("Entrando al categoriesssssssDDDDDDDDDDDDDDDDDDDDDDDD")
+    # print("Entrando al categoriesssssssDDDDDDDDDDDDDDDDDDDDDDDD")
     all_categories = Category.objects.all().order_by('category_name')
     if request.method == "POST":
         # print(all_categories[0])
@@ -452,8 +466,8 @@ def categories(request):
         response = {}
         response = serializers.serialize("json",all_categories)
 
-        print("this is the json")
-        print(response)
+        # print("this is the json")
+        # print(response)
         # categories_array = []   
         # for each_category in all_categories:
         #     # print(each_category)
@@ -518,3 +532,123 @@ def check_auction(request):
             "auction_repeated":auction_repeated,
         }
         , status=201)
+
+
+        
+def add_in_watch_list(request, auction):
+    user_logged = request.user
+    # print("auction")
+    # print(auction)
+    auction_data = AuctionListings.objects.get(id=auction)
+    actual_bid = Bids.objects.filter(id_auction=auction_data.id)
+    actual_comment = Comments.objects.filter(id_auction=auction_data.id)
+    comments = Comments.objects.filter(id_auction=auction_data.id)
+    err_mess = ""
+    if(actual_bid):
+        actual_bid = Bids.objects.get(id_auction=auction_data.id)
+    # print("user_logged.id")
+    # print(user_logged.id)
+    print("request POST:")
+    # print(request.POST)
+    # if(request.POST):
+    #     print("true")
+    # else:
+    #     print("false")
+    # print("request.method")
+    # print(request.method)
+    print('request POST ["_place bid"]:')
+    # if("_place_bid" in request.POST):
+        # print(request.POST["_place_bid"])
+    # if("new_bid" in request.POST):
+    #     print("new_bidnew_bid")
+
+        
+    
+    '''print(auction_data.id)'''
+    if(request.method == "GET"):
+            
+        # if("_place_bid" in request.POST):
+        if(request.GET["_place_bid"] == "Add to Watchlist"):
+            already_in_watchlist = WatchLists.objects.filter(id_auction=auction_data,id_user=user_logged)
+            if(already_in_watchlist):
+                print("This item is already charged in the watchlist--->")
+                in_watchlist=already_in_watchlist
+            else:
+                print("This item is not already charged in the watchlist--->")
+                add_watchlist = WatchLists(id_auction=auction_data , id_user=user_logged)
+                add_watchlist.save()
+                '''print(add_watchlist)'''
+                in_watchlist=add_watchlist
+        else:
+            '''print(user_logged)
+            print(auction_data.id)'''
+            del_watchlist = WatchLists.objects.get(id_auction=auction_data.id,id_user=user_logged.id)
+            if(del_watchlist):
+                del_watchlist.delete()
+            in_watchlist=False
+            #pass
+        #elif((request.POST["_place_bid"]))
+            
+    # else:
+    #     in_watchlist = WatchLists.objects.filter(id_auction=auction_data.id,id_user=user_logged.id)
+    #     new_bid = request.GET.get('new_bid')
+    #     close_auction = request.GET.get('close_auction')
+    #     new_comment = request.GET.get('new_comment')
+    #     print("new bid:")
+    #     print(new_bid)
+    #     print("close auction:")
+    #     print(close_auction)
+    #     print("new comment:")
+    #     print(new_comment)
+    #     if(new_bid):
+    #         #actual_bid = Bids.objects.filter(id_auction=auction_data.id)
+    #         print("hay una nueva oferta")
+    #         print(actual_bid)
+    #         if(actual_bid):
+    #             print("si ya tenia una oferta anterior")
+    #             #actual_bid = Bids.objects.get(id_auction=auction_data.id)
+    #             if(int(new_bid) > actual_bid.price):
+    #                 print("nueva oferta mayor que la anterior")
+    #                 actual_bid.delete()
+    #                 add_bid = Bids(id_auction=auction_data, price=int(new_bid), id_user=user_logged)
+    #                 add_bid.save()
+    #                 actual_bid = add_bid
+    #             else:
+    #                 print("nueva oferta no es mayor que la anterior")
+    #                 err_mess = "Your bid is lower than the previous"
+    #         else:
+    #             print("no tenia una oferta anterior")
+    #             if(int(new_bid)>=auction_data.initial_price):
+    #                 print("nueva oferta mayor o igual que la inicial")
+    #                 add_bid = Bids(id_auction=auction_data, price=int(new_bid), id_user=user_logged)
+    #                 add_bid.save()
+    #                 actual_bid = add_bid
+    #             else:
+    #                 print("nueva oferta es menor que la inicial")
+    #                 err_mess = "Your bid is lower than the starting price."
+
+    #     elif(new_bid == "" and new_comment == ""):
+    #         print("no ha ingresado ninguna oferta o comentario")
+    #         err_mess = "You have not entered any bid or comment."
+    #     elif(new_comment):
+    #         add_comment = Comments(id_auction=auction_data, description=new_comment, id_user=user_logged)
+    #         add_comment.save()
+    #     elif(close_auction):
+    #         print("se pidió el cierre de la auction list")
+    #         auction_data.auction_active = 0
+    #         auction_data.save()
+
+    #     else:
+    #         print("carga inicial de la pagina")
+            
+            
+            
+            
+    return render(request, "auctions/listing_page.html", {
+        "auction_data": auction_data,
+        "in_watchlist": in_watchlist,
+        "user_logged" : user_logged,
+        "actual_bid" : actual_bid,
+        "err" : err_mess,
+        "comments" : comments,
+    })

@@ -562,11 +562,21 @@ textarea {
 #in_watchlist {
   /*color: blue;*/
   background-color: blue;
+  box-shadow: none !important;
+}
+
+#in_watchlist:before {
+  content: "In Watchlist";
 }
 
 #out_watchlist {
   background-color: white;
   color: blue;
+  box-shadow: none !important;
+}
+
+#out_watchlist:before {
+  content: "Add to Watchlist";
 }
 
 .hide {
