@@ -332,7 +332,7 @@ function submitButtonClick(event) {
 function watch_list_change(id_auction){
 
 
-    alert(id_auction)
+    // alert(id_auction)
     let button_watch_list_change = document.getElementById("in_watchlist")
     if(button_watch_list_change){
         button_watch_list_change.setAttribute('id', 'out_watchlist');
