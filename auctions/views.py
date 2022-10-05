@@ -403,12 +403,13 @@ def create_answer(request, id_comment):
         add_answer = Comments.objects.get(id=id_comment)
         add_answer.answer = answer_added
         add_answer.save()
-   
+        to_question = add_answer.description
     
     
     return render(request, "auctions/create_answer.html", {
         "auction_data": auction_data,
         "answer_added": answer_added,
+        "to_question": to_question,
         "err" : err_mess
 
     })

@@ -140,6 +140,9 @@ div{
 .btn{
     font-weight: bold;
     font-size: larger;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
