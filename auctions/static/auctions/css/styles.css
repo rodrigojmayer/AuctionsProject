@@ -307,7 +307,7 @@ input[type=number] {
   margin-bottom: 3vw;
   background-color: var(--white-color);
   border-radius: 10px;
-  max-width: 70vw;
+  max-width: 55vw;
   min-width: 10vw;
   /*height: 1500px;*/ /* Used in this example to enable scrolling */
 }
@@ -496,18 +496,25 @@ input[type=number] {
 
 #auction_data {
   /*margin-right: -250%;*/
-  padding: 1rem 0.5rem;
+  padding: 1rem 2vw;
   display: flex;
   flex-direction: row;
-  gap: 3rem;
-}
-#auction_data #order-column {
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 7vw;
 }
 #auction_data .btn, #auction_data .form-control {
   max-width: 15rem;
   margin-top: 1rem;
   margin-left: 1rem;
+}
+#auction_data #new_bid {
+  width: 20vw;
+  min-width: 5rem;
+  max-width: 12.8rem;
+  height: 3rem;
+  margin: 1rem;
+  padding: 6px 12px;
 }
 
 textarea {
@@ -547,8 +554,8 @@ textarea {
 }
 
 #article_image img {
-  height: 35vw;
-  width: 35vw;
+  height: 21rem;
+  width: 21rem;
   -o-object-fit: contain;
      object-fit: contain;
 }

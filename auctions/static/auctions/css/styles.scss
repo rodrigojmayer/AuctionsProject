@@ -418,7 +418,7 @@ opacity: 1;
     border-radius: 10px;
     // min-height: calc(100vh - var(--header-height) - 5.5rem - var(--footer-height));
 
-    max-width: 70vw;
+    max-width: 55vw;
     // min-width: 10%;
     min-width: 10vw;
     /*height: 1500px;*//* Used in this example to enable scrolling */
@@ -663,20 +663,32 @@ opacity: 1;
     /*margin-right: -250%;*/
     // margin-top: 5%;
     // width:40%;
-    padding: 1rem 0.5rem;
+    // padding: 1rem 0.5rem;
+    padding: 1rem 2vw;
     // padding: 2rem;
     display: flex;
     flex-direction: row;
-    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7vw;
 
     #order-column{
-        width:100%;
+        // width:100%;
     }
     .btn, .form-control{
         max-width: 15rem;
         margin-top: 1rem;
         margin-left: 1rem;
         // display: block;
+    }
+    #new_bid{
+        width: 20vw;
+        min-width: 5rem;
+        max-width: 12.8rem;
+        height:3rem;
+        margin: 1rem;
+        padding: 6px 12px;
     }
 }
 textarea{
@@ -718,8 +730,16 @@ textarea{
     // margin-left: 44%;
 
     img{
-        height: 35vw;
-        width: 35vw;
+        // height: 20vw;
+        // width: 20vw;
+        // min-height: 17rem;
+        // min-width: 17rem;
+        height: 21rem;
+        width: 21rem;
+        // max-height: 21rem;
+        // max-width: 21rem;
+
+
         object-fit: contain;
     }
 }
