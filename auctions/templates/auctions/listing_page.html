@@ -32,7 +32,7 @@
                     <h2>{{ auction_data.name }}</h2>
                     <label class="container">
                         {% if user_logged.id %}
-                            <button onclick="watch_list_change()" class="btn btn-primary" id={{in_watchlist}} name="_place_bid">   </button>
+                            <button onclick="watch_list_change('{{auction_data.id}}')" class="btn btn-primary" id={{in_watchlist}} name="_place_bid">   </button>
 
                         {% else %}
                             <input class="btn btn-primary" id="myDIV" disabled   value="Add to Watchlist" name="_place_bid">

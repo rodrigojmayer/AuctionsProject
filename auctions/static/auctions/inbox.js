@@ -329,10 +329,10 @@ function submitButtonClick(event) {
 
 } 
 
-function watch_list_change(){
+function watch_list_change(id_auction){
 
 
-    alert("pepin")
+    alert(id_auction)
     let button_watch_list_change = document.getElementById("in_watchlist")
     if(button_watch_list_change){
         button_watch_list_change.setAttribute('id', 'out_watchlist');
@@ -341,37 +341,19 @@ function watch_list_change(){
         button_watch_list_change.setAttribute('id', 'in_watchlist');
     }
     
-    
     // const formData = new FormData();
     // formData.append('name', data_article.value);
     // formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
-    // // console.log(formData);
-    // fetch(`/check_auction/`, {
-    //     method: 'POST',
-    //     body:formData,
-    // })
-    // .then(response => response.json())
-    // .then(result => {
-    //     console.log(result.auction_repeated)
-    //     if(result.auction_repeated){
-    //         modal_subtitle.innerHTML = "Duplicate data"
-    //         modal_text.innerHTML = "There is already an active article with that name."
-    //         rejected_modal()
-    //     }
-    //     else{
-    //         modal_subtitle.innerHTML = "Post item"
-    //         modal_text.innerHTML = `Name: ${data_article.value}</br>
-    //                                 Description: ${data_description.value}</br>
-    //                                 Price: ${data_initial_price.value}</br>
-    //                                 Category: ${data_auction_category.value}</br>
-    //                                 Image: ${document.getElementById("glosaArchivos").textContent}</br>`
-    //         modal_save.classList.remove('hide');
-    //         modal_save.classList.add('show');
-    //         modal_save.onclick="";
-    //     }
-
-    // })
-    // .catch((error) => {
-    //     console.log(error)
-    // });
+    // console.log(formData);
+    fetch(`/add_in_watch_list/${id_auction}/`, {
+        method: 'POST',
+        // body:formData,
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log(result.change_response)
+    })
+    .catch((error) => {
+        console.log(error)
+    });
 }
