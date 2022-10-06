@@ -43,6 +43,7 @@ html {
     font-size: 16px;
     scroll-behavior: smooth;
     /* overflow-y:hidden; */
+    
   }
   
   *,
@@ -728,6 +729,7 @@ textarea{
 }
 #article_image{
     // margin-left: 44%;
+    cursor: zoom-in;
 
     img{
         // height: 20vw;
@@ -904,10 +906,6 @@ footer {
     background-color: transparent;
 }
 
-
-
-
-
 #app{
     width: 100%;
     text-align: center;
@@ -924,3 +922,20 @@ footer {
     
 }
 
+
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  position:relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 10%;
+//   cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 250px;
+  height: 250px;
+//   display: none;
+}

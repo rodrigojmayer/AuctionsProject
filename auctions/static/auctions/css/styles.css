@@ -553,6 +553,9 @@ textarea {
      object-fit: contain;
 }
 
+#article_image {
+  cursor: zoom-in;
+}
 #article_image img {
   height: 21rem;
   width: 21rem;
@@ -696,4 +699,21 @@ footer div {
 }
 #app .incorrect {
   color: red;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.img-magnifier-container {
+  position: relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 10%;
+  /*Set the size of the magnifier glass:*/
+  width: 250px;
+  height: 250px;
 }/*# sourceMappingURL=styles.css.map */

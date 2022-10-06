@@ -37,164 +37,20 @@ document.addEventListener('DOMContentLoaded', function(){
         
     }
     
-    // let modal_alert = document.querySelector(".modal-alert");
-    // console.log(modal_alert)
-    // let accept = document.getElementById("accept");
-    // if(accept)
-    //     accept.addEventListener("click", handleModal, false)
-
-    // function handleModal() {
-    //     // alert("entrando al submit")
-    //     modal_alert.classList.add('show');
-    //     modal_alert.classList.remove('hide');
-
-    //     let modal_subtitle = document.getElementById("modal_subtitle");
-    //     let modal_text = document.getElementById("modal_text");
-    //     let modal_back = document.getElementById("modal_back");
-    //     let modal_save = document.getElementById("modal_save");
-        
-    //     let data_article = document.getElementById("data_article");
-    //     let data_description = document.getElementById("data_description");
-    //     let data_initial_price = document.getElementById("data_initial_price");
-    //     let data_auction_category = document.getElementById("data_auction_category");
-    //     let data_image = document.getElementById("image");
-    //     let modal_answer_text = "", modal_answer_subtitle
-    //     // data_article.value=1
-    //     // data_description.value=1
-    //     // data_initial_price.value=1
-    //     // data_image.value=1
-
-        
-    //     if(!data_article.value){
-    //         console.log("Article name missing")
-    //         modal_answer_text += "- Name</br>"
-    //     }
-    //     if(!data_description.value){
-    //         console.log("Description missing")
-    //         modal_answer_text += " - Description</br>"
-    //     }
-    //     if(!data_initial_price.value){
-    //         console.log("Price missing")
-    //         modal_answer_text += " - Price</br>"
-    //     }
-    //     if(!data_auction_category.value){
-    //         console.log("Category missing")
-    //         modal_answer_text += " - Category</br>"
-    //     }
-    //     if(!data_image.value){
-    //         console.log("Image missing")
-    //         modal_answer_text += " - Image</br>"
-    //     }
-
-    //     if(modal_answer_text){
-    //         modal_subtitle.innerHTML = "Missing data"
-    //         modal_text.innerHTML = `You need to enter: </br> ${modal_answer_text}`
-    //         rejected_modal()
-    //     }
-    //     else{
-
-    //         const formData = new FormData();
-    //         formData.append('name', data_article.value);
-    //         formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
-    //         // console.log(formData);
-    //         fetch(`/check_auction/`, {
-    //             method: 'POST',
-    //             body:formData,
-    //         })
-    //         .then(response => response.json())
-    //         .then(result => {
-    //             console.log(result.auction_repeated)
-    //             if(result.auction_repeated){
-    //                 modal_subtitle.innerHTML = "Duplicate data"
-    //                 modal_text.innerHTML = "There is already an active article with that name."
-    //                 rejected_modal()
-    //             }
-    //             else{
-    //                 modal_subtitle.innerHTML = "Post item"
-    //                 modal_text.innerHTML = `Name: ${data_article.value}</br>
-    //                                         Description: ${data_description.value}</br>
-    //                                         Price: ${data_initial_price.value}</br>
-    //                                         Category: ${data_auction_category.value}</br>
-    //                                         Image: ${document.getElementById("glosaArchivos").textContent}</br>`
-    //                 modal_save.classList.remove('hide');
-    //                 modal_save.classList.add('show');
-    //                 modal_save.onclick="";
-    //             }
-
-    //         })
-    //         .catch((error) => {
-    //             console.log(error)
-    //         });
-    //     }
-    //     modal_back.addEventListener("click", function() {
-    //         modal_alert.classList.add('hide');
-    //         modal_alert.classList.remove('show');
+    
+    let img_listing_page = document.getElementById("myimage");
+    
+    // if(img_listing_page){
+        // img_listing_page.addEventListener("mouseover", magnify("myimage", 2), false);
+        // img_listing_page.addEventListener("mouseover", console.log("over"), false);
+        // img_listing_page.addEventListener("mouseout",  close_magnify(), false);
+        // img_listing_page.addEventListener("mouseout",  console.log("out"), false);
+    // }
+    // if(img){
+    //     img.onmouseover(function() {
+    //         magnify("myimage", 2); 
     //     })
-    
-    //     function rejected_modal(){
-    //         modal_save.classList.remove('show');
-    //         modal_save.classList.add('hide');
-    //     }
-    //     // modal_text
-
-    //     // console.log(data_article.value);
-    //     // console.log(data_description.value);
-    //     // console.log(data_initial_price.value);
-    //     // console.log(data_auction_category.value);
-    //     // console.log(data_image.value);
-
-    // };
-    
-
-    // const image_input = document.querySelector("#change_profile_picture");
-    // image_input.addEventListener("change", function(e) {
-
-    //     alert("holis")
-    //     if (e.target.files) {
-    //         let imageFile = e.target.files[0];
-    //         var reader = new FileReader();
-    //         reader.onload = function (e) {
-    //             var img = document.createElement("img");
-    //             img.onload = function (event) {
-    //                 // Dynamically create a canvas element
-    //                 var canvas = document.createElement("canvas");
-    //                 // var canvas = document.getElementById("canvas");
-    //                 var ctx = canvas.getContext("2d");
-    //                 // Actual resizing
-    //                 ctx.drawImage(img, 0, 0, 300, 160);
-    //                 var dataurl = canvas.toDataURL(imageFile.type);
-    //                 document.getElementById("display-image").src = dataurl;
-    //             }
-    //             img.src = e.target.result;
-    //         }
-    //         reader.readAsDataURL(imageFile);
-    //         if(document.getElementById("no_profile_picture_background")){
-    //             document.getElementById("no_profile_picture_background").style.display="none";
-    //             document.getElementById("display-image").style.opacity=1;
-    //         }
-    //     }
-    // });
-
-    // alert("Its working!")
-    // document.getElementById("user-logged").onmouseover=function(){
-    //     document.getElementById("myDropdownUser").classList.add('show');
-    //     document.getElementById("myDropdownUser").classList.remove('hide');
-
-    // };
-    // document.getElementById("user-logged").onmouseout=function(){
-    //     document.getElementById("myDropdownUser").classList.add('hide');
-    //     document.getElementById("myDropdownUser").classList.remove('show');
-    // };
-// 
-    // document.getElementsByName("enable-answer")[0].addEventListener("click", function() {
-        // this.style.backgroundColor = "red";
-        // alert("RED")
-    // });
-
-    // document.querySelectorAll(".enable-answer").addEventListener("click", function() {
-        // this.style.backgroundColor = "red";
-        // alert("RED")
-    // });
+    // }
 })
 
 function enable_answer(varr){
@@ -356,4 +212,78 @@ function watch_list_change(id_auction){
     .catch((error) => {
         console.log(error)
     });
+}
+
+
+function magnify(imgID, zoom) {
+    // let img_glass = document.getElementById("id_glass");
+    
+    console.log("esta adentro")
+
+    var img, glass, w, h, bw;
+    img = document.getElementById(imgID);
+    /*create magnifier glass:*/
+    // glass = document.createElement("DIV");
+    // glass.setAttribute("class", "img-magnifier-glass");
+    // glass.setAttribute('id', 'id_glass');
+    glass = document.getElementById("id_glass");
+    glass.classList.add('show');
+    glass.classList.remove('hide');
+
+    /*insert magnifier glass:*/
+    img.parentElement.insertBefore(glass, img);
+    /*set background properties for the magnifier glass:*/
+    glass.style.backgroundImage = "url('" + img.src + "')";
+    glass.style.backgroundRepeat = "no-repeat";
+    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+    bw = 3;
+    w = glass.offsetWidth / 2;
+    h = glass.offsetHeight / 2;
+    /*execute a function when someone moves the magnifier glass over the image:*/
+    glass.addEventListener("mousemove", moveMagnifier);
+    img.addEventListener("mousemove", moveMagnifier);
+    /*and also for touch screens:*/
+    glass.addEventListener("touchmove", moveMagnifier);
+    img.addEventListener("touchmove", moveMagnifier);
+    function moveMagnifier(e) {
+      var pos, x, y;
+      /*prevent any other actions that may occur when moving over the image*/
+      e.preventDefault();
+      /*get the cursor's x and y positions:*/
+      pos = getCursorPos(e);
+      x = pos.x;
+      y = pos.y;
+      /*prevent the magnifier glass from being positioned outside the image:*/
+      if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+      if (x < w / zoom) {x = w / zoom;}
+      if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+      if (y < h / zoom) {y = h / zoom;}
+      /*set the position of the magnifier glass:*/
+      glass.style.left = (x - w) + "px";
+      glass.style.top = (y - h) + "px";
+      /*display what the magnifier glass "sees":*/
+      glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+    }
+    function getCursorPos(e) {
+      var a, x = 0, y = 0;
+      e = e || window.event;
+      /*get the x and y positions of the image:*/
+      a = img.getBoundingClientRect();
+      /*calculate the cursor's x and y coordinates, relative to the image:*/
+      x = e.pageX - a.left;
+      y = e.pageY - a.top;
+      /*consider any page scrolling:*/
+      x = x - window.pageXOffset;
+      y = y - window.pageYOffset;
+      return {x : x, y : y};
+    }
+}
+
+function close_magnify(){
+    let glass = document.getElementById("id_glass");
+    console.log("esta afuera")
+    if(glass){
+        glass.classList.add('hide');
+        glass.classList.remove('show');
+    }
 }
