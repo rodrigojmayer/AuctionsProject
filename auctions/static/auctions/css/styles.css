@@ -160,7 +160,7 @@ input[type=number] {
   height: 2.5rem;
   width: 6rem;
   left: -1.7rem;
-  background-color: var(--black-color);
+  background-color: var(--title-color);
   border-radius: 4px;
 }
 .navbar #myDropdownUser ul {
@@ -184,7 +184,7 @@ input[type=number] {
 }
 .navbar #myDropdownUser a:hover {
   cursor: pointer;
-  background-color: var(--link-pressing);
+  background-color: var(--link-light);
 }
 .navbar #myDropdownUser a:first-child:hover {
   border-top-left-radius: 4px;
@@ -203,14 +203,14 @@ input[type=number] {
   right: 13px;
   border-width: 0 8px 8px 8px;
   border-style: solid;
-  border-color: var(--black-color) transparent;
+  border-color: var(--title-color) transparent;
 }
 .navbar #myDropdownCategories {
   position: absolute;
   margin-top: 1.2rem;
   left: -1.7rem;
   width: 10rem;
-  background-color: var(--black-color);
+  background-color: var(--title-color);
   border-radius: 4px;
 }
 .navbar #myDropdownCategories ul {
@@ -234,7 +234,7 @@ input[type=number] {
 }
 .navbar #myDropdownCategories a:hover {
   cursor: pointer;
-  background-color: var(--link-pressing);
+  background-color: var(--link-light);
 }
 .navbar #myDropdownCategories a:first-child:hover {
   border-top-left-radius: 4px;
@@ -253,7 +253,7 @@ input[type=number] {
   right: 13px;
   border-width: 0 8px 8px 8px;
   border-style: solid;
-  border-color: var(--black-color) transparent;
+  border-color: var(--title-color) transparent;
 }
 
 #user-logged > #myDropdownUser {
@@ -503,6 +503,17 @@ input[type=number] {
   justify-content: center;
   gap: 7vw;
 }
+#auction_data .img-magnifier-container {
+  position: relative;
+}
+#auction_data .img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 10%;
+  /*Set the size of the magnifier glass:*/
+  width: 250px;
+  height: 250px;
+}
 #auction_data .btn, #auction_data .form-control {
   max-width: 15rem;
   margin-top: 1rem;
@@ -702,17 +713,4 @@ footer div {
 
 * {
   box-sizing: border-box;
-}
-
-.img-magnifier-container {
-  position: relative;
-}
-
-.img-magnifier-glass {
-  position: absolute;
-  border: 3px solid #000;
-  border-radius: 10%;
-  /*Set the size of the magnifier glass:*/
-  width: 250px;
-  height: 250px;
 }/*# sourceMappingURL=styles.css.map */
