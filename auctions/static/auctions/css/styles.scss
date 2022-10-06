@@ -12,11 +12,11 @@
     --gray-color-2: rgb(240, 240, 240);
     --gray-dark-color: rgb(190, 190, 190);
     --black-color: #000;
-    --link: #509ee3;
+    --link-color: #509ee3;
     --link-hover: rgb(3, 87, 215, 1);
     --link-pressing: rgb(0, 65, 164, 1);
     --link-light: rgb(52, 131, 250, 0.50);
-    --link-light-hover: rgb(190, 190, 190, 0.50);
+    --link-light-hover: rgb(3, 87, 215, 0.50);
     --link-light-pressing: rgb(190, 190, 190, 0.50);
     --title-color: #333;
     --text-color: #222;
@@ -24,9 +24,9 @@
     --black-alpha-color: rgba(0, 0, 0, 0.3);
     --black-alpha-color2: rgba(0, 0, 0, 0.5);
     --green-color: rgba(54, 255, 74, 1);
-    --red-color-pressing: rgba(255, 77, 77, 1);
-    --red-color-hover: rgb(255, 47, 47, 1);
-    --red-color: rgb(255, 17, 17, 1);
+    --red-color: rgb(255, 47, 47, 1);
+    --red-color-hover: rgba(255, 77, 77, 1);
+    --red-color-pressing: rgb(255, 17, 17, 1);
     --font: "Roboto", sans-serif;
     --max-width: 1200px;
     --header-height: 4rem;
@@ -79,12 +79,12 @@ html {
   
   a{
     // font-weight: bold;
-    color: var(--link);
+    color: var(--link-color);
     transition: all 0.5s ease-out;
   }
   li{
     // font-weight: bold;
-    // color: var(--link);
+    // color: var(--link-color);
   }
   
   a:hover {
@@ -234,6 +234,7 @@ input[type=number] {
         // background-color: var(--white-color);
         // background-color: var(--black-color);
         background-color: var(--title-color); 
+        // background-color: var(--second-alpha-color); 
         border-radius: 4px;
         ul {
             position:static;
@@ -497,7 +498,7 @@ opacity: 1;
             // width: calc(10vw + 2px);
             height: 10vw;
             width: 10vw;
-            outline: dotted 1px var(--link);
+            outline: dotted 1px var(--link-color);
             // border-inline: ;
             // padding:10px;
             margin:  auto;
@@ -775,7 +776,8 @@ textarea{
 }
 #bid_price{
     font-weight: bold;
-    color: red;
+    // color: red;
+    color: var(--red-color)
 }
 #in_watchlist{
     /*color: blue;*/

@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     
     
-    let img_listing_page = document.getElementById("myimage");
+    // let img_listing_page = document.getElementById("myimage");
     
     // if(img_listing_page){
         // img_listing_page.addEventListener("mouseover", magnify("myimage", 2), false);
@@ -218,7 +218,7 @@ function watch_list_change(id_auction){
 function magnify(imgID, zoom) {
     // let img_glass = document.getElementById("id_glass");
     
-    console.log("esta adentro")
+    // console.log("esta adentro")
 
     var img, glass, w, h, bw;
     img = document.getElementById(imgID);
@@ -281,7 +281,7 @@ function magnify(imgID, zoom) {
 
 function close_magnify(){
     let glass = document.getElementById("id_glass");
-    console.log("esta afuera")
+    // console.log("esta afuera")
     if(glass){
         glass.classList.add('hide');
         glass.classList.remove('show');
