@@ -308,7 +308,7 @@ input[type=number] {
   background-color: var(--white-color);
   border-radius: 10px;
   max-width: 55vw;
-  min-width: 10vw;
+  min-width: 740px;
   /*height: 1500px;*/ /* Used in this example to enable scrolling */
 }
 .main .to-log-form-group {
