@@ -308,7 +308,7 @@ input[type=number] {
   background-color: var(--white-color);
   border-radius: 10px;
   max-width: 55vw;
-  min-width: 740px;
+  min-width: 45rem;
   /*height: 1500px;*/ /* Used in this example to enable scrolling */
 }
 .main .to-log-form-group {
@@ -455,8 +455,8 @@ input[type=number] {
 }
 
 #login, #register, #id_create_listing, #create_comment {
-  width: 50%;
-  max-width: 26.5rem;
+  max-width: 35rem;
+  min-width: 25rem;
 }
 
 .borders {

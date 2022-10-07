@@ -433,7 +433,7 @@ opacity: 1;
 
     max-width: 55vw;
     // min-width: 10%;
-    min-width: 740px;
+    min-width: 45rem;
     /*height: 1500px;*//* Used in this example to enable scrolling */
     .to-log-form-group{
 
@@ -623,8 +623,8 @@ opacity: 1;
     // padding-bottom: 28%;
 // }
 #login, #register, #id_create_listing, #create_comment{
-    width: 50%;
-    max-width: 26.5rem;
+    max-width: 35rem;
+    min-width: 25rem;
 }
 .borders{
     // border-bottom: thick dotted $gray_color;
