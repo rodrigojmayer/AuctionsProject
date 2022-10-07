@@ -44,7 +44,7 @@
 
                         {% else %}
                             <input class="btn btn-primary" id="myDIV" disabled   value="Add to Watchlist" name="_place_bid">
-                            <div class="hide">You must be logged to add this auction.</div>
+                            <div id="add_watchlist_warning" class="hide notlogged_warning">You must be logged to add this auction.</div>
                         {% endif %}
                     </label>
                     <div id="auction_price" ><h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})</div>
@@ -70,7 +70,7 @@
                                         <input  id="accept" class="btn btn-primary"  value="Place bid" >
                                     {% else %}
                                         <input class="btn btn-primary"  id="myDIV" disabled value="Place bid" >
-                                        <div class="hide">You must be logged to place a bid.</div>
+                                        <div id="add_watchlist_warning" class="hide notlogged_warning">You must be logged to place a bid.</div>
                                     {% endif %}
                                 </div>
 
@@ -161,7 +161,7 @@
                             <input class="btn btn-primary" type="submit" value="Add question">
                         {% else %}
                             <input class="btn btn-primary"  id="myDIV" disabled value="Add comment">
-                            <div class="hide">You must be logged to add a comment.</div>
+                            <div id="comment_warning" class="hide warning_relocation notlogged_warning">You must be logged to add a comment.</div>
                         {% endif %}
                     </div>
 

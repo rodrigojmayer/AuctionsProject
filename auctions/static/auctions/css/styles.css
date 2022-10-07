@@ -616,9 +616,22 @@ textarea {
   position: static;
 }
 
-#myDIV:hover + .hide {
-  display: block;
+#add_watchlist_warning {
+  position: absolute;
+  margin-top: -15px;
+  margin-left: -25px;
+}
+
+#comment_warning {
+  margin-top: -40px;
+}
+
+.notlogged_warning {
   color: red;
+}
+
+#myDIV:hover + .notlogged_warning {
+  display: block !important;
 }
 
 .window-notice {
