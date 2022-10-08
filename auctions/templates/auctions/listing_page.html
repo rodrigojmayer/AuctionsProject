@@ -49,10 +49,11 @@
                     </label>
                     
                 <!-- </form> -->
+                    
+                    <div id="auction_price" >
+                        <h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})
+                    </div>
                     {% if auction_data.auction_active == 1 %}
-                        <div id="auction_price" >
-                            <h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})
-                        </div>
                         {% if actual_bid %}     
                             <div id="bid_price" value={{actual_bid.price}}>
                                 <h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})
@@ -89,22 +90,30 @@
                         {% endif %}
                     {% else %}
                         <div id="sold_price" >
-                            <h2>Sold for $
+                            
+
+                                     
+                            <!-- <div id="bid_price" value={{actual_bid.price}}>
+                                <h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})
+                            </div> -->
+
+
                                 {% if actual_bid.price %}
-                                    {{ actual_bid.price }}
+                                <h4>Sold for ${{ actual_bid.price }}</h4>
+                                    (Bid by {{ actual_bid.id_user }})
                                 {% else %}
-                                    {{ auction_data.initial_price }}
+                                <h4>Unsold</h4>
                                 {% endif %}
-                            </h2>
+                            
                         </div>
-                        <div class="form-group" id="auction_price"> 
-                             Auction list closed.
-                        </div>
+                        <!-- <div class="form-group" id="auction_price">  -->
+                             <h4>Auction list closed</h4>
+                        <!-- </div> -->
                         {% if user_logged.id %}
                             {% if user_logged.id == actual_bid.id_user.id %}
                        
                             <div class="form-group" id="auction_winner">  
-                                <a> You have won this auction!</a>
+                                <h3> You have won this auction!</h3>
                             </div>
                             {% endif %}
                         {% endif %}

@@ -110,10 +110,10 @@ html {
 //     font-size: 1.5rem;
 //   }
   
-//   h4 {
-//     margin: 0;
-//     font-size: 1.25rem;
-//   }
+  h4 {
+    margin: 0;
+    // font-size: 1.25rem;
+  }
   
 //   h5 {
 //     margin: 0;
@@ -771,8 +771,9 @@ textarea{
         object-fit: contain;
     }
 }
-#auction_price{
-    font-weight: bold;
+#auction_price, #sold_price{
+    // font-weight: bold;
+    margin-bottom: .5rem;
 }
 #bid_price{
     font-weight: bold;

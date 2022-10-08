@@ -93,6 +93,10 @@ h2 {
   font-size: 2rem;
 }
 
+h4 {
+  margin: 0;
+}
+
 div {
   height: auto;
   word-wrap: break-word;
@@ -573,8 +577,8 @@ textarea {
      object-fit: contain;
 }
 
-#auction_price {
-  font-weight: bold;
+#auction_price, #sold_price {
+  margin-bottom: 0.5rem;
 }
 
 #bid_price {
