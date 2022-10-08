@@ -50,6 +50,8 @@
                     <div id="auction_price" ><h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})</div>
                     {% if actual_bid %}
                         <div id="bid_price" value={{actual_bid.price}}><h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})</div>
+                    {% else %}
+                        <div id="bid_price" ><h4>There are no bids yet</h4></div>
                     {% endif %}
 
                 <!-- </form> -->
