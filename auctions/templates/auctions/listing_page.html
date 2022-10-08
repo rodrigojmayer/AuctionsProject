@@ -44,18 +44,25 @@
 
                         {% else %}
                             <input class="btn btn-primary" id="myDIV" disabled   value="Add to Watchlist" name="_place_bid">
-                            <div id="add_watchlist_warning" class="hide notlogged_warning">You must be logged to add this auction.</div>
+                            <div id="add_watchlist_warning" class="hide notlogged_warning">You must be log in to have a watchlist.</div>
                         {% endif %}
                     </label>
-                    <div id="auction_price" ><h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})</div>
-                    {% if actual_bid %}
-                        <div id="bid_price" value={{actual_bid.price}}><h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})</div>
-                    {% else %}
-                        <div id="bid_price" ><h4>There are no bids yet</h4></div>
-                    {% endif %}
-
+                    
                 <!-- </form> -->
                     {% if auction_data.auction_active == 1 %}
+                        <div id="auction_price" >
+                            <h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})
+                        </div>
+                        {% if actual_bid %}     
+                            <div id="bid_price" value={{actual_bid.price}}>
+                                <h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})
+                            </div>
+                        {% else %}
+                            <div id="bid_price" >
+                                <h4>There are no bids yet</h4>
+                            </div>
+                        {% endif %}
+
                         <!--form action="{% url 'auctions_app:listing_page' auction=auction_data.id %}"  method="GET" enctype="multipart/form-data"-->
                         {% if user_logged.id == auction_data.id_user.id %}
                             <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
@@ -72,19 +79,28 @@
                                         <input  id="accept" class="btn btn-primary"  value="Place bid" >
                                     {% else %}
                                         <input class="btn btn-primary"  id="myDIV" disabled value="Place bid" >
-                                        <div id="add_watchlist_warning" class="hide notlogged_warning">You must be logged to place a bid.</div>
+                                        <div id="add_watchlist_warning" class="hide notlogged_warning">
+                                            You must be logged to place a bid.
+                                        </div>
                                     {% endif %}
                                 </div>
-
-                                
                                 <div id="modal" value="listing_page"> </div>
-
                             </form>
                         {% endif %}
                     {% else %}
-                        <div class="form-group" id="auction_price"> </br> <a> Auction list closed.</a></div>
-                        {% if user_logged.id == actual_bid.id_user.id %}
-                            <div class="form-group" id="bid_price"> </br> <a> You have won this auction ! ! !</a></div>
+                        <div id="bid_price" value={{actual_bid.price}}>
+                            <h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})
+                        </div>
+                        <div class="form-group" id="auction_price"> 
+                             Auction list closed.
+                        </div>
+                        {% if user_logged.id %}
+                            {% if user_logged.id == actual_bid.id_user.id %}
+                       
+                            <div class="form-group" id="auction_winner">  
+                                <a> You have won this auction!</a>
+                            </div>
+                            {% endif %}
                         {% endif %}
                     {% endif %}
                 </div>
