@@ -198,8 +198,11 @@ function handleModal() {
     else if( modal.getAttribute('value') == "listing_page"){
 
         // new_bid
-        const bid_price = parseInt(document.getElementById("bid_price").getAttribute('value'))
-        console.log("inicial price: " + bid_price)
+        let bid_price = parseInt(document.getElementById("bid_price").getAttribute('value'))
+        if(!bid_price)
+            bid_price = parseInt(document.getElementById("auction_price").getAttribute('value'))
+        //  bid_price = parseInt(document.getElementById("auction_price").getAttribute('value'))
+        console.log("initial price: " + bid_price)
         const new_bid = parseInt(document.getElementById("new_bid").value)
         console.log("new bid: " + new_bid)
         if(bid_price < new_bid){

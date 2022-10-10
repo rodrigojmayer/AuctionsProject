@@ -38,19 +38,15 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     
     
-    // let img_listing_page = document.getElementById("myimage");
-    
-    // if(img_listing_page){
-        // img_listing_page.addEventListener("mouseover", magnify("myimage", 2), false);
-        // img_listing_page.addEventListener("mouseover", console.log("over"), false);
-        // img_listing_page.addEventListener("mouseout",  close_magnify(), false);
-        // img_listing_page.addEventListener("mouseout",  console.log("out"), false);
-    // }
-    // if(img){
-    //     img.onmouseover(function() {
-    //         magnify("myimage", 2); 
-    //     })
-    // }
+    let new_bid = document.getElementById("new_bid");
+    new_bid.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        // alert(event.key  + " " + event.which);
+        event.preventDefault();
+        handleModal()
+
+      }
+    });
 })
 
 function enable_answer(varr){
@@ -180,6 +176,7 @@ function contar(elem, idGlosa) {
 }
 
 function submitButtonClick(event) {
+    console.log(event.preventDefault())
     event.preventDefault();
     //other stuff you want to do instead...
 

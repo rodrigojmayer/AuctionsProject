@@ -50,7 +50,7 @@
                     
                 <!-- </form> -->
                     
-                    <div id="auction_price" >
+                    <div id="auction_price" value={{auction_data.initial_price}}>
                         <h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})
                     </div>
                     {% if auction_data.auction_active == 1 %}
