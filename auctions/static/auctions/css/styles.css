@@ -105,6 +105,12 @@ html input::-webkit-inner-spin-button {
 html input[type=number] {
   -moz-appearance: textfield;
 }
+html .hide {
+  display: none !important;
+}
+html .show {
+  display: block !important;
+}
 
 *,
 *::after,
@@ -281,6 +287,11 @@ html input[type=number] {
   padding-bottom: 1rem;
 }
 
+#login, #register, #id_create_listing, #create_comment {
+  max-width: 35rem;
+  min-width: 25rem;
+}
+
 .main {
   margin: auto;
   margin-bottom: 3vw;
@@ -386,6 +397,223 @@ html input[type=number] {
   margin-left: auto;
   margin-right: 3%;
 }
+.main #listing_auction {
+  font-family: var(--font);
+  color: var(--text-color);
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.main #listing_auction b {
+  display: block;
+  margin: auto;
+}
+.main #listing_watchlist {
+  font-size: 140%;
+  padding: 0.5rem;
+}
+.main #listing_watchlist #auction_category {
+  font-size: 60%;
+  margin: auto;
+  padding: 0;
+}
+.main #auction_name {
+  font-weight: bold;
+}
+.main #auction_data {
+  padding: 1rem 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 7vw;
+}
+.main #auction_data .img-magnifier-container {
+  position: relative;
+}
+.main #auction_data .img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 10%;
+  background-color: var(--white-color);
+  width: 250px;
+  height: 250px;
+}
+.main #auction_data .btn, .main #auction_data .form-control {
+  max-width: 15rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.main #auction_data #new_bid {
+  width: 20vw;
+  min-width: 5rem;
+  max-width: 12.8rem;
+  height: 3rem;
+  margin: 1rem;
+  padding: 6px 12px;
+}
+.main textarea {
+  min-height: 4rem;
+}
+.main #auction_description {
+  padding: 0.5rem;
+}
+.main #auction_category {
+  padding: 0.5rem;
+}
+.main #auction_category h5 {
+  display: inline;
+}
+.main .multiselect-dropdown {
+  display: block !important;
+  margin: auto !important;
+  width: 100% !important;
+}
+.main .multiselect-dropdown .optext {
+  margin: 0.5rem 0.1rem !important;
+}
+.main #auction_comments {
+  padding: 0.5rem;
+}
+.main #auction_image img {
+  height: 10rem;
+  width: 10rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.main #article_image {
+  cursor: zoom-in;
+}
+.main #article_image img {
+  height: 21rem;
+  width: 21rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.main #auction_price, .main #sold_price {
+  margin-bottom: 0.5rem;
+}
+.main #bid_price {
+  font-weight: bold;
+  color: var(--red-color);
+}
+.main #in_watchlist {
+  background-color: var(--third-color);
+  box-shadow: none !important;
+}
+.main #in_watchlist:before {
+  content: "In Watchlist";
+}
+.main #out_watchlist {
+  background-color: white;
+  color: var(--third-color);
+  border-color: var(--third-color);
+  box-shadow: none !important;
+}
+.main #out_watchlist:before {
+  content: "Add to Watchlist";
+}
+.main #auction_winner {
+  color: var(--green-dark-color);
+  border: solid var(--green-dark-color);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: var(--green-light-color);
+  text-align: center;
+}
+.main #myDIV {
+  background-color: white;
+  color: var(--third-color);
+  position: static;
+}
+.main #add_watchlist_warning {
+  position: absolute;
+  margin-top: -15px;
+  margin-left: -25px;
+}
+.main #comment_warning {
+  margin-top: -40px;
+}
+.main .notlogged_warning {
+  color: var(--red-color);
+}
+.main #myDIV:hover + .notlogged_warning {
+  display: block !important;
+}
+.main .window-notice {
+  background: var(--text-color);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  position: fixed;
+  z-index: 999;
+}
+.main .window-notice .content {
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(33, 41, 52, 0.75);
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 400px;
+  min-width: 220px !important;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.3rem;
+}
+.main .window-notice .content-text {
+  color: rgb(105, 105, 105);
+}
+.main .window-notice .content-buttons {
+  margin-left: 90%;
+  margin-top: 3%;
+}
+.main .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background-color: var(--gray-color2);
+  grid-gap: 10px;
+  outline: 10px solid var(--gray-color-2);
+  border-radius: 10px;
+}
+.main .grid-item {
+  background-color: var(--white-color);
+  outline: 10px solid var(--gray-color-2);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  justify-content: space-evenly;
+}
+.main #watch_list_main {
+  background-color: transparent;
+}
+.main #app {
+  width: 100%;
+  text-align: center;
+}
+.main #app #problem {
+  font-size: 57px;
+}
+.main #app input {
+  display: block;
+  margin: auto;
+}
+.main #app .incorrect {
+  color: var(--red-color);
+}
+.main .borders {
+  border-bottom: solid var(--gray-color-2);
+}
 
 .modal-alert {
   position: absolute;
@@ -426,228 +654,9 @@ html input[type=number] {
 .modal-alert .modal-body #modal_back:active {
   background-color: var(--red-color-pressing);
 }
-
-.flex-horizontal {
+.modal-alert .modal-body .flex-horizontal {
   display: flex;
   gap: 0.5rem;
-}
-
-#login, #register, #id_create_listing, #create_comment {
-  max-width: 35rem;
-  min-width: 25rem;
-}
-
-.borders {
-  border-bottom: solid var(--gray-color-2);
-}
-
-#listing_auction {
-  font-family: var(--font);
-  color: var(--text-color);
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-}
-#listing_auction b {
-  display: block;
-  margin: auto;
-}
-
-#listing_watchlist {
-  font-size: 140%;
-  padding: 0.5rem;
-}
-#listing_watchlist #auction_category {
-  font-size: 60%;
-  margin: auto;
-  padding: 0;
-}
-
-#auction_name {
-  font-weight: bold;
-}
-
-#auction_data {
-  padding: 1rem 2vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 7vw;
-}
-#auction_data .img-magnifier-container {
-  position: relative;
-}
-#auction_data .img-magnifier-glass {
-  position: absolute;
-  border: 3px solid #000;
-  border-radius: 10%;
-  background-color: var(--white-color);
-  width: 250px;
-  height: 250px;
-}
-#auction_data .btn, #auction_data .form-control {
-  max-width: 15rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
-}
-#auction_data #new_bid {
-  width: 20vw;
-  min-width: 5rem;
-  max-width: 12.8rem;
-  height: 3rem;
-  margin: 1rem;
-  padding: 6px 12px;
-}
-
-textarea {
-  min-height: 4rem;
-}
-
-#auction_description {
-  padding: 0.5rem;
-}
-
-#auction_category {
-  padding: 0.5rem;
-}
-#auction_category h5 {
-  display: inline;
-}
-
-.multiselect-dropdown {
-  display: block !important;
-  margin: auto !important;
-  width: 100% !important;
-}
-.multiselect-dropdown .optext {
-  margin: 0.5rem 0.1rem !important;
-}
-
-#auction_comments {
-  padding: 0.5rem;
-}
-
-#auction_image img {
-  height: 10rem;
-  width: 10rem;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-#article_image {
-  cursor: zoom-in;
-}
-#article_image img {
-  height: 21rem;
-  width: 21rem;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-#auction_price, #sold_price {
-  margin-bottom: 0.5rem;
-}
-
-#bid_price {
-  font-weight: bold;
-  color: var(--red-color);
-}
-
-#in_watchlist {
-  background-color: blue;
-  box-shadow: none !important;
-}
-
-#in_watchlist:before {
-  content: "In Watchlist";
-}
-
-#out_watchlist {
-  background-color: white;
-  color: blue;
-  box-shadow: none !important;
-}
-
-#out_watchlist:before {
-  content: "Add to Watchlist";
-}
-
-#auction_winner {
-  color: var(--green-dark-color);
-  border: solid var(--green-dark-color);
-  border-radius: 1rem;
-  padding: 0.5rem;
-  background-color: var(--green-light-color);
-  text-align: center;
-}
-
-.hide {
-  display: none !important;
-}
-
-.show {
-  display: block !important;
-}
-
-#myDIV {
-  background-color: white;
-  color: blue;
-  position: static;
-}
-
-#add_watchlist_warning {
-  position: absolute;
-  margin-top: -15px;
-  margin-left: -25px;
-}
-
-#comment_warning {
-  margin-top: -40px;
-}
-
-.notlogged_warning {
-  color: red;
-}
-
-#myDIV:hover + .notlogged_warning {
-  display: block !important;
-}
-
-.window-notice {
-  background: var(--text-color);
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  position: fixed;
-  z-index: 999;
-}
-.window-notice .content {
-  background: rgb(255, 255, 255);
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(33, 41, 52, 0.75);
-  box-sizing: content-box;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-width: 400px;
-  min-width: 220px !important;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  padding: 2rem;
-  font-size: 1.3rem;
-}
-.window-notice .content-text {
-  color: rgb(105, 105, 105);
-}
-.window-notice .content-buttons {
-  margin-left: 90%;
-  margin-top: 3%;
 }
 
 footer {
@@ -664,44 +673,4 @@ footer div {
   padding-top: 5px;
   text-align: center;
   width: 100%;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  background-color: var(--gray-color2);
-  grid-gap: 10px;
-  outline: 10px solid var(--gray-color-2);
-  border-radius: 10px;
-}
-
-.grid-item {
-  background-color: var(--white-color);
-  outline: 10px solid var(--gray-color-2);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  justify-content: space-evenly;
-}
-
-#watch_list_main {
-  background-color: transparent;
-}
-
-#app {
-  width: 100%;
-  text-align: center;
-}
-#app #problem {
-  font-size: 57px;
-}
-#app input {
-  display: block;
-  margin: auto;
-}
-#app .incorrect {
-  color: red;
 }/*# sourceMappingURL=styles.css.map */
