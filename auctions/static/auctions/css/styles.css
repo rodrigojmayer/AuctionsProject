@@ -42,7 +42,6 @@ html {
   font-family: var(--font);
   font-size: 16px;
   scroll-behavior: smooth;
-  /* overflow-y:hidden; */
 }
 
 *,
@@ -125,8 +124,7 @@ input[type=number] {
 }
 
 /* *************** Components *************** */
-.nav {
-  /*background-color: #333;    */
+#header {
   background-color: var(--first-color);
   padding-left: 3%;
   font-family: var(--font);
@@ -136,19 +134,14 @@ input[type=number] {
   height: var(--header-height);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 111;
-  /*margin-bottom: 200px;*/
-  /*text-align: left;*/
 }
 
 .navbar {
-  /*background-color: #333;    */
   font-family: var(--font);
   position: relative;
   top: 0;
   width: 95%;
   height: var(--header-height);
-  /*margin-bottom: 200px;*/
-  /*text-align: left;*/
 }
 .navbar .nav-link {
   font-size: larger;
@@ -301,8 +294,6 @@ input[type=number] {
   right: 1%;
 }
 
-/*margin-bottom: -20px;*/
-/*height: 76px;*/
 #content-wrap {
   padding-top: var(--header-height);
   padding-bottom: 1rem;
@@ -315,7 +306,6 @@ input[type=number] {
   border-radius: 10px;
   max-width: 55vw;
   min-width: 45rem;
-  /*height: 1500px;*/ /* Used in this example to enable scrolling */
 }
 .main .to-log-form-group {
   width: 80%;
@@ -471,9 +461,7 @@ input[type=number] {
 
 #listing_auction {
   font-family: var(--font);
-  /*background-color: aqua;*/
   color: var(--text-color);
-  /*text-align: center;*/
   width: 100%;
   padding: 2rem;
   display: flex;
@@ -497,11 +485,9 @@ input[type=number] {
 
 #auction_name {
   font-weight: bold;
-  /*margin-left: -30%;*/
 }
 
 #auction_data {
-  /*margin-right: -250%;*/
   padding: 1rem 2vw;
   display: flex;
   flex-direction: row;
@@ -517,7 +503,6 @@ input[type=number] {
   border: 3px solid #000;
   border-radius: 10%;
   background-color: var(--white-color);
-  /*Set the size of the magnifier glass:*/
   width: 250px;
   height: 250px;
 }
@@ -590,7 +575,6 @@ textarea {
 }
 
 #in_watchlist {
-  /*color: blue;*/
   background-color: blue;
   box-shadow: none !important;
 }

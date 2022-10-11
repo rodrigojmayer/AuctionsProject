@@ -1,14 +1,9 @@
 {% extends "auctions/layout.html" %}
-<!-- {% load static %} -->
-
 {% block body %}
-
-
 <div class="sub" id="sub-not-logged">
     <h2>New Article</h2>
 </div>
 <div class="main" id="id_create_listing">
-    <!-- Agregado para las imagenes: enctype="multipart/form-data" -->
     <form class="form" action="{% url 'auctions_app:create_listing' %}"  method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="to-log-form-group">
@@ -28,17 +23,7 @@
                     <option value="{{ all_categorie.id }}">{{ all_categorie.category_name }}</option>
                 {% endfor %}
             </select>
-            <!--input  type="file" name="image" placeholder="Image"-->
-
-            <!-- <label for="image">Image</label></br> -->
-            <!-- <button  class="btn btn-primary" type="button" onclick="abrir('image')" accept="image/*">  -->
-            
-            <input  type="file"  id="input" accept="image/*"> 
-            </input>
-            <!-- <label class="form-control a-link" for="change_profile_picture" class="btn"><a>Change profile picture</a></label> -->
-            <!-- <input id="change_profile_picture" name="change_profile_picture"  type="file" style="visibility:hidden;" accept="image/png, image/jpeg, image/jpg"/> -->
-            <!-- <img id="display-image" src="/media/{{ user.header_image }}"></img> -->
-
+            <input  type="file"  id="input" accept="image/*"><!-- </input> -->
             <input type="file" multiple id="image" name="image" onchange="contar(this, 'glosaArchivos')" style="display: none">
             <div id="display-image-environment">
                  <label class="btn btn-primary" id="button_image" for="input">
@@ -53,26 +38,9 @@
                 </label>
             </div>
             <span id="glosaArchivos">None image selected</span>
-            
         </div>
-        <!-- <input class="btn btn-primary" type="submit" value="Save and add another" name="_save"> -->
-        
-        <!-- <div class="modal-alert hide" >
-            <div class="modal-body ">
-                <h5 id="modal_subtitle"></h5>
-                <p id="modal_text"></p>
-                <div class="flex-horizontal">
-                    <button id="modal_back"  class="btn btn-primary" type="button" value="Back" >Back</button>
-                    <input id="modal_save" onclick="submitButtonClick(event)" class="btn btn-primary" type="submit" value="Save" name="_save" >
-                </div>
-            </div>
-        </div> -->
-
         <div id="modal" value="create_listing"></div>
-        
     </form>
     <button class="btn btn-primary" id="accept">Save</button>
-   
-
 </div>
 {% endblock %}

@@ -1,14 +1,9 @@
 {% extends "auctions/layout.html" %}
-
 {% block body %}
 <div class="sub">
     <h2>Category List</h2>
 </div>
-
 <div class="main">
-
-    <!-- </br> -->
-
     {% for categories in all_categories %}
         <div id="listing_auction" >
             <a href="../category/{{ categories.id }}" >

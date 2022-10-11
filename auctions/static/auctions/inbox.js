@@ -39,14 +39,15 @@ document.addEventListener('DOMContentLoaded', function(){
     
     
     let new_bid = document.getElementById("new_bid");
-    new_bid.addEventListener("keypress", function(event) {
-      if (event.key === "Enter") {
-        // alert(event.key  + " " + event.which);
-        event.preventDefault();
-        handleModal()
-
-      }
-    });
+    if(new_bid){
+        new_bid.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            // alert(event.key  + " " + event.which);
+            event.preventDefault();
+            handleModal()
+        }
+        });
+    }
 })
 
 function enable_answer(varr){

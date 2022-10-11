@@ -1,5 +1,4 @@
 {% extends "auctions/layout.html" %}
-
 {% block body %}
     <div class="sub">
         <h2>Category: {{ category.category_name }}</h2>
@@ -9,28 +8,21 @@
             {% for auction_category in auction_listing_category %}
                 <div id="listing_auction" >
                     <div id="auction_image">
-
                         <a href="{% url 'auctions_app:listing_page' auction_category.id %}">
-                        <!-- <a href="../listing_page/{{ auction_category.id }}" > -->
                             <img src="/media/{{ auction_category.image }}"  height="200px">
                         </a>
                     </div>
                     <div id="order-column">
                         <div id="auction_name">
-                        <a href="{% url 'auctions_app:listing_page' auction_category.id %}">
-                            <!-- <a href="../listing_page/{{ auction_category.id }}" > -->
-
+                            <a href="{% url 'auctions_app:listing_page' auction_category.id %}">
                                 <h2>{{ auction_category.name }}</h2>
                             </a>  
                         </div> 
-                        <!-- <div id="auction_data"> -->
                         <div id="auction_listing_data">
                             <div id="auction_price">
                                 <h3>${{ auction_category.initial_price }}</h3>
                             </div>
-                            <!-- <div id="auction_description"> -->
-                                {{ auction_category.description }}
-                            <!-- </div>         -->
+                            {{ auction_category.description }}
                         </div>           
                     </div>
                 </div>
@@ -38,7 +30,6 @@
                     <div class="borders"></div>
                 {% endif %}
             {% endfor %}
-            
         {%else %}
         <div id="listing_auction" >
             <div id="auction_name">

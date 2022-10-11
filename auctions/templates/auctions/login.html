@@ -1,18 +1,12 @@
 {% extends "auctions/layout.html" %}
-
 {% block body %}
-
 <div class="sub" id="sub-not-logged">
     <h2>Login</h2>
 </div>
-
-<!-- <div class="main" id="login"> -->
 <div id="login" class="main" >
-
     {% if message %}
         <div>{{ message }}</div>
     {% endif %}
-
     <form action="{% url 'auctions_app:login' %}" method="post" class="form">
         {% csrf_token %}
         <div class="to-log-form-group">
@@ -24,8 +18,6 @@
         <input class="btn btn-primary" type="submit" value="Login">
         <a href="{% url 'auctions_app:register' %}">Create account</a>
     </form>
-
 </div>
-
 <div id="app"></div>
 {% endblock %}

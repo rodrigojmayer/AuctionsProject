@@ -1,21 +1,15 @@
 {% extends "auctions/layout.html" %}
-
 {% block body %}
-
 <div class="sub">
     <h2>My Watch List</h2>
 </div>
 <div class="main" id="watch_list_main">
-
     {% if my_watch_list %}
         <div class="grid-container">        
             {% for my_watch in my_watch_list %}
                 {% for auction in all_auctions %}
                     {% if auction.id == my_watch.id_auction.id %}
-                        
- 
                     <div class="grid-item" id="listing_watchlist" >
-                    
                         <div id="auction_name">
                             <a href="../listing_page/{{ auction.id }}" >
                                 {{ auction.name }}
@@ -26,33 +20,24 @@
                                 <img src="/media/{{ auction.image }}"  height="200px">
                             </a>
                         </div>
-                        <!-- <div id="auction_data"> -->
-                            <div id="auction_price">
-                                <!-- <b> -->
-                                    {% if auction.auction_active %}
-                                        ${{ auction.initial_price }}
-                                    {% else %}
-                                        Sold
-                                    {% endif %}
-
-                                <!-- </b> -->
-                            </div>
-                            <div id="auction_category">
-                                Category:     
-                                {% for category in auction.auction_category.all %} 
-                                <a href="../category/{{ category.id }}" >  
-                                    {{ category.category_name }}
-                                </a>
-                                {% endfor %}
-                            </div>              
-                        <!-- </div> -->
+                        <div id="auction_price">
+                            {% if auction.auction_active %}
+                                ${{ auction.initial_price }}
+                            {% else %}
+                                Sold for ${{ auction.initial_price }}
+                            {% endif %}
+                        </div>
+                        <div id="auction_category">
+                            Category:     
+                            {% for category in auction.auction_category.all %} 
+                            <a href="../category/{{ category.id }}" >  
+                                {{ category.category_name }}
+                            </a>
+                            {% endfor %}
+                        </div>            
                     </div>
-
-
                     {% endif %}
-
                 {% endfor %}
-
             {% endfor %}
         </div>
     {%else %}
@@ -60,6 +45,5 @@
         <b>There is no auction in the watch list.</b> 
     </div>
     {% endif %}
-   
 </div>
 {% endblock %}

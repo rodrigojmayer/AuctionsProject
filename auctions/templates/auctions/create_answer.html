@@ -1,31 +1,26 @@
 {% extends "auctions/layout.html" %}
-
 {% block body %}
     {% if err %}
-    <div class="main" id="create_answer">
-        <h2>Error </h2>
-        {{ err }}
-        <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
-            <div class="form-group">
-                <input class="btn btn-primary" type="submit"  value="Back" >
-            </div>
-        </form>
+        <div class="main" id="create_answer">
+            <h2>Error </h2>
+            {{ err }}
+            <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit"  value="Back" >
+                </div>
+            </form>
     {% else %}
         <div class="sub">
             <h2>Your answer has been added to {{ auction_data.name }} </h2>
         </div>
         <div class="main" id="create_answer">
-
-        <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
-            <div class="form-group">
-                <h5>Question: </h5> 
-                {{ to_question }}
-                <h5>New answer added: </h5> 
-                {{ answer_added }}
-            </div>
-        
-            <input class="btn btn-primary" type="submit"  value="Back" >
-        </form>
+            <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
+                <div class="form-group">
+                    <h5>Question: </h5> {{ to_question }}
+                    <h5>New answer added: </h5> {{ answer_added }}
+                </div>
+                <input class="btn btn-primary" type="submit"  value="Back" >
+            </form>
     {% endif %}
-</div>
+        </div>
 {% endblock %}

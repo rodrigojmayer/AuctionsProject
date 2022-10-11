@@ -1,5 +1,4 @@
 {% extends "auctions/layout.html" %}
-
 {% block body %}
     <div class="sub">
         <h2>Active Listings</h2>
@@ -20,7 +19,6 @@
                     </div>
                     <div id="auction_listing_data">                
                         <div id="auction_price"> 
-                            <!-- <h3>${{ auction.initial_price }}</h3> -->
                             <h3>
                                 {% if auction.auction_active %}
                                     ${{ auction.initial_price }}

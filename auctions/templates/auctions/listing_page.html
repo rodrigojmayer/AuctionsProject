@@ -16,110 +16,82 @@
         </div>
         {% endif %}
 
-        
-
-        <!-- <form action="{% url 'auctions_app:listing_page' auction=auction_data.id %}"  method="post" enctype="multipart/form-data"> -->
-        <!-- <form action="{% url 'auctions_app:add_in_watch_list' auction=auction_data.id %}"  method="get" enctype="multipart/form-data"> -->
-            {% csrf_token %}
-            <div id="auction_data">
-
-                
-                <!-- <div id="article_image">
-                    <img src="/media/{{ auction_data.image }}"  height="200px">
-                </div> -->
-                <div class="img-magnifier-container">
-                    <!-- <img id="myimage" src="img_girl.jpg" width="600" height="400"> -->
-                    <div id="article_image"  onmouseover="magnify('myimage', 2)" onmouseout="close_magnify()" >
-                        <div id="id_glass" class="img-magnifier-glass hide"></div>
-                        <!-- <img id="myimage" src="/media/{{ auction_data.image }}"  height="200px" > -->
-                        <img id="myimage" src="/media/{{ auction_data.image }}" height="200px" >
-                    </div>
-                  </div>
-                
-                <div id="order-column">
-                    <h2>{{ auction_data.name }}</h2>
-                    <label class="container">
-                        {% if user_logged.id %}
-                            <button onclick="watch_list_change('{{auction_data.id}}')" class="btn btn-primary" id={{in_watchlist}} name="_place_bid">   </button>
-
-                        {% else %}
-                            <input class="btn btn-primary" id="myDIV" disabled   value="Add to Watchlist" name="_place_bid">
-                            <div id="add_watchlist_warning" class="hide notlogged_warning">You must be log in to have a watchlist.</div>
-                        {% endif %}
-                    </label>
-                    
-                <!-- </form> -->
-                    
-                    <div id="auction_price" value={{auction_data.initial_price}}>
-                        <h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})
-                    </div>
-                    {% if auction_data.auction_active == 1 %}
-                        {% if actual_bid %}     
-                            <div id="bid_price" value={{actual_bid.price}}>
-                                <h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})
-                            </div>
-                        {% else %}
-                            <div id="bid_price" >
-                                <h4>There are no bids yet</h4>
-                            </div>
-                        {% endif %}
-
-                        <!--form action="{% url 'auctions_app:listing_page' auction=auction_data.id %}"  method="GET" enctype="multipart/form-data"-->
-                        {% if user_logged.id == auction_data.id_user.id %}
-                            <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <input class="btn btn-primary" type="submit" name="close_auction" value="Close auction" >
-                                </div>
-                            </form>
-                        {% else %}
-                            <form action="{% url 'auctions_app:create_bid'  %}"  method="GET" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <input id="new_bid" class="form-control" type="number" name="new_bid" placeholder="New bid">
-                                    <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
-                                    {% if user_logged.id %} 
-                                        <input  id="accept" class="btn btn-primary"  value="Place bid" >
-                                    {% else %}
-                                        <input class="btn btn-primary"  id="myDIV" disabled value="Place bid" >
-                                        <div id="add_watchlist_warning" class="hide notlogged_warning">
-                                            You must be logged to place a bid.
-                                        </div>
-                                    {% endif %}
-                                </div>
-                                <div id="modal" value="listing_page"> </div>
-                            </form>
-                        {% endif %}
+        {% csrf_token %}
+        <div id="auction_data">
+            <div class="img-magnifier-container">
+                <div id="article_image"  onmouseover="magnify('myimage', 2)" onmouseout="close_magnify()" >
+                    <div id="id_glass" class="img-magnifier-glass hide"></div>
+                    <img id="myimage" src="/media/{{ auction_data.image }}" height="200px" >
+                </div>
+            </div>
+            
+            <div id="order-column">
+                <h2>{{ auction_data.name }}</h2>
+                <label class="container">
+                    {% if user_logged.id %}
+                        <button onclick="watch_list_change('{{auction_data.id}}')" class="btn btn-primary" id={{in_watchlist}} name="_place_bid">   </button>
                     {% else %}
-                        <div id="sold_price" >
-                            
-
-                                     
-                            <!-- <div id="bid_price" value={{actual_bid.price}}>
-                                <h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})
-                            </div> -->
-
-
-                                {% if actual_bid.price %}
-                                <h4>Sold for ${{ actual_bid.price }}</h4>
-                                    (Bid by {{ actual_bid.id_user }})
-                                {% else %}
-                                <h4>Unsold</h4>
-                                {% endif %}
-                            
+                        <input class="btn btn-primary" id="myDIV" disabled   value="Add to Watchlist" name="_place_bid">
+                        <div id="add_watchlist_warning" class="hide notlogged_warning">You must be log in to have a watchlist.</div>
+                    {% endif %}
+                </label>
+                <div id="auction_price" value={{auction_data.initial_price}}>
+                    <h4>Initial Price: ${{ auction_data.initial_price }}</h4> (Listed by {{auction_data.id_user}})
+                </div>
+                {% if auction_data.auction_active == 1 %}
+                    {% if actual_bid %}     
+                        <div id="bid_price" value={{actual_bid.price}}>
+                            <h2>Best Bid: ${{ actual_bid.price }}</h2> (Bid by {{ actual_bid.id_user }})
                         </div>
-                        <!-- <div class="form-group" id="auction_price">  -->
-                             <h4>Auction list closed</h4>
-                        <!-- </div> -->
-                        {% if user_logged.id %}
-                            {% if user_logged.id == actual_bid.id_user.id %}
-                       
-                            <div class="form-group" id="auction_winner">  
-                                <h3> You have won this auction!</h3>
+                    {% else %}
+                        <div id="bid_price" >
+                            <h4>There are no bids yet</h4>
+                        </div>
+                    {% endif %}
+
+                    {% if user_logged.id == auction_data.id_user.id %}
+                        <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input class="btn btn-primary" type="submit" name="close_auction" value="Close auction" >
                             </div>
-                            {% endif %}
+                        </form>
+                    {% else %}
+                        <form action="{% url 'auctions_app:create_bid'  %}"  method="GET" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input id="new_bid" class="form-control" type="number" name="new_bid" placeholder="New bid">
+                                <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
+                                {% if user_logged.id %} 
+                                    <input  id="accept" class="btn btn-primary"  value="Place bid" >
+                                {% else %}
+                                    <input class="btn btn-primary"  id="myDIV" disabled value="Place bid" >
+                                    <div id="add_watchlist_warning" class="hide notlogged_warning">
+                                        You must be logged to place a bid.
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div id="modal" value="listing_page"> </div>
+                        </form>
+                    {% endif %}
+                {% else %}
+                    <div id="sold_price" >
+                        {% if actual_bid.price %}
+                            <h4>Sold for ${{ actual_bid.price }}</h4>
+                            (Bid by {{ actual_bid.id_user }})
+                        {% else %}
+                            <h4>Unsold</h4>
+                        {% endif %}
+                    </div>
+                    <h4>Auction list closed</h4>
+                    {% if user_logged.id %}
+                        {% if user_logged.id == actual_bid.id_user.id %}
+                        <div class="form-group" id="auction_winner">  
+                            <h3> You have won this auction!</h3>
+                        </div>
                         {% endif %}
                     {% endif %}
-                </div>
-            </div> 
+                {% endif %}
+            </div>
+        </div> 
         <div id="auction_description">
             <h5>Description: </h5>
             {{ auction_data.description }}
@@ -134,9 +106,7 @@
                 {% endfor %}
             </h5>
         </div> 
-
         <div class="borders"></div>
-        
         <div id="auction_comments">
             <h5>Questions and answers</h5>
             {% if comments %}
@@ -158,12 +128,9 @@
                                         <div class="form-group hide answer-forms" id="answer-form-{{comment.id}}">
                                             <textarea class="form-control "  id="answer-input-{{comment.id}}" name="new_answer" placeholder="New answer"></textarea>
                                             <input class="hide" value="{{auction_data.id}}" name="auction_data" placeholder="Auction Data">
-                                            <!--input class="hide" value="{{ auction_data.id}}" -->
                                             {% if user_logged.id %}
                                                 <input class="btn btn-primary" type="submit" value="Add answer">
                                             {% else %}
-                                                <!-- <input class="btn btn-primary"  id="myDIV" disabled value="Add comment"> -->
-                                                <!-- <div class="hide">You must be logged to add a comment.</div> -->
                                             {% endif %}
                                         </div>
                                     </form>
@@ -172,40 +139,30 @@
                             {% endif %}
                         </div>
                     </div>
-                    
-
                 {% endfor %}
             {% else %}
                 <div class="form-group" >  
                     <b> No questions</b>
                 </div>
             {% endif %}
-            <!-- </br> -->
             {% if user_logged.id != auction_data.id_user.id %}<!-- You can create questions. -->
-                <!-- <a href="javascript:void(0);" onclick="enable_question()" >Make a question</a> -->
                 <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
                     <a href="#question-input" onclick="enable_question()" >Make a question</a>
                     <div class="form-group hide" id="question-form" >
                         <textarea class="form-control" id="question-input" type="text" name="new_comment" placeholder="New question"></textarea>
-
                         <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
-                        <!--input class="hide" value="{{ auction_data.id}}" -->
                         {% if user_logged.id %}
                             <input class="btn btn-primary" type="submit" value="Add question">
                         {% else %}
                             <input class="btn btn-primary"  id="myDIV" disabled value="Add comment">
-                            <div id="comment_warning" class="hide warning_relocation notlogged_warning">You must be logged to add a comment.</div>
+                            <div id="comment_warning" class="hide warning_relocation notlogged_warning">
+                                You must be logged to add a comment.
+                            </div>
                         {% endif %}
                     </div>
-
-
-
                 </form>
-            {% else %}
-                <!-- You can't create questions because you are the owner of the auction. -->
-
+            {% else %}<!-- You can't create questions because you are the owner of the auction. -->
             {% endif %}
-                
         </div>
     </div>
 {% endblock %}
