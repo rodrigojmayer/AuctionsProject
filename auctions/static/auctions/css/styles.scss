@@ -758,10 +758,11 @@ footer {
             }
             .menu{
                 position: static;
-                width: auto;
+                width: 70vw;
                 flex-direction: row;
                 opacity: 1;
                 pointer-events: auto;
+                justify-content: space-between;
             }
 
         }
