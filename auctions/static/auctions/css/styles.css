@@ -174,125 +174,10 @@ html .show {
   position: relative;
   cursor: pointer;
   height: 100%;
+  margin-top: 4.8px;
 }
-#header .navbar #myDropdownUser {
-  position: absolute;
-  margin-top: 0.5rem;
-  height: 2.5rem;
-  width: 6rem;
-  left: -1.7rem;
-  background-color: var(--title-color);
-  border-radius: 4px;
-}
-#header .navbar #myDropdownUser ul {
-  position: static;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-#header .navbar #myDropdownUser a {
-  position: static;
-  display: block;
-}
-#header .navbar #myDropdownUser a li {
-  position: static;
-  height: 2.5rem;
-  color: var(--white-color);
-  font-weight: bold;
-  text-align: center;
-  transition: all 0.3s ease-out;
-  padding: 0.5rem;
-}
-#header .navbar #myDropdownUser a:hover {
-  cursor: pointer;
-  background-color: var(--link-light);
-}
-#header .navbar #myDropdownUser a:first-child:hover {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-#header .navbar #myDropdownUser a:last-child:hover {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-#header .navbar #myDropdownUser:before {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  bottom: 100%;
-  right: 13px;
-  border-width: 0 8px 8px 8px;
-  border-style: solid;
-  border-color: var(--title-color) transparent;
-}
-#header .navbar #myDropdownCategories {
-  position: absolute;
-  margin-top: 1.2rem;
-  left: -1.7rem;
-  width: 10rem;
-  background-color: var(--title-color);
-  border-radius: 4px;
-}
-#header .navbar #myDropdownCategories ul {
-  position: static;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-#header .navbar #myDropdownCategories a {
-  position: static;
-  display: block;
-}
-#header .navbar #myDropdownCategories a li {
-  position: static;
-  height: 2.5rem;
-  color: var(--white-color);
-  font-weight: bold;
-  text-align: center;
-  transition: all 0.3s ease-out;
-  padding: 0.5rem;
-}
-#header .navbar #myDropdownCategories a:hover {
-  cursor: pointer;
-  background-color: var(--link-light);
-}
-#header .navbar #myDropdownCategories a:first-child:hover {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-#header .navbar #myDropdownCategories a:last-child:hover {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-#header .navbar #myDropdownCategories:before {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  bottom: 100%;
-  right: 13px;
-  border-width: 0 8px 8px 8px;
-  border-style: solid;
-  border-color: var(--title-color) transparent;
-}
-#header #user-logged > #myDropdownUser {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.2s linear;
-}
-#header #user-logged:hover > #myDropdownUser {
-  visibility: visible;
-  opacity: 1;
-}
-#header #id_categories > #myDropdownCategories {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.2s linear;
-}
-#header #id_categories:hover > #myDropdownCategories {
-  visibility: visible;
-  opacity: 1;
+#header .navbar #myDropdownUser, #header .navbar #myDropdownCategories {
+  display: none;
 }
 #header .nav-item {
   position: relative;
@@ -741,5 +626,124 @@ footer div {
     opacity: 1;
     pointer-events: auto;
     justify-content: space-between;
+  }
+  #header .navbar #myDropdownUser {
+    position: absolute;
+    margin-top: 0.5rem;
+    height: 2.5rem;
+    width: 6rem;
+    left: -1.7rem;
+    background-color: var(--title-color);
+    border-radius: 4px;
+  }
+  #header .navbar #myDropdownUser ul {
+    position: static;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  #header .navbar #myDropdownUser a {
+    position: static;
+    display: block;
+  }
+  #header .navbar #myDropdownUser a li {
+    position: static;
+    height: 2.5rem;
+    color: var(--white-color);
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    padding: 0.5rem;
+  }
+  #header .navbar #myDropdownUser a:hover {
+    cursor: pointer;
+    background-color: var(--link-light);
+  }
+  #header .navbar #myDropdownUser a:first-child:hover {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  #header .navbar #myDropdownUser a:last-child:hover {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  #header .navbar #myDropdownUser:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: var(--title-color) transparent;
+  }
+  #header .navbar #myDropdownCategories {
+    position: absolute;
+    margin-top: 1.2rem;
+    left: -1.7rem;
+    width: 10rem;
+    background-color: var(--title-color);
+    border-radius: 4px;
+  }
+  #header .navbar #myDropdownCategories ul {
+    position: static;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  #header .navbar #myDropdownCategories a {
+    position: static;
+    display: block;
+  }
+  #header .navbar #myDropdownCategories a li {
+    position: static;
+    height: 2.5rem;
+    color: var(--white-color);
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    padding: 0.5rem;
+  }
+  #header .navbar #myDropdownCategories a:hover {
+    cursor: pointer;
+    background-color: var(--link-light);
+  }
+  #header .navbar #myDropdownCategories a:first-child:hover {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  #header .navbar #myDropdownCategories a:last-child:hover {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  #header .navbar #myDropdownCategories:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: var(--title-color) transparent;
+  }
+  #header #user-logged > #myDropdownUser {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+  }
+  #header #user-logged:hover > #myDropdownUser {
+    visibility: visible;
+    opacity: 1;
+  }
+  #header #id_categories > #myDropdownCategories {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+  }
+  #header #id_categories:hover > #myDropdownCategories {
+    visibility: visible;
+    opacity: 1;
   }
 }/*# sourceMappingURL=styles.css.map */

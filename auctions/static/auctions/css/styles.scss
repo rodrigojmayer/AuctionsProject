@@ -188,135 +188,15 @@ html {
             position:relative;
             cursor: pointer;
             height: 100%;
+            margin-top: 4.8px;
             // padding-top: 20px;
         }
-        #myDropdownUser {
-            position:absolute;
-            margin-top: .5rem;
-            height: 2.5rem;
-            width: 6rem;
-            left: -1.7rem;
-            background-color: var(--title-color); 
-            border-radius: 4px;
-            ul {
-                position:static;
-                list-style-type: none;
-                padding:0;
-                margin:0;
-            }
-            a{
-                position:static;
-                display: block;
-                li{
-                    position:static;
-                    height: 2.5rem;
-                    color: var(--white-color);
-                    font-weight: bold;
-                    text-align: center;
-                    transition: all 0.3s ease-out;
-                    padding: .5rem;
-                }
-            }
-            a:hover{
-                cursor: pointer;
-                background-color: var(--link-light);
-            }
-            a:first-child:hover{
-                border-top-left-radius: 4px;
-                border-top-right-radius: 4px;
-            }
-            a:last-child:hover{
-                border-bottom-left-radius: 4px;
-                border-bottom-right-radius: 4px;
-            }
+        #myDropdownUser, #myDropdownCategories{
+            display: none;
         }
-        #myDropdownUser:before {
-            content: "";
-            width: 0;
-            height: 0;
-            position: absolute;
-            bottom: 100%;
-            right: 13px;
-            border-width: 0 8px 8px 8px;
-            border-style: solid;  
-            border-color: var(--title-color) transparent; 
-        }
-        #myDropdownCategories {
-            position:absolute;
-            margin-top: 1.2rem;
-            left: -1.7rem;
-            width: 10rem;
-            background-color: var(--title-color); 
-            border-radius: 4px;
-    
-            ul {
-                position:static;
-                list-style-type: none;
-                padding:0;
-                margin:0;
-            }
-            a{
-                position:static;
-                display: block;
-    
-                li{
-                    position:static;
-                    height: 2.5rem;
-                    color: var(--white-color);
-                    font-weight: bold;
-                    text-align: center;
-                    transition: all 0.3s ease-out;
-                    padding: .5rem;
-                }
-            }
-            a:hover{
-                cursor: pointer;
-                background-color: var(--link-light);
-            }
-            a:first-child:hover{
-                border-top-left-radius: 4px;
-                border-top-right-radius: 4px;
-            }
-            a:last-child:hover{
-                border-bottom-left-radius: 4px;
-                border-bottom-right-radius: 4px;
-            }
-        }
-        #myDropdownCategories:before {
-            content: "";
-            width: 0;
-            height: 0;
-            position: absolute;
-            bottom: 100%;
-            right: 13px;
-            border-width: 0 8px 8px 8px;
-            border-style: solid;
-            border-color: var(--title-color) transparent;   
-        }
+        
     }
     
-    #user-logged > #myDropdownUser {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.2s linear;
-    }
-
-    #user-logged:hover > #myDropdownUser{
-        visibility: visible;
-        opacity: 1;
-    }
-
-    #id_categories > #myDropdownCategories {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.2s linear;
-    }
-
-    #id_categories:hover > #myDropdownCategories{
-        visibility: visible;
-        opacity: 1;
-    }
-
     .nav-item{
         // height: 65px;
         // height: auto;
@@ -798,7 +678,134 @@ footer {
                 justify-content: space-between;
             }
 
+            #myDropdownUser {
+                position:absolute;
+                margin-top: .5rem;
+                height: 2.5rem;
+                width: 6rem;
+                left: -1.7rem;
+                background-color: var(--title-color); 
+                border-radius: 4px;
+                ul {
+                    position:static;
+                    list-style-type: none;
+                    padding:0;
+                    margin:0;
+                }
+                a{
+                    position:static;
+                    display: block;
+                    li{
+                        position:static;
+                        height: 2.5rem;
+                        color: var(--white-color);
+                        font-weight: bold;
+                        text-align: center;
+                        transition: all 0.3s ease-out;
+                        padding: .5rem;
+                    }
+                }
+                a:hover{
+                    cursor: pointer;
+                    background-color: var(--link-light);
+                }
+                a:first-child:hover{
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                }
+                a:last-child:hover{
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+            }
+            #myDropdownUser:before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                bottom: 100%;
+                right: 13px;
+                border-width: 0 8px 8px 8px;
+                border-style: solid;  
+                border-color: var(--title-color) transparent; 
+            }
+            #myDropdownCategories {
+                position:absolute;
+                margin-top: 1.2rem;
+                left: -1.7rem;
+                width: 10rem;
+                background-color: var(--title-color); 
+                border-radius: 4px;
+        
+                ul {
+                    position:static;
+                    list-style-type: none;
+                    padding:0;
+                    margin:0;
+                }
+                a{
+                    position:static;
+                    display: block;
+        
+                    li{
+                        position:static;
+                        height: 2.5rem;
+                        color: var(--white-color);
+                        font-weight: bold;
+                        text-align: center;
+                        transition: all 0.3s ease-out;
+                        padding: .5rem;
+                    }
+                }
+                a:hover{
+                    cursor: pointer;
+                    background-color: var(--link-light);
+                }
+                a:first-child:hover{
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                }
+                a:last-child:hover{
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+            }
+            #myDropdownCategories:before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                bottom: 100%;
+                right: 13px;
+                border-width: 0 8px 8px 8px;
+                border-style: solid;
+                border-color: var(--title-color) transparent;   
+            }
+
         }
+        
+        #user-logged > #myDropdownUser {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.2s linear;
+        }
+
+        #user-logged:hover > #myDropdownUser{
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #id_categories > #myDropdownCategories {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.2s linear;
+        }
+
+        #id_categories:hover > #myDropdownCategories{
+            visibility: visible;
+            opacity: 1;
+        }
+
     }
 
 
