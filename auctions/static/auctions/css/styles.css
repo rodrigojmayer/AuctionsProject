@@ -121,7 +121,6 @@ html .show {
 /* *************** Components *************** */
 #header {
   background-color: var(--first-color);
-  padding-left: 3%;
   font-family: var(--font);
   position: fixed;
   bottom: 0;
@@ -136,9 +135,22 @@ html .show {
   top: 0;
   width: 95%;
   height: var(--header-height);
+  padding: 0.5rem;
 }
 #header .navbar #logo {
   height: 43px;
+}
+#header .navbar .menu {
+  position: fixed;
+  left: 0;
+  bottom: var(--header-height);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-alpha-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 #header .navbar .nav-link {
   font-size: larger;
@@ -269,7 +281,6 @@ html .show {
   opacity: 1;
 }
 #header .nav-item {
-  height: auto;
   position: relative;
 }
 #header .nav-item a {
@@ -676,10 +687,30 @@ footer div {
 }
 
 @media screen and (min-width: 768px) {
+  #header .navbar #logo {
+    height: 52px;
+  }
+}
+@media screen and (min-width: 1024px) {
   #header {
     top: 0;
+    padding-left: 3%;
+  }
+  #header .navbar {
+    padding: 0.5rem 1rem;
   }
   #header .navbar #logo {
     height: 52px;
+    bottom: 10px;
+  }
+  #header .navbar .menu-btn {
+    display: none;
+  }
+  #header .navbar .menu {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
   }
 }/*# sourceMappingURL=styles.css.map */

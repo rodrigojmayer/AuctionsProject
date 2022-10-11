@@ -135,7 +135,7 @@ html {
 
 #header {
     background-color: var(--first-color);
-    padding-left: 3%;
+    // padding-left: 3%;
     font-family: var(--font);
     position:fixed;
     bottom: 0;
@@ -150,8 +150,24 @@ html {
         top: 0;
         width: 95%;
         height: var(--header-height);
+        padding: .5rem;
         #logo{
             height: 43px;
+        }
+        .menu-btn{
+            
+        }
+        .menu{
+            position: fixed;
+            left: 0;
+            bottom: var(--header-height);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--first-alpha-color);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
         }
         .nav-link{
             font-size: larger;
@@ -181,13 +197,13 @@ html {
                 position:static;
                 display: block;
                 li{
-                position:static;
-                height: 2.5rem;
-                color: var(--white-color);
-                font-weight: bold;
-                text-align: center;
-                transition: all 0.3s ease-out;
-                padding: .5rem;
+                    position:static;
+                    height: 2.5rem;
+                    color: var(--white-color);
+                    font-weight: bold;
+                    text-align: center;
+                    transition: all 0.3s ease-out;
+                    padding: .5rem;
                 }
             }
             a:hover{
@@ -292,7 +308,7 @@ html {
 
     .nav-item{
         // height: 65px;
-        height: auto;
+        // height: auto;
         position: relative;
         // bottom: 5px;
         // bottom: 10px;
@@ -709,9 +725,9 @@ footer {
 @media screen and (min-width: 768px) {
 
     #header {
-        top: 0;
 
         .navbar {
+
             #logo{
                 height: 52px;
             }
@@ -726,6 +742,30 @@ footer {
 @media screen and (min-width: 1024px) {
 
 
+    #header {
+        top: 0;
+        padding-left: 3%;
+
+        .navbar {
+            padding: .5rem 1rem;
+
+            #logo{
+                height: 52px;
+                bottom:10px;
+            }
+            .menu-btn{
+                display: none;
+            }
+            .menu{
+                position: static;
+                width: auto;
+                flex-direction: row;
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+        }
+    }
 
 
 }
