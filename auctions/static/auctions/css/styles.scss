@@ -155,7 +155,14 @@ html {
             height: 43px;
         }
         .menu-btn{
-            
+            background-color: var(--first-color);
+            border: 0;
+            cursor: pointer;
+            outline: none;
+            border: none;
+        }
+        svg{
+            fill: var(--second-color);
         }
         .menu{
             position: fixed;
@@ -168,6 +175,10 @@ html {
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.5s ease;
+        }
+        .menu.is-active{
+            opacity: 1;
+            pointer-events: auto;
         }
         .nav-link{
             font-size: larger;
@@ -662,6 +673,8 @@ html {
     }
 }
 
+/* *************** Modal *************** */
+
 .modal-alert{
     position:absolute;
     top:0;
@@ -705,6 +718,26 @@ html {
         }
     }
 }
+
+.lock-scroll{
+    overflow: hidden;
+}
+.un-lock-scroll{
+    overflow-y: overlay;
+}
+
+/* ************ Utilities *********** */
+
+.none {
+    display: none;
+}
+
+
+
+
+
+
+
 footer {
     position: absolute;
     bottom: 0;

@@ -140,6 +140,16 @@ html .show {
 #header .navbar #logo {
   height: 43px;
 }
+#header .navbar .menu-btn {
+  background-color: var(--first-color);
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+#header .navbar svg {
+  fill: var(--second-color);
+}
 #header .navbar .menu {
   position: fixed;
   left: 0;
@@ -151,6 +161,10 @@ html .show {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
+}
+#header .navbar .menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
 }
 #header .navbar .nav-link {
   font-size: larger;
@@ -626,6 +640,7 @@ html .show {
   border-bottom: solid var(--gray-color-2);
 }
 
+/* *************** Modal *************** */
 .modal-alert {
   position: absolute;
   top: 0;
@@ -668,6 +683,19 @@ html .show {
 .modal-alert .modal-body .flex-horizontal {
   display: flex;
   gap: 0.5rem;
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+.un-lock-scroll {
+  overflow-y: overlay;
+}
+
+/* ************ Utilities *********** */
+.none {
+  display: none;
 }
 
 footer {

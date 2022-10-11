@@ -28,7 +28,14 @@
                     </div>  
                 </a>
                 <button class="menu-btn">
-                    menuicon
+                    <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M5.33337 8H26.6667V10.6667H5.33337V8ZM5.33337 14.6667H26.6667V17.3333H5.33337V14.6667ZM5.33337 21.3333H26.6667V24H5.33337V21.3333Z" />
+                      </svg>
+                      <svg class="none" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M21.1987 8L15.5413 13.656L9.88533 8L8 9.88533L13.656 15.5413L8 21.1973L9.88533 23.0827L15.5413 17.4267L21.1987 23.0827L23.084 21.1973L17.428 15.5413L23.084 9.88533L21.1987 8Z" />
+                      </svg>
                 </button>
                 <div class="menu">
                     {% if user.is_authenticated %}

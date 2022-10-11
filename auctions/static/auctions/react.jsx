@@ -70,7 +70,8 @@ if(modal)
 function Modal(){
 
     // console.log(modal.getAttribute('value'))
-    
+
+
     return(
         <div class="modal-alert hide" >
             <div class="modal-body ">
@@ -110,6 +111,7 @@ function handleModal() {
     // alert("entrando al submit")
     modal_alert.classList.add('show');
     modal_alert.classList.remove('hide');
+    lockScroll()
 
     let modal_subtitle = document.getElementById("modal_subtitle");
     let modal_text = document.getElementById("modal_text");
@@ -227,6 +229,7 @@ function handleModal() {
     modal_back.addEventListener("click", function() {
         modal_alert.classList.add('hide');
         modal_alert.classList.remove('show');
+        unLockScroll()
     })
 
     function rejected_modal(){
@@ -242,3 +245,13 @@ function handleModal() {
     // console.log(data_image.value);
 
 };
+
+
+function lockScroll(){
+    document.body.classList.add("lock-scroll");
+    document.body.classList.remove("un-lock-scroll");
+}
+function unLockScroll(){
+    document.body.classList.remove("lock-scroll")
+    document.body.classList.add("un-lock-scroll")
+}
