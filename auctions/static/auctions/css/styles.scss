@@ -85,7 +85,9 @@ html {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-
+    p{
+        margin:0;
+    }
     a{
         color: var(--link-color);
         transition: all 0.5s ease-out;
@@ -433,6 +435,9 @@ html {
         min-width: 44.37%;
         width: 64.37%;
         max-width: 94.37%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     #listing_watchlist{
         font-size: 140%;
@@ -450,7 +455,7 @@ html {
         // margin:auto;
         display: flex;
         align-items: center;
-        margin-bottom: .3rem;
+        // margin-bottom: .3rem;
         overflow: hidden;
         text-overflow: ellipsis;
         
@@ -469,6 +474,12 @@ html {
                 font-size: 1rem;
             }
         }
+    }
+    #auction_listing_data{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 5rem;
     }
     #auction_data{
         padding: 1rem 2vw;
@@ -542,7 +553,7 @@ html {
         }
     }
     #auction_price, #sold_price{
-        margin-bottom: .5rem;
+        // margin-bottom: .5rem;
         height: .8125rem;
         // font-size: 
         h3{
@@ -560,7 +571,7 @@ html {
         // height: 2.75rem;
         display: flex;
         align-items: center;
-        margin-bottom: .3rem;
+        // margin-bottom: .3rem;
         overflow: hidden;
         text-overflow: ellipsis;
         
@@ -573,14 +584,14 @@ html {
             // color: #FFDB15;
             // height: 1rem;
             min-height: 1rem;
-            margin-bottom: 0;
+            // margin-bottom: 0;
             height: auto;
 
             max-height: 2.6rem;
             p{
                 // display: block;
                 // color: #FFDB15;
-                margin-bottom: 0;
+                // margin-bottom: 0;
 
                 // height: 1rem ;
                 font-size: .6rem;
@@ -855,7 +866,7 @@ footer {
             height: 4rem;
             // display: flex;
             // align-items: center;
-            margin-bottom: .2rem;
+            // margin-bottom: .2rem;
             a{
 
                 h2{
@@ -866,16 +877,16 @@ footer {
 
    
         #auction_price, #sold_price{
-            margin-bottom: .2rem;
+            // margin-bottom: .2rem;
             height: 1.5rem;
             // font-size: 
             h3{
-            margin-bottom: .2rem;
+            // margin-bottom: .2rem;
             font-size: 1.5rem;
             }
         }
         #auction_description{
-            margin-bottom: .5625rem;
+            // margin-bottom: .5625rem;
             // padding: 0.5rem;
             // margin-top: 1px;
             height: 3.7rem;
@@ -887,7 +898,7 @@ footer {
                 // display: block;
                 height: 3.2rem;
                 max-height: 3.2rem;
-                margin:0;
+                // margin:0;
                 }
             }
     

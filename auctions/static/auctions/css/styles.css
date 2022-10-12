@@ -70,6 +70,9 @@ html a, html p, html h1, html h2, html h3, html h4, html h5, html h6 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+html p {
+  margin: 0;
+}
 html a {
   color: var(--link-color);
   transition: all 0.5s ease-out;
@@ -363,6 +366,9 @@ html .show {
   min-width: 44.37%;
   width: 64.37%;
   max-width: 94.37%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .main #listing_watchlist {
   font-size: 140%;
@@ -378,7 +384,6 @@ html .show {
   height: 2.4rem;
   display: flex;
   align-items: center;
-  margin-bottom: 0.3rem;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -390,6 +395,12 @@ html .show {
 }
 .main #auction_name a h2 {
   font-size: 1rem;
+}
+.main #auction_listing_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 5rem;
 }
 .main #auction_data {
   padding: 1rem 2vw;
@@ -459,7 +470,6 @@ html .show {
      object-fit: contain;
 }
 .main #auction_price, .main #sold_price {
-  margin-bottom: 0.5rem;
   height: 0.8125rem;
 }
 .main #auction_price h3, .main #sold_price h3 {
@@ -468,7 +478,6 @@ html .show {
 .main #auction_description {
   display: flex;
   align-items: center;
-  margin-bottom: 0.3rem;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -478,12 +487,10 @@ html .show {
   line-clamp: 2;
   -webkit-box-orient: vertical;
   min-height: 1rem;
-  margin-bottom: 0;
   height: auto;
   max-height: 2.6rem;
 }
 .main #auction_description #auction_description_block p {
-  margin-bottom: 0;
   font-size: 0.6rem;
   min-height: 1rem;
   height: auto;
@@ -703,28 +710,23 @@ footer div {
   }
   .main #auction_name {
     height: 4rem;
-    margin-bottom: 0.2rem;
   }
   .main #auction_name a h2 {
     font-size: 2rem;
   }
   .main #auction_price, .main #sold_price {
-    margin-bottom: 0.2rem;
     height: 1.5rem;
   }
   .main #auction_price h3, .main #sold_price h3 {
-    margin-bottom: 0.2rem;
     font-size: 1.5rem;
   }
   .main #auction_description {
-    margin-bottom: 0.5625rem;
     height: 3.7rem;
   }
   .main #auction_description #auction_description_block p {
     font-size: 1.125rem;
     height: 3.2rem;
     max-height: 3.2rem;
-    margin: 0;
   }
   .main #auction_category {
     font-size: 1.125rem;
