@@ -285,12 +285,15 @@ html {
 }
 
 .main {
-    margin:auto;
+    // margin:auto;
+    margin:auto .75rem;
     margin-bottom:3vw;
     background-color:  var(--white-color);
     border-radius: 10px;
-    max-width: 55vw;
-    min-width: 45rem;
+    // max-width: 55vw;
+    // min-width: 45rem;
+    // max-width: 5vw;
+    // min-width: 18.5rem;
     .to-log-form-group{
         width: 80%;
         margin: 1rem auto ;
@@ -704,6 +707,11 @@ footer {
         }
     }
 
+    
+    .main {
+        margin:auto 3.625rem;
+        margin-bottom:3rem;
+    }
 
 }
 
@@ -915,7 +923,17 @@ footer {
     }
 
 
+
     
+    .main {
+        margin:auto;
+        // margin-bottom:3vw;
+        margin-bottom:3rem;
+        max-width: 55vw;
+        min-width: 45rem;
+    }
+
+
     footer{
         margin-bottom: 0;
 

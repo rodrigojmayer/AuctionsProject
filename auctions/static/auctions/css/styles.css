@@ -235,12 +235,10 @@ html .show {
 }
 
 .main {
-  margin: auto;
+  margin: auto 0.75rem;
   margin-bottom: 3vw;
   background-color: var(--white-color);
   border-radius: 10px;
-  max-width: 55vw;
-  min-width: 45rem;
 }
 .main .to-log-form-group {
   width: 80%;
@@ -636,6 +634,10 @@ footer div {
   #header .navbar #logo {
     height: 52px;
   }
+  .main {
+    margin: auto 3.625rem;
+    margin-bottom: 3rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   #header {
@@ -818,6 +820,12 @@ footer div {
     padding-top: var(--header-height);
     padding-bottom: 1rem;
     margin-bottom: 0;
+  }
+  .main {
+    margin: auto;
+    margin-bottom: 3rem;
+    max-width: 55vw;
+    min-width: 45rem;
   }
   footer {
     margin-bottom: 0;
