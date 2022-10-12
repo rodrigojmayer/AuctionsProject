@@ -246,6 +246,7 @@ html .show {
   background-color: var(--white-color);
   border-radius: 10px;
   padding-top: 1px;
+  padding-bottom: 1px;
 }
 .main .to-log-form-group {
   width: 80%;
@@ -465,13 +466,28 @@ html .show {
   font-size: 0.8125rem;
 }
 .main #auction_description {
-  margin-bottom: 0.5rem;
-  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.main #auction_description p {
-  font-size: 0.6875rem;
-  height: 2.75rem;
-  margin: 0;
+.main #auction_description #auction_description_block {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  min-height: 1rem;
+  margin-bottom: 0;
+  height: auto;
+  max-height: 2.6rem;
+}
+.main #auction_description #auction_description_block p {
+  margin-bottom: 0;
+  font-size: 0.6rem;
+  min-height: 1rem;
+  height: auto;
+  max-height: 2.6rem;
 }
 .main #bid_price {
   font-weight: bold;
@@ -687,11 +703,31 @@ footer div {
   }
   .main #auction_name {
     height: 4rem;
-    display: flex;
-    align-items: center;
+    margin-bottom: 0.2rem;
   }
   .main #auction_name a h2 {
     font-size: 2rem;
+  }
+  .main #auction_price, .main #sold_price {
+    margin-bottom: 0.2rem;
+    height: 1.5rem;
+  }
+  .main #auction_price h3, .main #sold_price h3 {
+    margin-bottom: 0.2rem;
+    font-size: 1.5rem;
+  }
+  .main #auction_description {
+    margin-bottom: 0.5625rem;
+    height: 3.7rem;
+  }
+  .main #auction_description #auction_description_block p {
+    font-size: 1.125rem;
+    height: 3.2rem;
+    max-height: 3.2rem;
+    margin: 0;
+  }
+  .main #auction_category {
+    font-size: 1.125rem;
   }
 }
 @media screen and (min-width: 1024px) {
