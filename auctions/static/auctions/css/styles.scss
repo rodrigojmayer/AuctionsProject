@@ -192,6 +192,7 @@ html {
             // height: 100%;
             width:6rem;
             margin: auto;
+            padding-top: .3rem;
 
             // margin-top: 4.8px;
             // padding-top: 20px;
@@ -199,26 +200,64 @@ html {
         #myDropdownUser, #myDropdownCategories{
             display: none;
         }
-    }
-    
-    .nav-item{
-        // height: 65px;
-        // height: auto;
-        position: relative;
-        // background-color: red;
-        min-width: 6rem;
-        // bottom: 5px;
-        // bottom: 10px;
-        a{
-            display: inline-block;
+        
+        .nav-item{
+            // height: 65px;
+            // height: auto;
             position: relative;
-            // top: 13px;
-            color:  var(--title-color)
+            // background-color: red;
+            min-width: 6rem;
+            height: 2.6rem;
+            // bottom: 5px;
+            // bottom: 10px;
+            // transition:  0.1s ease;
+            a{
+                display: inline-block;
+                position: relative;
+                // top: 13px;
+                color:  var(--title-color)
+            }
+            #link_categories{
+                display: block;
+                // color:red;
+            }
+            #dropdown_categories{
+                display: none;
+                // color:green;
+            }
         }
-    }
-    #nav5, #nav6{
-        // position: relative;
-        // right: 1%;
+        .nav-logo{
+            height: auto;
+
+        }
+        .authentication{      
+            height: 2.6rem;
+        }
+        
+        .nav-item:hover {
+            // text-decoration: none;
+            color: var(--white-color);
+            background-color: var(--link-hover);
+            // fill: red;
+            path{
+                fill: var(--white-color);
+            }
+        }
+        .nav-item:hover > a {
+            color:var(--white-color);
+        }
+        .nav-logo:hover{
+            background-color:transparent;
+        }
+
+        // .nav-item:hover > svg {
+        //     fill: var(--white-color);
+        // }
+        // #nav5, #nav6{
+            // position: relative;
+            // right: 1%;
+        // }
+        
     }
 }
 
@@ -229,10 +268,6 @@ html {
     // margin-bottom: var(--header-height);
     // -bottom: 100rem;
     // padding-bottom: 1rem;
-}
-footer{
-    margin-bottom: var(--header-height);
-
 }
 #login, #register, #id_create_listing, #create_comment{
     max-width: 35rem;
@@ -628,9 +663,6 @@ footer{
 
 
 
-
-
-
 footer {
     position: absolute;
     bottom: 0;
@@ -639,6 +671,7 @@ footer {
     font-family: var(--font);
     width: 100%;
     height: var(--footer-height);
+    margin-bottom: var(--header-height);
     text-align: center;
     div{
         padding-top:  5px;
@@ -697,10 +730,31 @@ footer {
             .nav-item{
                 display: flex;
                 justify-content: end;
+                
+                #link_categories{
+                    display: none;
+                }
+                #dropdown_categories{
+                    display: block;
+                    
+                }
+            }
+            
+            .nav-item:hover {
+                // text-decoration: none;
+                color:  var(--title-color);
+                background-color: transparent;
+                path{
+                    fill: var(--title-color);
+                }
+            }
+            .nav-item:hover > a {
+                color:  var(--title-color)
             }
             #user-logged{
                 height: 100%;
-                margin-top: 4.8px;
+                // margin-top: 4.8px;
+                // padding-top: .3rem;
                 width:100%;
                 // margin: auto;
             }
@@ -759,7 +813,8 @@ footer {
             #myDropdownCategories {
                 display: block;
                 position:absolute;
-                margin-top: 1.2rem;
+                // margin-top: 1.2rem;
+                margin-top: 2rem;
                 left: -1.7rem;
                 width: 10rem;
                 background-color: var(--title-color); 

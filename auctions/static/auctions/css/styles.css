@@ -176,25 +176,49 @@ html .show {
   cursor: pointer;
   width: 6rem;
   margin: auto;
+  padding-top: 0.3rem;
 }
 #header .navbar #myDropdownUser, #header .navbar #myDropdownCategories {
   display: none;
 }
-#header .nav-item {
+#header .navbar .nav-item {
   position: relative;
   min-width: 6rem;
+  height: 2.6rem;
 }
-#header .nav-item a {
+#header .navbar .nav-item a {
   display: inline-block;
   position: relative;
   color: var(--title-color);
 }
-#content-wrap {
-  padding-bottom: calc(var(--header-height) + 2rem);
+#header .navbar .nav-item #link_categories {
+  display: block;
+}
+#header .navbar .nav-item #dropdown_categories {
+  display: none;
+}
+#header .navbar .nav-logo {
+  height: auto;
+}
+#header .navbar .authentication {
+  height: 2.6rem;
+}
+#header .navbar .nav-item:hover {
+  color: var(--white-color);
+  background-color: var(--link-hover);
+}
+#header .navbar .nav-item:hover path {
+  fill: var(--white-color);
+}
+#header .navbar .nav-item:hover > a {
+  color: var(--white-color);
+}
+#header .navbar .nav-logo:hover {
+  background-color: transparent;
 }
 
-footer {
-  margin-bottom: var(--header-height);
+#content-wrap {
+  padding-bottom: calc(var(--header-height) + 2rem);
 }
 
 #login, #register, #id_create_listing, #create_comment {
@@ -591,6 +615,7 @@ footer {
   font-family: var(--font);
   width: 100%;
   height: var(--footer-height);
+  margin-bottom: var(--header-height);
   text-align: center;
 }
 footer div {
@@ -634,9 +659,24 @@ footer div {
     display: flex;
     justify-content: end;
   }
+  #header .navbar .nav-item #link_categories {
+    display: none;
+  }
+  #header .navbar .nav-item #dropdown_categories {
+    display: block;
+  }
+  #header .navbar .nav-item:hover {
+    color: var(--title-color);
+    background-color: transparent;
+  }
+  #header .navbar .nav-item:hover path {
+    fill: var(--title-color);
+  }
+  #header .navbar .nav-item:hover > a {
+    color: var(--title-color);
+  }
   #header .navbar #user-logged {
     height: 100%;
-    margin-top: 4.8px;
     width: 100%;
   }
   #header .navbar #myDropdownUser {
@@ -694,7 +734,7 @@ footer div {
   #header .navbar #myDropdownCategories {
     display: block;
     position: absolute;
-    margin-top: 1.2rem;
+    margin-top: 2rem;
     left: -1.7rem;
     width: 10rem;
     background-color: var(--title-color);

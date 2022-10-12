@@ -23,7 +23,7 @@
                         {{result}}
                 {% endfor %}
                 <a href="{% url 'auctions_app:index' %}" >
-                    <div class="nav-item" >
+                    <div class="nav-item nav-logo" >
                         <img id="logo" src="/media/Group 3.png" alt="Logo">
                     </div>  
                 </a>
@@ -43,7 +43,8 @@
                             <a class="nav-link" href="{% url 'auctions_app:create_listing' %}">Post Item</a>
                         </div>
                         <div class="nav-item" id="id_categories">                
-                            <a class="nav-link" href="javascript:void(0);">Categories</a>
+                            <a class="nav-link" id="link_categories" href="{% url 'auctions_app:categories' %}" >Categories</a>
+                            <a class="nav-link" id="dropdown_categories"  href="javascript:void(0);" >Categories</a>
                             <div id="myDropdownCategories" >
                                 <ul>
 
