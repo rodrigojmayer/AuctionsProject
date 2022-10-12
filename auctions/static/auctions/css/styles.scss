@@ -182,25 +182,31 @@ html {
         }
         .nav-link{
             font-size: larger;
-            padding-top:.3rem;
+            // padding:0;
+            width: 100%;
+            text-align: center;
         }
         #user-logged{
             position:relative;
             cursor: pointer;
-            height: 100%;
-            margin-top: 4.8px;
+            // height: 100%;
+            width:6rem;
+            margin: auto;
+
+            // margin-top: 4.8px;
             // padding-top: 20px;
         }
         #myDropdownUser, #myDropdownCategories{
             display: none;
         }
-        
     }
     
     .nav-item{
         // height: 65px;
         // height: auto;
         position: relative;
+        // background-color: red;
+        min-width: 6rem;
         // bottom: 5px;
         // bottom: 10px;
         a{
@@ -210,15 +216,18 @@ html {
             color:  var(--title-color)
         }
     }
-    #nav1,#nav2, #nav3, #nav4, #nav5, #nav6{
-        position: relative;
-        right: 1%;
+    #nav5, #nav6{
+        // position: relative;
+        // right: 1%;
     }
 }
 
 #content-wrap{
-    padding-top: var(--header-height);
-    padding-bottom: 1rem;
+    // padding-top: var(--header-height);
+    padding-bottom: var(--header-height);
+    margin-bottom: var(--header-height);
+    // -bottom: 100rem;
+    // padding-bottom: 1rem;
 }
 
 #login, #register, #id_create_listing, #create_comment{
@@ -678,7 +687,21 @@ footer {
                 justify-content: space-between;
             }
 
+            .nav-link{
+                padding-top:.3rem;
+            }
+            .nav-item{
+                display: flex;
+                justify-content: end;
+            }
+            #user-logged{
+                height: 100%;
+                margin-top: 4.8px;
+                width:100%;
+                // margin: auto;
+            }
             #myDropdownUser {
+                display: block;
                 position:absolute;
                 margin-top: .5rem;
                 height: 2.5rem;
@@ -730,6 +753,7 @@ footer {
                 border-color: var(--title-color) transparent; 
             }
             #myDropdownCategories {
+                display: block;
                 position:absolute;
                 margin-top: 1.2rem;
                 left: -1.7rem;
@@ -808,5 +832,9 @@ footer {
 
     }
 
+    #content-wrap{
+        padding-top: var(--header-height);
+        padding-bottom: 1rem;
+    }
 
 }

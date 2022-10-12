@@ -43,9 +43,7 @@
                             <a class="nav-link" href="{% url 'auctions_app:create_listing' %}">Post Item</a>
                         </div>
                         <div class="nav-item" id="id_categories">                
-                            <a class="nav-link" href="javascript:void(0);">
-                                Categories
-                            </a>
+                            <a class="nav-link" href="javascript:void(0);">Categories</a>
                             <div id="myDropdownCategories" >
                                 <ul>
 
@@ -55,12 +53,7 @@
                         <div class="nav-item" id="nav2">                
                             <a class="nav-link" href="{% url 'auctions_app:watch_list' %}">My Watch List</a>
                         </div>
-                    {% else %}
 
-                    {% endif %}
-
-
-                    {% if user.is_authenticated %}
                     <div class="nav-item authentication" >
                         <div id="user-logged">
                             <strong>{{ user.username }}</strong>
@@ -79,8 +72,18 @@
                         </div>
                     </div>
                     {% else %}
+                    <div class="nav-item" > 
+                    </div>
+                    <div class="nav-item" > 
+                    </div>
+                    <div class="nav-item" > 
+                    </div>
                     <div class="nav-item" id="nav5">
                         <a class="nav-link" href="{% url 'auctions_app:login' %}">Log In</a>
+                    </div>
+
+                    <div class="nav-item" id="nav6">
+
                         <a class="nav-link" href="{% url 'auctions_app:register' %}">Register</a>
                     </div>
                     {% endif %}

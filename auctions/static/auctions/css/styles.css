@@ -168,33 +168,30 @@ html .show {
 }
 #header .navbar .nav-link {
   font-size: larger;
-  padding-top: 0.3rem;
+  width: 100%;
+  text-align: center;
 }
 #header .navbar #user-logged {
   position: relative;
   cursor: pointer;
-  height: 100%;
-  margin-top: 4.8px;
+  width: 6rem;
+  margin: auto;
 }
 #header .navbar #myDropdownUser, #header .navbar #myDropdownCategories {
   display: none;
 }
 #header .nav-item {
   position: relative;
+  min-width: 6rem;
 }
 #header .nav-item a {
   display: inline-block;
   position: relative;
   color: var(--title-color);
 }
-#header #nav1, #header #nav2, #header #nav3, #header #nav4, #header #nav5, #header #nav6 {
-  position: relative;
-  right: 1%;
-}
-
 #content-wrap {
-  padding-top: var(--header-height);
-  padding-bottom: 1rem;
+  padding-bottom: var(--header-height);
+  margin-bottom: var(--header-height);
 }
 
 #login, #register, #id_create_listing, #create_comment {
@@ -627,7 +624,20 @@ footer div {
     pointer-events: auto;
     justify-content: space-between;
   }
+  #header .navbar .nav-link {
+    padding-top: 0.3rem;
+  }
+  #header .navbar .nav-item {
+    display: flex;
+    justify-content: end;
+  }
+  #header .navbar #user-logged {
+    height: 100%;
+    margin-top: 4.8px;
+    width: 100%;
+  }
   #header .navbar #myDropdownUser {
+    display: block;
     position: absolute;
     margin-top: 0.5rem;
     height: 2.5rem;
@@ -679,6 +689,7 @@ footer div {
     border-color: var(--title-color) transparent;
   }
   #header .navbar #myDropdownCategories {
+    display: block;
     position: absolute;
     margin-top: 1.2rem;
     left: -1.7rem;
@@ -745,5 +756,9 @@ footer div {
   #header #id_categories:hover > #myDropdownCategories {
     visibility: visible;
     opacity: 1;
+  }
+  #content-wrap {
+    padding-top: var(--header-height);
+    padding-bottom: 1rem;
   }
 }/*# sourceMappingURL=styles.css.map */
