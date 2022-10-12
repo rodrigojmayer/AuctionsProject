@@ -186,7 +186,17 @@ html {
             width: 100%;
             text-align: center;
         }
-        #user-logged{
+        #user-logged-link{
+            display: block;
+            position:relative;
+            // cursor: pointer;
+            // height: 100%;
+            width:7rem;
+            margin: auto;
+            padding-top: .5rem;
+        }
+        #user-logged-dropdown{
+            display: none;
             position:relative;
             cursor: pointer;
             // height: 100%;
@@ -727,6 +737,13 @@ footer {
             .nav-link{
                 padding-top:.3rem;
             }
+            
+            #user-logged-link{
+                display: none;
+            }
+            #user-logged-dropdown{
+                display: block;
+            }
             .nav-item{
                 display: flex;
                 justify-content: end;
@@ -751,7 +768,7 @@ footer {
             .nav-item:hover > a {
                 color:  var(--title-color)
             }
-            #user-logged{
+            #user-logged-dropdown{
                 height: 100%;
                 // margin-top: 4.8px;
                 // padding-top: .3rem;
@@ -814,7 +831,7 @@ footer {
                 display: block;
                 position:absolute;
                 // margin-top: 1.2rem;
-                margin-top: 2rem;
+                margin-top: 2.7rem;
                 left: -1.7rem;
                 width: 10rem;
                 background-color: var(--title-color); 
@@ -867,13 +884,13 @@ footer {
 
         }
         
-        #user-logged > #myDropdownUser {
+        #user-logged-dropdown > #myDropdownUser {
             visibility: hidden;
             opacity: 0;
             transition: visibility 0s, opacity 0.2s linear;
         }
 
-        #user-logged:hover > #myDropdownUser{
+        #user-logged-dropdown:hover > #myDropdownUser{
             visibility: visible;
             opacity: 1;
         }

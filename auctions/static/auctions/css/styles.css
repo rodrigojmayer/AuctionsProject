@@ -171,7 +171,15 @@ html .show {
   width: 100%;
   text-align: center;
 }
-#header .navbar #user-logged {
+#header .navbar #user-logged-link {
+  display: block;
+  position: relative;
+  width: 7rem;
+  margin: auto;
+  padding-top: 0.5rem;
+}
+#header .navbar #user-logged-dropdown {
+  display: none;
   position: relative;
   cursor: pointer;
   width: 6rem;
@@ -655,6 +663,12 @@ footer div {
   #header .navbar .nav-link {
     padding-top: 0.3rem;
   }
+  #header .navbar #user-logged-link {
+    display: none;
+  }
+  #header .navbar #user-logged-dropdown {
+    display: block;
+  }
   #header .navbar .nav-item {
     display: flex;
     justify-content: end;
@@ -675,7 +689,7 @@ footer div {
   #header .navbar .nav-item:hover > a {
     color: var(--title-color);
   }
-  #header .navbar #user-logged {
+  #header .navbar #user-logged-dropdown {
     height: 100%;
     width: 100%;
   }
@@ -734,7 +748,7 @@ footer div {
   #header .navbar #myDropdownCategories {
     display: block;
     position: absolute;
-    margin-top: 2rem;
+    margin-top: 2.7rem;
     left: -1.7rem;
     width: 10rem;
     background-color: var(--title-color);
@@ -782,12 +796,12 @@ footer div {
     border-style: solid;
     border-color: var(--title-color) transparent;
   }
-  #header #user-logged > #myDropdownUser {
+  #header #user-logged-dropdown > #myDropdownUser {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.2s linear;
   }
-  #header #user-logged:hover > #myDropdownUser {
+  #header #user-logged-dropdown:hover > #myDropdownUser {
     visibility: visible;
     opacity: 1;
   }
