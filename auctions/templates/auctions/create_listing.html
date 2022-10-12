@@ -8,7 +8,7 @@
         {% csrf_token %}
         <div class="to-log-form-group">
             <label for="auction_name" >Article</label>
-            <input autofocus class="form-control" id="data_article" type="text" name="auction_name" placeholder="" autocomplete="off"> 
+            <input autofocus class="form-control" id="data_article" type="text" name="auction_name" placeholder="" autocomplete="off" maxlength="30"> 
             <label for="description">Description</label>
             <textarea  class="form-control" id="data_description" name="description" placeholder="" maxlength="150"></textarea>
             <label for="initial_price">Starting price</label>

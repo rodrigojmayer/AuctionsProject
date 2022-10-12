@@ -26,8 +26,10 @@
                                     Sold for ${{ auction.initial_price }}
                                 {% endif %}
                             </h3>
+                        </div>              
+                        <div id="auction_description"> 
+                            <p>{{ auction.description }}</p>
                         </div>
-                        {{ auction.description }}
                         <div id="auction_category">
                             Category:     
                             {% for category in auction.auction_category.all %}   
