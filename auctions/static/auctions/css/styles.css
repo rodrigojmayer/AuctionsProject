@@ -190,7 +190,10 @@ html .show {
   color: var(--title-color);
 }
 #content-wrap {
-  padding-bottom: var(--header-height);
+  padding-bottom: calc(var(--header-height) + 2rem);
+}
+
+footer {
   margin-bottom: var(--header-height);
 }
 
@@ -760,5 +763,9 @@ footer div {
   #content-wrap {
     padding-top: var(--header-height);
     padding-bottom: 1rem;
+    margin-bottom: 0;
+  }
+  footer {
+    margin-bottom: 0;
   }
 }/*# sourceMappingURL=styles.css.map */

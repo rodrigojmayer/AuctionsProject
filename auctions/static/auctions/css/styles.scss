@@ -224,12 +224,16 @@ html {
 
 #content-wrap{
     // padding-top: var(--header-height);
-    padding-bottom: var(--header-height);
-    margin-bottom: var(--header-height);
+    // padding-bottom: var(--header-height);
+    padding-bottom: calc(var(--header-height) + 2rem);
+    // margin-bottom: var(--header-height);
     // -bottom: 100rem;
     // padding-bottom: 1rem;
 }
+footer{
+    margin-bottom: var(--header-height);
 
+}
 #login, #register, #id_create_listing, #create_comment{
     max-width: 35rem;
     min-width: 25rem;
@@ -835,6 +839,13 @@ footer {
     #content-wrap{
         padding-top: var(--header-height);
         padding-bottom: 1rem;
+        margin-bottom: 0;
     }
 
+
+    
+    footer{
+        margin-bottom: 0;
+
+    }
 }
