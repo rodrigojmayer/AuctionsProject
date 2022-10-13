@@ -3,13 +3,13 @@
 <div class="sub">
     <h2>Category List</h2>
 </div>
-<div class="main">
+<div class="main"id="list_categories">
     {% for categories in all_categories %}
-        <div id="listing_auction" >
+        <!-- <div class="listinsg_auction"  > -->
             <a href="../category/{{ categories.id }}" >
-                <div id="auction_name">{{ categories.category_name }}</div>   
+                {{ categories.category_name }}   
             </a>
-        </div>
+        <!-- </div> -->
     {% endfor %}
 </div>
 {% endblock %}

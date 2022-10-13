@@ -6,7 +6,7 @@
     <div class="main" id="category">
         {% if auction_listing_category %}    
             {% for auction_category in auction_listing_category %}
-                <div id="listing_auction" >
+                <div class="listing_auction" >
                     <div id="auction_image">
                         <a href="{% url 'auctions_app:listing_page' auction_category.id %}">
                             <!-- <img src="/media/{{ auction_category.image }}"  height="200px"> -->
@@ -44,7 +44,7 @@
                 {% endif %}
             {% endfor %}
         {%else %}
-        <div id="listing_auction" >
+        <div class="listing_auction" >
             <div id="auction_name">
                 There is no auction in this category.
             </div> 

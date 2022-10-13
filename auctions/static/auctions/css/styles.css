@@ -62,6 +62,7 @@ html body .sub {
 }
 html body .sub h2 {
   padding-top: 0.75rem;
+  padding-bottom: 1px;
 }
 html body #sub-not-logged {
   padding-left: 37%;
@@ -241,9 +242,11 @@ html .show {
   padding-bottom: calc(var(--header-height) + 2rem);
 }
 
-#login, #register, #id_create_listing, #create_comment {
-  max-width: 35rem;
-  min-width: 25rem;
+#login, #register, #id_create_listing, #create_comment, #list_categories {
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 17rem;
 }
 
 .main {
@@ -351,7 +354,7 @@ html .show {
   margin-left: auto;
   margin-right: 3%;
 }
-.main #listing_auction {
+.main .listing_auction {
   font-family: var(--font);
   color: var(--text-color);
   width: auto;
@@ -361,7 +364,7 @@ html .show {
   flex-direction: row;
   gap: 0.75rem;
 }
-.main #listing_auction b {
+.main .listing_auction b {
   display: block;
   margin: auto;
 }
@@ -473,6 +476,7 @@ html .show {
   font-size: 0.8125rem;
 }
 .main #auction_description {
+  line-height: 0.8rem;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -619,6 +623,14 @@ html .show {
   border-bottom: solid var(--gray-color-2);
 }
 
+#list_categories {
+  display: flex;
+  flex-direction: column;
+}
+#list_categories a {
+  text-align: center;
+}
+
 /* *************** Modal *************** */
 .modal-alert {
   position: absolute;
@@ -698,11 +710,15 @@ footer div {
   #header .navbar #logo {
     height: 52px;
   }
+  #login, #register, #id_create_listing, #create_comment, #list_categories {
+    max-width: 35rem;
+    margin: auto;
+  }
   .main {
     margin: auto 3.625rem;
     margin-bottom: 3rem;
   }
-  .main #listing_auction {
+  .main .listing_auction {
     height: 10.563rem;
     margin: 1.5rem;
     gap: 1.5rem;
@@ -716,14 +732,16 @@ footer div {
     height: 4.6rem;
   }
   .main #auction_name a {
-    padding: 10px;
+    padding: 10px 0;
     font-size: 2rem;
   }
   .main #auction_price, .main #sold_price {
     height: 1.5rem;
+    margin-bottom: 0.4rem;
     font-size: 1.5rem;
   }
   .main #auction_description {
+    line-height: 1.5rem;
     height: 3.7rem;
   }
   .main #auction_description #auction_description_block p {

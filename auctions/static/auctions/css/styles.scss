@@ -73,6 +73,7 @@ html {
 
             h2{
                 padding-top:0.75rem;
+                padding-bottom:1px;
             }
         }
 
@@ -303,11 +304,16 @@ html {
     // -bottom: 100rem;
     // padding-bottom: 1rem;
 }
-#login, #register, #id_create_listing, #create_comment{
-    max-width: 35rem;
-    min-width: 25rem;
-}
 
+#login, #register, #id_create_listing, #create_comment, #list_categories{
+    // max-width: 17rem;
+    max-width: 70vw;
+    margin-left: auto ;
+    margin-right: auto ;
+    // margin-bottom: ;
+    min-width: 17rem;
+    // margin:
+}
 .main {
     // margin:auto;
     margin:auto .75rem;
@@ -418,7 +424,7 @@ html {
         margin-right:3%;
     }
     
-    #listing_auction{
+    .listing_auction{
         font-family: var(--font);
         color: var(--text-color); 
         // width:100%;
@@ -439,6 +445,7 @@ html {
         min-width: 44.37%;
         width: 64.37%;
         max-width: 94.37%;
+        // min-height: 12rem;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -477,6 +484,8 @@ html {
         // justify-content: space-around;
         justify-content: space-between;
         min-height: 5rem;
+        // min-height: 7rem;
+        // padding-bottom: 1rem;
     }
     #auction_data{
         padding: 1rem 2vw;
@@ -518,6 +527,7 @@ html {
         // padding: 0.5rem;
         font-size: .6875rem;
 
+        // font-weight:550;
 
 
 
@@ -590,7 +600,8 @@ html {
         // height: 100%;
         // max-height: 3rem;
 
-        // height: 2.75rem;
+            line-height: .8rem;
+            // height: 2.75rem;
         display: flex;
         align-items: center;
         // margin-bottom: .3rem;
@@ -782,6 +793,17 @@ html {
         border-bottom: solid var(--gray-color-2);
     }
 }
+#list_categories{
+    display: flex;
+    flex-direction: column;
+    // color:red !important;
+        // text-align: center;
+    a{
+        // color:red !important;
+        text-align: center;
+    }
+
+}
 
 /* *************** Modal *************** */
 
@@ -877,12 +899,18 @@ footer {
     }
 
     
+    #login, #register, #id_create_listing, #create_comment, #list_categories{
+        max-width: 35rem;
+        // min-width: 25rem;
+        margin:auto;
+
+    }
     .main {
         margin:auto 3.625rem;
         margin-bottom:3rem;
 
         
-        #listing_auction{
+        .listing_auction{
             // font-family: var(--font);
             // color: var(--text-color); 
             // width:100%;
@@ -919,7 +947,7 @@ footer {
             a{
 
                 // h2{
-            padding: 10px;
+            padding: 10px 0;
                     font-size: 2rem;
                     // height: 4.5rem;
                     // height: 2.5rem;
@@ -934,7 +962,7 @@ footer {
             height: 1.5rem;
             // font-size: 
             // h3{
-            // margin-bottom: .2rem;
+            margin-bottom: .4rem;
             font-size: 1.5rem;
             // }
         }
@@ -942,7 +970,9 @@ footer {
             // margin-bottom: .5625rem;
             // padding: 0.5rem;
             // margin-top: 1px;
+            line-height: 1.5rem;
             height: 3.7rem;
+            // gap:30rem;
             // display: flex;
             // align-items: center;
             #auction_description_block{
@@ -1207,7 +1237,7 @@ footer {
         min-width: 45rem;
 
 
-        #listing_auction{
+        .listing_auction{
             // font-family: var(--font);
             // color: var(--text-color); 
             // width:100%;
