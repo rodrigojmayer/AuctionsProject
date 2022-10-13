@@ -71,6 +71,7 @@ html a, html p, html h1, html h2, html h3, html h4, html h5, html h6 {
   text-overflow: ellipsis;
 }
 html p {
+  padding: 1px;
   margin: 0;
 }
 html a {
@@ -85,6 +86,7 @@ html a:active {
   color: var(--link-light-pressing);
 }
 html h1 {
+  padding: 1px;
   margin: 0;
   font-size: 2.9rem;
 }
@@ -93,6 +95,7 @@ html h2 {
   font-size: 2rem;
 }
 html h4 {
+  padding: 1px;
   margin: 0;
 }
 html div {
@@ -371,6 +374,7 @@ html .show {
   justify-content: space-around;
 }
 .main #auction_name {
+  line-height: 120%;
   font-weight: bold;
   height: 2.4rem;
   display: flex;
@@ -709,10 +713,12 @@ footer div {
     width: 10.563rem;
   }
   .main #auction_name {
+    line-height: 2rem;
     height: 4rem;
   }
   .main #auction_name a {
     font-size: 2rem;
+    height: 4.5rem;
   }
   .main #auction_price, .main #sold_price {
     height: 1.5rem;

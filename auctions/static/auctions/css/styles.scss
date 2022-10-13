@@ -86,6 +86,7 @@ html {
         text-overflow: ellipsis;
     }
     p{
+        padding:1px;
         margin:0;
     }
     a{
@@ -100,14 +101,17 @@ html {
         color: var(--link-light-pressing);
     }
     h1 {
+        padding:1px;
         margin: 0;
         font-size: 2.9rem;
     }
     h2 {
         margin: 0;
+        // padding:1px;
         font-size: 2rem;
     }
     h4 {
+        padding:1px;
         margin: 0;
     }
     div{
@@ -440,6 +444,8 @@ html {
         justify-content: space-around;
     }
     #auction_name{ 
+        // line-height: 170%;
+        line-height: 120%;
         font-weight: bold;
         height: 2.4rem;
         // margin:auto;
@@ -878,6 +884,9 @@ footer {
 
         #auction_name{ 
             // font-weight: bold;
+            // line-height: 200%;
+            // padding: 1px;
+            line-height: 2rem;
             height: 4rem;
             // display: flex;
             // align-items: center;
@@ -885,7 +894,9 @@ footer {
             a{
 
                 // h2{
+            // padding: 10px;
                     font-size: 2rem;
+                    height: 4.5rem;
                 // }
             }
         }
