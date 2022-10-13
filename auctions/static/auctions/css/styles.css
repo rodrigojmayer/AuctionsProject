@@ -432,6 +432,12 @@ html .show {
 }
 .main #auction_category {
   font-size: 0.6875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .main #auction_category h5 {
   display: inline;
