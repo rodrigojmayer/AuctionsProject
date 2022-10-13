@@ -8,13 +8,16 @@
             <div id="listing_auction" >
                 <div id="auction_image">
                     <a href="listing_page/{{ auction.id }}" >
-                        <img src="/media/{{ auction.image }}"  height="200px">
+                        <!-- <img src="/media/{{ auction.image }}"  height="200px"> -->
+                        <img src="/media/{{ auction.image }}"  >
                     </a>
                 </div>
                 <div id="order-column">
                     <div id="auction_name">
                         <a href="../listing_page/{{ auction.id }}" >
-                            <h2>{{ auction.name }}</h2>    
+                            <!-- <h2> -->
+                                {{ auction.name }}
+                            <!-- </h2>     -->
                         </a>   
                     </div>
                     <div id="auction_listing_data">                

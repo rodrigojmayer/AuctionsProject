@@ -370,15 +370,6 @@ html .show {
   flex-direction: column;
   justify-content: space-around;
 }
-.main #listing_watchlist {
-  font-size: 140%;
-  padding: 0.5rem;
-}
-.main #listing_watchlist #auction_category {
-  font-size: 60%;
-  margin: auto;
-  padding: 0;
-}
 .main #auction_name {
   font-weight: bold;
   height: 2.4rem;
@@ -392,8 +383,6 @@ html .show {
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 2;
   -webkit-box-orient: vertical;
-}
-.main #auction_name a h2 {
   font-size: 1rem;
 }
 .main #auction_listing_data {
@@ -578,7 +567,7 @@ html .show {
 }
 .main .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   background-color: var(--gray-color2);
   grid-gap: 10px;
   outline: 10px solid var(--gray-color-2);
@@ -588,7 +577,6 @@ html .show {
   background-color: var(--white-color);
   outline: 10px solid var(--gray-color-2);
   padding: 20px;
-  font-size: 30px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -597,6 +585,18 @@ html .show {
 }
 .main #watch_list_main {
   background-color: transparent;
+}
+.main #listing_watchlist {
+  padding: 0.5rem;
+}
+.main #listing_watchlist #auction_name a {
+  width: 100rem;
+  text-align: center;
+}
+.main #listing_watchlist #auction_category {
+  font-size: 60%;
+  margin: auto;
+  padding: 0;
 }
 .main #app {
   width: 100%;
@@ -711,7 +711,7 @@ footer div {
   .main #auction_name {
     height: 4rem;
   }
-  .main #auction_name a h2 {
+  .main #auction_name a {
     font-size: 2rem;
   }
   .main #auction_price, .main #sold_price {
@@ -730,6 +730,9 @@ footer div {
   }
   .main #auction_category {
     font-size: 1.125rem;
+  }
+  .main .grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media screen and (min-width: 1024px) {

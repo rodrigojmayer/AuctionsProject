@@ -439,16 +439,6 @@ html {
         flex-direction: column;
         justify-content: space-around;
     }
-    #listing_watchlist{
-        font-size: 140%;
-        padding: .5rem;
-        #auction_category{
-            font-size: 60%;
-            margin: auto;
-            padding: 0;
-        }
-    }
-
     #auction_name{ 
         font-weight: bold;
         height: 2.4rem;
@@ -467,12 +457,12 @@ html {
 
             // display: block;
             
-            h2{
+            // h2{
             // display: block;
 
                 // margin:25% 0;
                 font-size: 1rem;
-            }
+            // }
         }
     }
     #auction_listing_data{
@@ -488,6 +478,7 @@ html {
         align-items: center;
         justify-content: center;
         gap: 7vw;
+        
         .img-magnifier-container {
             position:relative;
         }
@@ -697,7 +688,7 @@ html {
 
     .grid-container{
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         background-color: var(--gray-color2);
         grid-gap: 10px;
         outline: 10px solid var(--gray-color-2);
@@ -707,7 +698,7 @@ html {
         background-color: var(--white-color);
         outline: 10px solid var(--gray-color-2);
         padding: 20px;
-        font-size: 30px;
+        // font-size: 30px;
         text-align: center;
         display:flex;
         flex-direction: column;
@@ -717,6 +708,30 @@ html {
     #watch_list_main{
         background-color: transparent;
     }
+    
+    #listing_watchlist{
+        // font-size: 140%;
+        padding: .5rem;
+        #auction_name{ 
+            // display: flex;
+
+            // justify-content: center;
+
+            a{
+                // margin:auto;
+                width: 100rem;
+                text-align: center;
+                // color:red !important;
+            }
+
+        }
+        #auction_category{
+            font-size: 60%;
+            margin: auto;
+            padding: 0;
+        }
+    }
+
     #app{
         width: 100%;
         text-align: center;
@@ -869,9 +884,9 @@ footer {
             // margin-bottom: .2rem;
             a{
 
-                h2{
+                // h2{
                     font-size: 2rem;
-                }
+                // }
             }
         }
 
@@ -909,8 +924,30 @@ footer {
                 font-size: 1.125rem; 
 
         }
+    
+        .grid-container{
+            // display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            // background-color: var(--gray-color2);
+            // grid-gap: 10px;
+            // outline: 10px solid var(--gray-color-2);
+            // border-radius: 10px;
+        }
+        .grid-item{
+            // background-color: var(--white-color);
+            // outline: 10px solid var(--gray-color-2);
+            // padding: 20px;
+            // font-size: 30px;
+            // text-align: center;
+            // display:flex;
+            // flex-direction: column;
+            // gap: .7rem;
+            // justify-content: space-evenly;
+        }
 
     }
+
+
 
 }
 
