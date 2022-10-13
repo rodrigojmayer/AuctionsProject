@@ -9,41 +9,43 @@
             {% for my_watch in my_watch_list %}
                 {% for auction in all_auctions %}
                     {% if auction.id == my_watch.id_auction.id %}
-                    <div class="grid-item" id="listing_watchlist" >
-                        <div id="auction_name">
-                            <a href="../listing_page/{{ auction.id }}" >
-                                {{ auction.name }}
-                            </a>  
-                        </div>  
-                        <div id="auction_image">
-                            <a href="/listing_page/{{ auction.id }}" >
-                                <img src="/media/{{ auction.image }}"  height="200px">
-                            </a>
+                        <div class="grid-item" id="listing_watchlist" >
+                            <div id="auction_name">
+                                <a href="../listing_page/{{ auction.id }}" >
+                                    {{ auction.name }}
+                                </a>  
+                            </div>   
+                            <div id="auction_image">
+                                <a href="/listing_page/{{ auction.id }}" >
+                                    <img src="/media/{{ auction.image }}"  height="200px">
+                                </a>
+                            </div>
+                            <!-- <div id="auction_listing_data">  -->
+                                <div id="auction_price">
+                                    {% if auction.auction_active %}
+                                        ${{ auction.initial_price }}
+                                    {% else %}
+                                        Sold for ${{ auction.initial_price }}
+                                    {% endif %}
+                                </div>
+                                <div id="auction_category">
+                                    Category:     
+                                    {% for category in auction.auction_category.all %} 
+                                    <a href="../category/{{ category.id }}" >  
+                                        {{ category.category_name }}
+                                    </a>
+                                    {% endfor %}
+                                </div>
+                            <!-- </div>             -->
                         </div>
-                        <div id="auction_price">
-                            {% if auction.auction_active %}
-                                ${{ auction.initial_price }}
-                            {% else %}
-                                Sold for ${{ auction.initial_price }}
-                            {% endif %}
-                        </div>
-                        <div id="auction_category">
-                            Category:     
-                            {% for category in auction.auction_category.all %} 
-                            <a href="../category/{{ category.id }}" >  
-                                {{ category.category_name }}
-                            </a>
-                            {% endfor %}
-                        </div>            
-                    </div>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
         </div>
     {%else %}
-    <div id="listing_auction" >
-        <b>There is no auction in the watch list.</b> 
-    </div>
+        <div id="listing_auction" >
+            <b>There is no auction in the watch list.</b> 
+        </div>
     {% endif %}
 </div>
 {% endblock %}

@@ -392,7 +392,7 @@ html .show {
 .main #auction_listing_data {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   min-height: 5rem;
 }
 .main #auction_data {
@@ -464,8 +464,6 @@ html .show {
 }
 .main #auction_price, .main #sold_price {
   height: 0.8125rem;
-}
-.main #auction_price h3, .main #sold_price h3 {
   font-size: 0.8125rem;
 }
 .main #auction_description {
@@ -597,11 +595,6 @@ html .show {
   width: 100rem;
   text-align: center;
 }
-.main #listing_watchlist #auction_category {
-  font-size: 60%;
-  margin: auto;
-  padding: 0;
-}
 .main #app {
   width: 100%;
   text-align: center;
@@ -714,16 +707,14 @@ footer div {
   }
   .main #auction_name {
     line-height: 2rem;
-    height: 4rem;
+    height: 4.6rem;
   }
   .main #auction_name a {
+    padding: 10px;
     font-size: 2rem;
-    height: 4.5rem;
   }
   .main #auction_price, .main #sold_price {
     height: 1.5rem;
-  }
-  .main #auction_price h3, .main #sold_price h3 {
     font-size: 1.5rem;
   }
   .main #auction_description {
