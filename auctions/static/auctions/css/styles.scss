@@ -74,6 +74,7 @@ html {
             h2{
                 padding-top:0.75rem;
                 padding-bottom:1px;
+                font-size: 1.5;
             }
         }
 
@@ -796,6 +797,9 @@ html {
 #list_categories{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 1rem;
     // color:red !important;
         // text-align: center;
     a{
@@ -902,7 +906,7 @@ footer {
     #login, #register, #id_create_listing, #create_comment, #list_categories{
         max-width: 35rem;
         // min-width: 25rem;
-        margin:auto;
+        // margin:auto;
 
     }
     .main {

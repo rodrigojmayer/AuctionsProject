@@ -63,6 +63,7 @@ html body .sub {
 html body .sub h2 {
   padding-top: 0.75rem;
   padding-bottom: 1px;
+  font-size: 1.5;
 }
 html body #sub-not-logged {
   padding-left: 37%;
@@ -626,6 +627,9 @@ html .show {
 #list_categories {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  padding: 1rem;
 }
 #list_categories a {
   text-align: center;
@@ -712,7 +716,6 @@ footer div {
   }
   #login, #register, #id_create_listing, #create_comment, #list_categories {
     max-width: 35rem;
-    margin: auto;
   }
   .main {
     margin: auto 3.625rem;
