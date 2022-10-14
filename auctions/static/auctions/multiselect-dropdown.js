@@ -37,7 +37,7 @@ style.innerHTML = `
 .multiselect-dropdown span.placeholder{
   color:#ced4da;
   // color: pink;
-  margin: .5rem !important;
+  margin: .5rem;
   // vertical-align:middle !important;
 }
 .multiselect-dropdown-list-wrapper{

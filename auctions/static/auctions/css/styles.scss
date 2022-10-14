@@ -329,14 +329,21 @@ html {
     // max-width: 5vw;
     // min-width: 18.5rem;
     .to-log-form-group{
-        width: 80%;
-        margin: 1rem auto ;
+        width: 90%;
+        margin: .5rem auto ;
         >input, .multiselect-dropdown{
-            height: 3rem;
+            // height: 3rem;
             margin:0;
+            height: 2.25rem;
         }
         label{
             margin: 3.5px 5px;
+            margin-bottom: 0;
+            font-size: .75rem;
+        }
+        .multiselect-dropdown span.placeholder{
+            margin: .1rem;
+
         }
         #glosaArchivos{
             display: block;
@@ -927,7 +934,23 @@ footer {
         margin:auto 3.625rem;
         margin-bottom:3rem;
 
-        
+        .to-log-form-group{
+            width: 80%;
+            margin: 1rem auto ;
+            >input, .multiselect-dropdown{
+                // height: 3rem;
+                // margin:0;
+                height: 3rem;
+            }
+            label{
+                // margin: 3.5px 5px;
+                font-size: 1.125rem;
+            }
+            .multiselect-dropdown span.placeholder{
+                margin: .5rem;
+    
+            }
+        }
         .listing_auction{
             // font-family: var(--font);
             // color: var(--text-color); 

@@ -259,15 +259,20 @@ html .show {
   padding-bottom: 1px;
 }
 .main .to-log-form-group {
-  width: 80%;
-  margin: 1rem auto;
+  width: 90%;
+  margin: 0.5rem auto;
 }
 .main .to-log-form-group > input, .main .to-log-form-group .multiselect-dropdown {
-  height: 3rem;
   margin: 0;
+  height: 2.25rem;
 }
 .main .to-log-form-group label {
   margin: 3.5px 5px;
+  margin-bottom: 0;
+  font-size: 0.75rem;
+}
+.main .to-log-form-group .multiselect-dropdown span.placeholder {
+  margin: 0.1rem;
 }
 .main .to-log-form-group #glosaArchivos {
   display: block;
@@ -727,6 +732,19 @@ footer div {
   .main {
     margin: auto 3.625rem;
     margin-bottom: 3rem;
+  }
+  .main .to-log-form-group {
+    width: 80%;
+    margin: 1rem auto;
+  }
+  .main .to-log-form-group > input, .main .to-log-form-group .multiselect-dropdown {
+    height: 3rem;
+  }
+  .main .to-log-form-group label {
+    font-size: 1.125rem;
+  }
+  .main .to-log-form-group .multiselect-dropdown span.placeholder {
+    margin: 0.5rem;
   }
   .main .listing_auction {
     height: 10.563rem;
