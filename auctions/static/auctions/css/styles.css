@@ -273,6 +273,7 @@ html .show {
 }
 .main .to-log-form-group .multiselect-dropdown span.placeholder {
   margin: 0.1rem;
+  color: var(--gray-dark-color);
 }
 .main .to-log-form-group span {
   font-size: 0.75rem;
@@ -316,39 +317,42 @@ html .show {
   margin: 1.7rem 0;
 }
 .main .form #display-image-environment {
-  height: 10vw;
-  width: 10vw;
+  height: 7.8125rem;
+  width: 7.8125rem;
   outline: dotted 1px var(--link-color);
   margin: auto;
   margin-top: 1rem;
 }
 .main .form #display-image-environment #display-image {
   display: none;
-  height: 10vw;
-  width: 10vw;
+  height: 100%;
+  width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 .main .form #display-image-environment #button_image {
   display: block;
-  height: 10vw;
-  width: 10vw;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  color: var(--black-color);
+  color: var(--gray-dark-color);
   background-color: transparent;
   border: none;
 }
 .main .form #display-image-environment #button_image p {
-  font-size: 1.5vw;
+  font-size: 0.875rem;
   display: block;
-  padding-top: 10%;
+  padding-top: 20%;
   overflow: hidden;
   white-space: nowrap;
 }
 .main .form #display-image-environment #button_image p svg {
-  width: 2vw;
-  height: 2vw;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.main .form #display-image-environment #button_image p svg path {
+  fill: var(--gray-dark-color);
 }
 .main #accept {
   margin-top: 0;
@@ -709,12 +713,14 @@ footer {
   color: var(--second-color);
   font-family: var(--font);
   width: 100%;
-  height: var(--footer-height);
+  height: calc(var(--footer-height) - 0.5rem);
   margin-bottom: var(--header-height);
   text-align: center;
   font-size: smaller;
+  font-size: 0.725rem;
 }
-footer div {
+
+#div_footer {
   padding-top: 5px;
   text-align: center;
   width: 100%;
@@ -759,6 +765,17 @@ footer div {
     height: 3rem;
     font-size: 1.125rem;
   }
+  .main .form #display-image-environment {
+    height: 8.125rem;
+    width: 8.125rem;
+  }
+  .main .form #display-image-environment #button_image p {
+    font-size: 1.125rem;
+  }
+  .main .form #display-image-environment #button_image p svg {
+    width: 2rem;
+    height: 2rem;
+  }
   .main .listing_auction {
     height: 10.563rem;
     margin: 1.5rem;
@@ -797,7 +814,8 @@ footer div {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   footer {
-    font-size: medium;
+    height: var(--footer-height);
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
