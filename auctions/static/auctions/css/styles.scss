@@ -882,6 +882,7 @@ footer {
     height: var(--footer-height);
     margin-bottom: var(--header-height);
     text-align: center;
+    font-size: smaller;
     div{
         padding-top:  5px;
         text-align: center;
@@ -1033,6 +1034,24 @@ footer {
     }
 
 
+    footer {
+        // position: absolute;
+        // bottom: 0;
+        // background-color: var(--gray-dark-color);
+        // color: var(--second-color);
+        // font-family: var(--font);
+        // width: 100%;
+        // height: var(--footer-height);
+        // margin-bottom: var(--header-height);
+        // text-align: center;
+        font-size:medium;
+
+        div{
+            // padding-top:  5px;
+            // text-align: center;
+            // width:100%;
+        }
+    }
 
 }
 

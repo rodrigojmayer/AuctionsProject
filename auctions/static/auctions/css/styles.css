@@ -703,6 +703,7 @@ footer {
   height: var(--footer-height);
   margin-bottom: var(--header-height);
   text-align: center;
+  font-size: smaller;
 }
 footer div {
   padding-top: 5px;
@@ -763,6 +764,9 @@ footer div {
   }
   .main .grid-container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  footer {
+    font-size: medium;
   }
 }
 @media screen and (min-width: 1024px) {
