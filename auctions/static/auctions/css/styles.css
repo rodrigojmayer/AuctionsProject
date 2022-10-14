@@ -274,6 +274,9 @@ html .show {
 .main .to-log-form-group .multiselect-dropdown span.placeholder {
   margin: 0.1rem;
 }
+.main .to-log-form-group span {
+  font-size: 0.75rem;
+}
 .main .to-log-form-group #glosaArchivos {
   display: block;
   margin: auto;
@@ -288,7 +291,8 @@ html .show {
 .main .btn {
   margin: 1rem 10%;
   width: 80%;
-  height: 3rem;
+  height: 2.25rem;
+  font-size: 0.875rem;
 }
 .main form a {
   display: block;
@@ -721,7 +725,7 @@ footer div {
     height: 52px;
   }
   #login, #register, #id_create_listing, #create_comment, #list_categories {
-    max-width: 35rem;
+    max-width: 30rem;
   }
   .sub {
     height: 4rem !important;
@@ -734,17 +738,26 @@ footer div {
     margin-bottom: 3rem;
   }
   .main .to-log-form-group {
-    width: 80%;
-    margin: 1rem auto;
+    width: 85%;
+    margin: 0.1rem auto;
   }
   .main .to-log-form-group > input, .main .to-log-form-group .multiselect-dropdown {
     height: 3rem;
   }
   .main .to-log-form-group label {
-    font-size: 1.125rem;
+    margin: 0.5rem 5px;
+    margin-bottom: 0.1rem;
+    font-size: 1rem;
   }
   .main .to-log-form-group .multiselect-dropdown span.placeholder {
     margin: 0.5rem;
+  }
+  .main .to-log-form-group span {
+    font-size: 0.9rem;
+  }
+  .main .btn {
+    height: 3rem;
+    font-size: 1.125rem;
   }
   .main .listing_auction {
     height: 10.563rem;
