@@ -225,10 +225,8 @@ function MultiselectDropdown(options){
     });
     
     document.addEventListener('click', function(event) {
-      // console.log(event.target.getAttribute("name")) 
       if (!div.contains(event.target) || event.target.getAttribute("name") == "close") {
         listWrap.style.display='none';
-        // alert("jojo")
         div.refresh();
       }
     });    
