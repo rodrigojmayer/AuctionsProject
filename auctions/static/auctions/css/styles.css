@@ -1044,4 +1044,22 @@ footer {
   footer {
     margin-bottom: 0;
   }
+}
+.multiselect-dropdown-search {
+  width: calc(100% - 2.1rem) !important;
+}
+
+#id_multiselect_search {
+  position: relative;
+  left: calc(100% - 2rem);
+  top: 0.2rem;
+  height: 0;
+}
+#id_multiselect_search svg {
+  height: 2rem;
+  width: 2rem;
+  margin: 0;
+}
+#id_multiselect_search svg path {
+  fill: var(--gray-dark-color);
 }/*# sourceMappingURL=styles.css.map */

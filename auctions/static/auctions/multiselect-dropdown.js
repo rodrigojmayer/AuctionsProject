@@ -118,13 +118,29 @@ function MultiselectDropdown(options){
   
   document.querySelectorAll("select[multiple]").forEach((el,k)=>{
     
-    var div=newEl('div',{class:'multiselect-dropdown',style:{width:config.style?.width??el.clientWidth+'px',padding:config.style?.padding??''}});
+    var div=newEl('div',{class:'multiselect-dropdown',
+                          style:{width:config.style?.width??el.clientWidth+'px',
+                          padding:config.style?.padding??''}});
     el.style.display='none';
     el.parentNode.insertBefore(div,el.nextSibling);
     var listWrap=newEl('div',{class:'multiselect-dropdown-list-wrapper'});
     var list=newEl('div',{class:'multiselect-dropdown-list',style:{height:config.height}});
-    var search=newEl('input',{class:['multiselect-dropdown-search'].concat([config.searchInput?.class??'form-control']),style:{width:'100%',display:el.attributes['multiselect-search']?.value==='true'?'block':'none'},placeholder:config.txtSearch});
+    var search=newEl('input',{class:['multiselect-dropdown-search'].concat([config.searchInput?.class??'form-control']),
+                              style:{width:'100%',display:el.attributes['multiselect-search']?.value==='true'?'block':'none'},
+                              placeholder:config.txtSearch});
+    
+    // listWrap.setAttribute('id','id_multiselect_search');
+    // var hijojo = `<div id="cuidado"></div>`;
+    // search.appendChild(hijojo)
+    const node = document.createElement("div");
+    node.setAttribute('id','id_multiselect_search');
+    node.innerHTML = `<svg name="close" width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path name="close" d="M21.1987 8L15.5413 13.656L9.88533 8L8 9.88533L13.656 15.5413L8 21.1973L9.88533 23.0827L15.5413 17.4267L21.1987 23.0827L23.084 21.1973L17.428 15.5413L23.084 9.88533L21.1987 8Z" fill="#D90062"/>
+                      </svg>`
+    listWrap.appendChild(node);
+    // console.log(search);
     listWrap.appendChild(search);
+    // listWrap.appendChild('<div>are</div>');
     div.appendChild(listWrap);
     listWrap.appendChild(list);
 
@@ -209,8 +225,10 @@ function MultiselectDropdown(options){
     });
     
     document.addEventListener('click', function(event) {
-      if (!div.contains(event.target)) {
+      // console.log(event.target.getAttribute("name")) 
+      if (!div.contains(event.target) || event.target.getAttribute("name") == "close") {
         listWrap.style.display='none';
+        // alert("jojo")
         div.refresh();
       }
     });    

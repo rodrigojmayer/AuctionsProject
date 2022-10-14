@@ -1464,3 +1464,40 @@ footer {
 
     }
 }
+
+.multiselect-dropdown-search{
+    
+    width:calc(100% - 2.1rem)!important;
+}
+#id_multiselect_search{
+    position:relative;
+    // left: calc(100% - ;
+    left:calc(100% - 2rem);
+    // right: -3rem;
+    top:.2rem;
+    // position:absolute;
+    // background-color: red;
+    height: 0;
+    // width: 0;
+    // z-index: 999!important;
+    // display: block!important;
+    svg{
+
+        // position:relative;
+        height: 2rem;
+        width: 2rem;
+        margin:0;
+        // top:0;
+        // left:0;
+        // height: 10rem!important;
+        // width: 10rem!important;
+        // z-index: 999!important;
+        // display: block!important;
+        path{
+            
+            fill:var(--gray-dark-color);
+        // height: 1rem;
+        // width: 1rem;
+        }
+        }
+}

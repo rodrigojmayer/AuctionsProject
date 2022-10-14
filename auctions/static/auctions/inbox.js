@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', function(){
     })(document);
 
 
+    // document.querySelector('#id_multiselect_search > svg').addEventListener("click", (e) => {
 
+    // }
 
     let id_categories = document.getElementById("id_categories");
     if(id_categories)
@@ -70,6 +72,25 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         });
     }
+
+
+
+    // setTimeout(function(){ 
+        // var testtete = document.getElementById('id_multiselect_search');
+        // var hijojo = `<div id="cuidado"></div>`;
+        // testtete.appendChild(hijojo)
+    // }, 500);
+    // var z = document.getElementById('id_multiselect_search');
+    // z.innerHTML = 'test satu dua tiga';
+
+    // document.getElementById('id_multiselect_search').appendChild(z);
+
+    
+    // if (testtete)
+        
+
+
+
 })
 
 function enable_answer(varr){
