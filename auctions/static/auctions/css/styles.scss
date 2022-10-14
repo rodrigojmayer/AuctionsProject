@@ -212,9 +212,11 @@ html {
         #user-logged-link{
             display: block;
             position:relative;
-            width:7rem;
+            // width:7rem;
+            width:100%;
             margin: auto;
             padding-top: .5rem;
+            text-align: center;
         }
         #user-logged-dropdown{
             display: none;
@@ -354,8 +356,8 @@ html {
         padding-top: .5rem;
     }
     .btn{
-        margin: 1rem 10%;
-        width: 80%;
+        margin: 1rem 5%;
+        width: 90%;
         height: 2.25rem;
         font-size: .875rem;
     }
