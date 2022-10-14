@@ -302,6 +302,24 @@ html .show {
   margin-left: 0.7rem;
   height: 1rem;
 }
+.main .to-log-form-group .multiselect-dropdown-search {
+  width: calc(100% - 2.1rem) !important;
+}
+.main .to-log-form-group #id_multiselect_search {
+  position: relative;
+  left: calc(100% - 2rem);
+  top: 0.2rem;
+  height: 0;
+}
+.main .to-log-form-group #id_multiselect_search svg {
+  height: 2rem;
+  width: 2rem;
+  margin: 0;
+  cursor: pointer;
+}
+.main .to-log-form-group #id_multiselect_search svg path {
+  fill: var(--gray-dark-color);
+}
 .main form:first-child {
   padding-top: 0.5rem;
 }
@@ -479,6 +497,7 @@ html .show {
   display: block !important;
   margin: auto !important;
   width: 100% !important;
+  cursor: pointer;
 }
 .main .multiselect-dropdown .optext {
   margin: 0.5rem 0.1rem !important;
@@ -777,6 +796,10 @@ footer {
   .main .to-log-form-group span {
     font-size: 0.9rem;
   }
+  .main .to-log-form-group #glosaArchivos {
+    margin-right: 0;
+    margin-left: 0.6rem;
+  }
   .main .order_create_listing_data_row {
     display: flex;
     flex-direction: row;
@@ -791,6 +814,14 @@ footer {
   .main .order_create_listing_data_row .order_create_listing_data_column {
     display: flex;
     flex-direction: column;
+  }
+  .main #id_multiselect_search {
+    left: calc(100% - 2.2rem) !important;
+    top: 0.1rem !important;
+  }
+  .main #id_multiselect_search svg {
+    height: 3rem !important;
+    width: 2.5rem !important;
   }
   .main .btn {
     margin: 1rem 7.5%;
@@ -1044,22 +1075,4 @@ footer {
   footer {
     margin-bottom: 0;
   }
-}
-.multiselect-dropdown-search {
-  width: calc(100% - 2.1rem) !important;
-}
-
-#id_multiselect_search {
-  position: relative;
-  left: calc(100% - 2rem);
-  top: 0.2rem;
-  height: 0;
-}
-#id_multiselect_search svg {
-  height: 2rem;
-  width: 2rem;
-  margin: 0;
-}
-#id_multiselect_search svg path {
-  fill: var(--gray-dark-color);
 }/*# sourceMappingURL=styles.css.map */
