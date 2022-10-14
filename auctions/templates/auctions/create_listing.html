@@ -11,34 +11,38 @@
             <input autofocus class="form-control" id="data_article" type="text" name="auction_name" placeholder="" autocomplete="off" maxlength="30"> 
             <label for="description">Description</label>
             <textarea  class="form-control" id="data_description" name="description" placeholder="" maxlength="150"></textarea>
-            <div id="order_create_listing_secondary_data">
-                <label for="initial_price">Starting price</label>
-                <input  class="form-control" id="data_initial_price" type="number" name="initial_price" placeholder="">
-                <label for="auction_category">Category</label></br>
-                <select  name="auction_category" id="data_auction_category" multiple 
-                        multiselect-search="true" 
-                        multiselect-max-items="2"
-                        multiselect-hide-x = "false"
-                        placeholder="Select Category">
-                    {% for all_categorie in all_categories %}
-                        <option value="{{ all_categorie.id }}">{{ all_categorie.category_name }}</option>
-                    {% endfor %}
-                </select>
-                <input  type="file"  id="input" accept="image/*"><!-- </input> -->
-                <input type="file" multiple id="image" name="image" onchange="contar(this, 'glosaArchivos')" style="display: none">
-                <div id="display-image-environment">
-                    <label class="btn btn-primary" id="button_image" for="input">
-                            <p> Select </br> Image </br>
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M26.6667 6.66667H23.2187L19.6094 3.05733C19.4857 2.93328 19.3388 2.83489 19.177 2.76784C19.0153 2.7008 18.8418 2.66641 18.6667 2.66667H13.3334C13.1582 2.66641 12.9848 2.7008 12.823 2.76784C12.6612 2.83489 12.5143 2.93328 12.3907 3.05733L8.78135 6.66667H5.33335C3.86269 6.66667 2.66669 7.86267 2.66669 9.33333V24C2.66669 25.4707 3.86269 26.6667 5.33335 26.6667H26.6667C28.1374 26.6667 29.3334 25.4707 29.3334 24V9.33333C29.3334 7.86267 28.1374 6.66667 26.6667 6.66667ZM16 22.6667C12.3867 22.6667 9.33335 19.6133 9.33335 16C9.33335 12.3853 12.3867 9.33333 16 9.33333C19.6134 9.33333 22.6667 12.3853 22.6667 16C22.6667 19.6133 19.6134 22.6667 16 22.6667Z" fill="black"/>
-                                    <path d="M17.3333 12H14.6667V14.6667H12V17.3333H14.6667V20H17.3333V17.3333H20V14.6667H17.3333V12Z" fill="Black"/>
-                                </svg>
-                            </p>
-                            <img id="display-image" src="" >
-                        </img>
-                    </label>
+            <div class="order_create_listing_data_row">
+                <div class="order_create_listing_data_column" id="price_category_column">
+                    <label for="initial_price">Starting price</label>
+                    <input  class="form-control" id="data_initial_price" type="number" name="initial_price" placeholder="">
+                    <label for="auction_category">Category</label>
+                    <select  name="auction_category" id="data_auction_category" multiple 
+                            multiselect-search="true" 
+                            multiselect-max-items="2"
+                            multiselect-hide-x = "false"
+                            placeholder="">
+                        {% for all_categorie in all_categories %}
+                            <option value="{{ all_categorie.id }}">{{ all_categorie.category_name }}</option>
+                        {% endfor %}
+                    </select>
                 </div>
-                <span id="glosaArchivos">None image selected</span>
+                <div class="order_create_listing_data_column" id="image_column">
+                    <input  type="file"  id="input" accept="image/*"><!-- </input> -->
+                    <input type="file" multiple id="image" name="image" onchange="contar(this, 'glosaArchivos')" style="display: none">
+                    <div id="display-image-environment">
+                        <label class="btn btn-primary" id="button_image" for="input">
+                                <p> Select </br> Image </br>
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.6667 6.66667H23.2187L19.6094 3.05733C19.4857 2.93328 19.3388 2.83489 19.177 2.76784C19.0153 2.7008 18.8418 2.66641 18.6667 2.66667H13.3334C13.1582 2.66641 12.9848 2.7008 12.823 2.76784C12.6612 2.83489 12.5143 2.93328 12.3907 3.05733L8.78135 6.66667H5.33335C3.86269 6.66667 2.66669 7.86267 2.66669 9.33333V24C2.66669 25.4707 3.86269 26.6667 5.33335 26.6667H26.6667C28.1374 26.6667 29.3334 25.4707 29.3334 24V9.33333C29.3334 7.86267 28.1374 6.66667 26.6667 6.66667ZM16 22.6667C12.3867 22.6667 9.33335 19.6133 9.33335 16C9.33335 12.3853 12.3867 9.33333 16 9.33333C19.6134 9.33333 22.6667 12.3853 22.6667 16C22.6667 19.6133 19.6134 22.6667 16 22.6667Z" fill="black"/>
+                                        <path d="M17.3333 12H14.6667V14.6667H12V17.3333H14.6667V20H17.3333V17.3333H20V14.6667H17.3333V12Z" fill="Black"/>
+                                    </svg>
+                                </p>
+                                <img id="display-image" src="" >
+                            </img>
+                        </label>
+                    </div>
+                    <span id="glosaArchivos">None image selected</span>
+                </div>
             </div>
         </div>
         <div id="modal" value="create_listing"></div>

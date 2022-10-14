@@ -334,6 +334,8 @@ html .show {
   display: block;
   height: 100%;
   width: 100%;
+  height: 7.8125rem;
+  width: 7.8125rem;
   margin: 0;
   padding: 0;
   color: var(--gray-dark-color);
@@ -761,13 +763,32 @@ footer {
   .main .to-log-form-group span {
     font-size: 0.9rem;
   }
+  .main .order_create_listing_data_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .main .order_create_listing_data_row #price_category_column {
+    width: 14.5rem;
+  }
+  .main .order_create_listing_data_row #image_column {
+    width: 9.2rem;
+  }
+  .main .order_create_listing_data_row .order_create_listing_data_column {
+    display: flex;
+    flex-direction: column;
+  }
   .main .btn {
+    margin: 1rem 7.5%;
+    width: 85%;
     height: 3rem;
     font-size: 1.125rem;
   }
   .main .form #display-image-environment {
     height: 8.125rem;
     width: 8.125rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
   }
   .main .form #display-image-environment #button_image p {
     font-size: 1.125rem;
