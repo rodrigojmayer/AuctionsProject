@@ -742,6 +742,10 @@ html .show {
   display: none;
 }
 
+.only_1024 {
+  display: none;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -1072,6 +1076,9 @@ footer {
     margin-bottom: 3rem;
     max-width: 55vw;
     min-width: 45rem;
+  }
+  .only_1024 {
+    display: block;
   }
   footer {
     margin-bottom: 0;

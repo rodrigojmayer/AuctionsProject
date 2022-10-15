@@ -782,7 +782,9 @@ html {
 .none {
     display: none;
 }
-
+.only_1024{
+    display: none;
+}
 
 
 
@@ -1146,6 +1148,11 @@ footer {
         max-width: 55vw;
         min-width: 45rem;
     }
+    
+    .only_1024{
+        display: block;
+    }
+
     footer{
         margin-bottom: 0;
     }
