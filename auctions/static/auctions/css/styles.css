@@ -47,27 +47,6 @@ html {
   /* Chrome, Safari, Edge, Opera */
   /* Firefox */
 }
-html body {
-  background-color: var(--gray-color-2);
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: overlay;
-  color: var(--text-color);
-  position: relative;
-  min-height: 100vh;
-}
-html body .sub {
-  height: 3rem;
-  padding-left: 10%;
-}
-html body .sub h2 {
-  padding-top: 0.75rem;
-  padding-bottom: 10px;
-  font-size: 1.5rem;
-}
-html body #sub-not-logged {
-  padding-left: 37%;
-}
 html a, html p, html h1, html h2, html h3, html h4, html h5, html h6 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -133,6 +112,28 @@ html .show {
 }
 
 /* *************** Components *************** */
+body {
+  background-color: var(--gray-color-2);
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  color: var(--text-color);
+  position: relative;
+  min-height: 100vh;
+}
+body .sub {
+  height: 3rem;
+  padding-left: 5vw;
+}
+body .sub h2 {
+  padding-top: 0.75rem;
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+body #sub-not-logged {
+  padding-left: 10vw;
+}
+
 #header {
   background-color: var(--first-color);
   font-family: var(--font);
@@ -779,6 +780,9 @@ footer {
   .sub h2 {
     font-size: 2.2rem !important;
   }
+  #sub-not-logged {
+    padding-left: 25vw !important;
+  }
   .main {
     margin: auto 3.625rem;
     margin-bottom: 3rem;
@@ -1070,6 +1074,12 @@ footer {
     padding-top: var(--header-height);
     padding-bottom: 1rem;
     margin-bottom: 0;
+  }
+  .sub {
+    padding-left: 13vw !important;
+  }
+  #sub-not-logged {
+    padding-left: 30vw !important;
   }
   .main {
     margin: auto;
