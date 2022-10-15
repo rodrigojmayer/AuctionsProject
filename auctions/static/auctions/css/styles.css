@@ -453,9 +453,11 @@ body #sub-not-logged {
   width: calc(100% - 0.75rem);
   margin: 0.375rem;
   text-align: center;
+  line-height: 1.5rem;
 }
 .main #auction_data {
-  padding: 1rem 2vw;
+  margin: 0 0.375rem;
+  padding: 0.375rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -478,9 +480,8 @@ body #sub-not-logged {
   margin: 0.375rem;
 }
 .main #auction_data #listing_auction_order_column .container {
-  margin: 0;
   padding: 0;
-  width: 100%;
+  margin: 0 auto !important;
 }
 .main #auction_data #listing_auction_order_column .container button {
   margin: auto;
@@ -895,11 +896,17 @@ footer {
     margin: 0.75rem;
   }
   .main #auction_data {
+    margin: 0 0.75rem;
+    padding: 0.75rem;
     flex-direction: row;
   }
   .main #auction_data .img-magnifier-glass {
     width: 13.475rem;
     height: 13.475rem;
+  }
+  .main #auction_data #listing_auction_order_column {
+    width: 45%;
+    height: 19.25rem;
   }
   .main #article_image img {
     width: 19.25rem;
