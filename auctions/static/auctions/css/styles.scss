@@ -516,10 +516,13 @@ body {
         #listing_auction_order_column{
             width: calc(100% - .75rem);
             margin: .375rem;
+            max-width: 25rem;
             
             .container{
                 padding: 0;
-                // width: 100%;
+                width: 100%;
+                display: block;
+                // max-width: 100%;
                 // height: 7.875rem;
 
                 margin: 0 auto!important;
@@ -1293,6 +1296,34 @@ footer {
         width: 15rem!important;
         height: 15rem!important;
     }
+
+
+    
+    #listing_auction_order_column{
+        // width: calc(100% - .75rem);
+        // margin: .375rem;
+        width: 17.25rem!important;
+        max-width: 17.25rem!important;
+        
+        // .container{
+            // padding: 0;
+            // width: 100%;
+            // display: block;
+            // max-width: 100%;
+            // height: 7.875rem;
+
+            // margin: 0 auto!important;
+            // button{
+            // margin: auto;
+            // padding: 0;
+            // width: 1000rem;
+            // max-width:100%;
+            // }
+        // }
+    }
+
+
+
     #article_image{
         // cursor: zoom-in;
         img{
