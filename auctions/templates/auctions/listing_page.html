@@ -17,6 +17,7 @@
         {% endif %}
 
         {% csrf_token %}
+        <div id="listing_auction_name">{{ auction_data.name }}</div>
         <div id="auction_data">
             <div class="img-magnifier-container">
                 <div id="article_image"  onmouseover="magnify('myimage', 2)" onmouseout="close_magnify()" >
@@ -26,7 +27,6 @@
             </div>
             
             <div id="order-column">
-                <h2>{{ auction_data.name }}</h2>
                 <label class="container">
                     {% if user_logged.id %}
                         <button onclick="watch_list_change('{{auction_data.id}}')" class="btn btn-primary" id={{in_watchlist}} name="_place_bid">   </button>
