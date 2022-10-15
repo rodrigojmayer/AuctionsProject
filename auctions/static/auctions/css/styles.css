@@ -481,7 +481,7 @@ body #sub-not-logged {
 .main #auction_data #listing_auction_order_column {
   width: calc(100% - 0.75rem);
   margin: 0.375rem;
-  max-width: 25rem;
+  max-width: 20rem;
 }
 .main #auction_data #listing_auction_order_column .container {
   padding: 0;
@@ -494,6 +494,24 @@ body #sub-not-logged {
   padding: 0;
   width: 1000rem;
   max-width: 100%;
+}
+.main #auction_data #listing_auction_order_column #auction_price, .main #auction_data #listing_auction_order_column #sold_price {
+  margin-top: 0.562rem;
+  margin-bottom: 0.375rem;
+  line-height: 1rem;
+  height: auto;
+  font-size: 0.875rem;
+}
+.main #auction_data #listing_auction_order_column #auction_price h4, .main #auction_data #listing_auction_order_column #sold_price h4 {
+  font-size: 1.25rem;
+}
+.main #auction_data #listing_auction_order_column #bid_price {
+  height: auto;
+  line-height: 1rem;
+  color: var(--red-color);
+}
+.main #auction_data #listing_auction_order_column #bid_price h2 {
+  font-size: 1.375rem;
 }
 .main #auction_data .btn, .main #auction_data .form-control {
   max-width: 15rem;
@@ -575,10 +593,6 @@ body #sub-not-logged {
   min-height: 1rem;
   height: auto;
   max-height: 2.6rem;
-}
-.main #bid_price {
-  font-weight: bold;
-  color: var(--red-color);
 }
 .main #in_watchlist {
   background-color: var(--third-color);
