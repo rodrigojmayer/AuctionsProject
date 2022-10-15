@@ -31,7 +31,7 @@
                     {% if user_logged.id %}
                         <button onclick="watch_list_change('{{auction_data.id}}')" class="btn btn-primary" id={{in_watchlist}} name="_place_bid"></button>
                     {% else %}
-                        <input class="btn btn-primary" id="myDIV" disabled   value="Add to Watchlist" name="_place_bid">
+                        <input class="btn btn-primary myDIV" id="add_to_watchlist_disabled" disabled   value="Add to Watchlist" name="_place_bid">
                         <div id="add_watchlist_warning" class="hide notlogged_warning">You must be log in to have a watchlist.</div>
                     {% endif %}
                 </label>
@@ -48,7 +48,6 @@
                             <h4>There are no bids yet</h4>
                         </div>
                     {% endif %}
-
                     {% if user_logged.id == auction_data.id_user.id %}
                         <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                             <div class="form-group">
@@ -63,7 +62,7 @@
                                 {% if user_logged.id %} 
                                     <input  id="accept" class="btn btn-primary"  value="Place bid" >
                                 {% else %}
-                                    <input class="btn btn-primary"  id="myDIV" disabled value="Place bid" >
+                                    <input class="btn btn-primary myDIV"  id="place_bid_disabled" disabled value="Place bid" >
                                     <div id="add_watchlist_warning" class="hide notlogged_warning">
                                         You must be logged to place a bid.
                                     </div>
@@ -154,7 +153,7 @@
                         {% if user_logged.id %}
                             <input class="btn btn-primary" type="submit" value="Add question">
                         {% else %}
-                            <input class="btn btn-primary"  id="myDIV" disabled value="Add comment">
+                            <input class="btn btn-primary myDIV"  id="add_comment_disabled" disabled value="Add comment">
                             <div id="comment_warning" class="hide warning_relocation notlogged_warning">
                                 You must be logged to add a comment.
                             </div>
