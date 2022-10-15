@@ -276,13 +276,24 @@ body {
 }
 
 #login, #register, #id_create_listing, #create_comment, #list_categories{
-    max-width: 70vw;
+    max-width: 24rem!important;
     margin-left: auto ;
     margin-right: auto ;
-    min-width: 17rem;
+    min-width: 17rem!important;
 }
 .main {
-    margin:auto .75rem;
+    width: 95vw;
+    min-width: 18.5rem;
+    max-width: 27rem;
+    margin:auto ;
+    // margin:auto calc();
+    // margin-right: calc( ( width ) / 2 )!important;
+    // margin-left: calc((width / 2));
+    // margin-left: calc(( ( 100vw )  ) )!important;
+    // margin-left: calc(50px + 1px)!important;
+    // margin-left: min(50px, 5%);
+    // margin-left: auto ;
+    // margin-right: auto ;
     margin-bottom:3vw;
     background-color:  var(--white-color);
     border-radius: 10px;
@@ -857,6 +868,10 @@ footer {
     }
 
     
+    .main{
+        max-width: 41rem!important;
+        margin: 0 auto!important;
+    }
     #login, #register, #id_create_listing, #create_comment, #list_categories{
         max-width: 30rem;
     }
@@ -973,6 +988,7 @@ footer {
             font-size: 2rem;
             width: calc(100% - 1.5rem);
             margin: .75rem;
+            line-height: 2rem;
             // text-align: center;
         }
 
