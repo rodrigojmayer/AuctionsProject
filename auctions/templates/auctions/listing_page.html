@@ -26,10 +26,10 @@
                 </div>
             </div>
             
-            <div id="order-column">
+            <div id="listing_auction_order_column">
                 <label class="container">
                     {% if user_logged.id %}
-                        <button onclick="watch_list_change('{{auction_data.id}}')" class="btn btn-primary" id={{in_watchlist}} name="_place_bid">   </button>
+                        <button onclick="watch_list_change('{{auction_data.id}}')" class="btn btn-primary" id={{in_watchlist}} name="_place_bid"></button>
                     {% else %}
                         <input class="btn btn-primary" id="myDIV" disabled   value="Add to Watchlist" name="_place_bid">
                         <div id="add_watchlist_warning" class="hide notlogged_warning">You must be log in to have a watchlist.</div>

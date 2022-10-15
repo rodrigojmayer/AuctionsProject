@@ -448,6 +448,8 @@ body {
             margin:auto;
         }
     }
+
+////////// VERQUEONDACONESTO///////////////
     #order-column{
         min-width: 44.37%;
         width: 64.37%;
@@ -456,6 +458,8 @@ body {
         flex-direction: column;
         justify-content: space-around;
     }
+    
+////////// VERQUEONDACONESTO///////////////
     #auction_name{ 
         line-height: 120%;
         font-weight: bold;
@@ -504,6 +508,24 @@ body {
             // height: 250px;
             width: 7.875rem;
             height: 7.875rem;
+        }
+        #listing_auction_order_column{
+            width: calc(100% - .75rem);
+            margin: .375rem;
+            
+            .container{
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                // height: 7.875rem;
+
+                button{
+                margin: auto;
+                padding: 0;
+                width: 1000rem;
+                max-width:100%;
+                }
+            }
         }
         .btn, .form-control{
             max-width: 15rem;
