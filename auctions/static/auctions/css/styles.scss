@@ -433,17 +433,6 @@ body {
     #accept{
         margin-top:0;
     }
-    #answer{
-        margin: 0 0.72rem;
-    }
-    #auction_comments .btn{
-        display: block;
-        font-size: smaller;
-        max-width: 7rem;
-        max-height: 4rem;
-        margin-left:auto;
-        margin-right:3%;
-    }
     
     .listing_auction{
         font-family: var(--font);
@@ -636,6 +625,20 @@ body {
             display: inline;
         }
     }
+    
+    #answer{
+        margin: 0 0.72rem;
+    }
+    #auction_comments .btn{
+        display: block;
+        // font-size: smaller;
+        max-width: 8rem;
+        max-height: 4rem;
+        margin-left:auto;
+        margin-right:3%;
+    }
+
+
     .multiselect-dropdown{
         display: block !important;
         margin: 0 auto !important;
@@ -1189,6 +1192,14 @@ footer {
 
         }
 
+        #auction_comments .btn{
+            // display: block;
+            // font-size: smaller;
+            max-width: 10rem;
+            // max-height: 4rem;
+            // margin-left:auto;
+            // margin-right:3%;
+        }
 
         #article_image{
             // cursor: zoom-in;
