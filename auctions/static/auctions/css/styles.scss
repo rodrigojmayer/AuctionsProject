@@ -739,6 +739,7 @@ body {
         // margin-left: -25px;
     }
     #comment_warning{
+        position:absolute;
         margin-top: -40px;
     }
     .notlogged_warning{
@@ -1229,11 +1230,11 @@ footer {
             // margin-top: -4.6rem;
         }
         #add_bid_warning{
-            // font-size: .8rem;
+            font-size: 1.07rem;
             // position:absolute;
-            // width:16rem;
-            // margin: 0 ( 10%);
-            // margin-top: -4rem;
+            width:20rem;
+            margin: 0 1rem;
+            margin-top: -.8rem;
         }
         #comment_warning{
             // margin-top: -40px;

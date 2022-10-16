@@ -659,6 +659,7 @@ body #sub-not-logged {
   margin-top: -5.57rem;
 }
 .main #comment_warning {
+  position: absolute;
   margin-top: -40px;
 }
 .main .notlogged_warning {
@@ -1013,6 +1014,12 @@ footer {
     font-size: 1.07rem;
     width: 20rem;
     margin: 0;
+  }
+  .main #add_bid_warning {
+    font-size: 1.07rem;
+    width: 20rem;
+    margin: 0 1rem;
+    margin-top: -0.8rem;
   }
   .main #auction_category {
     font-size: 1.125rem;
