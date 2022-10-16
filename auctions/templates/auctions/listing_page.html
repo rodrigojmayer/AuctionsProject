@@ -148,7 +148,7 @@
             {% endif %}
             {% if user_logged.id != auction_data.id_user.id %}<!-- You can create questions. -->
                 <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
-                    <a href="#question-input" onclick="enable_question()" >Make a question</a>
+                    <h5><a href="#question-input" onclick="enable_question()" >Make a question</a></h5>
                     <div class="form-group hide" id="question-form" >
                         <textarea class="form-control" id="question-input" type="text" name="new_comment" placeholder="New question"></textarea>
                         <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
