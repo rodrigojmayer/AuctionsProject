@@ -57,13 +57,14 @@
                     {% else %}
                         <form action="{% url 'auctions_app:create_bid'  %}"  method="GET" enctype="multipart/form-data">
                             <div class="form-group">
-                                <input id="new_bid" class="form-control" type="number" name="new_bid" placeholder="New bid">
                                 <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
                                 {% if user_logged.id %} 
+                                    <input id="new_bid" class="form-control" type="number" name="new_bid" placeholder="New bid">
                                     <input  id="accept" class="btn btn-primary"  value="Place bid" >
                                 {% else %}
+                                    <input id="new_bid" class="form-control" type="number" name="new_bid" disabled placeholder="New bid">
                                     <input class="btn btn-primary myDIV"  id="place_bid_disabled" disabled value="Place bid" >
-                                    <div id="add_watchlist_warning" class="hide notlogged_warning">
+                                    <div id="add_bid_warning" class="hide notlogged_warning">
                                         (You must log in to place a bid)
                                     </div>
                                 {% endif %}

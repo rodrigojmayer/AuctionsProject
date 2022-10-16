@@ -539,12 +539,8 @@ body #sub-not-logged {
 }
 .main textarea {
   min-height: 4rem;
-  font-size: 0.75rem;
 }
-.main input {
-  font-size: 0.75rem;
-}
-.main textarea::-webkit-input-placeholder {
+.main input, .main textarea, .main textarea::-webkit-input-placeholder {
   font-size: 0.75rem;
 }
 .main #auction_category {
@@ -649,9 +645,18 @@ body #sub-not-logged {
   position: static;
 }
 .main #add_watchlist_warning {
+  font-size: 0.8rem;
   position: absolute;
-  margin-top: -15px;
-  margin-left: -25px;
+  width: 16rem;
+  margin: 0 3%;
+  margin-top: -4rem;
+}
+.main #add_bid_warning {
+  font-size: 0.8rem;
+  position: absolute;
+  width: 16rem;
+  margin: 0 10%;
+  margin-top: -4rem;
 }
 .main #comment_warning {
   margin-top: -40px;
@@ -977,10 +982,7 @@ footer {
   .main #listing_page_description_category #auction_category, .main #auction_comments #auction_category {
     padding: 0.3rem 0;
   }
-  .main textarea {
-    font-size: 1rem;
-  }
-  .main input {
+  .main input, .main textarea, .main textarea::-webkit-input-placeholder {
     font-size: 1rem;
   }
   .main #auction_comments .btn {
