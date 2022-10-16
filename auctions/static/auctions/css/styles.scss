@@ -498,7 +498,9 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 7vw;
+        gap: 1rem;
+        // height: 290px;
+        // max-height: 290px;
         
         .img-magnifier-container {
             position:relative;
@@ -724,8 +726,8 @@ body {
         font-size: .8rem;
         position:absolute;
         width:16rem;
-        margin: 0 ( 3%);
-        margin-top: -4rem;
+        margin: 0 ( 8.5vw);
+        margin-top: -3.6rem;
     }
     #add_bid_warning{
         font-size: .8rem;

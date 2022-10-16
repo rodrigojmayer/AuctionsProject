@@ -454,7 +454,7 @@ body #sub-not-logged {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7vw;
+  gap: 1rem;
 }
 .main #auction_data .img-magnifier-container {
   position: relative;
@@ -648,8 +648,8 @@ body #sub-not-logged {
   font-size: 0.8rem;
   position: absolute;
   width: 16rem;
-  margin: 0 3%;
-  margin-top: -4rem;
+  margin: 0 8.5vw;
+  margin-top: -3.6rem;
 }
 .main #add_bid_warning {
   font-size: 0.8rem;
