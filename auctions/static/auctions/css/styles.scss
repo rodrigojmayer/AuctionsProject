@@ -733,8 +733,8 @@ body {
         font-size: .8rem;
         position:absolute;
         width:16rem;
-        margin: 0 ( 10%);
-        margin-top: -4rem;
+        margin: 0 calc( 4rem + 3vw);
+        margin-top: -5.57rem;
         // margin-top: -15px;
         // margin-left: -25px;
     }
@@ -1099,7 +1099,8 @@ footer {
                 // margin: .375rem;
                 // max-width: 20rem;
                 
-                // .container{
+                .container{
+                    margin-bottom:1.5rem!important;
                     // padding: 0;
                     // width: 100%;
                     // display: block;
@@ -1113,7 +1114,7 @@ footer {
                         // width: 1000rem;
                         // max-width:100%;
                     // }
-                // }
+                }
                 
                 // #auction_price, #sold_price{
                     // height: .8125rem;
@@ -1215,6 +1216,30 @@ footer {
                 }
             }
         }
+
+        // #add_to_watchlist_disabled{
+            // margin-bottom:3rem!important;
+        // }
+        #add_watchlist_warning{
+            font-size: 1.07rem;
+            // position:absolute;
+            width:20rem;
+            // margin: 0 ( 8.5vw);
+            margin: 0;
+            // margin-top: -4.6rem;
+        }
+        #add_bid_warning{
+            // font-size: .8rem;
+            // position:absolute;
+            // width:16rem;
+            // margin: 0 ( 10%);
+            // margin-top: -4rem;
+        }
+        #comment_warning{
+            // margin-top: -40px;
+        }
+
+
         #auction_category{
                 font-size: 1.125rem;
         }

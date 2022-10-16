@@ -655,8 +655,8 @@ body #sub-not-logged {
   font-size: 0.8rem;
   position: absolute;
   width: 16rem;
-  margin: 0 10%;
-  margin-top: -4rem;
+  margin: 0 calc(4rem + 3vw);
+  margin-top: -5.57rem;
 }
 .main #comment_warning {
   margin-top: -40px;
@@ -966,6 +966,9 @@ footer {
     width: 45%;
     height: 19.25rem;
   }
+  .main #auction_data #listing_auction_order_column .container {
+    margin-bottom: 1.5rem !important;
+  }
   .main #auction_data #listing_auction_order_column .form-group #new_bid, .main #auction_data #listing_auction_order_column .form-group #accept, .main #auction_data #listing_auction_order_column .form-group #place_bid_disabled {
     height: 3rem;
   }
@@ -1005,6 +1008,11 @@ footer {
     font-size: 1.125rem;
     height: 3.2rem;
     max-height: 3.2rem;
+  }
+  .main #add_watchlist_warning {
+    font-size: 1.07rem;
+    width: 20rem;
+    margin: 0;
   }
   .main #auction_category {
     font-size: 1.125rem;
