@@ -550,6 +550,13 @@ body #sub-not-logged {
 }
 .main textarea {
   min-height: 4rem;
+  font-size: 0.75rem;
+}
+.main input {
+  font-size: 0.75rem;
+}
+.main textarea::-webkit-input-placeholder {
+  font-size: 0.75rem;
 }
 .main #auction_category {
   font-size: 0.6875rem;
@@ -753,7 +760,7 @@ body #sub-not-logged {
   top: 0;
   right: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: var(--black-alpha-color);
   z-index: 900;
 }
@@ -970,6 +977,12 @@ footer {
   }
   .main #listing_page_description_category #auction_category, .main #auction_comments #auction_category {
     padding: 0.3rem 0;
+  }
+  .main textarea {
+    font-size: 1rem;
+  }
+  .main input {
+    font-size: 1rem;
   }
   .main #article_image img {
     width: 19.25rem;

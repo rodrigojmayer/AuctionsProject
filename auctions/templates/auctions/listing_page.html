@@ -32,7 +32,7 @@
                         <button onclick="watch_list_change('{{auction_data.id}}')" class="btn btn-primary" id={{in_watchlist}} name="_place_bid"></button>
                     {% else %}
                         <input class="btn btn-primary myDIV" id="add_to_watchlist_disabled" disabled   value="Add to Watchlist" name="_place_bid">
-                        <div id="add_watchlist_warning" class="hide notlogged_warning">You must be log in to have a watchlist.</div>
+                        <div id="add_watchlist_warning" class="hide notlogged_warning">(You must log in to have a watchlist)</div>
                     {% endif %}
                 </label>
                 <div id="auction_price" value={{auction_data.initial_price}}>
@@ -64,7 +64,7 @@
                                 {% else %}
                                     <input class="btn btn-primary myDIV"  id="place_bid_disabled" disabled value="Place bid" >
                                     <div id="add_watchlist_warning" class="hide notlogged_warning">
-                                        You must be logged to place a bid.
+                                        (You must log in to place a bid)
                                     </div>
                                 {% endif %}
                             </div>
@@ -157,7 +157,7 @@
                         {% else %}
                             <input class="btn btn-primary myDIV"  id="add_comment_disabled" disabled value="Add comment">
                             <div id="comment_warning" class="hide warning_relocation notlogged_warning">
-                                You must be logged to add a comment.
+                                (You must log in to add a comment)
                             </div>
                         {% endif %}
                     </div>
