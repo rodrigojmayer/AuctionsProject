@@ -740,7 +740,13 @@ body {
     }
     #comment_warning{
         position:absolute;
-        margin-top: -40px;
+        // margin-top: -40px;
+        width:16rem;
+        // width:7rem;
+        margin: 0 calc(1rem + 10vw);
+        // margin: 0 5vw;
+        margin-top: -6.5rem;
+        // margin-top: -3.5rem;
     }
     .notlogged_warning{
         color: var(--red-color);
@@ -1237,7 +1243,15 @@ footer {
             margin-top: -.8rem;
         }
         #comment_warning{
-            // margin-top: -40px;
+            font-size: 1.07rem;
+            // position:absolute;
+            // margin-top: -40px;       
+            width:20rem;
+            // width:7rem;
+            margin: 0 calc(1rem + 10vw);
+            // margin: 0 5vw;
+            // margin-top: -6.5rem;
+            margin-top: -3.5rem;
         }
 
 
