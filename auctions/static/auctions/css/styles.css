@@ -122,18 +122,14 @@ body {
   min-height: 100vh;
 }
 body .sub {
-  height: 3rem;
-  padding-left: 5vw;
+  height: 2.5rem;
+  margin-left: 10vw;
 }
 body .sub h2 {
-  padding-top: 0.75rem;
+  padding-top: 0.25rem;
   padding-bottom: 10px;
   font-size: 1.5rem;
 }
-body #sub-not-logged {
-  padding-left: 10vw;
-}
-
 #header {
   background-color: var(--first-color);
   font-family: var(--font);
@@ -855,13 +851,14 @@ footer {
     max-width: 30rem;
   }
   .sub {
-    height: 4rem !important;
+    height: 3.5rem !important;
+    margin-left: calc((100vw - 47rem) / 2) !important;
   }
   .sub h2 {
     font-size: 2.2rem !important;
   }
   #sub-not-logged {
-    padding-left: 25vw !important;
+    margin-left: calc((100vw - 30rem) / 2) !important;
   }
   .main {
     margin: auto 3.625rem;
@@ -1223,10 +1220,7 @@ footer {
     margin-bottom: 0;
   }
   .sub {
-    padding-left: 13vw !important;
-  }
-  #sub-not-logged {
-    padding-left: 30vw !important;
+    margin-left: calc((100vw - 55rem) / 2) !important;
   }
   .main {
     margin: auto;
