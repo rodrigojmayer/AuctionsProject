@@ -320,17 +320,23 @@ function handleModal(evt) {
     }
 
 
+    // id_modal.addEventListener("click", (e)=>{
+        
+    //         console.log("e target")
+    //         console.log(e.target.getAttribute('name'))
+    // })
+
     id_modal.addEventListener("click", (e)=>{
-        if (e.target.matches("#id_modal")){
+        if (e.target.matches("#id_modal") || e.target.getAttribute('name') == 'close'){
             // console.log("cualquiera")
             // console.log(e.target)
             closeModal()
         }
     })
-
+    // console.log(id_close_button)
     id_close_button.addEventListener("click", closeModal)
-
     modal_back.addEventListener("click", closeModal)
+
     function closeModal(){
         modal_alert.classList.add('hide');
         modal_alert.classList.remove('show');

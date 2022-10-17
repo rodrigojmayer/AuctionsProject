@@ -891,8 +891,9 @@ body {
         gap: .5rem;
         border-radius: .5rem;
         background-color: var(--white-color);
-        width: 25vw;
+        // width: 25vw;
         // max-width: 20rem;
+        width: 18rem;
         margin: 25vh auto;
         box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
         h5, p{
@@ -917,6 +918,10 @@ body {
             display: flex;
             gap: .5rem;
         }
+        
+        #id_close_button{
+
+            z-index: 101;}
     }
     .modal-body-bigger{
         // width: 350vw;
@@ -930,6 +935,7 @@ body {
 
         #id_close_button{
 
+            z-index: 100;
             // background-color: red;
                 // border-top-right-radius:100px;
             svg{

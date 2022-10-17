@@ -775,7 +775,7 @@ body .sub h2 {
   gap: 0.5rem;
   border-radius: 0.5rem;
   background-color: var(--white-color);
-  width: 25vw;
+  width: 18rem;
   margin: 25vh auto;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
 }
@@ -801,10 +801,16 @@ body .sub h2 {
   display: flex;
   gap: 0.5rem;
 }
+.modal-alert .modal-body #id_close_button {
+  z-index: 101;
+}
 .modal-alert .modal-body-bigger {
   padding: 0;
   height: 18rem;
   width: 18rem;
+}
+.modal-alert .modal-body-bigger #id_close_button {
+  z-index: 100;
 }
 .modal-alert .modal-body-bigger #id_close_button svg {
   position: relative;
