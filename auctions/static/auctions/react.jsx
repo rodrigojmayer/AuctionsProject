@@ -61,38 +61,35 @@
 
 
 // var modal = document.querySelector("#modal")
-var modal = document.getElementById("modal")
+let modal = document.getElementById("modal")
+// let modal_image = document.getElementById("modal_image")
 if(modal)
     ReactDOM.render(<Modal />, modal);
+// if(modal_image)
+    // ReactDOM.render(<Modal />, modal_image);
         
         
 
 function Modal(){
 
-    // console.log(modal.getAttribute('value'))
-
-
     return(
         <div class="modal-alert hide" >
             <div class="modal-body ">
+                <div id="id_close_button">
+                    <svg name="close" width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path name="close" d="M21.1987 8L15.5413 13.656L9.88533 8L8 9.88533L13.656 15.5413L8 21.1973L9.88533 23.0827L15.5413 17.4267L21.1987 23.0827L23.084 21.1973L17.428 15.5413L23.084 9.88533L21.1987 8Z" fill="#D90062"/>
+                    </svg>
+                </div>
                 <h5 id="modal_subtitle"></h5>
                 <p id="modal_text"></p>
                 <div class="flex-horizontal">
                     <button id="modal_back"  class="btn btn-primary" type="button" value="Back" >Back</button>
                     <input id="modal_save" onclick="submitButtonClick(event)" class="btn btn-primary" type="submit" value="Save" name="_save" />
                 </div>
+                <div id="modal_image"></div>
             </div>
         </div>
     )
-
-    // else if(modal.getAttribute('value') == "listing_page"){
-
-        // return()
-    // }
-    // if(modal.getAttribute('value') == "listing_page"){
-    // }
-
-
 }
 
 
@@ -102,12 +99,36 @@ function Modal(){
 // -------JS SCRIPT-------- //
 
 let modal_alert = document.querySelector(".modal-alert");
+console.log("modal alert")
 console.log(modal_alert)
 let accept = document.getElementById("accept");
-if(accept)
-    accept.addEventListener("click", handleModal, false)
+if(accept){
+    // accept.addEventListener("click", handleModal, false)
+    // let v=2
+    // accept.addEventListener("click", handleModal, false)
+    accept.addEventListener("click", (e)=>{       
+        let ew = false
+
+        handleModal(ew)
+    }, false)
+}
+    
+    
+let article_image = document.getElementById("article_image")
+if(article_image){
+    // article_image.myParam = true;
+    // article_image.addEventListener("click", handleModal, false)
+    article_image.addEventListener("click", (e)=>{
+        let ew = true
+        handleModal(ew)
+    }, false)
+};
  
-function handleModal() {
+function handleModal(evt) {
+
+    console.log("valor e")
+    console.log(evt)
+    // console.log(evt.currentTarget.myParam)
     // alert("entrando al submit")
     modal_alert.classList.add('show');
     modal_alert.classList.remove('hide');
@@ -117,10 +138,24 @@ function handleModal() {
     let modal_text = document.getElementById("modal_text");
     let modal_back = document.getElementById("modal_back");
     let modal_save = document.getElementById("modal_save");
+    let modal_image = document.getElementById("modal_image");
+    let id_close_button = document.getElementById("id_close_button");
     
+    let value
+
+    // if(evt.currentTarget.myParam)   // for the img modal
+    if(evt)   // for the img modal
+        value = "modal_image"
+    else
+        value = modal.getAttribute('value')
+
     console.log("modal value")
-    console.log(modal.getAttribute('value'))
-    if(modal.getAttribute('value') == "create_listing"){
+    // console.log(modal.getAttribute('value'))
+    console.log(value)
+    console.log(modal.getAttribute('src'))
+    console.log("modal getAttribute")
+    console.log(modal.getAttribute)
+    if(value == "create_listing"){
         let data_article = document.getElementById("data_article");
         let data_description = document.getElementById("data_description");
         let data_initial_price = document.getElementById("data_initial_price");
@@ -185,8 +220,20 @@ function handleModal() {
                                             Price: ${data_initial_price.value}</br>
                                             Category: ${data_auction_category.value}</br>
                                             Image: ${document.getElementById("glosaArchivos").textContent}</br>`
-                    modal_save.classList.remove('hide');
+                    
+            // modal_subtitle.classList.add('show');
+            // modal_subtitle.classList.remove('hide');
+            // modal_text.classList.add('show');
+            // modal_text.classList.remove('hide');
+            // modal_back.classList.remove('hide');
+            // modal_back.classList.add('show');
+            // modal_image.classList.add("hide");
+            // modal_image.classList.remove("show");
+            
+            modal_save.classList.remove('hide');
                     modal_save.classList.add('show');
+                    // modal_image.classList.add("hide");
+                    // modal_image.classList.remove("show");
                     modal_save.onclick="";
                 }
 
@@ -197,7 +244,7 @@ function handleModal() {
         }
     }
 
-    else if( modal.getAttribute('value') == "listing_page"){
+    else if( value == "listing_page"){
 
         // new_bid
         let bid_price = parseInt(document.getElementById("bid_price").getAttribute('value'))
@@ -210,21 +257,66 @@ function handleModal() {
         if(bid_price < new_bid){
             modal_subtitle.innerHTML = "New bid"
             modal_text.innerHTML = "You are offering $" + new_bid
-            modal_save.classList.remove('hide');
+
+            modal_subtitle.classList.add('show');
+            modal_subtitle.classList.remove('hide');
+            modal_text.classList.add('show');
+            modal_text.classList.remove('hide');
+            modal_back.classList.add('show');
+            modal_back.classList.remove('hide');
             modal_save.classList.add('show');
+            modal_save.classList.remove('hide');
+            modal_image.classList.add("hide");
+            modal_image.classList.remove("show");
             modal_save.onclick="";
         }
         else{
 
             modal_subtitle.innerHTML = "Not enough"
             modal_text.innerHTML = "Your offer must be higher than $" + bid_price
+            
+            
+            modal_subtitle.classList.add('show');
+            modal_subtitle.classList.remove('hide');
+            modal_text.classList.add('show');
+            modal_text.classList.remove('hide');
+            modal_back.classList.remove('hide');
+            modal_back.classList.add('show');
+            modal_image.classList.add("hide");
+            modal_image.classList.remove("show");
             rejected_modal()
 
         }
             
     }
 
+    else if( value == "modal_image"){
+        // alert("pepito el pistolero")
+        // console.log(modal.getAttribute('src'))
+        
+        
+        modal_image.innerHTML = `<img src=${modal.getAttribute('src')}  height="200px" />`
+            
+        modal_subtitle.classList.add('hide');
+        modal_subtitle.classList.remove('show');
+        modal_text.classList.add('hide');
+        modal_text.classList.remove('show');
+        modal_back.classList.add('hide');
+        modal_back.classList.remove('show');
+        modal_save.classList.add('hide');
+        modal_save.classList.remove('show');
+        modal_image.classList.add("show");
+        modal_image.classList.remove("hide");
+        // modal_save.onclick="";
+    }
 
+
+
+    id_close_button.addEventListener("click", function() {
+        modal_alert.classList.add('hide');
+        modal_alert.classList.remove('show');
+        unLockScroll()
+    })
 
     modal_back.addEventListener("click", function() {
         modal_alert.classList.add('hide');

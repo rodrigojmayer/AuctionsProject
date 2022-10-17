@@ -88,8 +88,22 @@ document.addEventListener('DOMContentLoaded', function(){
     
     // if (testtete)
         
+    // document.getElementById('id_multiselect_search').appendChild(z)
+    
+    // let id_glass = document.getElementById("id_glass");
+    // if(new_bid){
+    //     new_bid.addEventListener("keypress", function(event) {
+    //     if (event.key === "Enter") {
+    //         // alert(event.key  + " " + event.which);
+    //         event.preventDefault();
+    //         handleModal()
+    //     }
+    //     });
+    // }
 
 
+    
+    // e=1
 
 })
 
@@ -318,6 +332,8 @@ function magnify(imgID, zoom) {
       y = y - window.pageYOffset;
       return {x : x, y : y};
     }
+
+
 }
 
 function close_magnify(){

@@ -69,7 +69,6 @@
                                     </div>
                                 {% endif %}
                             </div>
-                            <div id="modal" value="listing_page"> </div>
                         </form>
                     {% endif %}
                 {% else %}
@@ -166,6 +165,10 @@
                 </form>
             {% else %}<!-- You can't create questions because you are the owner of the auction. -->
             {% endif %}
+          
         </div>
-    </div>
+    </div> 
+    <div id="modal" value="listing_page" src="/media/{{ auction_data.image }}"> </div>
+
+    <!-- <div id="modal_image" value="modal_image" ></div> -->
 {% endblock %}
