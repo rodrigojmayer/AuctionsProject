@@ -776,7 +776,6 @@ body .sub h2 {
   border-radius: 0.5rem;
   background-color: var(--white-color);
   width: 25vw;
-  max-width: 20rem;
   margin: 25vh auto;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
 }
@@ -803,9 +802,33 @@ body .sub h2 {
   gap: 0.5rem;
 }
 .modal-alert .modal-body-bigger {
-  width: 350vw;
-  max-width: 50rem;
-  margin: auto;
+  padding: 0;
+  height: 18rem;
+  width: 18rem;
+}
+.modal-alert .modal-body-bigger #id_close_button svg {
+  position: relative;
+  top: 5px;
+  border-radius: 4px;
+  background-color: red;
+  z-index: 100;
+}
+.modal-alert .modal-body-bigger #id_close_button svg path {
+  fill: var(--white-color);
+}
+.modal-alert #modal_image {
+  position: relative;
+  top: -8px;
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
+}
+.modal-alert #modal_image img {
+  height: 18rem;
+  width: 18rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0.5rem;
 }
 
 .lock-scroll {
@@ -1038,6 +1061,16 @@ footer {
   .main .grid-container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  /* *************** Modals *************** */
+  .modal-alert .modal-body-bigger {
+    height: 30rem;
+    width: 30rem;
+    margin-top: 5rem;
+  }
+  .modal-alert #modal_image img {
+    height: 30rem;
+    width: 30rem;
+  }
   footer {
     height: var(--footer-height);
     font-size: 1rem;
@@ -1244,6 +1277,15 @@ footer {
   #article_image img {
     width: 21.375rem !important;
     height: 21.375rem !important;
+  }
+  /* *************** Modals *************** */
+  .modal-alert .modal-body-bigger {
+    height: 35rem;
+    width: 35rem;
+  }
+  .modal-alert #modal_image img {
+    height: 35rem;
+    width: 35rem;
   }
   .only_1024 {
     display: block;
