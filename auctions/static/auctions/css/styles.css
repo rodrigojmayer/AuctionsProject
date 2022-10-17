@@ -802,6 +802,11 @@ body .sub h2 {
   display: flex;
   gap: 0.5rem;
 }
+.modal-alert .modal-body-bigger {
+  width: 350vw;
+  max-width: 50rem;
+  margin: auto;
+}
 
 .lock-scroll {
   overflow: hidden;

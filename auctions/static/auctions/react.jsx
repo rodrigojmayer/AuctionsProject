@@ -73,8 +73,8 @@ if(modal)
 function Modal(){
 
     return(
-        <div class="modal-alert hide" >
-            <div class="modal-body ">
+        <div id="id_modal" class="modal-alert hide" >
+            <div id="id_modal_body" class="modal-body ">
                 <div id="id_close_button">
                     <svg name="close" width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path name="close" d="M21.1987 8L15.5413 13.656L9.88533 8L8 9.88533L13.656 15.5413L8 21.1973L9.88533 23.0827L15.5413 17.4267L21.1987 23.0827L23.084 21.1973L17.428 15.5413L23.084 9.88533L21.1987 8Z" fill="#D90062"/>
@@ -133,6 +133,10 @@ function handleModal(evt) {
     modal_alert.classList.add('show');
     modal_alert.classList.remove('hide');
     lockScroll()
+    
+    let id_modal = document.getElementById("id_modal");
+    let id_modal_body = document.getElementById("id_modal_body");
+    
 
     let modal_subtitle = document.getElementById("modal_subtitle");
     let modal_text = document.getElementById("modal_text");
@@ -140,7 +144,6 @@ function handleModal(evt) {
     let modal_save = document.getElementById("modal_save");
     let modal_image = document.getElementById("modal_image");
     let id_close_button = document.getElementById("id_close_button");
-    
     let value
 
     // if(evt.currentTarget.myParam)   // for the img modal
@@ -268,6 +271,8 @@ function handleModal(evt) {
             modal_save.classList.remove('hide');
             modal_image.classList.add("hide");
             modal_image.classList.remove("show");
+
+            id_modal_body.classList.remove("modal-body-bigger")
             modal_save.onclick="";
         }
         else{
@@ -284,6 +289,8 @@ function handleModal(evt) {
             modal_back.classList.add('show');
             modal_image.classList.add("hide");
             modal_image.classList.remove("show");
+
+            id_modal_body.classList.remove("modal-body-bigger")
             rejected_modal()
 
         }
@@ -307,22 +314,29 @@ function handleModal(evt) {
         modal_save.classList.remove('show');
         modal_image.classList.add("show");
         modal_image.classList.remove("hide");
+
+        id_modal_body.classList.add("modal-body-bigger")
         // modal_save.onclick="";
     }
 
 
+    id_modal.addEventListener("click", (e)=>{
+        if (e.target.matches("#id_modal")){
+            // console.log("cualquiera")
+            // console.log(e.target)
+            closeModal()
+        }
+    })
 
-    id_close_button.addEventListener("click", function() {
+    id_close_button.addEventListener("click", closeModal)
+
+    modal_back.addEventListener("click", closeModal)
+    function closeModal(){
         modal_alert.classList.add('hide');
         modal_alert.classList.remove('show');
         unLockScroll()
-    })
 
-    modal_back.addEventListener("click", function() {
-        modal_alert.classList.add('hide');
-        modal_alert.classList.remove('show');
-        unLockScroll()
-    })
+    }
 
     function rejected_modal(){
         modal_save.classList.remove('show');
