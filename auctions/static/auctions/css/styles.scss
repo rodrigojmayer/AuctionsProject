@@ -909,10 +909,12 @@ body {
             display: block;
             margin: .1rem;
             width: 7rem;
+            // font-size: 0.875rem;
         }
         #modal_back{
             background-color: var(--red-color);
             border:none;
+            // font-size: smaller;
         }
         #modal_back:hover{
             background-color: var(--red-color-hover);
@@ -950,7 +952,7 @@ body {
                 // top: -3.1px;
                 top: 5px;
                 border-radius:4px;
-                background-color: red;
+                background-color: var(--red-color);
                 z-index: 100;
                 path{
                     fill: var(--white-color);

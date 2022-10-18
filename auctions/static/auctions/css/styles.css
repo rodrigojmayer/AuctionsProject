@@ -822,7 +822,7 @@ body .sub h2 {
   position: relative;
   top: 5px;
   border-radius: 4px;
-  background-color: red;
+  background-color: var(--red-color);
   z-index: 100;
 }
 .modal-alert .modal-body-bigger #id_close_button svg path {
