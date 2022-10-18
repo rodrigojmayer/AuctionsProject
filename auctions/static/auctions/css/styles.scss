@@ -304,6 +304,14 @@ body {
     margin-right: auto ;
     min-width: 17rem!important;
 }
+#create_comment{
+    position:relative;
+    top: 30vh;
+    padding: 1rem;
+    padding-bottom: 0;
+    // margin-top: 5rem!important;
+    // margin-bottom: -50rem!important;
+}
 .main {
     width: 95vw;
     min-width: 18.5rem;
@@ -916,7 +924,7 @@ body {
         padding:0;
         
 
-        height: 18rem!important;
+        height: 18rem;
         width: 18rem;
         // margin:  auto;
         // background-color: blue;
@@ -1026,6 +1034,9 @@ footer {
         max-width: 30rem;
     }
     
+    #create_comment{
+        top: 25vh;
+    }
     .sub{
         height: 3.5rem !important;
         margin-left: calc((100vw - 47rem) / 2)!important;
@@ -1555,6 +1566,10 @@ footer {
     }
 
     
+    #create_comment{
+        top: 15vh;
+    }
+
     .sub{
         // height: 4rem !important;
         // padding-left: 18vw!important;
