@@ -60,7 +60,7 @@
                                 <input class="hide" value="{{ auction_data.id}}" name="auction_data" placeholder="Auction Data">
                                 {% if user_logged.id %} 
                                     <input id="new_bid" class="form-control" type="number" name="new_bid" placeholder="New bid">
-                                    <input  id="accept" class="btn btn-primary"  value="Place bid" readonly="readonly">
+                                    <a href="#top_page"><input  id="accept" class="btn btn-primary"  value="Place bid" readonly="readonly"></a>
                                 {% else %}
                                     <input id="new_bid" class="form-control" type="number" name="new_bid" disabled placeholder="New bid">
                                     <input class="btn btn-primary myDIV"  id="place_bid_disabled" disabled value="Place bid" >
