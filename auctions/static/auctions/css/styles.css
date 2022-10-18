@@ -443,6 +443,8 @@ body .sub h2 {
   flex-direction: column;
   justify-content: space-between;
   min-height: 5rem;
+  justify-content: flex-start;
+  gap: 0.7rem;
 }
 .main #listing_auction_name {
   font-size: 1.5rem;
@@ -990,11 +992,15 @@ footer {
   }
   .main #auction_name {
     line-height: 2rem;
-    height: 4.6rem;
+    height: 4.9rem;
   }
   .main #auction_name a {
     padding: 10px 0;
+    padding-top: 5px;
     font-size: 2rem;
+  }
+  .main #auction_listing_data {
+    gap: 0.3rem;
   }
   .main #listing_auction_name {
     font-size: 2rem;
@@ -1055,9 +1061,11 @@ footer {
     line-height: 1.5rem;
     height: 3.7rem;
   }
+  .main #auction_description #auction_description_block {
+    max-height: 3.2rem;
+  }
   .main #auction_description #auction_description_block p {
     font-size: 1.125rem;
-    height: 3.2rem;
     max-height: 3.2rem;
   }
   .main #add_watchlist_warning {
@@ -1079,6 +1087,7 @@ footer {
   }
   .main #auction_category {
     font-size: 1.125rem;
+    height: 2rem;
   }
   .main .grid-container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
