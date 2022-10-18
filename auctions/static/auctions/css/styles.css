@@ -1026,6 +1026,18 @@ footer {
   .main #auction_data #listing_auction_order_column .container {
     margin-bottom: 1.5rem !important;
   }
+  .main #auction_data #listing_auction_order_column #auction_price, .main #auction_data #listing_auction_order_column #sold_price {
+    font-size: 1.125rem;
+  }
+  .main #auction_data #listing_auction_order_column #auction_price h4, .main #auction_data #listing_auction_order_column #sold_price h4 {
+    font-size: 1.5rem;
+  }
+  .main #auction_data #listing_auction_order_column #bid_price {
+    font-size: 1.125rem;
+  }
+  .main #auction_data #listing_auction_order_column #bid_price h2 {
+    font-size: 1.75rem;
+  }
   .main #auction_data #listing_auction_order_column .form-group #new_bid, .main #auction_data #listing_auction_order_column .form-group #accept, .main #auction_data #listing_auction_order_column .form-group #place_bid_disabled {
     height: 3rem;
   }

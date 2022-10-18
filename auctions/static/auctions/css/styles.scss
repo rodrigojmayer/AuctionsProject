@@ -1184,6 +1184,27 @@ footer {
                 .container{
                     margin-bottom:1.5rem!important;
                 }
+                
+                #auction_price, #sold_price{
+                    // margin-top: 0.4rem;
+                    // margin-bottom: 0.375rem;
+                    // line-height: 1rem;
+                    // height: auto;
+                    font-size: 1.125rem;
+                    h4{
+                        font-size: 1.5rem;
+                    }
+                }
+                
+                #bid_price{
+                    // height: auto;
+                    // line-height: 1rem;
+                    // color: var(--red-color);
+                    font-size: 1.125rem;
+                    h2{
+                        font-size: 1.75rem;
+                    }
+                }
                 .form-group{
 
                     #new_bid, #accept, #place_bid_disabled{
