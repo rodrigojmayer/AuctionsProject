@@ -269,6 +269,13 @@ body .sub h2 {
   top: 30vh;
   padding: 1rem;
   padding-bottom: 0;
+  font-size: 0.875rem;
+}
+#create_comment h4, #create_answer h4 {
+  font-size: 1.375rem;
+}
+#create_comment h5, #create_answer h5 {
+  font-size: 1.125rem;
 }
 
 .main {
@@ -905,6 +912,13 @@ footer {
   }
   #create_comment, #create_answer {
     top: 25vh;
+    font-size: 1rem;
+  }
+  #create_comment h4, #create_answer h4 {
+    font-size: 1.5rem;
+  }
+  #create_comment h5, #create_answer h5 {
+    font-size: 1.25rem;
   }
   .sub {
     height: 3.5rem !important;
