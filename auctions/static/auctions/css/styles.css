@@ -640,10 +640,13 @@ body .sub h2 {
 .main #auction_winner {
   color: var(--green-dark-color);
   border: solid var(--green-dark-color);
-  border-radius: 1rem;
+  border-radius: 0.1rem;
   padding: 0.5rem;
   background-color: var(--green-light-color);
   text-align: center;
+}
+.main #auction_winner h3 {
+  font-size: 1.2rem;
 }
 .main .myDIV {
   background-color: white;
@@ -1079,6 +1082,9 @@ footer {
   .main #auction_description #auction_description_block p {
     font-size: 1.125rem;
     max-height: 3.2rem;
+  }
+  .main #auction_winner h3 {
+    font-size: 1.5rem;
   }
   .main #add_watchlist_warning {
     font-size: 1.07rem;
