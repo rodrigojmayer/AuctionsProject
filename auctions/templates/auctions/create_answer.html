@@ -6,7 +6,7 @@
         <div class="main" id="create_answer">
             <!-- <h2>Your answer hasn't been added to {{ auction_data.name }} </h2> -->
             <h3>Error </h3>
-            {{ err }}
+            <p>{{ err }}</p>
             <!-- <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data"> -->
             <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                 <div class="form-group">
@@ -22,7 +22,7 @@
             <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                 <div class="form-group">
                     <h5>Question: </h5> {{ to_question }}
-                    <h5>New answer added: </h5> {{ answer_added }}
+                    <h5>New answer added: </h5> <p>{{ answer_added }}</p>
                 </div>
                 <input class="btn btn-primary" type="submit"  value="Back" >
             </form>

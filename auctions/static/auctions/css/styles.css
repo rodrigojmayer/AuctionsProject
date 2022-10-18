@@ -271,11 +271,27 @@ body .sub h2 {
   padding-bottom: 0;
   font-size: 0.875rem;
 }
+#create_comment .to-log-form-group, #create_answer .to-log-form-group {
+  margin: 0;
+  width: 100%;
+}
+#create_comment .form, #create_answer .form {
+  padding-bottom: 0 !important;
+}
+#create_comment .btn, #create_answer .btn {
+  width: 70%;
+  margin: 0;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+}
 #create_comment h4, #create_answer h4 {
   font-size: 1.375rem;
 }
 #create_comment h5, #create_answer h5 {
   font-size: 1.125rem;
+}
+#create_comment p, #create_answer p {
+  margin: 0.4rem;
 }
 
 .main {

@@ -7,7 +7,7 @@
         <div class="main" id="create_comment">
         <!-- <h2>Your comment hasn't been added to {{ auction_data.name }} </h2> -->
             <h4>Error </h4>
-            {{ err }}
+            <p>{{ err }}</p>
             <!-- <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data"> -->
             <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                 <div class="form-group">
@@ -24,7 +24,7 @@
             <form class="form" action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                 <div class="to-log-form-group">
                     <h5>New question added to {{ auction_data.name }}: </h5>
-                    {{ comment_added }}
+                    <p>{{ comment_added }}</p>
                     </br>
                 </div>
 
