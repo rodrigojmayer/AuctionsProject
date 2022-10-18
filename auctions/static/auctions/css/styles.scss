@@ -11,6 +11,7 @@
     --gray-color: #ccc;
     --gray-color-2: rgb(240, 240, 240);
     --gray-dark-color: rgb(190, 190, 190);
+    --gray-dark-color2: rgb(120, 120, 120);
     --black-color: #000;
     --link-color: #509ee3;
     --link-hover: rgb(3, 87, 215, 1);
@@ -176,8 +177,8 @@ body {
     height: var(--header-height);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5),
     10px 1px 16px 10px rgba(0,0,0,0.2),
-     inset 15px 15px 15px 0px rgba(255, 255, 255, 0.5),
-    12px 12px 16px 0 rgba(0, 0, 0, 0.1) inset,
+     inset 10px 15px 15px 0px rgba(255, 255, 255, 0.5),
+    // 12px 12px 16px 0 rgba(0, 0, 0, 0.1) inset
     ;
     z-index:111;
 
@@ -1041,8 +1042,9 @@ body {
 footer {
     position: absolute;
     bottom: 0;
-    background-color: var(--gray-dark-color);
-    color: var(--second-color);
+    background-color: var(--gray-dark-color2);
+    // color: var(--second-color);
+    color: var(--white-color);
     font-family: var(--font);
     width: 100%;
     height: calc(var(--footer-height) - .5rem);
@@ -1050,10 +1052,16 @@ footer {
     text-align: center;
     font-size: smaller;
     font-size: .725rem;
+    a{
+        color:var(--first-color);
+    }
+    a:hover{
+        color:var(--white-color);
+    }
 }
 
 #div_footer{
-    padding-top:  5px;
+    padding-top:  2.5px;
     text-align: center;
     width:100%;
 }
