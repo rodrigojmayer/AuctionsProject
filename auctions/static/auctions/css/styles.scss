@@ -887,22 +887,28 @@ body {
     .modal-body{
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
+        justify-content: space-between;
         gap: .5rem;
         border-radius: .5rem;
         background-color: var(--white-color);
         // width: 25vw;
         // max-width: 20rem;
         width: 18rem;
+        min-height: 11rem;
         margin: 25vh auto;
         box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+        padding: 0 ;
+        padding-bottom: .4rem;
         h5, p{
             text-align: center;
             margin: 0;
+            padding: 1px;
         }
         .btn{
             display: block;
-            margin: .5rem auto;
+            margin: .1rem;
+            width: 7rem;
         }
         #modal_back{
             background-color: var(--red-color);
@@ -916,7 +922,8 @@ body {
         }
         .flex-horizontal{
             display: flex;
-            gap: .5rem;
+            justify-content: center;
+            gap: .4rem;
         }
         
         #id_close_button{

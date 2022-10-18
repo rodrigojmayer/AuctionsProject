@@ -771,21 +771,26 @@ body .sub h2 {
 .modal-alert .modal-body {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 0.5rem;
   border-radius: 0.5rem;
   background-color: var(--white-color);
   width: 18rem;
+  min-height: 11rem;
   margin: 25vh auto;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  padding-bottom: 0.4rem;
 }
 .modal-alert .modal-body h5, .modal-alert .modal-body p {
   text-align: center;
   margin: 0;
+  padding: 1px;
 }
 .modal-alert .modal-body .btn {
   display: block;
-  margin: 0.5rem auto;
+  margin: 0.1rem;
+  width: 7rem;
 }
 .modal-alert .modal-body #modal_back {
   background-color: var(--red-color);
@@ -799,7 +804,8 @@ body .sub h2 {
 }
 .modal-alert .modal-body .flex-horizontal {
   display: flex;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.4rem;
 }
 .modal-alert .modal-body #id_close_button {
   z-index: 101;
