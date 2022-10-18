@@ -309,14 +309,6 @@ body {
     min-width: 18.5rem;
     max-width: 27rem;
     margin:auto ;
-    // margin:auto calc();
-    // margin-right: calc( ( width ) / 2 )!important;
-    // margin-left: calc((width / 2));
-    // margin-left: calc(( ( 100vw )  ) )!important;
-    // margin-left: calc(50px + 1px)!important;
-    // margin-left: min(50px, 5%);
-    // margin-left: auto ;
-    // margin-right: auto ;
     margin-bottom:3vw;
     background-color:  var(--white-color);
     border-radius: 10px;
@@ -371,21 +363,6 @@ body {
         }
 
     }
-    // #id_multiselect_search{
-    //     position:relative;
-    //     left:calc(100% - 2rem);
-    //     top:.2rem;
-    //     height: 0;
-    //     svg{
-    //         height: 2rem;
-    //         width: 2rem;
-    //         margin:0;
-    //         cursor: pointer;
-    //         path{
-    //             fill:var(--gray-dark-color);
-    //         }
-    //     }
-    // }
     form:first-child{
         padding-top: .5rem;
     }
@@ -934,10 +911,12 @@ body {
     }
     .modal-body-bigger{
         // width: 350vw;
-        // max-width: 50rem;
+        // max-height: 18rem!important;
+        // min-height: 18rem!important;
         padding:0;
         
-        height: 18rem;
+
+        height: 18rem!important;
         width: 18rem;
         // margin:  auto;
         // background-color: blue;
@@ -950,7 +929,7 @@ body {
             svg{
                 position:relative;
                 // top: -3.1px;
-                top: 5px;
+                top: -3px;
                 border-radius:4px;
                 background-color: var(--red-color);
                 z-index: 100;
@@ -965,7 +944,7 @@ body {
         // padding-top: 1rem;
         position:relative;
         // top: -50px;
-                top: -8px;
+                top: -16px;
                 border-radius:.5rem;
         
         // height: 18rem;

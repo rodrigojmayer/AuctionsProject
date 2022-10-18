@@ -812,7 +812,7 @@ body .sub h2 {
 }
 .modal-alert .modal-body-bigger {
   padding: 0;
-  height: 18rem;
+  height: 18rem !important;
   width: 18rem;
 }
 .modal-alert .modal-body-bigger #id_close_button {
@@ -820,7 +820,7 @@ body .sub h2 {
 }
 .modal-alert .modal-body-bigger #id_close_button svg {
   position: relative;
-  top: 5px;
+  top: -3px;
   border-radius: 4px;
   background-color: var(--red-color);
   z-index: 100;
@@ -830,7 +830,7 @@ body .sub h2 {
 }
 .modal-alert #modal_image {
   position: relative;
-  top: -8px;
+  top: -16px;
   border-radius: 0.5rem;
   height: 100%;
   width: 100%;
