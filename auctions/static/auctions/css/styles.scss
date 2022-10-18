@@ -167,15 +167,26 @@ body {
     }
 }
 #header {
+
     background-color: var(--first-color);
     font-family: var(--font);
     position:fixed;
     bottom: 0;
     width: 100%;
     height: var(--header-height);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5),
+    10px 1px 16px 10px rgba(0,0,0,0.2),
+     inset 15px 15px 15px 0px rgba(255, 255, 255, 0.5),
+    12px 12px 16px 0 rgba(0, 0, 0, 0.1) inset,
+    ;
     z-index:111;
 
+    // box-shadow: 
+    // 12px 12px 16px 0 rgba(0, 0, 0, 0.1) inset,
+    // -8px -8px 12px 0 rgba(0, 0, 0, 0.2) inset,
+    //  inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    // 0 0 0 0 rgba(0, 0, 0, 0.3) inset
+    // ;
     .navbar {
         font-family: var(--font);
         position:relative;
@@ -187,7 +198,8 @@ body {
             height: 43px;
         }
         .menu-btn{
-            background-color: var(--first-color);
+            // background-color: var(--first-color);
+            background-color: transparent;
             border: 0;
             cursor: pointer;
             outline: none;
@@ -1426,6 +1438,7 @@ footer {
                 display: none;
             }
             .menu{
+                background-color: transparent;
                 position: static;
                 width: 70vw;
                 flex-direction: row;
