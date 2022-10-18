@@ -359,7 +359,7 @@ def create_comment(request):
     print(comment_added)
     if(comment_added == ""):
         print("no ha ingresado ningun comentario")
-        err_mess = "You have not entered any comment."
+        err_mess = "You have not entered any question."
     else:
         print(" ha ingresado comentario")
         comment_duplicated = Comments.objects.filter(id_auction=auction_data, description=comment_added, id_user=user_logged.id)
@@ -396,6 +396,12 @@ def create_answer(request, id_comment):
     if(answer_added == ""):
         print("no ha ingresado ninguna respuesta")
         err_mess = "You have not entered any answer."
+        return render(request, "auctions/create_answer.html", {
+            "auction_data": auction_data,
+            "answer_added": answer_added,
+            "err" : err_mess
+
+        })
     else:
         print(" ha ingresado comentario")
         # add_answer = Comments(id_auction=auction_data, answer=answer_added, id_user=user_logged)

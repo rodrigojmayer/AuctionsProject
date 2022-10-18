@@ -298,13 +298,13 @@ body {
     padding-bottom: calc(var(--header-height) + 2rem);
 }
 
-#login, #register, #id_create_listing, #create_comment, #list_categories{
+#login, #register, #id_create_listing, #create_comment, #create_answer, #list_categories{
     max-width: 24rem!important;
     margin-left: auto ;
     margin-right: auto ;
     min-width: 17rem!important;
 }
-#create_comment{
+#create_comment, #create_answer{
     position:relative;
     top: 30vh;
     padding: 1rem;
@@ -1030,11 +1030,11 @@ footer {
         max-width: 41rem!important;
         margin: 0 auto!important;
     }
-    #login, #register, #id_create_listing, #create_comment, #list_categories{
+    #login, #register, #id_create_listing, #create_comment, #create_answer, #list_categories{
         max-width: 30rem;
     }
     
-    #create_comment{
+    #create_comment, #create_answer{
         top: 25vh;
     }
     .sub{
@@ -1566,7 +1566,7 @@ footer {
     }
 
     
-    #create_comment{
+    #create_comment, #create_answer{
         top: 15vh;
     }
 

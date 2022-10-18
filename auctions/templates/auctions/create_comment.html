@@ -2,21 +2,26 @@
 
 {% block body %}
     {% if err %}
+        <!-- <div class="sub"> -->
+        <!-- </div> -->
         <div class="main" id="create_comment">
-            <h2>Error </h2>
+        <!-- <h2>Your comment hasn't been added to {{ auction_data.name }} </h2> -->
+            <h3>Error </h3>
             {{ err }}
-            <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
+            <!-- <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data"> -->
+            <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                 <div class="form-group">
                     <input class="btn btn-primary" type="submit"  value="Back" >
                 </div>
             </form>
     {% else %}
-        <div class="sub">
-            <h2>Your comment has been added to {{ auction_data.name }} </h2>
-        </div>
+        <!-- <div class="sub"> -->
+        <!-- </div> -->
         <div class="main" id="create_comment">
+            <h4>Your comment has been added to {{ auction_data.name }} </h4>
 
-            <form class="form" action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
+            <!-- <form class="form" action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data"> -->
+            <form class="form" action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                 <div class="to-log-form-group">
                     <h5>New comment: </h5>
                     {{ comment_added }}
