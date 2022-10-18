@@ -1058,6 +1058,9 @@ footer {
     a:hover{
         color:var(--white-color);
     }
+    a:focus{
+        color:var(--first-alpha-color);
+    }
 }
 
 #div_footer{

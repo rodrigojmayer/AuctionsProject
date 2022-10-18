@@ -915,6 +915,9 @@ footer a {
 footer a:hover {
   color: var(--white-color);
 }
+footer a:focus {
+  color: var(--first-alpha-color);
+}
 
 #div_footer {
   padding-top: 2.5px;
