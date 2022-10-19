@@ -15,6 +15,24 @@
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{{MEDIA_URL}}/media/deremate.png" type="image/x-icon" />
+        <meta name="description" content="Design of an eBay-like e-commerce auction site.">
+        <link rel="canonical" href="https://rodrigojmayer.AUCTIONS---URL-----------------------------">
+        <link rel="favicon" href="{{MEDIA_URL}}/media/deremate.png">
+        <link rel="apple-touch-icon" href="{{MEDIA_URL}}/media/deremate.png">
+        <meta name="theme-color" content="#FFDB15">
+        <meta name="twitter:card" content="summary">
+        <meta property="og:type" content="website">
+        <meta property="og:title" name="twitter:title" content="Auctionss RJM">
+        <meta property="og:image" name="twitter:image"
+            content="static ">
+        <meta property="og:url" name="twitter:url" content="https://rodrigojmayer.AUCTIONS---URL-----------------------------">
+        <meta property="og:description" name="twitter:description"
+            content="Design of an eBay-like e-commerce auction site.">
+
     </head>
     <body id="top_page">
         <div id="header" >
@@ -24,7 +42,8 @@
                 {% endfor %}
                 <a href="{% url 'auctions_app:index' %}" >
                     <div class="nav-item nav-logo" >
-                        <img id="logo" src="/media/Group 3.png" alt="Logo">
+                        <!-- <img id="logo" src="/media/Group 3.png" alt="Logo"> -->
+                        <img id="logo" src="{{ MEDIA_URL }}/media/Group 3.png" alt="Logo">
                     </div>  
                 </a>
                 <button class="menu-btn">

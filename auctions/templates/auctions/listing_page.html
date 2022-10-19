@@ -22,7 +22,8 @@
             <div class="img-magnifier-container">
                 <div id="article_image"  onmouseover="magnify('myimage', 2)" onmouseout="close_magnify()" >
                     <div id="id_glass" class="img-magnifier-glass hide"></div>
-                    <img id="myimage" src="/media/{{ auction_data.image }}" height="200px" >
+                    <!-- <img id="myimage" src="/media/{{ auction_data.image }}" height="200px" > -->
+                    <img id="myimage" src="{{MEDIA_URL}}/media/{{ auction_data.image }}" height="200px" >
                 </div>
             </div>
             
@@ -167,7 +168,8 @@
             {% endif %}
           
         </div>
-        <div id="modal" value="listing_page" src="/media/{{ auction_data.image }}"> </div>
+        <!-- <div id="modal" value="listing_page" src="/media/{{ auction_data.image }}"> </div> -->
+        <div id="modal" value="listing_page" src="{{ MEDIA_URL }}/media/{{ auction_data.image }}"> </div>
 
     </div> 
     
