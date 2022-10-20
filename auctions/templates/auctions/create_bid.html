@@ -1,22 +1,24 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-<div class="main" id="create_bid">
     
+    <div class="main" id="create_bid">
     {% if err %}
-        <h2>Error </h2>
-        {{ err }}
+        <h4>Error </h4>
+        <p>{{ err }}</p>
         <!-- </br> -->
-        <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
+        <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
             <div class="form-group">
                 <input class="btn btn-primary" type="submit"  value="Back" >
             </div>
         </form>
     {% else %}
-        <h2>Your bid has been added to {{ auction_data.name }} </h2>
-        New price: ${{ bid_added }}
+        <h5>Your bid has been added to {{ auction_data.name }} </h5>
+        
         <!-- </br> -->
-        <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data">
+        <form class="form" action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
+        <!-- <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data"> -->
+            <p>New price: ${{ bid_added }}</p>
             <div class="form-group">
                 <input class="btn btn-primary" type="submit"  value="Back" >
             </div>
@@ -24,5 +26,5 @@
         
     {% endif %}
    
-</div>
+    </div>
 {% endblock %}

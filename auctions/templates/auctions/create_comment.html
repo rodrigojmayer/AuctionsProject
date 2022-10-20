@@ -1,10 +1,10 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
+    <div class="main" id="create_comment">
     {% if err %}
         <!-- <div class="sub"> -->
         <!-- </div> -->
-        <div class="main" id="create_comment">
         <!-- <h2>Your comment hasn't been added to {{ auction_data.name }} </h2> -->
             <h4>Error </h4>
             <p>{{ err }}</p>
@@ -17,7 +17,6 @@
     {% else %}
         <!-- <div class="sub"> -->
         <!-- </div> -->
-        <div class="main" id="create_comment">
             <!-- <h4>Question added to {{ auction_data.name }} </h4> -->
 
             <!-- <form class="form" action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data"> -->
@@ -31,5 +30,5 @@
                 <input class="btn btn-primary" type="submit"  value="Back" >
             </form>
     {% endif %}
-        </div>
+    </div>
 {% endblock %}
