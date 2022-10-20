@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(inputElement)
         inputElement.addEventListener("change", handleFiles, false);
 
+
     function handleFiles() {
         label_button = document.querySelector("#button_image p")
         
@@ -233,12 +234,6 @@ function contar(elem, idGlosa) {
     }
 }
 
-function submitButtonClick(event) {
-    console.log(event.preventDefault())
-    event.preventDefault();
-    //other stuff you want to do instead...
-
-} 
 
 function watch_list_change(id_auction){
 

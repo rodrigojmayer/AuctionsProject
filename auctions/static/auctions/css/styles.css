@@ -258,40 +258,40 @@ body .sub h2 {
   padding-bottom: calc(var(--header-height) + 2rem);
 }
 
-#login, #register, #id_create_listing, #create_comment, #create_answer, #list_categories {
+#login, #register, #id_create_listing, #create_comment, #create_answer, #create_bid, #list_categories {
   max-width: 24rem !important;
   margin-left: auto;
   margin-right: auto;
   min-width: 17rem !important;
 }
 
-#create_comment, #create_answer {
+#create_comment, #create_answer, #create_bid {
   position: relative;
   top: 30vh;
   padding: 1rem;
   padding-bottom: 0;
   font-size: 0.875rem;
 }
-#create_comment .to-log-form-group, #create_answer .to-log-form-group {
+#create_comment .to-log-form-group, #create_answer .to-log-form-group, #create_bid .to-log-form-group {
   margin: 0;
   width: 100%;
 }
-#create_comment .form, #create_answer .form {
+#create_comment .form, #create_answer .form, #create_bid .form {
   padding-bottom: 0 !important;
 }
-#create_comment .btn, #create_answer .btn {
+#create_comment .btn, #create_answer .btn, #create_bid .btn {
   width: 70%;
   margin: 0;
   margin-bottom: 1rem;
   margin-left: 15%;
 }
-#create_comment h4, #create_answer h4 {
+#create_comment h4, #create_answer h4, #create_bid h4 {
   font-size: 1.375rem;
 }
-#create_comment h5, #create_answer h5 {
+#create_comment h5, #create_answer h5, #create_bid h5 {
   font-size: 1.125rem;
 }
-#create_comment p, #create_answer p {
+#create_comment p, #create_answer p, #create_bid p {
   margin: 0.4rem;
 }
 
@@ -933,17 +933,17 @@ footer a:focus {
     max-width: 41rem !important;
     margin: 0 auto !important;
   }
-  #login, #register, #id_create_listing, #create_comment, #create_answer, #list_categories {
+  #login, #register, #id_create_listing, #create_comment, #create_answer, #create_bid, #list_categories {
     max-width: 30rem;
   }
-  #create_comment, #create_answer {
+  #create_comment, #create_answer, #create_bid {
     top: 25vh;
     font-size: 1rem;
   }
-  #create_comment h4, #create_answer h4 {
+  #create_comment h4, #create_answer h4, #create_bid h4 {
     font-size: 1.5rem;
   }
-  #create_comment h5, #create_answer h5 {
+  #create_comment h5, #create_answer h5, #create_bid h5 {
     font-size: 1.25rem;
   }
   .sub {
@@ -1348,7 +1348,7 @@ footer a:focus {
     padding-bottom: 1rem;
     margin-bottom: 0;
   }
-  #create_comment, #create_answer {
+  #create_comment, #create_answer, #create_bid {
     top: 15vh;
   }
   .sub {

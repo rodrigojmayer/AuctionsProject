@@ -84,12 +84,25 @@ function Modal(){
                 <p id="modal_text"></p>
                 <div class="flex-horizontal">
                     <button id="modal_back"  class="btn btn-primary" type="button" value="Back" >Back</button>
-                    <input id="modal_save" onclick="submitButtonClick(event)" class="btn btn-primary" type="submit" value="Save" name="_save" />
+                    <button id="modal_save" class="btn btn-primary" value="Save" name="_save" >Save</button>
                 </div>
                 <div id="modal_image"></div>
             </div>
         </div>
     )
+
+    
+    // function inputKeyPress() {
+    //     console.log("****************apreta el enter apreta/////////////////")
+    // }
+    
+    // function submitButtonClick() {
+    //     console.log(event.preventDefault())
+    //     // document.getElementById("myForm").submit();
+    //     // event.preventDefault();
+    //     //other stuff you want to do instead...
+
+    // } 
 }
 
 
@@ -158,6 +171,13 @@ function handleModal(evt) {
     console.log(modal.getAttribute('src'))
     console.log("modal getAttribute")
     console.log(modal.getAttribute)
+    
+    // let modal_save = document.getElementById("modal_save");
+    if(modal_save){
+        modal_save.addEventListener("click", submitButtonClick)
+        console.log("evednt.preventDefault()")
+        // event.preventDefault();
+    }
     if(value == "create_listing"){
         let data_article = document.getElementById("data_article");
         let data_description = document.getElementById("data_description");
@@ -224,20 +244,20 @@ function handleModal(evt) {
                                             Category: ${data_auction_category.value}</br>
                                             Image: ${document.getElementById("glosaArchivos").textContent}</br>`
                     
-            // modal_subtitle.classList.add('show');
-            // modal_subtitle.classList.remove('hide');
-            // modal_text.classList.add('show');
-            // modal_text.classList.remove('hide');
-            // modal_back.classList.remove('hide');
-            // modal_back.classList.add('show');
-            // modal_image.classList.add("hide");
-            // modal_image.classList.remove("show");
-            
-            modal_save.classList.remove('hide');
+                    // modal_subtitle.classList.add('show');
+                    // modal_subtitle.classList.remove('hide');
+                    // modal_text.classList.add('show');
+                    // modal_text.classList.remove('hide');
+                    // modal_back.classList.remove('hide');
+                    // modal_back.classList.add('show');
+                    // modal_image.classList.add("hide");
+                    // modal_image.classList.remove("show");
+                    
+                    modal_save.classList.remove('hide');
                     modal_save.classList.add('show');
                     // modal_image.classList.add("hide");
                     // modal_image.classList.remove("show");
-                    modal_save.onclick="";
+                    // modal_save.onclick="";
                 }
 
             })
@@ -273,7 +293,7 @@ function handleModal(evt) {
             modal_image.classList.remove("show");
 
             id_modal_body.classList.remove("modal-body-bigger")
-            modal_save.onclick="";
+            // modal_save.onclick="";
         }
         else{
 
@@ -366,4 +386,13 @@ function lockScroll(){
 function unLockScroll(){
     document.body.classList.remove("lock-scroll")
     document.body.classList.add("un-lock-scroll")
+}
+
+
+function submitButtonClick() {
+    // console.log(event.preventDefault())
+    document.getElementById("myForm").submit();
+    // event.preventDefault();
+    //other stuff you want to do instead...
+
 }
