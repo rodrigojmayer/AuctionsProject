@@ -34,7 +34,7 @@ from .models import User, AuctionListings, Bids, Comments, Category, WatchLists
 def index(request):
 
     print("Siempre entra aca o solo con el indice???????????????????????????")
-    all_auctions = AuctionListings.objects.all()
+    all_auctions = AuctionListings.objects.all().order_by('-id')
     #all_bids = Bids.objects.all()
     len_auctions = len(all_auctions)
     if len_auctions > 0:
