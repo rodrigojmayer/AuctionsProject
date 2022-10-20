@@ -1,23 +1,23 @@
 {% extends "auctions/layout.html" %}
 {% block body %}
-<div class="sub" id="sub-not-logged">
-    <h2>Login</h2>
-</div>
-<div id="login" class="main" >
-    {% if message %}
-        <div>{{ message }}</div>
-    {% endif %}
-    <form action="{% url 'auctions_app:login' %}" method="post" class="form">
-        {% csrf_token %}
-        <div class="to-log-form-group">
-            <label for="username">Username</label>
-            <input autofocus class="form-control" type="text" name="username" placeholder="" autocomplete="off" >
-            <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" placeholder="">
-        </div>
-        <input class="btn btn-primary" type="submit" value="Login">
-        <a href="{% url 'auctions_app:register' %}">Create account</a>
-    </form>
-</div>
-<div id="app"></div>
+    <div class="sub" id="sub-not-logged">
+        <h2>Login</h2>
+    </div>
+    <div id="login" class="main" >
+        {% if message %}
+            <div>{{ message }}</div>
+        {% endif %}
+        <form action="{% url 'auctions_app:login' %}" method="post" class="form">
+            {% csrf_token %}
+            <div class="to-log-form-group">
+                <label for="username">Username</label>
+                <input autofocus class="form-control" type="text" name="username" placeholder="" autocomplete="off" >
+                <label for="password">Password</label>
+                <input class="form-control" type="password" name="password" placeholder="">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Login">
+            <a href="{% url 'auctions_app:register' %}">Create account</a>
+        </form>
+    </div>
+    <div id="app"></div>
 {% endblock %}

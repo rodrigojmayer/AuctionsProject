@@ -129,18 +129,13 @@ function MultiselectDropdown(options){
                               style:{width:'100%',display:el.attributes['multiselect-search']?.value==='true'?'block':'none'},
                               placeholder:config.txtSearch});
     
-    // listWrap.setAttribute('id','id_multiselect_search');
-    // var hijojo = `<div id="cuidado"></div>`;
-    // search.appendChild(hijojo)
     const node = document.createElement("div");
     node.setAttribute('id','id_close_button');
     node.innerHTML = `<svg name="close" width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path name="close" d="M21.1987 8L15.5413 13.656L9.88533 8L8 9.88533L13.656 15.5413L8 21.1973L9.88533 23.0827L15.5413 17.4267L21.1987 23.0827L23.084 21.1973L17.428 15.5413L23.084 9.88533L21.1987 8Z" fill="#D90062"/>
                       </svg>`
     listWrap.appendChild(node);
-    // console.log(search);
     listWrap.appendChild(search);
-    // listWrap.appendChild('<div>are</div>');
     div.appendChild(listWrap);
     listWrap.appendChild(list);
 

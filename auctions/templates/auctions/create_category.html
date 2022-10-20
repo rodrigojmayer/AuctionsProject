@@ -1,15 +1,15 @@
 {% extends "auctions/layout.html" %}
 {% block body %}
-<div class="sub">
-    <h2>New Category</h2>
-</div>
-<div class="main">
-    <form action="{% url 'auctions_app:create_category' %}" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <input autofocus class="form-control" type="text" name="category_name" placeholder="Name"> 
-        </div>
-        <input class="btn btn-primary" type="submit" value="Login">
-    </form>
-</div>
+    <div class="sub">
+        <h2>New Category</h2>
+    </div>
+    <div class="main">
+        <form action="{% url 'auctions_app:create_category' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input autofocus class="form-control" type="text" name="category_name" placeholder="Name"> 
+            </div>
+            <input class="btn btn-primary" type="submit" value="Login">
+        </form>
+    </div>
 {% endblock %}

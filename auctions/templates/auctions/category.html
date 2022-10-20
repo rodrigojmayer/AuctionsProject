@@ -9,28 +9,22 @@
                 <div class="listing_auction" >
                     <div id="auction_image">
                         <a href="{% url 'auctions_app:listing_page' auction_category.id %}">
-                            <!-- <img src="/media/{{ auction_category.image }}"  height="200px"> -->
-                            <!-- <img src="/media/{{ auction_category.image }}" > -->
                             <img src="{{MEDIA_URL}}/media/{{ auction_category.image }}" >
                         </a>
                     </div>
                     <div id="order-column">
                         <div id="auction_name">
                             <a href="{% url 'auctions_app:listing_page' auction_category.id %}">
-                                <!-- <h2> -->
-                                    {{ auction_category.name }}
-                                <!-- </h2> -->
+                                {{ auction_category.name }}
                             </a>  
                         </div> 
                         <div id="auction_listing_data">
                             <div id="auction_price">
-                                <!-- <h3> -->
-                                    {% if auction_category.auction_active %}
-                                        ${{ auction_category.initial_price }}
-                                    {% else %}
-                                        Sold for ${{ auction_category.initial_price }}
-                                    {% endif %}
-                                <!-- </h3> -->
+                                {% if auction_category.auction_active %}
+                                    ${{ auction_category.initial_price }}
+                                {% else %}
+                                    Sold for ${{ auction_category.initial_price }}
+                                {% endif %}
                             </div>
                             <div id="auction_description"> 
                                 <div id="auction_description_block">

@@ -1,34 +1,23 @@
 {% extends "auctions/layout.html" %}
-
 {% block body %}
     <div class="main" id="create_comment">
-    {% if err %}
-        <!-- <div class="sub"> -->
-        <!-- </div> -->
-        <!-- <h2>Your comment hasn't been added to {{ auction_data.name }} </h2> -->
+        {% if err %}
             <h4>Error </h4>
             <p>{{ err }}</p>
-            <!-- <form action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data"> -->
             <form action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                 <div class="form-group">
                     <input class="btn btn-primary" type="submit"  value="Back" >
                 </div>
             </form>
-    {% else %}
-        <!-- <div class="sub"> -->
-        <!-- </div> -->
-            <!-- <h4>Question added to {{ auction_data.name }} </h4> -->
-
-            <!-- <form class="form" action="../listing_page/{{ auction_data.id }}"  method="GET" enctype="multipart/form-data"> -->
+        {% else %}
             <form class="form" action="{% url 'auctions_app:listing_page' auction=auction_data.id  %}"  method="GET" enctype="multipart/form-data">
                 <div class="to-log-form-group">
                     <h5>New question added to {{ auction_data.name }}: </h5>
                     <p>{{ comment_added }}</p>
                     </br>
                 </div>
-
                 <input class="btn btn-primary" type="submit"  value="Back" >
             </form>
-    {% endif %}
+        {% endif %}
     </div>
 {% endblock %}

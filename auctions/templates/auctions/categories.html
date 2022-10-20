@@ -5,11 +5,9 @@
 </div>
 <div class="main"id="list_categories">
     {% for categories in all_categories %}
-        <!-- <div class="listinsg_auction"  > -->
             <a href="../category/{{ categories.id }}" >
                 {{ categories.category_name }}   
             </a>
-        <!-- </div> -->
     {% endfor %}
 </div>
 {% endblock %}

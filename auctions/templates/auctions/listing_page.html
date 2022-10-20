@@ -2,10 +2,9 @@
 
 {% block body %}
 
-<div class="sub">
-    <h2>Article</h2>
-</div>
-
+    <div class="sub">
+        <h2>Article</h2>
+    </div>
     <div class="main">
         {% if err %}
         <div class="window-notice" id="window-notice">
@@ -22,11 +21,9 @@
             <div class="img-magnifier-container">
                 <div id="article_image"  onmouseover="magnify('myimage', 2)" onmouseout="close_magnify()" >
                     <div id="id_glass" class="img-magnifier-glass hide"></div>
-                    <!-- <img id="myimage" src="/media/{{ auction_data.image }}" height="200px" > -->
                     <img id="myimage" src="{{MEDIA_URL}}/media/{{ auction_data.image }}" height="200px" >
                 </div>
             </div>
-            
             <div id="listing_auction_order_column">
                 <label class="container">
                     {% if user_logged.id %}
@@ -123,8 +120,8 @@
                             {% endif %}
 
                             {% if user_logged.id == auction_data.id_user.id %}
-                                {% if comment.answer %}<!-- You can't answer the question because there is already an answer.   -->
-                                {% else %}<!-- You can answer the question because you are the owner of the bid and there is no answer for this question yet.. -->
+                                {% if comment.answer %}
+                                {% else %}
                                     <a href="#answer-input-{{comment.id}}" onclick="enable_answer(`{{comment.id}}`)" >Answer this question</a>
                                     <form action="{% url 'auctions_app:create_answer' id_comment=comment.id %}"  method="GET" enctype="multipart/form-data">
                                         <div class="form-group hide answer-forms" id="answer-form-{{comment.id}}">
@@ -137,7 +134,7 @@
                                         </div>
                                     </form>
                                 {% endif %}
-                            {% else %}<!-- You can't answer questions because you are not the owner of the bid. -->
+                            {% else %}
                             {% endif %}
                         </div>
                     </div>
@@ -147,7 +144,7 @@
                     <b> No questions</b>
                 </div>
             {% endif %}
-            {% if user_logged.id != auction_data.id_user.id %}<!-- You can create questions. -->
+            {% if user_logged.id != auction_data.id_user.id %}
                 <form action="{% url 'auctions_app:create_comment'  %}"  method="GET" enctype="multipart/form-data">
                     <h5><a href="#question-input" onclick="enable_question()" >Make a question</a></h5>
                     <div class="form-group hide" id="question-form" >
@@ -164,14 +161,9 @@
                         {% endif %}
                     </div>
                 </form>
-            {% else %}<!-- You can't create questions because you are the owner of the auction. -->
+            {% else %}
             {% endif %}
-          
         </div>
-        <!-- <div id="modal" value="listing_page" src="/media/{{ auction_data.image }}"> </div> -->
         <div id="modal" value="listing_page" src="{{ MEDIA_URL }}/media/{{ auction_data.image }}"> </div>
-
     </div> 
-    
-    <!-- <div id="modal_image" value="modal_image" ></div> -->
 {% endblock %}
