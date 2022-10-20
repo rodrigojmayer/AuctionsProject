@@ -425,7 +425,7 @@ def watch_list(request):
     all_auctions = AuctionListings.objects.all()
     all_bids = Bids.objects.all()
     user_logged = request.user
-    my_watch_list = WatchLists.objects.filter(id_user=user_logged)
+    my_watch_list = WatchLists.objects.filter(id_user=user_logged).order_by('-id')
     # len_auctions = len(my_watch_list)
     # print("--- len_auctions ---")
     # print(len_auctions)
@@ -496,7 +496,7 @@ def categories(request):
 def category(request, id_category):
 
     category = Category.objects.get(id=id_category)
-    auction_listing_category = AuctionListings.objects.filter(auction_category__id=id_category)
+    auction_listing_category = AuctionListings.objects.filter(auction_category__id=id_category).order_by('-id')
     len_auctions = len(auction_listing_category)
     if len_auctions > 0:
         last_auction = auction_listing_category[len_auctions-1].id
