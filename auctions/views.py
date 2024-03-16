@@ -116,7 +116,6 @@ def create_listing(request):
                 "message": "By post",
                 "all_categories": all_categories
             })
-        
     else:
         all_categories = Category.objects.all().order_by('category_name')
         return render(request, "auctions/create_listing.html", {
